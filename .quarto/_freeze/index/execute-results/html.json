@@ -1,0 +1,14 @@
+{
+  "hash": "4af1824210432d8b872267e2e6ae5a43",
+  "result": {
+    "markdown": "# Losowanie {.unnumbered}\n\n\n---\ntitle: \"\"\nauthor: \"Michał Koziński\"\nformat: \n  html:\n    toc: false\n    embed-resources: false\n    self-contained: false\n    page-layout: full\n---\n\n\n<iframe height=\"350\" width=\"125%\" frameborder=\"no\" src=\"https://michciak.shinyapps.io/losowanie2/\"> </iframe>\n\n\n::: {.cell}\n\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

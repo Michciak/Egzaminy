@@ -1,0 +1,926 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Egzaminy",
+    "section": "",
+    "text": "Losowanie"
+  },
+  {
+    "objectID": "WAD_egzamin.html",
+    "href": "WAD_egzamin.html",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "",
+    "text": "Zagadnienia do przygotowania na egzamin ustny z Wielowymiarowej Analizy Danych"
+  },
+  {
+    "objectID": "WAD_egzamin.html#czym-się-różni-test-jednowymiarowy-od-testu-wielowymiarowego",
+    "href": "WAD_egzamin.html#czym-się-różni-test-jednowymiarowy-od-testu-wielowymiarowego",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "1. Czym się różni test jednowymiarowy od testu wielowymiarowego?",
+    "text": "1. Czym się różni test jednowymiarowy od testu wielowymiarowego?\nUżycie p testów jednowymiarowych powoduje niekontrolowany wzrost błędu I rodzaju.\nTesty jednowymiarowe charakteryzują się mniejszą mocą niż testy wielowymiarowe. Zdarza się, że żaden z testów jednowymiarowych nie odrzuci hipotezy \\(H_0\\), a test wielowymiarowy tak.\nTesty jednowymiarowe kompletnie ignorują korelacje pomiędzy analizowanymi chechami. (nie wuzględniają zależności analizowanych cech)\n\n\n\ntesty t-Studenta lub ANOVA można stosować osobno dla \\(w\\) lub \\(h\\). W pożyszym przypadku nie wykryją one istotnych różnic, ponieważ średnie są podobne dla △ i ○. Dopiero jak się spojrzy na obie cechy jednocześnie, to widać różnicę.\n\nTesty jednowymiarowe: porównanie dwóch lub więcej grup pod względem wielkości pewnej cechy.\nTesty wielowymairowe: porównanie dówych lub więcej grup pod względem wielu cech.\nKilkukrotne wykonywanie testów jednowymiarowych powoduje niekontrolowany wzrost popełnienia błędu I. rodzaju,"
+  },
+  {
+    "objectID": "WAD_egzamin.html#wymień-znane-ci-dwa-testy-wielowymiarowe.",
+    "href": "WAD_egzamin.html#wymień-znane-ci-dwa-testy-wielowymiarowe.",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "2. Wymień znane Ci dwa testy wielowymiarowe.",
+    "text": "2. Wymień znane Ci dwa testy wielowymiarowe.\n- \\(T^2\\) Hotelling’a,\n- M-Shapiro test\n\n- Test jednorodności macierzy kowariancji (test M-Box’a),\n- MANOVA:\n\nLambda Wilka,\nTest Roy’a,\nTest Pillai’a,\nTest Hotelling’a-Lawley’a."
+  },
+  {
+    "objectID": "WAD_egzamin.html#do-czego-służy-test-manova-i-na-jakiej-zasadzie-działa",
+    "href": "WAD_egzamin.html#do-czego-służy-test-manova-i-na-jakiej-zasadzie-działa",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "3. Do czego służy test MANOVA i na jakiej zasadzie działa?",
+    "text": "3. Do czego służy test MANOVA i na jakiej zasadzie działa?\nMANOVA (Multivariante ANalysis Of VAriance)\n\nwielowymiarowa analiza wariancji\nuogólnienie testów wielowymiarowych Hotellinga.\n\n\n\\(H_0\\):   \\(u_1=u_2=...=u_k\\)\n\\(H_1\\):   co najmniej dwie średnie \\(u_j\\) nie są równe\n\nSłuży do porównywania k wektorów pod kątem średniej.\n\nPrzez analogię do jednowymiarowej analizy wariancji test opiera się na porównaniu zmienności międzygrupowej i wewnątrzgrupowej\n\\[H=n\\sum\\limits_{i=1}\\limits^{k}(y_{i\\cdot}-y_{\\cdot\\cdot})(y_{i\\cdot}-y_{\\cdot\\cdot})'\\]\n\\[E=\\sum\\limits_{i=1}\\limits^{k}\\sum\\limits_{j=1}\\limits^{n_i}(y_{ij}-y_{i\\cdot})(y_{ij}-y_{i\\cdot})'\\] \nCztery wersje MANOVA:\n\nLambda Wilka\n\\[\\Lambda = \\frac{|E|}{|E+H|}\\]\nOdrzucamy \\(H_0\\), gdy \\(\\Lambda \\leq \\Lambda_{\\alpha,p,v_H,v_E}\\).\nTest Roy’a\nPoszukiwanie takiego kierunku, aby stosunek wariancji międzygrupowej do wewnątrzgrupowej był jak największy.\n\\(\\lambda_1\\) - największa wartość własna macierzy \\(E^{-1}H\\)\n\\[\\Theta = \\frac{\\lambda_1}{1+\\lambda_1}\\]\nodrzucamy \\(H_0\\), jeśli \\(\\Theta \\geq \\Theta_{\\alpha,s,m,N}\\),\ngdzie\n\\(s=min(\\nu_H,p)\\),\n\\(m = \\frac{1}{2(|\\nu_H - p|-1)}\\),\n\\(N = \\frac{1}{2(\\nu_H - p-1)}\\).\nTest Pillai’a\nRozwinięcie testu Roy’a, opiera się na wartościach własnych \\(\\lambda_1,\\lambda_2,...,\\lambda_s,\\) mecierzy \\(E^{-1}H\\)\n\\[V^{(s)}=Tr[(E+H)^{-1}H] = \\sum\\limits_{i=1}\\limits^{s}\\frac{\\lambda_i}{1+\\lambda_i}\\]\nodrzucamy \\(H_0\\), gdy \\(V^{(s)}\\geq V^{(s)}_\\alpha\\).\nTest Hotelling’a-Lawley’a\n\\[U^{(s)}=Tr(E^{-1}H) = \\sum\\limits_{i=1}\\limits^{s}\\lambda_i\\]\nodrzucamy \\(H_0\\), jeśli \\(\\frac{\\nu_E}{\\nu_H}U^{(s)}\\) przekraczaja wartosci krytyczne z tabeli Hotelling’a-Lawley’a."
+  },
+  {
+    "objectID": "WAD_egzamin.html#wymień-różnice-pomiędzy-regresją-wieloraką-a-analizą-kanoniczną.",
+    "href": "WAD_egzamin.html#wymień-różnice-pomiędzy-regresją-wieloraką-a-analizą-kanoniczną.",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "4. Wymień różnice pomiędzy regresją wieloraką a analizą kanoniczną.",
+    "text": "4. Wymień różnice pomiędzy regresją wieloraką a analizą kanoniczną.\nAnaliza kanoniczna jest naturalnym uogólnikiem modelu regresji wielorakiej.\nPolega na badaniu zależności pomiędzy dwoma zbiorami zmiennych \\(X \\in \\mathbb{R}^q\\) oraz \\(Y \\in \\mathbb{R}^p\\)\nAnaliza kanoniczna ma na celu odnalezienie struktury zależnosci pomiedzy zmiennymi obu zbiorów.\n\n\n\n\n\n\n\n\nRegresja wieloraka jest skierowana (X objaśnia Y, ale Y w żadnym stopniu nie opisuje X).\nRegresja wieloraka ignoruje strukturę zależności zmiennych objaśnianych Y."
+  },
+  {
+    "objectID": "WAD_egzamin.html#opisz-zasadę-działania-analizy-kanonicznej.",
+    "href": "WAD_egzamin.html#opisz-zasadę-działania-analizy-kanonicznej.",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "5. Opisz zasadę działania analizy kanonicznej.",
+    "text": "5. Opisz zasadę działania analizy kanonicznej.\n\\[\\begin{pmatrix}X \\\\ Y\\end{pmatrix} \\sim \\left(\\begin{pmatrix}\\mu \\\\ \\nu\\end{pmatrix}, \\begin{pmatrix}\\Sigma_{XX}, & \\Sigma_{XY}\\\\ \\Sigma_{YX}, & \\Sigma_{YY}\\end{pmatrix}\\right)\\]\ngdzie\n\n\\(Cov(X) = \\Sigma_{XX}\\) o wymiarze \\(q \\times q\\)\n\\(Cov(Y) = \\Sigma_{YY}\\) o wymiarze \\(p \\times p\\)\n\\(Cov(X,Y) = E(X-\\mu)(Y-\\nu)'=\\Sigma_{XY}=\\Sigma_{YX}' \\quad [q \\times p]\\)\n\n\n\nAnaliza kanoniczna zmierza do zidentyfikowania struktury zależności pomiędzy zbiorami zmiennych \\(X\\) i \\(Y\\).\nRealizuje się to poprzez znalezienie pary wektorów maksymalizujących korelację kanoniczną między \\(X\\) i \\(Y\\).\nNa podstawie rozkładu SVD znajdujemy wektory własne macierzy \\(\\Sigma_{XX}^{-\\frac{1}{2}}\\Sigma_{XY}\\Sigma_{YY}^{-1}\\Sigma_{YX}\\Sigma_{XX}^{-\\frac{1}{2}}\\) i \\(\\Sigma_{YY}^{-\\frac{1}{2}}\\Sigma_{YX}\\Sigma_{XX}^{-1}\\Sigma_{XY}\\Sigma_{YY}^{-\\frac{1}{2}}\\), które definiują wektory \\(a\\) i \\(b\\).\nPierwiastki niezerowych wartości własnych wspomnianych macierzy ustawione w ciągu malejącym stanowią korelacje kanoniczne kolejnych par zmiennych kanonicznych.\nZ rozkładu SVD wynika, że kolejne pary zmiennych kanonicznych są nieskorelowane ze zmiennymi kanonicznymi innych par.\nKorelacje kanoniczne są niezmiennicze ze wzgledu na przekształcenia liniowe."
+  },
+  {
+    "objectID": "WAD_egzamin.html#czym-charakteryzują-się-kolejne-pary-zmiennych-kanonicznych",
+    "href": "WAD_egzamin.html#czym-charakteryzują-się-kolejne-pary-zmiennych-kanonicznych",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "6. Czym charakteryzują się kolejne pary zmiennych kanonicznych?",
+    "text": "6. Czym charakteryzują się kolejne pary zmiennych kanonicznych?\nKolejne pary kanoniczne są ze sobą coraz słabiej skorelowane. Wartość korelacji k-tej pary kanonicznej wynosi \\[\\rho(U_k,V_k) = \\sqrt{\\lambda_k}\\]\nPonad to:\n\nZ rozkładu SVD wynika, że kolejne pary zmiennych kanonicznych są nieskorelowane ze zmiennymi kanonicznymi innych par.\nPierwiastki niezerowych wartości własnych macierzy \\(\\Sigma_{XX}^{-\\frac{1}{2}}\\Sigma_{XY}\\Sigma_{YY}^{-1}\\Sigma_{YX}\\Sigma_{XX}^{-\\frac{1}{2}}\\) i \\(\\Sigma_{YY}^{-\\frac{1}{2}}\\Sigma_{YX}\\Sigma_{XX}^{-1}\\Sigma_{XY}\\Sigma_{YY}^{-\\frac{1}{2}}\\), ustawione w ciągu malejącym stanowią korelacje kanoniczne kolejnych par zmiennych kanonicznych.\nKorelacje kanoniczne są niezmiennicze ze względu na przekształcenia liniowe."
+  },
+  {
+    "objectID": "WAD_egzamin.html#jak-testujemy-istotność-statystyczną-par-kanonicznych",
+    "href": "WAD_egzamin.html#jak-testujemy-istotność-statystyczną-par-kanonicznych",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "7. Jak testujemy istotność statystyczną par kanonicznych?",
+    "text": "7. Jak testujemy istotność statystyczną par kanonicznych?\nDo badania nieskorelowania dwóch zbiorów zmiennych mozna wykorzystać test Wilka największej wiarogodności, przy założeniu normalności wielowymiarowej badanej struktury zmiennych. Badający hipotezę \\[H_0: \\exists_k \\text{cor}(U_k,U_k) \\neq 0\\] (conajmniej jedna para kanoniczna jest istotnie skorelowana)\n\\[\\text{O statystyce testowej }\\; T^{\\frac{2}{n}} = |I - S_{YY}^{-1}S_{YX}^{\\quad}S_{XX}^{-1}S_{XY}^{\\quad}|=\\prod\\limits_{i=1}^{k}(1-\\ell_i)\\] gdzie \\(S_{YY}^{\\quad},S_{YX}^{\\quad},S_{XX}^{\\quad},S_{XY}^{\\quad}\\) są odpowiednikami macierzy kowariancji \\(\\Sigma_{YY}^{\\quad},\\Sigma_{YX}^{\\quad},\\Sigma_{XX}^{\\quad},\\Sigma_{XY}^{\\quad}\\) wyliczonymi na podstawie próby\noraz \\(\\ell_i\\) jako próbkowy wskaźnik \\(\\lambda_i\\)\n\n\nTest Bartletta (czyli statystyka testowa zaproksymowana do rozkładu \\(\\chi^2\\))\nRozkład powyższej statystyki testowej jest skomplikowany, dlatego Bartlett wprowadził wzór aproksymacyjny dla dużych \\(n\\):\n\\[-\\left[n - \\frac{p+q+3}{2}\\right]log\\prod\\limits_{i=1}^{k}(1-\\ell_i)\\sim \\chi_{pq}^{2}\\]\nDo testowania hipotezy, że współczynniki korelacji kanonicznych są niezerowe po usunięciu pierwszych \\(s\\) pierwiastków (zmiennych kanonicznych) używamy statystki:\n\\[-\\left[n - \\frac{p+q+3}{2}\\right]log\\prod\\limits_{i=s+1}^{k}(1-\\ell_i)\\sim \\chi_{(p-s)(q-s)}^{2}\\]"
+  },
+  {
+    "objectID": "WAD_egzamin.html#co-wyrażają-ładunki-czynnikowe-w-analizie-kanonicznej",
+    "href": "WAD_egzamin.html#co-wyrażają-ładunki-czynnikowe-w-analizie-kanonicznej",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "8. Co wyrażają ładunki czynnikowe w analizie kanonicznej?",
+    "text": "8. Co wyrażają ładunki czynnikowe w analizie kanonicznej?\nŁadunki czynnikowe wyrażają korelację między zmiennymi kanonicznymi, a poszczególnymi zmiennymi pierwotnymi danego zbioru danych (im wyższe tym silnej dana zmienna pierwotna oddziaływuje na zmienną kanoniczną)."
+  },
+  {
+    "objectID": "WAD_egzamin.html#jak-określamy-poziom-wyjaśnionej-wariancji-w-analizie-kanonicznej",
+    "href": "WAD_egzamin.html#jak-określamy-poziom-wyjaśnionej-wariancji-w-analizie-kanonicznej",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "9. Jak określamy poziom wyjaśnionej wariancji w analizie kanonicznej?",
+    "text": "9. Jak określamy poziom wyjaśnionej wariancji w analizie kanonicznej?\nPoziom wyjaśnionej wariancji okreslamy za pomocą współczynnika determinacji. W CCA (Canonical Correlation Analysis) jest on średnią kwadratów ładunków czynnikowych, która oznacza jaki procent zmienności zbioru wyjasnia średnio dana zmienna kanoniczna w tym zbiorze danych.  Miarą wyjaśnionej wariancji pierwotnej zmiennej przez zmienną kanoniczną jest kwadrat ładunku (korelacji)."
+  },
+  {
+    "objectID": "WAD_egzamin.html#czym-jest-redundancja-w-analizie-kanonicznej",
+    "href": "WAD_egzamin.html#czym-jest-redundancja-w-analizie-kanonicznej",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "10. Czym jest redundancja w analizie kanonicznej?",
+    "text": "10. Czym jest redundancja w analizie kanonicznej?\nRedundancja - kwadrat korelacji kanonicznej pomnożony przez wariancję wyodrębnioną danej zmiennej kanonicznej.\nMówi nam o tym ile przeciętnej wariancji w jednym zbiorze jest wyjaśnione przez daną zmienną kanoniczną przy drugim zbiorze. Inaczej mówiąc dowiemy się z tego wskaźnika jak nadmiarowy jest jeden zbiór zmiennych przy takim, a nie innym składzie zmiennych w drugim zbiorze."
+  },
+  {
+    "objectID": "WAD_egzamin.html#jakie-są-założenia-analizy-kanonicznej",
+    "href": "WAD_egzamin.html#jakie-są-założenia-analizy-kanonicznej",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "11. Jakie są założenia analizy kanonicznej?",
+    "text": "11. Jakie są założenia analizy kanonicznej?\n\nWszystkie rozkłady zmiennych populacji z której pobieramy próbe są wielowymiarowe normalne (konsekwencje naruszenia tego założenia nie są znane).\nAby wyniki były rzetelne, zalecane jest aby liczba przypadków branych do analizy była dwudziestokrotnie większa niż liczba zmiennych.\nZmienne w obu zbiorach nie powinny być wspóliniowe.\nAnaliza kanoniczna jest wrażliwa na punkty odstające, które mogą zniekształcić znacząco wynik analiz."
+  },
+  {
+    "objectID": "WAD_egzamin.html#do-czego-służy-i-jak-działa-analiza-dyskryminacyjna",
+    "href": "WAD_egzamin.html#do-czego-służy-i-jak-działa-analiza-dyskryminacyjna",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "12. Do czego służy i jak działa analiza dyskryminacyjna?",
+    "text": "12. Do czego służy i jak działa analiza dyskryminacyjna?\nAnaliza funkcji dyskryminacyjnej stosowana jest do rozstrzygania, które zmienne pozwalają w najlepszy sposób wyróżniać (dyskryminować) dwie lub więcej wyłaniających się grup.\n\nDokonywane jest to przez przyglądanie się różnicom co do średniej zmiennych w podziale na grupy.\nNastępnie, za pomocą otrzymanych funkcji dyskryminacyjnych, określana jest przynależność danego obiektu do grupy."
+  },
+  {
+    "objectID": "WAD_egzamin.html#czym-są-funkcje-dyskryminacyjne",
+    "href": "WAD_egzamin.html#czym-są-funkcje-dyskryminacyjne",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "13. Czym są funkcje dyskryminacyjne?",
+    "text": "13. Czym są funkcje dyskryminacyjne?\nFunkcje dyskryminacyjne - kombinacje liniowe zmiennych niezależnych najlepiej separujące (dyskryminujące) obiekty różnych klas. (decydują o przynależności obiektu do jednej z grup).\n\n\n\n\n\n\n\n\n\n\nAlgebraicznie oznacza to zastąpienie wektora cech \\(x=(x_1,...,x_m)^T\\) kombinacją (zwykle) liniową:\n\\[u = a_1x_1+a_2x_2+...+a_mx_m\\]\ngdzie \\(\\mathrm{a} = (a_1,...,a_m)^T\\) będziemy nazywać wektorem wag dyskryminacyjnych i \\(x_i = (x_{i1},...,x_{in_i})\\) oznacza wartości \\(i\\)-tej cechy w próbie \\(n_i\\)-elementowej.\nCelem jest utworzenie takiej kombinacji liniowej zmiennych niezależnych, która w najlepszy sposób dyskryminuje dwie lub więcej grup określonych a priori. Oznacza to wyznaczenie takich estymatorów współczynników \\(a_i\\), które maksymalizują zmienność międzygrupową w stosunku do zmienności wewnątrz grupowej.\n\n\n\n\nPrzykład działania funkcji dyskryminacyjnych"
+  },
+  {
+    "objectID": "WAD_egzamin.html#jak-wyznacza-się-wektor-tworzący-funkcje-dyskryminacyjne",
+    "href": "WAD_egzamin.html#jak-wyznacza-się-wektor-tworzący-funkcje-dyskryminacyjne",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "14. Jak wyznacza się wektor tworzący funkcje dyskryminacyjne?",
+    "text": "14. Jak wyznacza się wektor tworzący funkcje dyskryminacyjne?\n\nNiech \\(x_{i1},x_{i2},\\dots,x_{in}\\) będzie próbą prostą z grupy \\(i\\), gdzie \\(i = 1,\\dots,k\\) i niech \\(n_1+n_2+\\dots+n_k=n\\).\n\nZ próby tej obliczamy wektory średnich grupowych \\[\\bar x_i = \\frac{1}{n_i}\\sum\\limits^{n_i}_{j=1}x_{ij}\\] oraz macierz kowariancji \\[S_i = \\frac{1}{n_i-1}\\sum\\limits^{n_i}_{j=1}(x_{ij}-\\bar{x}_{i})(x_{ij}-\\bar{x}_{i})^T\\; \\text{ gdzie }\\; i = 1,\\dots,k\\]\n\nNastępnie z całej \\(n\\)-elementowej próby uczącej obliczamy średnią ogólną \\[\\bar{x} = \\frac{1}{n}\\sum\\limits^{k}_{i=1} n_i\\bar{x}_i\\] macierz zmienności międzygrupowej \\[H=n\\sum\\limits_{i=1}\\limits^{k}(\\bar{x}_{i}-\\bar{x})(\\bar{x}_{i}-\\bar{x})^T\\] oraz macierz zmienności wewnątrzgrupowej \\[E=\\sum\\limits^k_{i=1}(n_i-1)S_i\\]\n\nWektory wpsółczynników \\(w\\) są wektorami własnymi odpowiadjącymi wartościom własnym \\[\\lambda_1,\\lambda_2\\dots,\\lambda_s \\quad s\\leq\\min(m,k-1)\\] równania \\[(H-\\lambda E)a = 0\\]\n\nOtrzymujemy zatem \\(s\\) kombinacji nazywanych liniowymi funkcjami dyskryminacyjnymi \\[u_i=a_i^Tx, \\quad i= 1,\\dots,s\\]\nZmienne dyskryminacyjne są nieskorelowane, ale nie są ortogonalne. Zniekształcenie nie jest zwykle duże, stąd zwyczaj rysowania ich w prostokątnym układzie wpółrzędnych."
+  },
+  {
+    "objectID": "WAD_egzamin.html#jak-określa-się-względną-miarę-siły-dyskryminacyjnej-funkcji-dyskryminacyjnej",
+    "href": "WAD_egzamin.html#jak-określa-się-względną-miarę-siły-dyskryminacyjnej-funkcji-dyskryminacyjnej",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "15. Jak określa się względną miarę siły dyskryminacyjnej funkcji dyskryminacyjnej?",
+    "text": "15. Jak określa się względną miarę siły dyskryminacyjnej funkcji dyskryminacyjnej?\nWygodną miarą względnej siły dyskryminacyjnej i-tej zmiennej dyskryminacyjnej \\(u_i\\) jest wielkość \\[\\widetilde{\\lambda}_i = \\frac{\\lambda_i}{\\sum\\limits_{i=1}^{s}\\lambda_i} \\cdot 100\\%\\] interpretowana jako procent wariancji międzygrupowej przypadający na daną zmienną."
+  },
+  {
+    "objectID": "WAD_egzamin.html#czym-jest-lambda-wilka-w-analizie-dyskryminacyjnej",
+    "href": "WAD_egzamin.html#czym-jest-lambda-wilka-w-analizie-dyskryminacyjnej",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "16. Czym jest lambda Wilka w analizie dyskryminacyjnej?",
+    "text": "16. Czym jest lambda Wilka w analizie dyskryminacyjnej?\nZauważmy, że \\(i\\)-ta zmienna dyskryminacyjna nie jest użyteczna w procesie klasyfikcaji jeśli odpowiadająca jej wartość własna nie jest istotnie różna od \\(0\\).\nPojawia się więc pytanie o istotność otrzymanych wyników. Czy obserwowane w próbie zróżnicowanie występuje faktycznie w badanej populacji?\nNajczęściej stosuje się w tym celu Lamdę Wilk’a, która jest miarą mocy dyskryminacyjnej modelu \\[\\Lambda = \\prod\\limits_{i=1}^s\\frac{1}{1+\\lambda_i}\\]\ngdzie  \\(0\\) - doskonkonała moc dyskryminacyjna  \\(1\\) - całkowity brak mocy"
+  },
+  {
+    "objectID": "WAD_egzamin.html#czym-jest-cząstkowa-lambda-wilka-w-analizie-dyskryminacyjnej",
+    "href": "WAD_egzamin.html#czym-jest-cząstkowa-lambda-wilka-w-analizie-dyskryminacyjnej",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "17. Czym jest cząstkowa lambda Wilka w analizie dyskryminacyjnej?",
+    "text": "17. Czym jest cząstkowa lambda Wilka w analizie dyskryminacyjnej?\nJeżeli model jest istotny statystycznie, to nalezy sprawdzić, czy wszystkie zmienne dyskryminacyjne są istotne.\nDokładniej, czy zmienne po wskaźniku \\(p\\) mają istotną miarę dyskryminacyjną.\nStosowana jest w tym celu analogiczna statystyka Wilk’a\n\\[\\Lambda_p = \\prod\\limits_{i=p+1}^s\\frac{1}{1+\\lambda_i}\\]\nWspomniana lambda Wilk’a ma w przybliżeniu rozkład \\(\\chi^2\\) i dlatego w praktyce do testowania istotności modelu wykorzystuje się statystykę postaci \\[\\chi^2 = -[n-\\frac{k+s}{2}-1]ln\\Lambda_p\\] mającą rozkład \\(\\chi^2\\) o \\((m-p)(k-p-1)\\) stopniach swobody\nOddzielnym zagadnieniem jest to, które ze zmiennych pierowtych są ważne ze względu na własności dyskryminacyjne. W tym celu dla każdej zmiennej wyznacza się lambdę wilka według wzoru jak wyżej, ale bez udziału \\(i\\)-tej zmiennej \\((\\Lambda_P^{(i)})\\)\nStosunek \\[\\frac{\\Lambda_p}{\\Lambda_p^{(i)}}\\] nazywany jest cząstkową lambdą Wilk’a gdzie \\(\\Lambda_p^{(i)}\\) oznacza \\(\\Lambda_p\\) bez udziału i-tej zmiennej.\nDo istotności poszególnych zmienncyh objaśniających stosujemy statystykę \\[F = \\frac{n-k-m}{k-1}\\cdot\\frac{1-\\Lambda_p^{(i)}}{\\Lambda_p^{(i)}}\\] mającą rozkład \\(F\\) o \\(n-k-m\\) i \\(k-1\\) stopniach swobody."
+  },
+  {
+    "objectID": "WAD_egzamin.html#podaj-założenia-modelu-analizy-dyskryminacyjnej.",
+    "href": "WAD_egzamin.html#podaj-założenia-modelu-analizy-dyskryminacyjnej.",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "18. Podaj założenia modelu analizy dyskryminacyjnej.",
+    "text": "18. Podaj założenia modelu analizy dyskryminacyjnej.\n\nCechy mają w grupach wielowymiarowy rozkład normalny.\nMacierze wariancji/kowariancji są w grupach homogeniczne.\nBrak korelacji miedzy średnimi i wariancjami.\nBrak współliniowości zmiennych wykorzystywanych do dyskryminacji grup - (w innym przypadku będzie źle uwarunkowana macierz wariancji / kowariancji)\nRozmiar próby - dobrze, aby przypadków było conajmniej 4-5 razy więcej niż zmiennych użytych do budowy modelu. Najmniejsza liczebność próby powinna być większa od liczby cech \\(m\\) (ew. \\(m-2\\)). Dobrze też, aby wszystkie grupy były równoliczne.\nBrak Wartości odstających - podobnie jak inne metody jest wrażliwa na takie punkty. Zawyżają one sztucznie zmienność i wartości średnie co narusza założenia o jednorodności wariancji/kowariancji i braku korelacji średnich i wariancji."
+  },
+  {
+    "objectID": "WAD_egzamin.html#do-czego-służy-analiza-składowych-głównych",
+    "href": "WAD_egzamin.html#do-czego-służy-analiza-składowych-głównych",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "19. Do czego służy analiza składowych głównych?",
+    "text": "19. Do czego służy analiza składowych głównych?\nPCA służy do:\n\nRedukcji liczby zmiennych bez istotnej straty zawartych w nich informacji.\nTransformacji układu zmiennych w jakościowo nowy układ czynników głównych.\nOrtogonalizacji przestrzeni, w której rozpatrywane są obiekty, będące przedmiotem badań.\nWykrywania ukrytych związków między zmiennymi – formułowania i weryfikacji hipotez dotyczących istnienia i charakteru prawidłowości kształtujących związki między zjawiskami.\nOpisu zjawisk w kontekście nowych kategorii zdefiniowanych przez czynniki."
+  },
+  {
+    "objectID": "WAD_egzamin.html#podaj-interpretację-geometryczną-pca.",
+    "href": "WAD_egzamin.html#podaj-interpretację-geometryczną-pca.",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "20. Podaj interpretację geometryczną PCA.",
+    "text": "20. Podaj interpretację geometryczną PCA.\nGeometrycznie chodzi o znalezienie takiego wektora(ów), w kierunku którego wariancja obserwacji w oryginalnej przestrzeni jest największa. Po znalezieniu takiego wektora (PC1), szukamy wektora prostopadłego do PC1, w kierunku którego wariancja jest największa. Procedurę tę prowadzimy do wyczerpania wymiaru przestrzeni, czyli jeśli \\(X\\) jest \\(n\\times p\\) wymiarowa, to możemy wyznaczyć \\(p\\) składowych głównych"
+  },
+  {
+    "objectID": "WAD_egzamin.html#jak-wyznacza-się-kierunki-składowych-głównych",
+    "href": "WAD_egzamin.html#jak-wyznacza-się-kierunki-składowych-głównych",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "21. - Jak wyznacza się kierunki składowych głównych?",
+    "text": "21. - Jak wyznacza się kierunki składowych głównych?\nKierunki składowych głównych znajdujemy poprzez transformacje oryginalnych wartości macierzy \\(X\\) przez ortogonalną macierz obrotu \\(A\\). Próbkowa macierz kowariancji nowego układu współrzędnych ma postać \\[S_z=ASA'\\] Z dekompozycji spektralnej (\\(A = CDC′\\)) po prostej dedukcji mamy, że \\[\\begin{align}\nA = C' & =\n\\begin{pmatrix}\na'_1 \\\\ a'_2 \\\\ \\vdots \\\\ a'_p\n\\end{pmatrix}\n\\end{align}\\] gdzie \\(a'_i\\) jest i-tym wektorem własnym próbkowej macierzy kowariancji \\(S\\).\nW ten sposób otrzymujemy wartości składowych głównych \\(\\;z_1 = a′_1x ,\\; z_2 = a′_2x ,\\; \\dots ,\\; z_p = a'_px\\)"
+  },
+  {
+    "objectID": "WAD_egzamin.html#jak-określa-się-miarę-wyjaśnionej-wariancji-przez-model-pca",
+    "href": "WAD_egzamin.html#jak-określa-się-miarę-wyjaśnionej-wariancji-przez-model-pca",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "22. Jak określa się miarę wyjaśnionej wariancji przez model PCA?",
+    "text": "22. Jak określa się miarę wyjaśnionej wariancji przez model PCA?\nMiarą wyjaśnionej zmienności wektora losowego \\(x\\) przez \\(k\\) pierwszych składowych głównych nazywamy wskaźnik \\[\\frac{\\lambda_1+\\lambda_2+\\dots+\\lambda_k}{\\lambda_1+\\lambda_2+\\dots+\\lambda_p} \\cdot 100\\%\\]\n\n\\(\\lambda_p\\) - wartości własne macierzy kowariancji \\(\\Sigma\\)"
+  },
+  {
+    "objectID": "WAD_egzamin.html#jakie-znasz-kryteria-doboru-liczby-składowych-głównych",
+    "href": "WAD_egzamin.html#jakie-znasz-kryteria-doboru-liczby-składowych-głównych",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "23. Jakie znasz kryteria doboru liczby składowych głównych?",
+    "text": "23. Jakie znasz kryteria doboru liczby składowych głównych?\n\nKryterium osypiska - na osi odciętych zaznaczamy numer wartości własnej (wartości własne uprzednio uporządkowane w kolejności nierosnącej), na osi rzędnych nanosimy wielkość wartości własnej. Tak powstałe punkty łączymy liniami. Otrzymany wykres nazywamy wykresem piargowym (lub wykresem osypiska)\nKryterium wyjaśnionej wariancji - dobieramy tak dużą liczbę składowych głównych, aby przekroczyć powszechnie uznawany próg 80 % wyjaśnionej zmienności. (Ze wzoru z 22.)\nKryterium Keisera - zakłada, że skoro standaryzowane zmienne wejściowe niosły ze sobą wariancje na poziomie 1, to każda składowa, którą chcemy włączyć do modelu też powinna mieć wariancję (wartość własną) równą co najmniej 1."
+  },
+  {
+    "objectID": "WAD_egzamin.html#na-czym-polega-analiza-czynnikowa",
+    "href": "WAD_egzamin.html#na-czym-polega-analiza-czynnikowa",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "24. Na czym polega analiza czynnikowa?",
+    "text": "24. Na czym polega analiza czynnikowa?\nAnaliza czynnikowa polega na odtworzeniu macierzy kowariancji (korelacji) pierwotnych zmiennych w nowym układzie współrzędnych utworzonym przez czynniki.\nZakłada się w niej, że każdą zmienną obserwowalną można przedstawić jako kombinację liniową pewnej liczby nieobserwowalnych zmiennych, zwanych czynnikami, wspólnych dla całego zbioru zmiennych wejściowych, oraz jednego nieobserwowalnego czynnika swoistego dla tej zmiennej.\nModel analizy czynnikowej \\[Z = WF + \\varepsilon\\] gdzie  \\(W\\) - macierz (\\(m \\times s\\)) ładunków czynnikowych (wag),  \\(F\\) - macierz (\\(s \\times m\\)) czynników wspólnych,  \\(\\varepsilon\\) - macierz (\\(m \\times 1\\)) czynników swoistych.   \\(W\\) znajdujemy w wyniku dekompozycji macierzy kowariancji \\(\\Sigma\\).\n\nŁadunki czynnikowe są współczynnikami korelacji pomiędzy daną zmienną a składowymi."
+  },
+  {
+    "objectID": "WAD_egzamin.html#czym-są-zasoby-zmienności-wspólnej-i-zasoby-zmienności-swoistej",
+    "href": "WAD_egzamin.html#czym-są-zasoby-zmienności-wspólnej-i-zasoby-zmienności-swoistej",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "25. Czym są zasoby zmienności wspólnej i zasoby zmienności swoistej?",
+    "text": "25. Czym są zasoby zmienności wspólnej i zasoby zmienności swoistej?\nWariancję (zasób informacyjny) każdej zmiennej wyjściowej rozkłada się na dwa składniki: \\[1=^1 V\\!ar(Z_j) = h^2_j + d^2_j = \\sum\\limits^s_{l=1}w^2_{jl} + V\\!ar(\\varepsilon_j)\\] gdzie  \\(h^2_j\\) - zasoby zmienności wspólnej (ang. communalities),  \\(d^2_j\\) - zasoby zmienności swoistej (ang. uniqueness).\n\n\\(^1\\)na podstawie standaryzacji"
+  },
+  {
+    "objectID": "WAD_egzamin.html#opisz-zasadę-działania-jednej-z-technik-wyznaczania-macierzy-ładunków-czynnikowych.",
+    "href": "WAD_egzamin.html#opisz-zasadę-działania-jednej-z-technik-wyznaczania-macierzy-ładunków-czynnikowych.",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "26. Opisz zasadę działania jednej z technik wyznaczania macierzy ładunków czynnikowych.",
+    "text": "26. Opisz zasadę działania jednej z technik wyznaczania macierzy ładunków czynnikowych.\nMetoda składowych głównych Ze względu na nazwę cześto jest mylona z PCA, faktycznie niewiele ma z nią wspólnego. Nazwa bierze się z faktu, iż w modelu pomija się zasoby zmienności swoistej podczas estymacji ładunków. Przyjmuje się, że \\(S=\\hat W\\hat W'\\). Do estymacji ładunków używamy dekompozycji spektralnej \\[S=CDC'=CD^\\frac{1}{2}D^\\frac{1}{2}C'=(CD^\\frac{1}{2})(CD^\\frac{1}{2})'\\] \\[\\text{Stąd }\\; \\hat W = CD^\\frac{1}{2}\\] Gdy naszą interpretacją jest redukcja przeztrzeni z \\(p\\) do \\(m\\) wymiarów przyjmuje się, że \\[\\hat W = C_1D^\\frac{1}{2}_1\\] gdzie  \\(C_1\\), \\(D_1\\) oznaczają zredukowane do pierwszych \\(m\\) wartości własnych wersje macierzy i wektorów własnych macierzy \\(S\\)."
+  },
+  {
+    "objectID": "WAD_egzamin.html#jakie-znasz-metody-estymacji-wstępnych-oszacowań-zasobów-zmienności-wspólnej",
+    "href": "WAD_egzamin.html#jakie-znasz-metody-estymacji-wstępnych-oszacowań-zasobów-zmienności-wspólnej",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "27. Jakie znasz metody estymacji wstępnych oszacowań zasobów zmienności wspólnej?",
+    "text": "27. Jakie znasz metody estymacji wstępnych oszacowań zasobów zmienności wspólnej?\nW ramach metody składowych głównych: \\[\\hat h^2_i=\\sum\\limits^m_{j=1}\\hat\\omega^2_{ij}\\]\nGdy estymujemy ładunki z macierzy korelacji \\(\\textbf{R}\\):\n\nśrednia arytmetyczna współczynników korelacji danej zmiennej z innymi \\[h^2_j=\\frac{1}{m}\\sum\\limits^m_{j'=1}r_{jj'} \\quad j\\neq j'\\]\nmaksymalna wartość bezwzględna współczynników korelacji danej zmiennej z innymi zmiennymi \\[h^2_j=\\max\\limits_{j'}|r_{jj'}| \\quad j\\neq j'\\]\nwspółczynnik determinacji wielokrotnej danej zmiennej z innymi zmiennymi (najczęściej stosowana i wykorzystywana przez R) \\[h^2_j=R^2_{j\\cdot 1,2,\\dots,m}\\]\nformuła triad \\[h^2_j=\\frac{r_{jj'}r_{jj''}}{r_{j'j''}} \\quad j\\neq j' \\neq j'' \\] gdzie  \\(r_{jj'}\\), \\(r_{jj''}\\) - dwie najwyższe wartości współczynników korelacji \\(j\\)-tej zmiennej z innymi zmiennymi"
+  },
+  {
+    "objectID": "WAD_egzamin.html#na-czym-polega-przypadek-heywooda",
+    "href": "WAD_egzamin.html#na-czym-polega-przypadek-heywooda",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "28. Na czym polega przypadek Heywood’a?",
+    "text": "28. Na czym polega przypadek Heywood’a?\nZdarza się, że zasoby zmienności wspólnej przekraczają 1, co nazywamy przypadkiem Heywood’a, może on wystapić w Metodzie iterowanych zasobów zmienności wspólnej (MINRES) i w Metodzie największej wiarogodności"
+  },
+  {
+    "objectID": "WAD_egzamin.html#jakie-znasz-kryteria-doboru-liczby-czynników",
+    "href": "WAD_egzamin.html#jakie-znasz-kryteria-doboru-liczby-czynników",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "29. Jakie znasz kryteria doboru liczby czynników?",
+    "text": "29. Jakie znasz kryteria doboru liczby czynników?\n\nWybierz taką liczbę czynników, aby łączny poziom wyjaśnionej wariancji przekroczył \\(80\\%\\),\nWybierz tyle czynników, ile wartości własnych jest wiekszych niż średnia wartość własna,\nUżyj kryterium osypiska (opisane przy okazji PCA).\nWyznacz liczbę potrzebnych czynników na podstawie testu, który mówi, że m jest wystarczającą liczbą czynników, aby spełniona była hipoteza \\(H_0\\): \\(S = \\hat{W}\\hat{W}'+\\hat{\\Psi}\\).\nUżyj kryterium resztowego - kryterium to opiera się na macierzy resztowej \\(R − \\tilde R\\), która jest różnicą macierzy korelacji i zredukowanej macierzy korelacji. Jest ona miarą dopasowania modelu zawierającego odpowiednią liczbę czynników do danych obserwowanych. Przyjmujemy taką liczbę czynników, począwszy od której odchylenie standardowe wyrazów macierzy powyżej głównej przekątnej jest mniejsze od \\(\\frac{1}{\\sqrt{n-2}}\\)"
+  },
+  {
+    "objectID": "WAD_egzamin.html#na-czym-polega-rotacja-układu-w-analizie-czynnikowej",
+    "href": "WAD_egzamin.html#na-czym-polega-rotacja-układu-w-analizie-czynnikowej",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "30. Na czym polega rotacja układu w analizie czynnikowej?",
+    "text": "30. Na czym polega rotacja układu w analizie czynnikowej?\nJest to metoda obracania układu współrzędnych, w taki sposób, aby umożliwić badaczowi łatwiejszą interpretację czynników. Transformacje te powinny prowadzić do prostych wyników. Wyróżnia się rotację ortogonalną i nieortogonalną (ukośną). Dążymy do tego aby ładunki czynnikowe miały wartości jak najbliższe 0 lub najbardziej skrajne, czyli bliskie -1 albo 1\nUdział czynników w wyjaśnianiu wspólnej wariancji (suma ich zasobów informacyjnych) nie ulega zmianie w wyniku rotacji)\nRotacje prowadzą do wyodrębnienia rozłącznych grup zmiennych wejściowych, z których każda zawiera zmienne o wysokich ładunkach dla jednego czynnika, średnie dla innych czynnikówo raz bliskie zeru dla pozostałych czynników."
+  },
+  {
+    "objectID": "WAD_egzamin.html#wymień-po-jednej-rotacji-ortogonalnej-i-ukośnej.",
+    "href": "WAD_egzamin.html#wymień-po-jednej-rotacji-ortogonalnej-i-ukośnej.",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "31. Wymień po jednej rotacji ortogonalnej i ukośnej.",
+    "text": "31. Wymień po jednej rotacji ortogonalnej i ukośnej.\nRotacje ortogonalne\n\nMetoda Varimax - Metoda ta pozwala na minimalizację liczby zmiennych posiadających wysokie ładunki czynnikowe przez obrót ortogonalny. Upraszcza w ten sposób interpretację czynników.\nMetoda Quartimax - Metoda rotacji, która minimalizuje liczbę czynników potrzebnych do wyjaśnienia każdej zmiennej. Metoda ta upraszcza interpretację obserwowanych zmiennych.\n\nRotacje ukośne\n\nMetoda rotacji prostą OBLIMIN - Metoda ta pozwala wyodrębnić ładunki czynnikowe przez obrót ukośny (dla czynników skorelowanych ze sobą)\nMetoda Promax - Metoda która pozwala na skorelowanie czynników. Można ją wyliczyć szybciej niż rotację prostą Oblimin, dlatego jest ona użyteczna w przypadku dużych zbiorów danych."
+  },
+  {
+    "objectID": "WAD_egzamin.html#na-czym-polega-analiza-skupień",
+    "href": "WAD_egzamin.html#na-czym-polega-analiza-skupień",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "32. Na czym polega analiza skupień?",
+    "text": "32. Na czym polega analiza skupień?\nGrupowanie (ang. data clustering), zwane również analizą skupień lub klasyfikacją nienadzorowaną polega na podziale pewnego zbioru danych \\[O = \\{x_i = (x_{i1},\\dots,x_{id}),\\; i=1,\\dots,N\\}\\] na pewne podzbiory wektorów (grupy).\nPodstawowym założeniem dotyczącym wynikowego podziału jest homogeniczność obiektów wchodzących w skład jednej grupy oraz heterogeniczność samych grup – oznacza to, że wektory stanowiące jedną grupę powinny być bardziej podobne do siebie niż do wektorów pochodzących z pozostałych grup.\n\n\\(x_i\\) jest \\(d\\)-wymiarowym wektorem cech opisujących obiekt należący do zbioru."
+  },
+  {
+    "objectID": "WAD_egzamin.html#jakie-warunki-spełnia-podział-twardy",
+    "href": "WAD_egzamin.html#jakie-warunki-spełnia-podział-twardy",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "33. Jakie warunki spełnia podział twardy?",
+    "text": "33. Jakie warunki spełnia podział twardy?\nPodział twardy (ang. hard) uzyskuje się w efekcie takiego grupowania, w którym każdy wektor (obiekt) należy dokładnie do jednej grupy i wszystkie grupy są niepuste.\nIstnieją również metody analizy skupień (ang. fuzzy clustering) oparte o grupowanie probabilistyczne, w którym obiekty należą z pewnym prawdopodobieństwem (nie zakałda się jednoznaczności przypisania)."
+  },
+  {
+    "objectID": "WAD_egzamin.html#czym-się-różnią-grupowania-hierarchiczne-od-niehierarchicznych",
+    "href": "WAD_egzamin.html#czym-się-różnią-grupowania-hierarchiczne-od-niehierarchicznych",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "34. Czym się różnią grupowania hierarchiczne od niehierarchicznych?",
+    "text": "34. Czym się różnią grupowania hierarchiczne od niehierarchicznych?\nCelem algorytmów niehierarchicznych jest znalezienie takiego podziału zbioru na zadaną liczbę podzbiorów, aby uzyskać optymalną wartość pewnego kryterium. Optymalizację kryterium osiąga się np. poprzez iteracyjne przemieszczanie obiektów między grupami.\nMetody hierarchiczne konstruują pewną hierarchię skupień, która najczęściej reprezentowana jest graficznie w postaci drzewa binarnego nazywanego dendrogramem. W liściach takiego drzewa znajdują się elementy analizowanego zbioru, węzły natomiast stanowią ich grupy"
+  },
+  {
+    "objectID": "WAD_egzamin.html#opisz-algorytm-grupowania-metodą-k-średnich.",
+    "href": "WAD_egzamin.html#opisz-algorytm-grupowania-metodą-k-średnich.",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "35. Opisz algorytm grupowania metodą k-średnich.",
+    "text": "35. Opisz algorytm grupowania metodą k-średnich.\n\nPodziel wstępnie zbiór na k skupień (losowo),\nDla każdego skupienia policz jego centroid (środek ciężkości grupy),\nPrzypisz każdy z elementów zbioru do najbliższej mu grupy (odległość od grupy jest w tym przypadku tożsama z odległością od centroidu),\nPowtarzaj dwa poprzednie kroki tak długo, jak długo zmienia się przyporządkowanie obiektów do skupień.\n\nNiestety algorytm k-średnich ma wiele wad. Już na wstępie konieczne jest zdefiniowanie liczby grup, chociaż zazwyczaj nie wiadomo, jak wiele grup występuje w przetwarzanym zbiorze. Początkowe centroidy wybierane są w sposób losowy, podczas gdy ich wybór ma decydujący wpływ na jakość otrzymanego grupowania. Ponadto algorytm jest mało odporny na zaszumione dane."
+  },
+  {
+    "objectID": "WAD_egzamin.html#czym-są-metody-aglomeracyjne-i-deglomeracyjne",
+    "href": "WAD_egzamin.html#czym-są-metody-aglomeracyjne-i-deglomeracyjne",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "36. Czym są metody aglomeracyjne i deglomeracyjne?",
+    "text": "36. Czym są metody aglomeracyjne i deglomeracyjne?\nMetody aglomeracyjne rozpoczynają tworzenie hierarchii od podziału zbioru n obserwacji na n jednoelementowych grup, które w kolejnych krokach są ze sobą scalane.\nMetody deglomeracyjne inicjowane są jedną grupą n-elementową, a hierarchia tworzona jest poprzez sukcesywny podział na coraz mniejsze grupy"
+  },
+  {
+    "objectID": "WAD_egzamin.html#wymień-co-najmniej-trzy-metryki-stosowane-w-analizie-klastrowej.",
+    "href": "WAD_egzamin.html#wymień-co-najmniej-trzy-metryki-stosowane-w-analizie-klastrowej.",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "37. Wymień co najmniej trzy metryki stosowane w analizie klastrowej.",
+    "text": "37. Wymień co najmniej trzy metryki stosowane w analizie klastrowej.\n\nOdległość euklidesowa \\[d(x,y) = \\sqrt{\\sum\\limits^k_{i=1}(x_i-y_i)^2}\\]\nKwadrat odległości euklidesowej \\[d^2(x,y) = \\sum\\limits^k_{i=1}(x_i-y_i)^2\\]\nOdległość Manhattan (taxi, miejska) \\[d(x,y) = \\sum\\limits^k_{i=1}|x_i-y_i|\\]\nOdległość Czebyszewa \\[d(x,y) = \\max\\limits_{i=1,\\dots,k}|x_i-y_i|\\]"
+  },
+  {
+    "objectID": "WAD_egzamin.html#opisz-co-najmniej-trzy-sposoby-aglomeracji.",
+    "href": "WAD_egzamin.html#opisz-co-najmniej-trzy-sposoby-aglomeracji.",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "38. Opisz co najmniej trzy sposoby aglomeracji.",
+    "text": "38. Opisz co najmniej trzy sposoby aglomeracji.\n\nPojedyńczego wiązania \\[d(A,B) = \\min \\{d(x,y): x\\in A, y \\in B\\}\\]\nPełnego wiązania \\[d(A,B) = \\max \\{d(x,y): x\\in A, y \\in B\\}\\]\nŚrodków ciężkości - środek ciężkości skupienia jest to punkt o współrzędnych będących średnimi arytmetycznymi wartości zmiennych dla obiektów należących do danego skupienia; odległość skupień jest definiowana jako odległość ich środków ciężkości\nWażonych środków ciężkości – analogicznie jak poprzednio z tym, że przy obliczeniach uwzględnia się ważenie, aby uwzględnić różnice w liczebnościach skupień,\nWarda - ta metoda różni się od wszystkich pozostałych, ponieważ do oszacowania odległości między skupieniami wykorzystuje podejście analizy wariancji. Zmierza do minimalizacji sumy kwadratów odchyleń dowolnych dwóch skupień, które mogą zostać uformowane na każdym etapie."
+  },
+  {
+    "objectID": "WAD_egzamin.html#jak-przebiega-algorytm-grupowania-hierarchicznego",
+    "href": "WAD_egzamin.html#jak-przebiega-algorytm-grupowania-hierarchicznego",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "39. Jak przebiega algorytm grupowania hierarchicznego?",
+    "text": "39. Jak przebiega algorytm grupowania hierarchicznego?\n\nWyznaczenie macierzy odległości pomiędzy obiektami;\nWybór najmniejszej odległości (poza przekątną) – tzw. odległości aglomeracyjnej;\nPołączenie odpowiadających jej obiektów;\nWyznaczenie nowej macierzy odległości;\nWybór nowej odległości aglomeracyjnej;\nPołączenie odpowiadających jej obiektów lub skupień;\nPowrót do punktu 4 aż do połączenia wszystkich obiektów w jedno skupienie."
+  },
+  {
+    "objectID": "WAD_egzamin.html#do-czego-służy-analiza-korespondencji",
+    "href": "WAD_egzamin.html#do-czego-służy-analiza-korespondencji",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "40. Do czego służy analiza korespondencji?",
+    "text": "40. Do czego służy analiza korespondencji?\n\n\nAnaliza korespondencji jest metodą badania współwystępowania zmiennych. Przeznaczona jest do analizy zmiennych o charakterze jakościowym, tj. mierzonych na słabych skalach pomiaru (nominalna, porządkowa, przedziałowa). Metoda ta pozwala na graficzne przedstawienie wyników analizy w postaci mapy percepcji, w niskowymiarowej przestrzeni, na której przedstawione są wszystkie kategorie badanych zmiennych.\nSkłada się ona z 3 podstawowych kroków:\n\nobliczania mas wierszy/kolumn\nobliczania profili wierszy/kolumn\nwyznaczania odległości pomiedzy wierszami lub kolumnami za pomocą statystyki \\(\\chi^2\\)"
+  },
+  {
+    "objectID": "WAD_egzamin.html#czym-jest-macierz-kontyngencji",
+    "href": "WAD_egzamin.html#czym-jest-macierz-kontyngencji",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "41. Czym jest macierz kontyngencji?",
+    "text": "41. Czym jest macierz kontyngencji?\nTabela kontyngencji prezentuje strukturę danych o charakterze jakościowym i jest punktem wyjścia do pomiaru siły zależności między dwiema zmiennymi.\n\nEmpiryczne liczebności w \\(h\\)-tym wierszu i \\(j\\)-tej kolumnie oznaczone są przez \\(n_{hj}\\) i oznaczają liczbę jednoczesnych wystąpień \\(h\\)-tej kategorii cechy \\(X\\) i \\(j\\)-tej kategorii cechy \\(Y\\). Liczebności brzegowe wierszy to liczba wszystkich wsytąpień cechy X na pewnym poziomie \\[n_{h\\cdot}=\\sum\\limits^J_{j=1}n_{hj}\\] a liczebności brzegowe kolumn to: \\[n_{\\cdot j}=\\sum\\limits^H_{h=1}n_{hj}\\] Tablica kontyngencji jest podstawą do zbudowania tablicy korespondencji P."
+  },
+  {
+    "objectID": "WAD_egzamin.html#czym-jest-macierz-korespondencji",
+    "href": "WAD_egzamin.html#czym-jest-macierz-korespondencji",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "42. Czym jest macierz korespondencji?",
+    "text": "42. Czym jest macierz korespondencji?\nTablica korespondencji jest wyznaczana na podstawie macierzy korespondencji i wyraża względną częstość wystąpień. Zdefinniowana jest jako \\[P= \\left[\\frac{n_{hj}}{n}\\right]\\]"
+  },
+  {
+    "objectID": "WAD_egzamin.html#wymień-po-dwie-miary-zależności-dla-skal-nominalnej-i-porządkowej.",
+    "href": "WAD_egzamin.html#wymień-po-dwie-miary-zależności-dla-skal-nominalnej-i-porządkowej.",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "43. Wymień po dwie miary zależności dla skal nominalnej i porządkowej.",
+    "text": "43. Wymień po dwie miary zależności dla skal nominalnej i porządkowej.\nMiary zależności dla skal nominalnych\n\nTest \\(\\chi^2\\) - sprawdzaniem hipotezy o niezależności jest statystyka: \\[\\chi^2=\\sum\\limits^H_{h=1}\\sum\\limits^J_{j=1}\\frac{(n_{hj}-\\hat n_{hj})^2}{\\hat n_{hj}}\\] gdzie  \\(\\hat n_{hj} = \\frac{n_{h\\cdot}n_{\\cdot j}}{n}\\) oznaczją teoretyczne liczebności tablicy kontyngencji.  \\(0\\neq\\chi^2\\neq n\\sqrt{(H-1)(J-1)}\\) i im bliżej 0, tym bardziej prawdopodobne, że \\(X\\) i \\(Y\\) są niezalezne.\n\nStatystyka ma rozkład \\(\\chi^2\\) o \\((H-1)(J-1)\\) stopniach swobody. Zbiór krytyczny \\(W\\) okreslony jest relacją \\(P(\\chi^2\\geq\\chi^2_\\alpha)=\\alpha\\)\n\n\\(\\Phi\\) Yule’a \\[\\Phi^2=\\frac{\\chi^2}{n}\\]\n\nmiara z przedziału \\([0,1)\\); interpretacja podobna do \\(\\chi^2\\)\nMiary zależności dla skal porządkowych\n\n\\(\\tau_\\alpha\\) Kendalla \\[\\tau_\\alpha = \\frac{n_Z-n_N}{\\frac{1}{2}n(n-1)}\\] gdzie  \\(n_Z\\) - liczba par zgodnych tzn. porównywane zmienne w obrębie tych dwóch obserwacji zmieniają się w tę samą stronę, czyli albo w pierwszej obserwacji obydwie są więkze niż w drugiej, albo obydwie mniejsze,  \\(n_N\\) - liczba par niezgodnych, tzn. zmieniają się w przeciwną stronę, czyli jedna z nich jest większa dla tej obserwacji w parze, dla której druga jest mniejsza. Współczynnik Kendalla służy do oceny siły związku między zmiennymi.\n\nPrzyjmuje wartości w przedziale \\([-1,1]\\), przy czym wartości bliskie \\(1\\) oznaczają, że każda ze zmiennych rośnie przy wzroście drugiej, natomiast \\(-1\\) oznacza, że każda zmienna maleje przy wzroście drugiej.\n\n\\(\\gamma\\) Goodmana-Kruskala \\[\\gamma=\\frac{n_Z-n_N}{n_Z+n_N}\\]\n\nSłuży on do oceny kierunku i syły związku. Przyjmuje wartości z przedziału \\([-1,1]\\), przy czym wartości bliskie \\(-1\\;\\)i\\(\\;1\\) oznaczają silną zależność, a bliskie \\(0\\) brak zależności pomiędzy zmiennymi."
+  },
+  {
+    "objectID": "WAD_egzamin.html#czym-są-masy-wierszowe-i-kolumnowe",
+    "href": "WAD_egzamin.html#czym-są-masy-wierszowe-i-kolumnowe",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "44. Czym są masy wierszowe i kolumnowe?",
+    "text": "44. Czym są masy wierszowe i kolumnowe?\nCzęstości brzegowe  wierszy \\[p_{h\\cdot}=\\sum\\limits^J_{j=1}p_{hj}=\\frac{n_{h\\cdot}}{n}\\] kolumn \\[p_{\\cdot j}=\\sum\\limits^H_{h=1}p_{hj}=\\frac{n_{\\cdot h}}{n}\\] i nazywane są masami wierszy i masami kolumn\nElementy \\(p_{h\\cdot}\\) i \\(p_{\\cdot j}\\) tworzą odpowienio wektory częstości brzegowych wierszy \\(\\textbf{r}\\) i wektory częstości brzegowych kolumn \\(\\textbf{c}\\) \\[\\textbf{r} = \\left[ \\frac{n_{h \\cdot}}{n} \\right] = [p_{h\\cdot}], \\quad \\textbf{c} = \\left[ \\frac{n_{\\cdot j}}{n} \\right] = [p_{\\cdot j}]\\]"
+  },
+  {
+    "objectID": "WAD_egzamin.html#czym-są-przeciętne-profile-wierszowe-i-kolumnowe",
+    "href": "WAD_egzamin.html#czym-są-przeciętne-profile-wierszowe-i-kolumnowe",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "45. Czym są przeciętne profile wierszowe i kolumnowe?",
+    "text": "45. Czym są przeciętne profile wierszowe i kolumnowe?\nMasy wierszowe i kolumnowe można traktować odpowiednio jako przeciętne profile kolumnowe i wierszowe (\\(\\leftrightarrows\\)).\nProfile wierszy i kolumn mogą być interpretowane jako punkty w wielowymiarowej przestrzeni. Profile podobne do siebie będą położone bliżej siebie,natomiast niepodobne będą przedstawione jako punkty leżące daleko od siebie."
+  },
+  {
+    "objectID": "WAD_egzamin.html#jak-obliczyć-odległość-pomiędzy-profilami",
+    "href": "WAD_egzamin.html#jak-obliczyć-odległość-pomiędzy-profilami",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "46. Jak obliczyć odległość pomiędzy profilami?",
+    "text": "46. Jak obliczyć odległość pomiędzy profilami?\nOdległość pomiędzy profilami wierszowymi obliczamy według wzoru \\[d(h,h') = \\sqrt{\\sum\\limits^J_{j=1}\\frac{\\left(\\frac{p_{hj}}{p_{h\\cdot}}-\\frac{p_{h'j}}{p_{h'\\cdot}}\\right)^2}{p_{\\cdot j}}}\\] gdzie \\(h,h' = 1,\\dots,H,h \\neq h'\\), oznaczają dwie rózne kategorie zmiennej wierszowej.\nOdległość pomiędzy profilami kolumnowymi obliczamy według wzoru \\[d(j,j') = \\sqrt{\\sum\\limits^H_{h=1}\\frac{\\left(\\frac{p_{hj}}{p_{\\cdot j}}-\\frac{p_{hj'}}{p_{\\cdot j'}}\\right)^2}{p_{h\\cdot}}}\\] gdzie \\(j,j' = 1,\\dots,J,j \\neq j'\\), oznaczają dwie rózne kategorie zmiennej kolumnowej."
+  },
+  {
+    "objectID": "WAD_egzamin.html#czym-jest-inercja-w-analizie-korespondencji",
+    "href": "WAD_egzamin.html#czym-jest-inercja-w-analizie-korespondencji",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "47. Czym jest inercja w analizie korespondencji?",
+    "text": "47. Czym jest inercja w analizie korespondencji?\nInercja(bezwładność) - jest miarą zróżnicowania elementów w macierzy danych wejściowych, natomiast całkowita inercja określa stopień dyspersji profili wierszowych (kolumnowych) względem odpowiadających im centroid i wskazuje, jak bardzo dane profile różnią się od odpowiadającego im profilu przeciętnego."
+  },
+  {
+    "objectID": "WAD_egzamin.html#wymień-miary-jakości-odtworzenia-informacji-w-mapie-percepcji.",
+    "href": "WAD_egzamin.html#wymień-miary-jakości-odtworzenia-informacji-w-mapie-percepcji.",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "48. Wymień miary jakości odtworzenia informacji w mapie percepcji.",
+    "text": "48. Wymień miary jakości odtworzenia informacji w mapie percepcji.\n\nkorelacja punktu z osią - dzięki niej możliwe jest wskazanie tej osi, która najlepiej opisuje punkt (kategorię) w nowej przestrzeni \\[\\text{cor}^2_{hk} = \\frac{p_{h\\cdot}f^2_{hk}}{\\sum\\limits^K_{k=1}p_{h\\cdot}f^2_{hk}} = \\frac{\\lambda_{hk}}{\\lambda_{h}}\\] \\[\\text{cor}^2_{jk} = \\frac{p_{\\cdot j}g^2_{jk}}{\\sum\\limits^K_{k=1}p_{\\cdot j}f^2_{jk}} = \\frac{\\lambda_{jk}}{\\lambda_{j}}\\] gdzie  \\(f_{hk}\\) - współrzędna \\(h\\)-tego wiersza w \\(k\\)-tym wymiarze  \\(g_{jk}\\) - współrzędna \\(j\\)-tej kolumny w \\(k\\)-tym wymiarze  \\(\\lambda_{hk}\\) - inercja \\(h\\)-tego wiersza w \\(k\\)-tym wymiarze  \\(\\lambda_{h}\\) - inercja \\(h\\)-tego wiersza  \\(\\lambda_{jk}\\) - inercja \\(j\\)-tej kolumny w \\(k\\)-tym wymiarze  \\(\\lambda_{h}\\) - inercja \\(j\\)-tej kolumny\nudział punktu w wymiarze - inaczej absolutny udział, jest interpretowany jako części inercji związana z konkretnym wymiarem, która jest wyjaśniana przez dany punkt i obrazuje, do jakiego stopnia punkt przyczynia się do zdefiniowania danego wymiaru. Punkty z relatywnie wysokimi wartościami absolutnego udziału są najważniejsze w definiowaniu danego wymiaru. Suma udziałów absolutnych dla każdego wymiaru wynosi 1. Udział wiersza w wymiarze określa relacja: \\[q_{hk}=\\frac{r_hf^2_{hk}}{\\lambda^2_k}\\] gdzie  \\(r_h\\) - masa \\(h\\)-tego wiersza,  \\(\\lambda^2_k\\) - wartość własna \\(k\\)-tego wymiaru.\n\nUdział kolumn określamy analogicznie: \\[q_{jk}=\\frac{c_jg^2_{jk}}{\\lambda^2_k}\\] gdzie  \\(c_j\\) - masa \\(h\\)-tego wiersza,  \\(\\lambda^2_k\\) - wartość własna \\(k\\)-tego wymiaru.\n\nudział wymiaru w inercji - stosunek kwadratu odległości danego punktu w tym wymiarze od środka układu osi czynnikowych do odległości od środka układu czynnikowego: \\[s_h=\\frac{f^2_{hk}}{d^2_h}=\\cos^2\\!\\omega\\] gdzie  \\(f^2_{hk}\\) - - współrzędna punktu \\(h\\) na \\(k\\)-tej osi,  \\(d^2_h\\) - odległość pomiędzy \\(h\\)-tym punktem a centroidą,  \\(\\omega\\) - kąt pomiędzy osią a odcinkiem łączącym punkt z centroidą.\n\nPodobnie definiuje się udział kolumn: \\[s_j=\\frac{g^2_{jk}}{d^2_h}=\\cos^2\\!\\omega\\] Jeśli wartość \\(s_h\\) lub \\(s_j\\) jest wysoka, to kąt jest mały i oznacza to, że wymiar dobrze opisuje ten punkt. Suma wartośći \\(s\\) dla każdego punktu wynosi 1."
+  },
+  {
+    "objectID": "WAD_egzamin.html#czym-jest-analiza-log-liniowa-i-do-czego-służy",
+    "href": "WAD_egzamin.html#czym-jest-analiza-log-liniowa-i-do-czego-służy",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "49. Czym jest analiza log-liniowa i do czego służy?",
+    "text": "49. Czym jest analiza log-liniowa i do czego służy?\nAnaliza log-liniowa jest analizą tabel wielodzielczych (tabel kontyngencji), służąca do badania wpływu różnych czynników i ich interakcji.\nAnaliza log-liniowa jest modelem regresji dla zmiennych jakościowych.\nModele log-liniowe są podobne do analizy wariancji i wiele terminów używanych w analizie wariancji zostało zaadoptowanych przez analizę log-liniowa."
+  },
+  {
+    "objectID": "WAD_egzamin.html#czym-są-zera-próbkowe-i-strukturalne-w-tablicach-kontyngencji",
+    "href": "WAD_egzamin.html#czym-są-zera-próbkowe-i-strukturalne-w-tablicach-kontyngencji",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "50. Czym są zera próbkowe i strukturalne w tablicach kontyngencji?",
+    "text": "50. Czym są zera próbkowe i strukturalne w tablicach kontyngencji?\nProblem mogą stwarzać przypadki dopasowywania modelu log-liniowego do danych z tablic wielodzielczych, w których występują zerowe liczebności, ponieważ funkcja logarytm nie jest określona w zerze, a prawostronna granica w tym punkcie wynosi \\(−\\infty\\).\nTakie sytuacje moga wystapic w dwóch przypadkach:  - gdy nie jest możliwe zaobserwowanie wartości dla pewnych kombinacji poziomów zmiennych - zera a priori (strukturalne);  - gdy obserwacje są zróżnicowane, komórek jest dużo, a liczebność próby mała - zera próbkowe.\nRozwiązaniem problemu występowania zer próbkowych jest zwiększenie liczebności próbki lub ewentualnie, jeśli jest to niemożliwe, zwiększenie wszystkich liczebności oczekiwanych przez dodanie małej stałej, zwykle \\(\\Delta = 0.5\\).\nW przypadku niekompletnych tablic z zerami strukturalnymi liczbę stopni swobody rozkładu \\(\\chi^2\\) statystyki \\(\\chi^2\\) (lub \\(\\chi^2_L\\)) określa formuła \\[d\\!f=n_1-n_2-n_3\\] gdzie  - \\(n_1\\) - liczba komórek w tabeli,  - \\(n_2\\) - liczba parametrów w modely wymagających estymacji,  - \\(n_3\\) - liczba zer a priori"
+  },
+  {
+    "objectID": "WAD_egzamin.html#czym-są-modele-hierarchiczne-w-analizie-log-liniowej",
+    "href": "WAD_egzamin.html#czym-są-modele-hierarchiczne-w-analizie-log-liniowej",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "51. Czym są modele hierarchiczne w analizie log-liniowej?",
+    "text": "51. Czym są modele hierarchiczne w analizie log-liniowej?\nModel hierarchiczny zawiera wszystkie składniki niższego rzędu. Jeżeli na przykład model zawiera \\(\\lambda^{XX}_{ij}\\), to zawiera również \\(\\lambda^X_i\\) i \\(\\lambda^Y_j\\).\nJeżeli nie włączymy składników niższego rzędu, to istotność statystyczna i interpretacja składników wyższego rzędu będzie zależała od kodowania zmiennych, co jest niepożądane.\nJeśli model zawiera składniki dwuczynnikowe, to należy być ostrożnym w interpretacji składników niższego rzędu, gdyż szacowanie efektów głównych zależy od sposobu kodowania zmiennych zastosowanego do efektów wyższego rzędu. Prawidłowo wiec powinniśmy ograniczyć uwagę do interpretacji składników najwyższego rzędu."
+  },
+  {
+    "objectID": "WAD_egzamin.html#do-czego-służy-skalowanie-wielowymiarowe",
+    "href": "WAD_egzamin.html#do-czego-służy-skalowanie-wielowymiarowe",
+    "title": "Wielowymiarowa Analiza Danych",
+    "section": "52. Do czego służy skalowanie wielowymiarowe?",
+    "text": "52. Do czego służy skalowanie wielowymiarowe?\nSkalowanie wielowymiarowe (ang. Multidimensional Scaling) jest zbiorem technik opartych na założeniu, że respondent wyrażający swój stosunek do rzeczywistości operuje w sposób mniej lub bardziej świadomy wymiarami, traktując obiekty jako punkty w przestrzeni m-wymiarowej.\nPodstawowe cele skalowania wielowymiarowego to:\n\nprzedstawienie w przestrzeni \\(r\\)-wymiarowej \\((r < m)\\) relacji zachodzących między badanymi obiektami;\nukazanie “struktury” badanych obiektów przez określenie treści wymiarów na podstawie podobieństw i preferencji respondentów;\nwykrycie ukrytych zmiennych, które choć nie są obserwowane bezpośrednio, wyjaśniają podobieństwa i różnice pomiędzy badanymi obiektami;\nweryfikacja hipotezy o tym, że pomiędzy badanymi obiektami faktycznie zachodzą (lub nie zachodzą) określone różnice.\n\nDecyzja o liczbie wymiarów \\(r\\), w których prezentowane są wyniki skalowania wielowymiarowego, należy do badacza i zależy od tego, ile wymiarów powinna mieć przestrzeń stanowiąca zadowalające rozwiązanie w odniesieniu do danych wyjściowych. Ze względu na możliwości graficznej prezentacji wyników jest to zazwyczaj przestrzeń dwu- lub trójwymiarowa."
+  },
+  {
+    "objectID": "Modele_egzamin.html",
+    "href": "Modele_egzamin.html",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "",
+    "text": "Zagadnienia do przygotowania na egzamin ustny z Statystycznych Modeli Liniowych i Nieliniowych"
+  },
+  {
+    "objectID": "Modele_egzamin.html#podaj-postać-ogólną-modelu-regresji-wielorakiej.",
+    "href": "Modele_egzamin.html#podaj-postać-ogólną-modelu-regresji-wielorakiej.",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "1. Podaj postać ogólną modelu regresji wielorakiej.",
+    "text": "1. Podaj postać ogólną modelu regresji wielorakiej.\nPrzez model liniowy (w sensie ścisłym) będziemy rozumieć wszystkie modele postaci \\[y = E(Y|X_1 = x_1 , ... , X_p = x_p) \\stackrel{\\text{def}}{=} \\beta_0 + \\beta_1 x_1 + ... + \\beta_px_p + \\varepsilon,\\] gdzie \\(Y\\) jest zmienną objaśnianą, \\(X_1,...,X_p\\) są zmiennymi objaśniającymi, a \\(x_1,...,x_p\\) ich realizacjami, \\(\\varepsilon\\) jest błędem modelu, natomiast \\(\\beta_0,...,\\beta_p\\) nieznanymi parametrami równania (parametrami strukturalnymi równania).\nPrzez modele liniowe (w szerszym sensie - liniowe względem parametrów, zwane także linearyzowalnymi) rozumie się takie modele, które zawierają zmienne objaśniające poddane transformacji (np. \\(X_i^3\\), \\(log(X_i)\\) lub interakcje zmiennych objaśniających (np. \\(X_2X_3\\))."
+  },
+  {
+    "objectID": "Modele_egzamin.html#przedstaw-model-liniowy-w-zapisie-macierzowym.",
+    "href": "Modele_egzamin.html#przedstaw-model-liniowy-w-zapisie-macierzowym.",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "2. Przedstaw model liniowy w zapisie macierzowym.",
+    "text": "2. Przedstaw model liniowy w zapisie macierzowym.\nZapis macierzowy modelu liniowego przyjmuje postać \\[\\textbf{Y}=\\textbf{X}\\beta + \\varepsilon,\\] gdzie\n\\[\\textbf{Y} =\\begin{pmatrix} y_1 \\\\ y_2 \\\\ \\vdots \\\\ y_n \\end{pmatrix},\n\\textbf{X} =\\begin{pmatrix} 1 & x_{11} & \\cdots & x_{1p} \\\\\n1 & x_{21} & \\cdots & x_{2p} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots\\\\\n1 & x_{n1} & \\cdots & x_{np} \\end{pmatrix},\n\\beta =\\begin{pmatrix} \\beta_0 \\\\ \\beta_1 \\\\ \\vdots \\\\ \\beta_p \\end{pmatrix},\n\\varepsilon =\\begin{pmatrix} \\varepsilon_1 \\\\ \\varepsilon_2 \\\\ \\vdots \\\\ \\varepsilon_n \\end{pmatrix} \\]\nDodatkowo o błędzie modelu przyjmuje się, że \\(E(\\varepsilon|\\textbf{X}) = 0\\) i \\(Cov(\\varepsilon|\\textbf{X}) = \\sigma^2I\\)."
+  },
+  {
+    "objectID": "Modele_egzamin.html#wymień-założenia-jakie-muszą-być-spełnione-aby-parametry-modelu-otrzymane-metodą-najmniejszych-kwadratów-były-blue.",
+    "href": "Modele_egzamin.html#wymień-założenia-jakie-muszą-być-spełnione-aby-parametry-modelu-otrzymane-metodą-najmniejszych-kwadratów-były-blue.",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "3. Wymień założenia jakie muszą być spełnione, aby parametry modelu otrzymane metodą najmniejszych kwadratów były BLUE.",
+    "text": "3. Wymień założenia jakie muszą być spełnione, aby parametry modelu otrzymane metodą najmniejszych kwadratów były BLUE.\nNa to aby estymatory parametrów strukturalnych modelu otrzymane metodą najmniejszych kwadratów(OLS) były BLUE(Best Linear Unbiased Estimators) muszą być spełnione następujące warunki (tw. Gaussa-Markova):\n\nCharakter zależności pomiędzy zmiennymi objaśniającymi, a objaśnianą powinien być liniowy.\nLiczba obserwacji w próbie musi być większa (najlepiej znacznie większa) od liczby szacowanych w modelu parametrów.\nZmienne objaśniające nie powinny wykazywać współliniowości (redundancji - nadmiarowości).\nSkładniki losowe (błędy) powinny być nieskorelowane o stałej wariancji i mieć średnią równą zero, co zapisujemy \\(E(\\varepsilon|\\textbf{X}) = 0\\) i \\(Cov(\\varepsilon|\\textbf{X}) = \\sigma^2I\\)."
+  },
+  {
+    "objectID": "Modele_egzamin.html#na-czym-polega-metoda-najmniejszych-kwadratów",
+    "href": "Modele_egzamin.html#na-czym-polega-metoda-najmniejszych-kwadratów",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "4. Na czym polega metoda najmniejszych kwadratów?",
+    "text": "4. Na czym polega metoda najmniejszych kwadratów?\nModel otrzymany tą metodą oznaczamy jako \\(\\hat y_{\\text{OLS}} = X\\hat\\beta\\;\\), gdzie  \\(\\hat y_{\\text{OLS}}\\) jest wartością teoretyczną oszacowaną na podstawie modelu,  \\(\\hat\\beta\\) jest estymatorem wektora parametrów \\(\\beta\\).\nProcedura estymacji parametrów najszerzej może być opisana jako minimalizacja następującej funkcji celu (straty) \\[\\sum\\limits^n_{i=1}M(e_i)\\stackrel{\\text{def}}{=}\\sum\\limits^n_{i=1}M(y_i - \\hat y_i)\\] gdzie  M przyjmuje się najczęściej jako \\(M(x) = |x|\\) lub (jak w przypadku OLS) \\(M(x)=x^2\\)."
+  },
+  {
+    "objectID": "Modele_egzamin.html#podaj-wzór-na-wektor-parametrów-hatbeta.",
+    "href": "Modele_egzamin.html#podaj-wzór-na-wektor-parametrów-hatbeta.",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "5. Podaj wzór na wektor parametrów \\(\\hat\\beta\\)“.",
+    "text": "5. Podaj wzór na wektor parametrów \\(\\hat\\beta\\)“.\nEstymator \\(\\hat\\beta = (X'X)^{-1}X'y\\)    jest nieobciążony o wiariancji \\(Cov(\\hat\\beta) = (X'X)^{-1}\\sigma^2\\)."
+  },
+  {
+    "objectID": "Modele_egzamin.html#podaj-twierdzenie-z-dowodem-mówiące-o-postaci-macierzy-kowariancji-parametrów-modelu-liniowego.",
+    "href": "Modele_egzamin.html#podaj-twierdzenie-z-dowodem-mówiące-o-postaci-macierzy-kowariancji-parametrów-modelu-liniowego.",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "6. Podaj twierdzenie z dowodem mówiące o postaci macierzy kowariancji parametrów modelu liniowego.",
+    "text": "6. Podaj twierdzenie z dowodem mówiące o postaci macierzy kowariancji parametrów modelu liniowego.\n\\[Cov(\\hat\\beta) = (X'X)^{-1}\\sigma^2\\] Ponieważ\n\\[\\begin{array}a Cov(\\hat\\beta) = Cov((X'X)^{-1}X'y) = \\\\\n(X'X)^{-1}X'Cov(y)((X'X)^{-1}X')' = \\\\\n(X'X)^{-1}X'X(X'X)^{-1}\\sigma^2 = (X'X)^{-1}\\sigma^2\\end{array}\\]"
+  },
+  {
+    "objectID": "Modele_egzamin.html#podaj-wzór-estymatora-wariancji-sigma2-dla-regresji-liniowej-i-podaj-jego-własności.",
+    "href": "Modele_egzamin.html#podaj-wzór-estymatora-wariancji-sigma2-dla-regresji-liniowej-i-podaj-jego-własności.",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "7. Podaj wzór estymatora wariancji \\(\\sigma^2\\) dla regresji liniowej i podaj jego własności.",
+    "text": "7. Podaj wzór estymatora wariancji \\(\\sigma^2\\) dla regresji liniowej i podaj jego własności.\nNieobciąonym estymatorem wariancji \\(\\sigma^2\\) w regresji wielorakiej jest\n\\[s^2 = \\frac{e'e}{n-p-1} = \\frac{1}{n-p-1}\\sum\\limits^n_{i=1}(y_i - \\hat y_i)^2\\]\nPrzy czym nalezny pamiętać, że jeśli \\(\\varepsilon \\sim N(0, \\sigma^2I)\\), to \\[s^2 \\sim \\chi^2(n-p-1) \\text{ - ma rozkład chi}^2 \\text{ z }n - p -1\\text{ stopniami swobody}\\]"
+  },
+  {
+    "objectID": "Modele_egzamin.html#do-czego-służy-test-f-w-modelach-liniowych",
+    "href": "Modele_egzamin.html#do-czego-służy-test-f-w-modelach-liniowych",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "8. Do czego służy test F w modelach liniowych?",
+    "text": "8. Do czego służy test F w modelach liniowych?\nTest F jest testem globalnym służącym do oceny jakości modelu w kontekście istotności statystycznej parametrów strukturalnych. Wartość statystyki F pokazuje, czy istnieje związek między zmiennymi objaśniającymi a zmienna objaśnianą. Im bardziej statystyka F różni się od 1, tym lepiej, tzn. możemy odrzucić hipotezę zerową  \\(H_0: \\beta_1 = \\beta_2 = \\dots = \\beta_p = 0\\)  \\(H_1: \\beta_1 \\neq 0\\) dla conajmniej jedngo i \nDany jest wzorem \\[F = \\frac{\\frac{SSR}{p}}{\\frac{RSS}{n-p-1}}\\] gdzie  SSR jest sumą kwadratów różnicy między linią regresji, a średnią y-ków (wariancja wyjaśniana przez model) RSS jest sumą kwadratów odchyleń, czyli sumą kwadratów różnic między wartością dopasowaną, a wartością w próbie. (wariancja resztowa)\n\nJeśli część wariancji wyjaśnianej przez model jest duża w stosunku do wariancji resztowej, to najczęściej będziemy odrzucać hipotezę H0, co oznacza, iż co najmnjej jedna ze zmiennych objaśniających użytych w modelu ma istotny wpływ na zmienną objaśnianą."
+  },
+  {
+    "objectID": "Modele_egzamin.html#czym-są-modele-zagnieżdżone",
+    "href": "Modele_egzamin.html#czym-są-modele-zagnieżdżone",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "9. Czym są modele zagnieżdżone?",
+    "text": "9. Czym są modele zagnieżdżone?\nModel M* jest zagnieżdżony w modelu M gdy mozna go uzyskać poprzez usunięcie z modelu M pewnych zmiennych. Zatem model \\[y = X_1\\beta^*_1+\\varepsilon^*\\] jest zagnieżdżony w modelu \\[y = X\\beta+\\varepsilon=(X_1,X_2)\\left( \\beta_1 \\atop \\beta_2 \\right) + \\varepsilon = X_1 \\beta_1 + X_2\\beta_2+\\varepsilon\\] Należy tu wyraźnie zaznaczyć, że parametry \\(\\beta_1\\) i \\(\\beta^*_1\\) mogą się różnić, ponieważ model zredukowany nie uwzględnia zestaw zmiennych \\(X_2\\)."
+  },
+  {
+    "objectID": "Modele_egzamin.html#jakie-są-obciążenie-i-wariancja-parametrów-modeli-niedouczonych-i-przeuczonych",
+    "href": "Modele_egzamin.html#jakie-są-obciążenie-i-wariancja-parametrów-modeli-niedouczonych-i-przeuczonych",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "10. Jakie są obciążenie i wariancja parametrów modeli niedouczonych i przeuczonych?",
+    "text": "10. Jakie są obciążenie i wariancja parametrów modeli niedouczonych i przeuczonych?\n\nNiedouczenie modelu redukuje wariancję parametrów modelu \\(V\\!ar(\\hat\\beta)\\) oraz wariancje predykcji \\(V\\!ar(y_0)\\), jednocześnie powodując obciążenia obu. Można rownież wykazać, że w modelach niedouczonych estymator \\(s^2\\) jest obciążony\nPrzeuczenie modelu powoduje wzrost wariancji obu wielkości."
+  },
+  {
+    "objectID": "Modele_egzamin.html#jak-testujemy-poszczególne-efekty-w-modelu-regresji-wielorakiej",
+    "href": "Modele_egzamin.html#jak-testujemy-poszczególne-efekty-w-modelu-regresji-wielorakiej",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "11. Jak testujemy poszczególne efekty w modelu regresji wielorakiej?",
+    "text": "11. Jak testujemy poszczególne efekty w modelu regresji wielorakiej?\nMożna pokazać, że do testowania hipotezy  \\(H_0: \\beta_j = 0\\)  właściwy będzie test: \\[t = \\frac{\\hat\\beta_j}{s\\sqrt{g_{jj}}}\\stackrel{\\text{lub}}{=}\\frac{\\hat\\beta_j}{\\text{se}(\\hat\\beta_j)}\\] gdzie  \\(g_{jj}\\) jest j-tą wielkością diagonali macierzy \\((X'X)^{-1}\\).  Przy założeniu prawdziwości hipotezy \\(H_0\\) statystyka tam ma rozkład t-studenta z \\(n-p-1\\) stopniami swobody.  UWAGA: Dla regresji prostej wartości wartości statystyki testowej t jest równa co do wartości bezwzględnej \\(\\sqrt{F}\\)"
+  },
+  {
+    "objectID": "Modele_egzamin.html#wymień-znane-ci-miary-dopasowania-modelu-regresji-podaj-wzory-3-z-nich.",
+    "href": "Modele_egzamin.html#wymień-znane-ci-miary-dopasowania-modelu-regresji-podaj-wzory-3-z-nich.",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "12. Wymień znane Ci miary dopasowania modelu regresji (podaj wzory 3 z nich).",
+    "text": "12. Wymień znane Ci miary dopasowania modelu regresji (podaj wzory 3 z nich).\nDotychczas poznane przez nas miary dopasowania modelu to\n\n\\(R^2\\) - współczynnik determinacji \\[R^2 = \\frac{SSR}{SST}\\]\nRMSE - Pierwiastek błędu średnio-kwadratowego \\[\\sqrt{\\frac{1}{n}\\sum\\limits^n_{n=1}(y_i - \\hat y_i)^2}\\]\nMAE - Średni błąd bezwzględny \\[\\frac{1}{n}\\sum\\limits^n_{n=1}|y_i - \\hat y_i|\\]\nPRESS\nCP Mallow’a\nGCV\nAIC\nAICc\nBIC"
+  },
+  {
+    "objectID": "Modele_egzamin.html#podaj-przyczyny-i-skutki-niespełnienia-założenia-o-jednorodności-wariancji-błędów-w-modelach-regresji.",
+    "href": "Modele_egzamin.html#podaj-przyczyny-i-skutki-niespełnienia-założenia-o-jednorodności-wariancji-błędów-w-modelach-regresji.",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "13. Podaj przyczyny i skutki niespełnienia założenia o jednorodności wariancji błędów w modelach regresji.",
+    "text": "13. Podaj przyczyny i skutki niespełnienia założenia o jednorodności wariancji błędów w modelach regresji.\nPrzyczyny: najczestszymi przyczynami heterogeniczności wariancji błędu są:\n\nwsteczna zależność\nbrak w modelu ważnych predyktorów (skorelowanych ze zmienną zależną)\nzła specyfikacja modelu\nbudowa modelu dla danych agregowanych (np. regresja dla średnich grupowych)\n\nSkutki: Estymatory wyznaczone metodą OLS przy naruszeniu jednorodności wariancji są nieefektywne. Ponadto szacunki błędów estymacji parametrów \\(\\beta\\) czyli \\(\\text{se}(\\beta)\\) są obciążone."
+  },
+  {
+    "objectID": "Modele_egzamin.html#podaj-przyczyny-i-skutki-niespełnienia-założenia-o-liniowym-charakterze-zależności-w-modelach-regresji.",
+    "href": "Modele_egzamin.html#podaj-przyczyny-i-skutki-niespełnienia-założenia-o-liniowym-charakterze-zależności-w-modelach-regresji.",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "14. Podaj przyczyny i skutki niespełnienia założenia o liniowym charakterze zależności w modelach regresji.",
+    "text": "14. Podaj przyczyny i skutki niespełnienia założenia o liniowym charakterze zależności w modelach regresji.\nPrzyczyny: Charakter zależności jest nieliniowy (brak liniowości ze względu na parametry). Prawdziwa zależność ma złożony charakter, który da się opisać jedynie modelem nieliniowym (np. \\(y = \\beta_0 \\exp(\\beta_1x^{\\beta_2} + \\varepsilon)\\)). Najczęściej brak wiedzy na temat prawdziwej postaci zależności jest powodem dopasowania modelu liniowego w szerszym sensie.\nSkutki: Dopasowanie modelu liniowego w szerszym sensie jest niewłaściwe, dlatego zarówno użycie tego modelu do celów sterowania i predykcji jest błędem. Zaleca się ponowną specyfikację modelu, czyli modyfikację estymowanego modelu z liniowego na nieliniowy."
+  },
+  {
+    "objectID": "Modele_egzamin.html#podaj-przyczyny-i-skutki-endogeniczności-w-modelach-regresji.",
+    "href": "Modele_egzamin.html#podaj-przyczyny-i-skutki-endogeniczności-w-modelach-regresji.",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "15. Podaj przyczyny i skutki endogeniczności w modelach regresji.",
+    "text": "15. Podaj przyczyny i skutki endogeniczności w modelach regresji.\nPrzyczyny: Endogeniczność predyktora oznacza, że istnieje związek pomiędzy \\(X_i\\), a \\(\\varepsilon_i\\), wówczas \\(E(\\varepsilon|X_i) \\neq 0\\). Mozilwe przyczyny takiego stanu do:\n\nwsteczna zależność,\npominięcie ważnego predyktora,\nbłędy pomiarowe zmiennych modelu,\nzła specyfikacja modelu.\n\nSkutki: fektem endogeniczności predyktorów jest obciążenie parametrów \\(\\hat\\beta\\) modelu."
+  },
+  {
+    "objectID": "Modele_egzamin.html#podaj-przyczyny-i-skutki-niespełnienia-założenia-o-braku-kowariancji-pomiędzy-błędami-w-modelach-regresji.",
+    "href": "Modele_egzamin.html#podaj-przyczyny-i-skutki-niespełnienia-założenia-o-braku-kowariancji-pomiędzy-błędami-w-modelach-regresji.",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "16. Podaj przyczyny i skutki niespełnienia założenia o braku kowariancji pomiędzy błędami w modelach regresji.",
+    "text": "16. Podaj przyczyny i skutki niespełnienia założenia o braku kowariancji pomiędzy błędami w modelach regresji.\nPrzyczyny: Najczęstsze przyczyny seryjnej korelacji błędów to:\n\nbrak w modelu ważnych predyktorów,\nzła specyfikacja modelu,\nbłędy pomiarowe zmiennej niezależnej,\nbudowa modelu dla danych agregowanych.\n\nSkutki: Estymatory parametrów modelu są nieefektywne, jeśli założenie o niezależności błędów nie jest spełnione. Ponadto, w niektórych przypadkach (regresja dla danych agregowanych) szacunki błędów standaryzowanych estymacji parametrów modelu są obciążone."
+  },
+  {
+    "objectID": "Modele_egzamin.html#czym-jest-heterogeniczność-próbkowa-i-modelowa",
+    "href": "Modele_egzamin.html#czym-jest-heterogeniczność-próbkowa-i-modelowa",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "17. Czym jest heterogeniczność próbkowa i modelowa?",
+    "text": "17. Czym jest heterogeniczność próbkowa i modelowa?\nHeterogeniczność Próbkowa: Powiedzmy, że analizujemy wpływ poziomu zarobków na procent budżetu jaki wydajemy na jedzenie. Można się spodziewać, że wraz ze wzrostem zarobków zmienna zależna będzie charakteryzowała się większym błędem. Wprowadzenie dodatkowej zmiennej np. “lubienie jedzenia”, spowoduje usunięcie niejednorodności, ale analizujemy wówczas nieco inny związek niż w zamierzeniach. Naszym celem było znalezienie wpływu dochodu na procent wydatków na jedzenie bez uwzględniania pozostałych czynników.\nHeterogeniczność Modelu: to taka niejednorodność, którą usuwa się przez wprowadzenie dodatkowej zmiennej związanej z jednym z predyktorów. Przykładowo, jeśli zależność ma charakter paraboliczny, to dla modelu liniowego w sensie ścisłym, dostrzeżemy heterogeniczność wariancji. Po wprowadzeniu zmiennej niezależnej w drugiej potędze możemy ją wyeliminować."
+  },
+  {
+    "objectID": "Modele_egzamin.html#podaj-przyczyny-i-skutki-nadmiarowości-w-modelach-regresji.",
+    "href": "Modele_egzamin.html#podaj-przyczyny-i-skutki-nadmiarowości-w-modelach-regresji.",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "18. Podaj przyczyny i skutki nadmiarowości w modelach regresji.",
+    "text": "18. Podaj przyczyny i skutki nadmiarowości w modelach regresji.\nPrzyczyny: Istnieją dwa rodzaje nadmiarowości, doskonała współliniowość gdy jeden z predyktorów jest kombinacją liniową pozostałych oraz statystyczna współliniowość, kiedy predyktory modelu wykazują silne korelacje\nSkutki: W przypadku doskonałej współniniowości nie da się oszacować parametrów modelu metodą OLS, ponieważ macierz modelu jest źle uwarunkowana. Natomiast gdy mamy doczynienia z nadmiarowością w sensie statystycznym, to wyznacznik macierzy \\(X′X\\) będzie bardzo bliski zera i to powoduje zawyżenie błędów standardowych estymacji parametrów modelu."
+  },
+  {
+    "objectID": "Modele_egzamin.html#jakie-są-konsekwencje-braku-normalności-wektora-błędów",
+    "href": "Modele_egzamin.html#jakie-są-konsekwencje-braku-normalności-wektora-błędów",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "19. Jakie są konsekwencje braku normalności wektora błędów?",
+    "text": "19. Jakie są konsekwencje braku normalności wektora błędów?\nBrak normalności rozkładu błędu uniemożliwia testowanie istotności parametrów modelu jeśli próba jest mała, a odchyłka od normalności duża. Ponadto wyznaczenie przedziałow ufności dla regresji i predykcji nie są możliwe."
+  },
+  {
+    "objectID": "Modele_egzamin.html#jakie-znasz-wykresy-diagnostyczne-do-testowania-założeń-modelu-linowego",
+    "href": "Modele_egzamin.html#jakie-znasz-wykresy-diagnostyczne-do-testowania-założeń-modelu-linowego",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "20. Jakie znasz wykresy diagnostyczne do testowania założeń modelu linowego?",
+    "text": "20. Jakie znasz wykresy diagnostyczne do testowania założeń modelu linowego?\n\nResiduals vs Fitted - Wykres reszt względem wartości dopasowanych \nNormal Q-Q - wykres kwantylowy \nScale-Location - wykres reszt standaryzowanych względem wartości dopasowanych \nCook’s distance - wykres odległości Cooka \nResiduals vs Leverage - wykres reszt względem dźwigni \nCook’s dist vs Leverage - wykres odległości Cooka względem dźwigni"
+  },
+  {
+    "objectID": "Modele_egzamin.html#wymień-testy-do-weryfikacji-hipotezy-o-równości-wariancji-wektora-błędów.",
+    "href": "Modele_egzamin.html#wymień-testy-do-weryfikacji-hipotezy-o-równości-wariancji-wektora-błędów.",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "21. Wymień testy do weryfikacji hipotezy o równości wariancji wektora błędów.",
+    "text": "21. Wymień testy do weryfikacji hipotezy o równości wariancji wektora błędów.\n\nTest Breuscha-Pagana\nTest White’a\nTest Goldfelda-Quandta\nTest Harrisona-McCabe’a"
+  },
+  {
+    "objectID": "Modele_egzamin.html#wymień-testy-do-weryfikacji-hipotezy-o-braku-seryjnej-korelacji-błędów-modelu-liniowego.",
+    "href": "Modele_egzamin.html#wymień-testy-do-weryfikacji-hipotezy-o-braku-seryjnej-korelacji-błędów-modelu-liniowego.",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "22. Wymień testy do weryfikacji hipotezy o braku seryjnej korelacji błędów modelu liniowego.",
+    "text": "22. Wymień testy do weryfikacji hipotezy o braku seryjnej korelacji błędów modelu liniowego.\n\nTest Durbina-Watsona\nTest Breuscha-Godfreya"
+  },
+  {
+    "objectID": "Modele_egzamin.html#wymień-testy-do-weryfikacji-hipotezy-o-liniowej-postaci-zależności-pomiędzy-zmienną-objaśnianą-i-objaśniającymi.",
+    "href": "Modele_egzamin.html#wymień-testy-do-weryfikacji-hipotezy-o-liniowej-postaci-zależności-pomiędzy-zmienną-objaśnianą-i-objaśniającymi.",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "23. Wymień testy do weryfikacji hipotezy o liniowej postaci zależności pomiędzy zmienną objaśnianą i objaśniającymi.",
+    "text": "23. Wymień testy do weryfikacji hipotezy o liniowej postaci zależności pomiędzy zmienną objaśnianą i objaśniającymi.\n\nTest RESET Ramseya\nTest Rainbow\nTet Harveya-Colliera"
+  },
+  {
+    "objectID": "Modele_egzamin.html#wypowiedz-twierdzenie-mówiące-o-własnościach-macierzy-h-modelu-liniowego.",
+    "href": "Modele_egzamin.html#wypowiedz-twierdzenie-mówiące-o-własnościach-macierzy-h-modelu-liniowego.",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "24. Wypowiedz twierdzenie mówiące o własnościach macierzy H modelu liniowego.",
+    "text": "24. Wypowiedz twierdzenie mówiące o własnościach macierzy H modelu liniowego.\nNiech \\(X\\) będzie macierzą \\(n \\times (p+1)\\) modelu o rzędzie \\(p + 1<n\\). Wówczas elementy \\(H\\) mają następujące własności:\n\n\\((1/n)\\leq h_{ii} \\leq 1\\) dla \\(i = 1,2,3,\\dots,n\\)\n\\(-0.5 \\leq h_{ij} \\leq 0.5\\) dla \\(i \\neq j\\)\n\\(\\text{Tr}(H) = \\sum\\limits^n_{i=1}h_{ii} = p + 1\\)"
+  },
+  {
+    "objectID": "Modele_egzamin.html#czym-są-obserwacje-odstające-dobrej-i-złej-dźwigni",
+    "href": "Modele_egzamin.html#czym-są-obserwacje-odstające-dobrej-i-złej-dźwigni",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "25. Czym są obserwacje odstające, dobrej i złej dźwigni?",
+    "text": "25. Czym są obserwacje odstające, dobrej i złej dźwigni?\n\nObserwacje odstające - obserwacje, które mają wpływ na linię regresji ale nie mają wysokiej dźwigni.\nObserwacje dobrej dźwigni - obserwacje o dużej dźwigni lecz nie mające dużego wpływu na kształt modelu.\nObserwacje złej dźwigni - obserwacje o dużej dźwigni, jednocześnie mające duży wpływ na model."
+  },
+  {
+    "objectID": "Modele_egzamin.html#podaj-wzór-odległości-cooka-i-powiedz-do-czego-ona-służy.",
+    "href": "Modele_egzamin.html#podaj-wzór-odległości-cooka-i-powiedz-do-czego-ona-służy.",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "26. Podaj wzór odległości Cooka i powiedz do czego ona służy.",
+    "text": "26. Podaj wzór odległości Cooka i powiedz do czego ona służy.\nW celu oceny czy dana obserwacja jest wpływowa, rozważa się następującą miarę: \\[D_i = \\frac{(\\hat\\beta_{(i)}-\\hat\\beta)'X'X(\\hat\\beta_{(i)}-\\hat\\beta)}{(p+1)s^2}=\\frac{(\\hat y_{(i)}-\\hat y)'(\\hat y_{(i)}-\\hat y)}{(p+1)s^2} = \\frac{r^2_i}{p+1}\\left(\\frac{h_{ii}}{1-h_{ii}}\\right)\\] gdzie  \\(\\hat\\beta_{(i)}\\) oznacza wektor parametrów estymowany na podstawie zbioru bez i-tej obserwacji,  \\(\\hat y_{(i)}\\) oznacza wartość dopasowaną na podstawie danych bez i-tej obserwacji,  \\(r_i\\) jest i-tą resztą standaryzowaną (czasem studentyzowaną)."
+  },
+  {
+    "objectID": "Modele_egzamin.html#podaj-wzór-reszt-standaryzowanych-i-studentyzowanych.",
+    "href": "Modele_egzamin.html#podaj-wzór-reszt-standaryzowanych-i-studentyzowanych.",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "27. Podaj wzór reszt standaryzowanych i studentyzowanych.",
+    "text": "27. Podaj wzór reszt standaryzowanych i studentyzowanych.\n\nReszty standaryzowane \\[r_i=\\frac{e_i}{s\\sqrt{1-h_{ii}}}\\]\nReszty studentyzowane \\[t_i=\\frac{e_i}{s_{(i)}\\sqrt{1-h_{ii}}}\\] gdzie  \\(s_{(i)}\\) oznacza błąd standardowy estymacji obliczony na podstawie zbioru pozbawionego i-tej obserwacji."
+  },
+  {
+    "objectID": "Modele_egzamin.html#czym-są-miary-dffit-dfbeta-covratio",
+    "href": "Modele_egzamin.html#czym-są-miary-dffit-dfbeta-covratio",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "28. Czym są miary DFFIT, DFBETA, COVRATIO?",
+    "text": "28. Czym są miary DFFIT, DFBETA, COVRATIO?\nSą to miary detekcji obserwacji nietypowych w modelu.\n\nDFFITS - Statystyka ta sprawdza jak i-ta obserwacja wpływa na wartość teoretyczną wyliczoną z równiania modelu liniowego. W literaturze podaje się, że obserwacje uznaje się za wpływową, jeśli: \\[DFFITs_i= \\frac{\\hat y_i - \\hat y_{i,(i)}}{s_{(i)}\\sqrt{h_{ii}}}\\]\nDFBETA - Statystyka ta mierzy wpływ i-tej obserwacji na każdy z estymatorów współczynników modelu liniowego. W literaturze statystycznej podaje się, że obserwację uważa się za wpływową, jeśli: \\[DFBETAs_i= \\frac{\\hat\\beta_i - \\hat \\beta_{(i)}}{s_{(i)}\\sqrt{h_{ii}}}\\]\nCOVRATIO - Statystyka ta mierzy zmianę wyznacznika macierzy kowariancji oszacowań poprzez usunięcie i-tej obserwacji.W literaturze sugeruje się, że obserwacje spełniające warunek: \\[COVRATIO_i= \\frac{\\det(\\hat\\sigma^2_{(i)}(X'_{(i)}X_{(i)})^{-1})}{\\det(\\hat\\sigma^2(X'X)^{-1})}\\] gdzie  \\(\\hat y_{i,(i)}\\) - wartość dopasowana,  \\(\\hat\\beta_i\\) - parametr modelu,  \\(\\hat\\sigma^2_{(i)}\\) - wariancja modelu,  \\(X_{(i)}\\) - macierz predyktorów modelu  w kótrym usunięto i-tą obserwację"
+  },
+  {
+    "objectID": "Modele_egzamin.html#opisz-metodę-największej-wiarogodności-wiarygodności-w-kontekście-modeli-liniowych.",
+    "href": "Modele_egzamin.html#opisz-metodę-największej-wiarogodności-wiarygodności-w-kontekście-modeli-liniowych.",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "29. Opisz metodę największej wiarogodności (wiarygodności) w kontekście modeli liniowych.",
+    "text": "29. Opisz metodę największej wiarogodności (wiarygodności) w kontekście modeli liniowych.\nMetoda największej wiarygodności jest inną metodą szacowania parametrów modeli liniowych. Opiera się o maksymalizację funkcji wiarygodności \\(L(\\beta,\\sigma^2)\\). Jeśli rozkład zmiennej y (lub błędu ε) jest normalny, to maksimum można uzyskać znajdując pochodne cząstkowe."
+  },
+  {
+    "objectID": "Modele_egzamin.html#podaj-własności-estymatora-parametrów-modelu-otrzymanego-metodą-największej-wiarogodności.",
+    "href": "Modele_egzamin.html#podaj-własności-estymatora-parametrów-modelu-otrzymanego-metodą-największej-wiarogodności.",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "30. Podaj własności estymatora parametrów modelu otrzymanego metodą największej wiarogodności.",
+    "text": "30. Podaj własności estymatora parametrów modelu otrzymanego metodą największej wiarogodności.\n\n\\(\\hat\\beta\\sim N(\\beta, \\sigma^2(X'X)^{-1})\\) - \\(\\hat\\beta\\) ma rozkład normalny o średniej równej \\(\\beta\\) i wariancji równej \\(\\sigma^2(X'X)^{-1}\\),\n\\(\\frac{(n-p-1)s^2}{\\sigma^2} \\sim \\chi^2(n-p-1)\\) - \\((n-p-1)s^2\\) oraz \\(\\sigma^2\\) ma rozkład \\(\\chi^2\\) o \\((n-p-1)\\) stopniach swobody, gdzie \\(s^2\\) to wariancja z próby, a \\(\\sigma^2\\) to wariancja z populacji,\n\\(\\hat\\beta\\) i \\(s^2\\) są niezależne."
+  },
+  {
+    "objectID": "Modele_egzamin.html#czym-jest-przedział-ufności-dla-regresji-i-predykcji",
+    "href": "Modele_egzamin.html#czym-jest-przedział-ufności-dla-regresji-i-predykcji",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "31. Czym jest przedział ufności dla regresji i predykcji?",
+    "text": "31. Czym jest przedział ufności dla regresji i predykcji?\nPrzedział ufności dla regresji informuje o tym, jak dokładnie oszacowaliśmy parametr rozkładu cechy populacji na podstawie próby. Dokładniej pobierając wielokrotnie próbę w tych samych warunkach i tej samej wielkości, otrzymujemy pewną liczbę przedziałów, z których 95% będzie zawierało prawdziwą wartość szacownego parametru rozkładu cechy populacji.Przedział ufności opisuje jak dokładnie oszacowaliśmy parametr rozkładu cechy populacji na podstawie próby. Przedział ufności dotyczy statystyki oszacowanej na podstawie wielu obserwacji i wyraża niepewność pobierania próby.W przypadku modelu liniowego możemy zbudować przedział ufności dla każdego współczynnika tego modelu. Przedziały ufności dla parametrów pokazują zakres, w jakim z zadanym prawdopodobieństwem „znajdują się ich prawdziwe wartości”. Dokładniej Przedziały ufności dla regresji z zadanym prawdopodobieństwem pokrywają nieznane wartości współczynników modelu.\nPrzedział ufności dla predykcji naczej przedział ufności dla prognozy informuje jakiej wartości zmiennej objaśnianej można się spodziewać na podstawie zbudowanego modelu liniowego, dla zadanych wartości zmiennych objaśniających. Przedziały dla prognozy uwzględniają zarówno niepewność znajomości wartości średniej populacji, jaki rozrzut danych, tak więc są one zawsze szerszy niż przedział ufności dla regresji"
+  },
+  {
+    "objectID": "Modele_egzamin.html#jakie-są-powody-transformacji-zmiennych-objaśniających-i-objaśnianych-w-modelach-liniowych",
+    "href": "Modele_egzamin.html#jakie-są-powody-transformacji-zmiennych-objaśniających-i-objaśnianych-w-modelach-liniowych",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "32. Jakie są powody transformacji zmiennych objaśniających i objaśnianych w modelach liniowych?",
+    "text": "32. Jakie są powody transformacji zmiennych objaśniających i objaśnianych w modelach liniowych?\nIstnieją trzy główne powody transformacji zmiennych modelu, są to:\n\nkorekta niejednorodności wariancji błędu modelu,\nwymuszenie normalności rozkładu błędu modelu,\nestymacja efektów procentowych.\n\nPierwsze dwa problemy dotyczą założeń modelu i istnieje kilka metod znajdowania odpowiedniej formy funkcyjnego przekształcenia zmiennej zależnej, zmiennych niezależnych lub wszystkich jednocześnie. Ostatni powód wynika z chęci uzyskania odpowiedniej postaci efektu. Czasami interesuje nas jak zmienna procentowa zmiennej niezależnej skutkuje zmianą procentową zmiennej zależnej."
+  },
+  {
+    "objectID": "Modele_egzamin.html#jak-interpretować-model-którego-zmienne-są-logarytmowane",
+    "href": "Modele_egzamin.html#jak-interpretować-model-którego-zmienne-są-logarytmowane",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "33. Jak interpretować model, którego zmienne są logarytmowane?",
+    "text": "33. Jak interpretować model, którego zmienne są logarytmowane?\nZałóżmy hipotetyczne model, który posiada zmienne “cena” i “sprzedaż”. Skupiając się na efekcie obniżki procentowej ceny i jej wpływie na procentowy wzrost sprzedaży dokonujemy logarytmowania zmiennych. Wtedy dany model powinno interpretować się w następujący sposób, że przykładowo podwyższenie ceny produktów o \\(1\\%\\) powoduje obniżenie popytu (sprzedaży) o \\(5.1\\%\\).\nMożna również rozpatrywać modele typu \\[y = \\beta_0 + \\beta_1\\log(x) + \\varepsilon\\] Wówczas wzrost cechy \\(x\\) o \\(1\\%\\) powoduje zmianę cechy \\(y\\) o \\(\\beta_1\\) jednostek, w których mierzono \\(y\\). Natomiast model \\[\\log(y) = \\beta_0 + \\beta_1x+\\varepsilon\\] mówi, że wzrost cechy \\(x\\) o jedną jednostkę, powoduję zmianę cechy \\(y\\) o \\(\\beta_1\\%\\)"
+  },
+  {
+    "objectID": "Modele_egzamin.html#czym-jest-przekształcenie-potęgowe-i-do-czego-służy",
+    "href": "Modele_egzamin.html#czym-jest-przekształcenie-potęgowe-i-do-czego-służy",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "34. Czym jest przekształcenie potęgowe i do czego służy?",
+    "text": "34. Czym jest przekształcenie potęgowe i do czego służy?\nAby oszacować postać funkcji \\(g^{−1}\\) będziemy stosować rodzinę przekształceń potęgowych postaci \\[\\Psi (y,\\lambda) =\n\\begin{cases}\n\\frac{y^\\lambda-1}{\\lambda}, \\quad \\; \\; y \\neq 0 \\\\\n\\log(y), \\quad y= 0\n\\end{cases}\\] Powyższa funkcja ma nastepujące własności:\n\n\\(\\Psi (y,\\lambda)\\) jest ciągła \\(\\lambda\\).\nPrzekształcenie logarytmiczne jest częścią rodziny przekształceń, bo \\[\\lim\\limits_{\\lambda \\rightarrow 0}\\frac{y^\\lambda-1}{\\lambda}=\\log(y)\\]\n\\(\\Psi (y,\\lambda)\\) zachowuje kierunek zależności (znak korelacji)."
+  },
+  {
+    "objectID": "Modele_egzamin.html#na-czym-polega-transformacja-box-cox-i-czym-się-różni-od-transformacji-yeo-johnsona",
+    "href": "Modele_egzamin.html#na-czym-polega-transformacja-box-cox-i-czym-się-różni-od-transformacji-yeo-johnsona",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "35. Na czym polega transformacja Box-Cox i czym się różni od transformacji Yeo-Johnsona?",
+    "text": "35. Na czym polega transformacja Box-Cox i czym się różni od transformacji Yeo-Johnsona?\nMetoda Box’a - Cox’a opiera się na takiej transformacji zmiennych, aby zmaksymalizować funkcję wiarygodności. Poprawiona transformacja Box’a - Cox’a przyjmuje postać:\n\\[\\Phi_{BC}(y,\\lambda) = \\Psi(y,\\lambda) \\times gm(y)^{1-\\lambda} = \\begin{cases}\ngm(y)^{1-\\lambda}\\frac{y^\\lambda-1}{\\lambda}, \\quad y \\neq 0 \\\\\ngm(y)\\log(y), \\quad \\; \\: \\,y = 0\n\\end{cases}\\]\ngdzie \\(gm(y)\\) = \\(\\prod\\limits^n_{i=1}y^{\\frac{1}{n}}_i\\) jest średnią geometryczną, a \\(y\\) przyjmuje tylko wartości dodatnie. Wówczas maksymalizacja funkcji wiarygodności sprowadza się do minimalizacji \\[RSS(\\lambda)=\\sum\\limits^n_{i=1}(\\Phi_{BC}(y_i,\\lambda)-\\hat\\beta_0 - \\hat\\beta_1x_i)^2\\] Jedyną niedogodnością w stosowaniu klasycznej transformacji Box’a-Cox’a jest wymóg aby \\(y > 0\\). Rozwiązaniem tego problemu jest modyfikacja przekształcenia Box’a-Cox’a autorstwa Yeo-Johnson’a \\[\\Phi_{YJ}(y,\\lambda) =\n\\begin{cases}\n\\Phi_{BC}(y+1,\\lambda), \\quad \\quad y \\geq 0 \\\\ \\Phi_{BC}(1-y,2-\\lambda), \\; y < 0\n\\end{cases}\\]"
+  },
+  {
+    "objectID": "Modele_egzamin.html#opisz-zasadę-działania-ważonej-metody-najmniejszych-kwadratów.",
+    "href": "Modele_egzamin.html#opisz-zasadę-działania-ważonej-metody-najmniejszych-kwadratów.",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "36. Opisz zasadę działania ważonej metody najmniejszych kwadratów.",
+    "text": "36. Opisz zasadę działania ważonej metody najmniejszych kwadratów.\nPrzypadkiem uogólnionego modelu regresji liniowej, w którym nie występuje zależność między resztami modelu jest ważony model regresji liniowej (WLS - Weighted Least Squares). W tym przypadku estymacja parametrów modelu polega na “zważeniu” obserwacji poprzez podzielenie ich (unormowanie) przez odchylenie standardowe, a następnie wyznaczenie estymatora OLS. W szczególności, dostajemy tzw.bezwarunkową homoskedastyczność, która nie implikuje warunkowej homoskedastyczności. Jednakże estymator WLS zwiększa jakość estymacji."
+  },
+  {
+    "objectID": "Modele_egzamin.html#na-czym-polega-metoda-fwls-fgls",
+    "href": "Modele_egzamin.html#na-czym-polega-metoda-fwls-fgls",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "37. Na czym polega metoda FWLS (FGLS)?",
+    "text": "37. Na czym polega metoda FWLS (FGLS)?\nW przypadku gdy nie znamy macierzy kowariancji V ale wiemy, że jest funkcją pewnego predyktora, to zaleca się stosowanie metody FGLS (czasem oznaczana jako FWLS). Polega ona na estymowaniu parametrów modelu w dwóch krokach:\n\nEstymacja parametrów \\(\\beta\\) metodą OLS.\nEstymacja modelu \\(\\ln(e^2) = \\gamma_0 + \\gamma_1x_1 + \\dots + \\gamma_px_p\\), gdzie \\(e\\) są resztami z modelu OLs. W niektórych publikacjach zaleca się stosować inne funkcje zależności reszt od predyktorów.\nWyznaczamy odpowiedzi modelu z punktu 2 i przyjmujemy, że \\(h_i=\\exp(\\ln(\\hat e^2))\\) dla \\(i = 1, \\dots, n\\).\nEstymujemy model WLS, przyjmując \\(\\frac{1}{h_i}\\) jako oszacowania wag."
+  },
+  {
+    "objectID": "Modele_egzamin.html#czym-są-estymatory-whitea",
+    "href": "Modele_egzamin.html#czym-są-estymatory-whitea",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "38. Czym są estymatory White’a?",
+    "text": "38. Czym są estymatory White’a?\nW przypadku gdy nie znamy macierzy kowariancji V i nie znamy struktury zależności wariancji od predyktorów, stosujemy odporne estymatory błędów standardowych White’a. Przyjmują one postać: \\[\\hat{V\\!ar}(\\hat\\beta) = (X'X)^{-1}X'diag(e^2)X(X'X)^{-1}\\] gdzie  \\(e^2\\) oznaczają kwadraty reszt modelu OLS, a \\(X\\) jest macierzą modelu. Pierwiastek z wariancji opisanej wyżej jest odpornym estymatorem błędu standardowego estymacji. Estymatory odporne nie zmieniają parametrów modelu, a jedynie macierz ich kowariancji."
+  },
+  {
+    "objectID": "Modele_egzamin.html#czym-jest-i-do-czego-służy-ancova",
+    "href": "Modele_egzamin.html#czym-jest-i-do-czego-służy-ancova",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "39. Czym jest i do czego służy ANCOVA?",
+    "text": "39. Czym jest i do czego służy ANCOVA?\nAnaliza kowariancji (ANCOVA - ANalysis of COVAriance) to często stosowana metoda statystyczna łącząca w sobie elementy analizy wariancji (ANOVA - ANalysis Of VAriance), korelacji i regresji. Główny cel metody jest podobny do analizy wariancji: dać odpowiedź czy analizowany czynnik doświadczalny wpływa w sposób istotny na badaną cechę. Na przykład, możemy mieć do czynienia z dwiema różnymi metodami nauczania matematyki w dwóch różnych klasach (grupach/próbach). Obok oceny biegłości w matematyce możemy zbierać także dane na temat ogólnej inteligencji. Może być interesującym przekonać się czy zależność między ogólną inteligencją a wynikami w matematyce jest silniejsza czy słabsza w zależności od metody nauczania. W terminologii ANCOVA taka hipoteza odnosi się do równoległości linii regresji w obydwu klasach. Jeśli linie te są równoległe to zależności w obu klasach są takie same i stąd wynika, że związek między inteligencją a wynikami w matematyce nie zależy od metody nauczania. Jeśli nie są one równoległe to wnioskujemy, że metoda nauczania ma wpływ na zależność wyników od inteligencji.\nW analizie kowariancji budujemy model regresji liniowej, w którym występuje pośród zmiennych objaśniających co najmniej jedna zmienna ilościowa i co najmniej jedna zmienna jakościowa. Jeśli zmienna jakościowa \\(V\\) ma \\(k\\) poziomów, to kodujemy ją następująco: jeden z tych poziomów określamy jako referencyjny, a dla każdego pozostałego poziomu tworzymy zmienną charakterystyczną zwaną zmienną pustą i te zmienne umieszczamy w modelu."
+  },
+  {
+    "objectID": "Modele_egzamin.html#czym-jest-regresja-wielomianowa-i-jak-można-ją-wykorzystać-w-modelowaniu-zależności-pomiędzy-cechami",
+    "href": "Modele_egzamin.html#czym-jest-regresja-wielomianowa-i-jak-można-ją-wykorzystać-w-modelowaniu-zależności-pomiędzy-cechami",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "40. Czym jest regresja wielomianowa i jak można ją wykorzystać w modelowaniu zależności pomiędzy cechami?",
+    "text": "40. Czym jest regresja wielomianowa i jak można ją wykorzystać w modelowaniu zależności pomiędzy cechami?\nRegresja wielomianowa - czasami zdarza się, że postać zależności nie da się opisać liniowo (w sensie ścisłym). Nawet jeśli prawdziwa postać nie da się opisać wielomianem rzędu m, to wiele z nich da się aproksymować za pomocą wielomianów.\n Interpretacja wyników  Na podstawie tabeli możemy wywnioskować, że wielomian 2 stopnia jest odpowiednim opisem zależności. Model liniowy wyraźnie nie opisuje właściwości badanej zależności. Natomiast wielomian 3 stopnia nie poprawia znacząco jakości dopasowania, jednocześnie zawyżając błędy standardowe estymacji, ponieważ jest nadmiernie dopasowany  Uwaga Pamiętajmy, że podobnie jak w przypadku analizy kowariancji, tak i w tym przypadku nie usuwamy efektów niższego rzędu jeśli efekty wyższych rzędów są istotne."
+  },
+  {
+    "objectID": "Modele_egzamin.html#przeprowadź-dyskusję-na-temat-naruszeń-założeń-modelu-anova.",
+    "href": "Modele_egzamin.html#przeprowadź-dyskusję-na-temat-naruszeń-założeń-modelu-anova.",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "41. Przeprowadź dyskusję na temat naruszeń założeń modelu ANOVA.",
+    "text": "41. Przeprowadź dyskusję na temat naruszeń założeń modelu ANOVA.\nWłaściwe przeprwadzenie testu wymaga spelnienia pewnych założeń:\n\nPierwszym z nich jest normalność próby w badanych grupach lub normalność zmiennej objaśnianej. Oba warunki przy założeniu, że model poprawnie został określony, są równoważne. Można się oczywiście zdarzyć, że niektóre rozkłady zmiennej objaśnianej w badanych grupach nie będą normalne, a zmienna y nie dzielona na grupy ma rozkład normalny. Wówczas prawdopodobnie brakuje w modelu zmiennych, które mają istotny wpływ na zmienną y, a przez to, że nie zostały ujęte w modelu, zakłócenia nie są losowe. Dobrym rozwiązaniem jest wówczas włączyć do modelu takie zmienne.\nDrugim założeniem jest jednorodność wariancji reszt. Nie spełnienie tego założenia również może być spowodowane brakiem istotnych zmiennych w modelu lub istnieniem przypadków odstających.\nSzczególnym przypadkiem niejednorodności wariancji reszt jest sytuacja kiedy odchylenia standardowe reszt są skorelowane ze średnimi w grupach.\n\n\nIstnieje wiele prac (Lindman 1974, Box i Anderson 1955) na temat wpływu niespełnienia poszczególnych założeń na moc testu. Twierdzą one, że test F jest odporny na brak normalności efektu losowego. Szczególnie małe znaczenie ma to założenie w przypadku dużych liczebności w podgrupach. W przypadku małych prób, które nie spełniają założenia o normalności, należy zwrócić szczególną uwagę na kurtozę rozkładu. Ma ona większe znaczenie niż skośność i w przypadku gdy jest większa od 0 powoduje zaniżenie wartości F. Test F wykazuje też dużą odporność na niejednorodność wariancji reszt. Jak pokazał Lindman w swojej pracy jeśli tylko odchylenia standardowe nie są skorelowane ze średnimi, to test F będzie pokazywał właściwe wyniki. U podstaw właściwego przeprowadzenia testu ANOVA leżą dwie zasady randomizacji. Pierwsza z nich głosi, że “dobór elementów do próby powinien być losowy”, a druga “dobór elementów do poszczególnych poziomów czynnika jakościowego powinien się odbywać w sposób losowy”. Nie zawsze jest możliwe spełnienie obu założeń. Trzeba wówczas zatroszczyć się o to, aby były w miarę równoliczne. W przypadku niespełnienia jakiegokolwiek z wyżej wymienionych założeń dobrą praktyką jest stosowanie nieparametrycznego odpowiednika analizy wariancji, czyli testu Kruskala - Wallisa."
+  },
+  {
+    "objectID": "Modele_egzamin.html#wymień-znane-ci-testy-post-hoc-oraz-określ-podobieństwa-i-różnice-pomiędzy-nimi.",
+    "href": "Modele_egzamin.html#wymień-znane-ci-testy-post-hoc-oraz-określ-podobieństwa-i-różnice-pomiędzy-nimi.",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "42. Wymień znane Ci testy post-hoc oraz określ podobieństwa i różnice pomiędzy nimi.",
+    "text": "42. Wymień znane Ci testy post-hoc oraz określ podobieństwa i różnice pomiędzy nimi.\n\nTest HSD Tukeya jest oparty na statystyce testowej studentyzowanego rozstępu wyznaczonej jako różnica pomiędzy najmniejszą a największą średnią w rozważanych grupach podzieloną przez pierwiastek z wariancji wewnątrzgrupowej. Test ten powinien być stosowany tylko do układu zrónoważonego (równoliczne grupy). Dla układów niezrównoważonych stosuje się test Spjotvolla i Stoline’a.\nTest Newmana-Keulsa ma podobną budowę do testu Tukeya, z jedną różnicą. Mianowicie, jeżeli rozważamy k grup, to w teście Tukeya dla każdej pary średnich stosuje się ten sam kwantyl studentyzowanego rozkładu rozstępu dla k grup. W teście Newmana-Keulsa średnie w pierwszym kroku są sortowane, następnie jeżeli porównuje się średnią, \\(\\hat\\mu_{1:k}\\) (najmniejszą) z \\(\\hat\\mu_{k:k}\\) (największą), to stosuje się rozkład studentyzowanego rozstępu dla k grup. Ale dla innych średnich, stosuje się rozkład studentyzowany dla \\(|i − j| + 1\\) grup.\nTest LSD Fishera Polega on na wykonaniu \\(\\frac{k(k1)}{2}\\) testów t-Studenta przez porównanie każdej pary średnich i zastosowanie korekty na liczbę przeprowadzonych testów. Do korekty wykorzystać można poprawkę np. Bonferroniego, Holma-Hochberga. Nie zakłada się tutaj równych liczebności grup.\nTest Scheffe Jest to najbardziej konserwatywny test, czyli najlepiej kontroluje błąd I rodzaju ale też ma najmniejszą czułość. Przypomina test LSD Fishera, ale tu są uwzględnione wszystkie możliwe kontrasty. Z tego powodu mimo konserwatywności, jest on używany w sytuacji, gdy porównywane są nieplanowane kontrasty. Nie zakłada się tutaj równych liczebności grup."
+  },
+  {
+    "objectID": "Modele_egzamin.html#czym-są-porównania-zaplanowane",
+    "href": "Modele_egzamin.html#czym-są-porównania-zaplanowane",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "43. Czym są porównania zaplanowane?",
+    "text": "43. Czym są porównania zaplanowane?\nPorównanie wszystkich par średnich ze sobą nie zawsze jest tym, co nas interesuje. W wielu sytuacjach chcemy porównać wybrane średnie lub grupy średnich pomiędzy sobą. Do porównania wybranych grup średnich służy analiza kontrastów (porównania zaplanowane). Kontrastem nazywamy liniową funkcję średnich \\[L = \\sum\\limits^k_{i=1}c_i\\mu_i\\] gdzie  najczęściej zakłada się, że \\(\\sum\\limits^k_{i=1}c_i = 0\\)\nPrzykładowo, jeśli badamy wpływ czynnika kontrolowanego na trzech poziomach i chcemy sprawdzić, czy pierwsza z tych grup różni się od pozostałych, to hipoteza zerowa ma postać  \\(H_0:\\mu = \\frac{\\mu_2+\\mu_3}{2}\\)  co możemy zapisać w postaci  \\(H_0:\\mu - \\frac{1}{2}\\mu_2 - \\frac{1}{2}\\mu_3 = 0 \\quad\\) lub \\(\\quad H_0:2\\mu - \\mu_2 - \\mu_3 = 0\\)\nAby przetestować tę hipotezę należy przypisać wagi \\(c_1=2; \\; c_2 = -1; \\; c_3=-1\\) odpowiednim średnim. Współczynniki zbioru kontrastów można przedstawić, używając macierzy \\(k \\times m\\)  gdzie  \\(m\\) to liczba kontrastów, \\(k\\) to liczba współczynników opisujących każdy kontrast."
+  },
+  {
+    "objectID": "Modele_egzamin.html#podaj-przykłady-trzech-predefiniowanych-kontrastów.",
+    "href": "Modele_egzamin.html#podaj-przykłady-trzech-predefiniowanych-kontrastów.",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "44. Podaj przykłady trzech predefiniowanych kontrastów.",
+    "text": "44. Podaj przykłady trzech predefiniowanych kontrastów.\n\n\nOdchylenie \n\n\nkontrast służący do porówniania odchyleń każdej średniej grupowej od średniej ogólnej zmiennej zależnej. Na przykład dla czynnika o trzech poziomach, jeśli chcemy porównać \\(\\mu_1\\) z \\(\\frac{\\mu_1+\\mu_2+\\mu_3}{3}\\), mamy \\(2\\mu_1-\\mu_2-\\mu_3=0\\), czyli dostajemy kontrast \\((2,-1,-1)\\). Podobnie porównując \\(\\mu_2\\) z \\(\\frac{\\mu_1+\\mu_2+\\mu_3}{3}\\), dostajemy kontrst \\((-1,2,-1)\\).\n\n\n\n\nProsty   \n\n\nten kontrast służy do porównywania średniej dla każdego poziomu ze średnią ostatniego poziomu. Dla trzech poziomów otrzymujemy macierzkonstastów: \\((1,0,-1), \\; (0,1,-1)\\).\n\n\n\n\nPowtarzany \n\n\nten kontrast służy do porównywania średnich sąsiednich poziomów czynnika. Dla trzech poziomów mamy macierz kontrastów: \\((1,0,-1), \\; (0,1,-1)\\)."
+  },
+  {
+    "objectID": "Modele_egzamin.html#czym-są-kontrasty-ortogonalne",
+    "href": "Modele_egzamin.html#czym-są-kontrasty-ortogonalne",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "45. Czym są kontrasty ortogonalne?",
+    "text": "45. Czym są kontrasty ortogonalne?\nDwa kontrasty \\(K_1 = \\sum\\limits^k_{i=1} c_{1i}\\mu_i\\) i \\(K_2 = \\sum\\limits^k_{i=1} c_{2i}\\mu_i\\) są względem siebie ortogonalne, gdy suma iloczynów odpowiadających sobie wag jest równa zero (niezależność wektorów), czyli \\(\\sum\\limits^k_{i=1} c_{1i}c_{2i} = 0\\). Zbiór \\(m\\) kontrastów tworzy zbiór kontrastów względem siebie ortogonalny, gdy wszystkie pary kontrastów w tym zbiorze są ortogonalne.\n\nDla zbioru \\(k\\) średnich możemy utworzyć maksymalnie \\(k − 1\\) kontrastów ortogonalnych.\nSuma sum kwadratów \\(k − 1\\) ortogonalnych kontrastów daje sumę kwadratów dla efektu badanego czynnika.\nRozkład sumy kwadratów na kontrasty ortogonalne nie jest jednoznaczny (możemy budować różne zbiory kontrastów ortogonalnych).\nNie musimy badać wszystkich kontrastów ortogonalnych. Najczęściej rozpatrujemy konkretne interesujące nas kontrasty badawcze. Pozostałe kontrasty można powiązać w efekt łączny, tworząc kontrast pomiędzy średnimi wykorzystanymi i niewykorzystanymi w dotychczasowych kontrastach.\n\nMiara \\(r^2 = \\frac{SS_K}{SS_{\\text{efektu}}}\\) wyrażana w procentach, informuje w jakim procencie dany kontrast wyjaśnia zmienność wśród zmiennych grupowych."
+  },
+  {
+    "objectID": "Modele_egzamin.html#na-czym-polegają-różnice-w-typach-testów-i-ii-iii-anova",
+    "href": "Modele_egzamin.html#na-czym-polegają-różnice-w-typach-testów-i-ii-iii-anova",
+    "title": "Statystyczne Modele Liniowe i Nieliniowe",
+    "section": "46. Na czym polegają różnice w typach testów (I, II, III) ANOVA?",
+    "text": "46. Na czym polegają różnice w typach testów (I, II, III) ANOVA?\nDo lepszego zrozumienia powyższej uwagi przyjrzyjmy się jak testy różnych typów testują poszczególne hipotezy. Po pierwsze należy wprowadzić pewne oznaczenia, które pozwolą rozróżniać sumy kwadratów odchyleń:\n\n\\(SS(A|B) = SS(A,B)- SS(B)\\),\n\\(SS(B|A) = SS(A,B)- SS(A)\\),\n\\(SS(AB|A,B) = SS(A,B,AB)- SS(A,B)\\),\n\\(SS(A|B,AB) = SS(A,B,AB)- SS(B,AB)\\),\n\\(SS(B|A,AB) = SS(A,B,AB)- SS(A,AB)\\),\n\ngdzie  skrót \\(SS\\) oznacza sumę kwadratów odchyleń uwzględniająca wskazane w nawiasie efekty.\n\nTest typu I\n(sekwencyjny) w modelu z interakcją testuje w następującej kolejności poszczególne efekty:\n\n\\(SS(A)\\) - test efektu \\(A\\)\n\\(SS(B|A)\\) - testuje istotność efektu \\(B\\) przy założeniu, że z sumy kwadratów odchyleń został już usunięty wpływ efektu czynnika \\(A\\),\n\\(SS(AB|A,B)\\) - testuje efekt interakcji \\(AB\\), przy założeniu, że z sumy kwadratów odchyleń zostały usunięte efekty \\(A\\) i \\(B\\).\n\nZalety\n\n\\(SS\\) poszczególnych efektów sumują się do SST,\nodpowiedni do badania efektów zagnieżdżonych,\nwyniki nie zależą od kontrastów.\n\nWady\n\nkolejność włączanych efektów jest ważna,\nniewłaściwe dla większości testowanych hipotez.\n\n\n\nTest typu II\n\n\\(SS(A|B)\\) - testuje efekt \\(A\\) przy założeniu, że wpływ efektu \\(B\\) został już usunięty.\n\\(SS(B|A)\\) - testuje istotność efektu \\(B\\) przy założeniu, że z sumy kwadratów odchyleń został już usunięty wpływ efektu czynnika \\(A\\),\n\\(SS(AB|A,B)\\) - testuje efekt interakcji \\(AB\\), przy założeniu, że z sumy kwadratów odchyleń zostały usunięte efekty \\(A\\) i \\(B\\).\n\nZalety\n\nnajmocniejszy test przy braku interakcji,\nwłaściwy do oceny istotności efektów w trakcie budowy modelu hierarchicznie,\nkolejność włączanych efektów jest nieistotna,\nwyniki nie zależą od kontrastów,\n\\(SS\\) efektów sumują się do SST.\n\nWady\n\nnie jest odpowiedni w przypadku istotnych interakcji efektów brzegowych.\n\n\n\nTest typu III\n(brzegowy):\n\n\\(SS(A|B,AB)\\) - test efektu \\(A\\) przy wyłączeniu wpływu czynnika \\(B\\) i interakcji \\(AB\\),\n\\(SS(B|A,AB)\\) - test efektu \\(B\\) przy wyłączeniu wpływu czynnika \\(A\\) i interakcji \\(AB\\),\n\\(SS(AB|A,B)\\) - testuje efekt interakcji \\(AB\\) przy wyłączeniu wpływu czynników \\(A\\) i \\(B\\).\n\nZalety\n\nkolejność efektów nie ma znaczenia.\n\nWady\n\ntylko dla kontrastów ortogonalnych do wyrazu wolnego są sensowne,\ntylko dla kontrastów ortogonalnych do wyrazu wolnego są sensowne,\nśrednie globalna i brzegowe nie uwzględniają niezbalansowania układu,\ntrudne do interpretacji wielkości efektów brzegowych w przypadku istotnej interakcji."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html",
+    "href": "Eksploracja_egzamin.html",
+    "title": "Eksploracja Danych",
+    "section": "",
+    "text": "Zagadnienia do przygotowania na egzamin ustny z Eksploracji Danych"
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#opisz-etapy-eksploracji-danych.",
+    "href": "Eksploracja_egzamin.html#opisz-etapy-eksploracji-danych.",
+    "title": "Eksploracja Danych",
+    "section": "1. Opisz etapy eksploracji danych.",
+    "text": "1. Opisz etapy eksploracji danych.\n\n\nCzyszczenie danych - polega na usuwaniu braków danych, usuwaniu stałych zmiennych, imputacji braków danych oraz przygotowaniu danych do dalszych analiz.\nIntegracja danych - łączenie danych pochodzących z różnych źródeł.\nSelekcja danych - wybór z bazy tych danych, które są potrzebne do dalszych analiz.\nTransformacja danych - przekształcenie i konsolidacja danych do postaci przydatnej do eksploracji.\nEksploracja danych - zastosowanie technik wymienionych wcześniej w celu odnalezienia wzorców i zależności.\nEwaluacja modeli - ocena poprawności modeli oraz wzorców z nich uzyskanych.\nWizualizacja wyników - graficzne przedstawienie odkrytych wzorców.\nWdrażanie modeli - zastosowanie wyznaczonych wzorców."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#na-czym-polega-imputacja-danych-wymień-trzy-metody-imputacji.",
+    "href": "Eksploracja_egzamin.html#na-czym-polega-imputacja-danych-wymień-trzy-metody-imputacji.",
+    "title": "Eksploracja Danych",
+    "section": "2. Na czym polega imputacja danych? Wymień trzy metody imputacji.",
+    "text": "2. Na czym polega imputacja danych? Wymień trzy metody imputacji.\nZastępowanie braków danych (zwane także imputacją danych) jest etapem procesu przygotowania danych do analiz. Nie można jednak wyróżnić uniwersalnego sposobu zastępowania braków dla wszystkich możliwych sytuacji. Wśród statystyków panuje przekonanie, że w przypadku wystąpienia braków danych można zastosować trzy strategie:\n\nnic nie robić z brakami - co wydaje się niedorzeczne ale wcale takie nie jest, ponieważ istnieje wiele modeli statystycznych (np. drzewa decyzyjne), które świetnie radzą sobie w sytuacji braków danych. Niestety nie jest to sposób, który można stosować zawsze, ponieważ są również modele wymagające kompletności danych jak na przykład sieci neuronowe.\nusuwać braki wierszami - to metoda, która jest stosowana domyślnie w przypadku kiedy twórca modelu nie zadecyduje o innym sposobie obsługi luk. Metoda ta ma swoją niewątpliwą zaletę w postaci jasnej i prostej procedury, ale szczególnie w przypadku niewielkich zbiorów może skutkować obciążeniem estymatorów. Nie wiemy bowiem jaka wartość faktycznie jest przypisana danej cesze. Jeśli jest to wartość bliska np. średniej, to nie wpłynie znacząco na obciążenie estymatora wartości oczekiwanej. W przypadku, gdy różni się ona znacznie od średniej tej cechy, to estymator może już wykazywać obciążenie. Jego wielkość zależy również od liczby usuniętych elementów. Nie jest zalecane usuwanie wielu wierszy ze zbioru danych i na podstawie okrojonego zbioru wyciąganie wniosków o populacji, ponieważ próba jest wówczas znacząco inna niż populacja. Dodatkowo jeśli estymatory są wyznaczane na podstawie zbioru wyraźnie mniej licznego, to precyzja estymatorów wyrażona wariancją spada. Reasumując, jeśli liczba wierszy z brakującymi danymi jest niewielka w stosunku do całego zbioru, to usuwanie wierszy jest sensownym rozwiązaniem.\nuzupełnianie braków - to procedura polegająca na zastępowaniu braków różnymi technikami. Jej niewątpliwą zaletą jest fakt posiadania kompletnych danych bez konieczności usuwania wierszy. Niestety wiąże się to również z pewnymi wadami. Zbiór posiadający wiele braków uzupełnianych nawet bardzo wyrafinowanymi metodami może cechować się zaniżoną wariancją poszczególnych cech oraz tzw. przeuczeniem.\n\nUzupełnianie średnią - braki w zakresie danej zmiennej uzupełniamy średnią tej zmiennej przypadków uzupełnionych.\nUzupełnianie medianą - braki w zakresie danej zmiennej uzupełniamy medianą tej zmiennej przypadków uzupełnionych.\nWypełnianie zmiennych typu wyliczeniowego, logicznego lub znakowego odbywa się najczęściej przez dobranie w miejsce brakującej wartości, elementu powtarzającego się najczęściej wśród obiektów obserwowanych.\nJeszcze innym sposobem imputacji danych są algorytmy oparte o metodę \\(k\\)-najbliższych sąsiadów. Istnieją również dużo bardziej złożone algorytmy imputacji danych oparte na bardziej wyrafinowanych technikach, takich jak: predykcja modelami liniowymi, nieliniowymi, analiza dyskryminacyjna, drzewa klasyfikacyjne."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#na-co-należy-zwrócić-uwagę-podczas-uzupełniania-danych",
+    "href": "Eksploracja_egzamin.html#na-co-należy-zwrócić-uwagę-podczas-uzupełniania-danych",
+    "title": "Eksploracja Danych",
+    "section": "3. Na co należy zwrócić uwagę podczas uzupełniania danych?",
+    "text": "3. Na co należy zwrócić uwagę podczas uzupełniania danych?\nImputacja danych z zastosowaniem pakietu mice wymaga podjęcia kilku decyzji przed przystąpieniem do uzupełniania danych:\n\nCzy dane są MAR (ang. Missing At Random) czy MNAR (ang. Missing Not At Random), co oznacza, że musimy się zastanowić jakie mogły być źródła braków danych, przypadkowe czy systematyczne?\nNależy się zdecydować na formę imputacji, określając strukturę zależności pomiędzy cechami oraz rozkład błędu danej cechy?\nWybrać zbiór danych, który posłuży nam za predyktory w imputacji (nie mogą zawierać braków).\nOkreślenie, które niepełne zmienne są funkcjami innych wybrakowanych zmiennych.\nOkreślić w jakiej kolejności dane będą imputowane.\nOkreślić parametry startowe imputacji (liczbę iteracji, warunek zbieżności).\nOkreślić liczę imputowanych zbiorów."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#czym-są-braki-mcar-mar-mnar",
+    "href": "Eksploracja_egzamin.html#czym-są-braki-mcar-mar-mnar",
+    "title": "Eksploracja Danych",
+    "section": "4. Czym są braki MCAR, MAR, MNAR?",
+    "text": "4. Czym są braki MCAR, MAR, MNAR?\n\nMCAR (ang. Missing Completely At Random) - z definicji to braki, których pojawienie się jest kompletnie losowe. Przykładowo gdy osoba poproszona o wypełnienie wieku w ankiecie będzie rzucać monetą czy wypełnić tą zmienną.\nMAR (ang. Missing At Random) - oznacza, że obserwowane wartości i wybrakowane mają inne rozkłady ale da się je oszacować na podstawie danych obserwowanych. Przykładowo ciśnienie tętnicze u osób, które nie wypełniły tej wartości jest wyższe niż u osób, które wpisały swoje ciśnienie. Okazuje się, że osoby starsze z nadciśnieniem nie wypełniały ankiety w tym punkcie.\nMNAR (ang. Missing Not At Random) - jeśli nie jest spełniony warunek MCAR i MAR, wówczas brak ma charakter nielosowy. Przykładowo respondenci osiągający wyższe zarobki sukcesywnie nie wypełniają pola “zarobki” i dodatkowo nie ma w ankiecie zmiennych, które pozwoliłyby nam ustalić, jakie to osoby."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#jakie-znasz-metody-wnioskowania",
+    "href": "Eksploracja_egzamin.html#jakie-znasz-metody-wnioskowania",
+    "title": "Eksploracja Danych",
+    "section": "5. Jakie znasz metody wnioskowania?",
+    "text": "5. Jakie znasz metody wnioskowania?\nData mining to zestaw metod pozyskiwania wiedzy na podstawie danych. Ową wiedzę zdobywamy w procesie wnioskowania na podstawie modeli. Wnioskowanie możemy podzielić na dedukcyjne i indukcyjne.\n\nZ wnioskowaniem dedukcyjnym mamy do czynienia wówczas, gdy na podstawie obecnego stanu wiedzy potrafimy odpowiedzieć na postawione pytanie dotyczące nowej wiedzy, stosując reguły wnioskowania.\nO wnioskowaniu indukcyjnym powiemy, że jest metodą pozyskiwania wiedzy na podstawie informacji ze zbioru uczącego. Znajduje ono szerokie zastosowanie w data mining i charakteryzuje się omylnością, ponieważ nawet najlepiej nauczony model na zbiorze uczącym nie zapewnia nam prawdziwości odpowiedzi w przypadku nowych danych, a jedynie je uprawdopodabnia. Esencją wnioskowania indukcyjnego w zakresie data mining, jest poszukiwanie na podstawie danych uczących modelu charakteryzującego się najlepszymi właściwościami predykcyjnymi i dającego się zastosować do zupełnie nowego zbioru danych."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#czym-są-obserwacja-atrybut-dziedzina-zbiór-uczący-i-testowy",
+    "href": "Eksploracja_egzamin.html#czym-są-obserwacja-atrybut-dziedzina-zbiór-uczący-i-testowy",
+    "title": "Eksploracja Danych",
+    "section": "6. Czym są obserwacja, atrybut, dziedzina, zbiór uczący i testowy?",
+    "text": "6. Czym są obserwacja, atrybut, dziedzina, zbiór uczący i testowy?\nObserwacja - każdy element dziedziny \\(x \\in X\\). Obserwacją nazywać będziemy zarówno rekordy danych ze zbioru uczącego, jak i ze zbioru testowego.\nAtrybut - za jego pomocą (zestawu cech/ atrybutów) można opisać obserwację (każdy obiekt z dziedziny \\(x \\in X\\)). W notacji matematycznaj oznaczany przez \\(a: X \\rightarrow A\\), gdzie \\(A\\) jest przestrzenią wartości aatrybutów. Każda obserwacja \\(x\\) posiadająca \\(k\\) cech da się wyrazić wektorowo jako \\((a_1(x),a_2(x),\\dots,a_k(x))\\).\nDla większości algorytmów uczenia maszynowego wyrożnia się trzy typy atrybutów:\n\nnominalne - posiadające skończoną liczbę stanów, które nie posiadają porządku (np. płeć, rasa)\nporządkowe - posiadające skończoną liczbę stanów z zachowanie porządku (np. wykształcenie)\nciągłe - przyjmujące wartości numeryczne (np. wiek, wynagrodzenie)\n\nCzęsto jeden z atrybutów spełnia specjalną rolę, ponieważ stanowi realizację cechy, którą traktujemy jako wyjściową (ang. target value attribute). W tym przypadku powiemy o nadzorowanym uczeniu maszynowym. Jeśli zmiennej wyjściowej nie ma dziedzinie, to mówimy o nienadzorowanym uczeniu maszynowym.\nDziedzina - zbiór wszystkich obiektów pozostających w zainteresowaniu badacza, będących przedmiotem wnioskowania, oznaczana najczęściej przez \\(X\\). Przykładowo mogą to być zbiory osób, transakcji, urządzeń, instytucji, itp.\nZbiór uczący - \\(T\\) (ang. training set) podzbiór \\(D\\) dzidziny \\(X\\) (czyli \\(T \\subseteq D \\subseteq X\\)), gdzie zbiór \\(D\\) stanowi ogół dostępnych obserwacji z dziedziny \\(X\\). Zbiór uczący zawiera informacje dotyczące badane zjawiska na podstawie których, dokonuje się doboru modelu, selekcji cech istotnych z punktu widzenia własności predykcyjnych lub jakości klasyfikacji, budowy modelu oraz optymalizacji jego parametrów. W przypadku uczenia z nauczycielem (nadzorowanego) zbiór \\(T\\) zawiera informację o wartościach atrybutów zmiennej wynikowej.\nZbiór testowy \\(T'\\) (ang. test set) zbiór będący dopełnieniem zbioru uczącego do zbioru \\(D\\), czyli \\(T' = D \\backslash T\\), stanowi zestaw danych służacy do oceny poprawności modelu nadzorowanego. W przypadku metod nienadorowanych raczej nie stosuje się zbiorów testowych"
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#czym-jest-nadmierne-dopasowanie-i-niewystarczające-dopasowanie-modelu",
+    "href": "Eksploracja_egzamin.html#czym-jest-nadmierne-dopasowanie-i-niewystarczające-dopasowanie-modelu",
+    "title": "Eksploracja Danych",
+    "section": "7. Czym jest nadmierne dopasowanie i niewystarczające dopasowanie modelu?",
+    "text": "7. Czym jest nadmierne dopasowanie i niewystarczające dopasowanie modelu?\nNadmierne dopasowanie - sytuacja, w której model wykazuje dobre charakterystyki jakości dopasowania na zbiorze uczącym ale słabe na testowym, mówimy wtedy o zjawisku przeuczenia modelu (ang. overfitting). Oznacza to, że model wskazuje predykcję poprawnie jedynie dla zbioru treningowego ale ma słaba własności generalizacyjne. Takie modele nie przedstawiają znaczącej wartości w odkrywaniu wiedzy w sposób indukcyjny.\nNiewystarczające dopasowanie - sytuacja w której parametry dopasowania modelu pokazują słabe dopasowanie, zarówno na zbiorze uczącym, jak i testowym. Takie modele również nie są użyteczne w pozyskiwaniu wiedzu na temaet badanego zjawiska, a sytuację taką nazywamy niedouczeniem (ang. underfitting)."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#wymień-typy-modeli-uczenia-maszynowego-i-krótki-opis-ich-zasady-działania.",
+    "href": "Eksploracja_egzamin.html#wymień-typy-modeli-uczenia-maszynowego-i-krótki-opis-ich-zasady-działania.",
+    "title": "Eksploracja Danych",
+    "section": "8. Wymień typy modeli uczenia maszynowego i krótki opis ich zasady działania.",
+    "text": "8. Wymień typy modeli uczenia maszynowego i krótki opis ich zasady działania.\nModele regresyjne Jednym z rodzajów zadań bazującym na wnioskowaniu indukcyjnym jest model regresyjny. Należy on do grupy metod nadzorowanych, których celem jest oszacowanie wartości cechy wyjściowej (która jest ilościowa) na podstawie zestawu predyktorów, które mogą być ilościowe i jakościowe. Uczenie takich modeli odbywa się poprzez optymalizację funkcji celu (np.\\(MSE\\)) na podstawie zbioru uczącego.\nModele klasyfikacyjne Podobnie jak modele regresyjne, modele klasyfikacyjne należą do grupy metod nadzorowanego uczenia maszynowego. Ich zadaniem jest właściwa klasyfikacja obiektów na podstawie wielkości predyktorów. Odpowiedzią modelu jest zawsze cecha typu jakościowego, natomiast predyktory mogą mieć dowolny typ. Wyróżnia się klasyfikację dwu i wielostanową. Lista modeli realizujących klasyfikację binarną jest nieco dłuższa niż w przypadku modeli z wielostanową cechą wynikową. Proces uczenia modelu klasyfikacyjnego również opiera się na optymalizacji funkcji celu. Tym razem są to zupełnie inne miary jakości dopasowania (np. trafność, czyli odsetek poprawnych klasyfikacji).\nModele grupujące Bardzo szeroką gamę modeli nienadzorowanych stanowią metody analizy skupień. Ich zadaniem jest grupowanie obiektów w możliwie najbardziej jednorodne grupy, na podstawie wartości atrybutów poddanych analizie. Ponieważ są to metody “bez nauczyciela”, to ocena ich przydatności ma nieco inny charakter i choć istnieją różne wskaźniki jakości grupowania, to trudno tu o obiektywne wskazanie najlepszego rozwiązania."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#czym-są-drzewa-decyzyjne-z-jakich-elementów-się-składają",
+    "href": "Eksploracja_egzamin.html#czym-są-drzewa-decyzyjne-z-jakich-elementów-się-składają",
+    "title": "Eksploracja Danych",
+    "section": "9. Czym są drzewa decyzyjne, z jakich elementów się składają?",
+    "text": "9. Czym są drzewa decyzyjne, z jakich elementów się składają?\nDrzewo decyzyjne jest strukturą hierarchiczną przedstawiającą model klasyfikacyjny lub regresyjny. Stosowane są szczególnie często wówczas, gdy funkcyjna postać związku pomiędzy predyktorami a zmienną wynikową jest nieznana lub ciężka do ustalenia. Każde drzewo decyzyjne składa się z korzenia (ang. root), węzłów (ang. nodes) i liści (ang. leaves). Korzeniem nazywamy początkowy węzeł drzewa, z którego poprzez podziały (ang. splits) powstają kolejne węzły potomne. Końcowe węzły, które nie podlegają podziałom nazywamy liśćmi, a linie łączące węzły nazywamy gałęziami (ang. branches).\n\nJeśli drzewo służy do zadań klasyfikacyjnych, to liście zawierają informację o tym, która klasa w danym ciągu podziałów jest najbardziej prawdopodobna. Natomiast, jeśli drzewo jest regresyjne, to liście zawierają warunkowe miary tendencji centralnej (najczęściej średnią) wartości zmiennej wynikowej. Warunek stanowi szereg podziałów doprowadzający do danego węzła terminalnego (liścia). W obu przypadkach (klasyfikacji i regresji) drzewo “dąży” do takiego podziału by kolejne węzły, a co za tym idzie również liście, były ja najbardziej jednorodne ze względu na zmienną wynikową."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#podaj-rodzaje-reguł-podziału.",
+    "href": "Eksploracja_egzamin.html#podaj-rodzaje-reguł-podziału.",
+    "title": "Eksploracja Danych",
+    "section": "10. Podaj rodzaje reguł podziału.",
+    "text": "10. Podaj rodzaje reguł podziału."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#opisz-algorytm-budowy-drzewa-decyzyjnego.",
+    "href": "Eksploracja_egzamin.html#opisz-algorytm-budowy-drzewa-decyzyjnego.",
+    "title": "Eksploracja Danych",
+    "section": "11. Opisz algorytm budowy drzewa decyzyjnego.",
+    "text": "11. Opisz algorytm budowy drzewa decyzyjnego.\n\nStwórz początkowy węzeł (korzeń) i oznacz go jako otwarty.\nPrzypisz wszystkie możliwe rekordy do węzła początkowego.\nDopóki istnieją otwarte węzły wykonuj:\n\n\nwybierz węzeł \\(n\\), wyznacz potrzebne statystyki opisowe zmiennej zależnej dla tego węzła i przypisz wartość docelową,\njesli kryterium zatrzymania podziału jest spełnione dla węzła \\(n\\) , to oznacz go jako zamknięty,\nw przeciwnym wypadku wybierz podział \\(r\\) elementów węzła \\(n\\) i dla każdego podzbioru podziału stwórz węzeł niższego rzędy (potomka) \\(n_r\\) oraz oznacz go jako otwarty,\nnastępnie przypisz wszystkie przypadki generowane podziałem \\(r\\) do odpowiednich węzłów potomków \\(n_r\\),\noznacz węzeł \\(n\\) jako zamknięty.\n\n\nSposób przypisywania wartości docelowej wiąże się ściśle z rodzajem drzewa. W drzewach regresyjnych chodzi o wyliczenie średniej lub mediany dla obserwacji ujętych w danym węźle. Natomiast w przypadku drzewa klasyfikacyjnego, wyznacza się wartości prawdopodobieństw przynależności obserwacji znajdującej się w danym węźle do poszczególnych klas."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#jakie-znasz-reguły-zatrzymania-modelu-drzewa-decyzyjnego",
+    "href": "Eksploracja_egzamin.html#jakie-znasz-reguły-zatrzymania-modelu-drzewa-decyzyjnego",
+    "title": "Eksploracja Danych",
+    "section": "12. Jakie znasz reguły zatrzymania modelu drzewa decyzyjnego?",
+    "text": "12. Jakie znasz reguły zatrzymania modelu drzewa decyzyjnego?\n\nKryterium zatrzymania jest warunkiem, który decyduje o tym, że dany węzeł uznajemy za zamknięty i nie dokonujemy dalszego jego podziału.\n\nWyróżniamy następujące kryteria zatrzymania:\n\nJednorodność węzła - w przypadku drzewa klasyfikacyjnego może zdarzyć się sytuacja, że wszystkie obserwacje węzła będą pochodziły z jednej klasy. Wówczas nie ma sensu dokonywać dalszego podziału węzła.\nWęzeł jest pusty - zbiór przypisanych obserwacji zbioru uczącego do \\(n\\)-tego węzła jest pusty.\nBrak reguł podziału - wszystkie reguły podziału zostały wykorzystane, zatem nie da się stworzyć potomnych węzłów, które charakteryzowałyby się większą homogenicznością.\n\n\n\nWielkość drzewa - węzeł potomny ustala się jako zamknięty, gdy długość ścieżki dojścia do niego przekroczy ustaloną wartość.\n\n\n\nWarunki ujęte w pierwszych dwóch kryteriach mogą być nieco złagodzone, poprzez zatrzymanie podziałów wówczas, gdy prawdopodobieństwo przynależenia do pewnej klasy przekroczy ustalony próg lub gdy liczebność węzła spadnie poniżej ustalonej wartości."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#opisz-jak-się-buduje-reguły-podziału-w-drzewach-decyzyjnych.",
+    "href": "Eksploracja_egzamin.html#opisz-jak-się-buduje-reguły-podziału-w-drzewach-decyzyjnych.",
+    "title": "Eksploracja Danych",
+    "section": "13. Opisz jak się buduje reguły podziału w drzewach decyzyjnych.",
+    "text": "13. Opisz jak się buduje reguły podziału w drzewach decyzyjnych."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#opisz-przycinanie-drzewa-redukujące-błąd.",
+    "href": "Eksploracja_egzamin.html#opisz-przycinanie-drzewa-redukujące-błąd.",
+    "title": "Eksploracja Danych",
+    "section": "14. Opisz przycinanie drzewa redukujące błąd.",
+    "text": "14. Opisz przycinanie drzewa redukujące błąd.\nJedną ze strategii przycinania drzewa jest przycinanie redukujące błąd (ang. reduced error pruning). Polega ono na porównaniu błędów (najczęściej używana jest miara odsetka błędnych klasyfikacji lub MSE) liścia \\(l\\) i węzła do którego drzewo przycinamy \\(n\\) na całkiem nowym zbiorze uczącym \\(R\\). Niech \\(e_R(l)\\) i \\(e_R(n)\\) oznaczają odpowiednio błędy liścia i węzła na zbiorze \\(R\\). Przez błąd węzła rozumiemy błąd pod-drzewa o korzeniu w węźle \\(n\\). Wówczas jeśli zachodzi warunek \\[e_R(l)\\leq e_R(n)\\] to zaleca się zastąpić węzeł \\(n\\) liściem \\(l\\)."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#opisz-przycinanie-drzewa-minimalizujące-błąd.",
+    "href": "Eksploracja_egzamin.html#opisz-przycinanie-drzewa-minimalizujące-błąd.",
+    "title": "Eksploracja Danych",
+    "section": "15. Opisz przycinanie drzewa minimalizujące błąd.",
+    "text": "15. Opisz przycinanie drzewa minimalizujące błąd.\n\nPrzycinanie minimalizujące błąd opiera się na spostrzeżeniu, że błąd drzewa przyciętego charakteryzuje się zbyt pesymistyczną oceną i dlatego wymaga korekty. Węzeł drzewa klasyfikacyjnego \\(n\\) zastępujemy liściem \\(l\\), jeśli \\[\\hat e_T(l)\\leq \\hat e_T(n)\\] gdzie  \\(\\hat e_T(n)\\) - miara błędu poddrzewa stojącego pod węzłem \\(n\\)  \\(\\hat e_T(l)\\) - miara błędu na liściu liczona na podstwaie prawdopodobieństwa przynależności do danej klasy\n\n\\(\\hat e\\) - szacunek błędu\n\nW przypadku drzewa regresyjnego znajdujemy wiele analogii, ponieważ jeśli dla pewnego zbioru rekordów \\(T\\) spełniony jest warunek \\[\\text{mse}_T(l) \\leq \\text{mse}_T(n)\\] gdzie  \\(l\\) i \\(n\\) oznaczają odpowiednio liść i węzeł, \nto wówczas zastępujemy węzeł \\(n\\) przez liść \\(l\\)."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#opisz-przycinanie-drzewa-ze-względu-na-współczynnik-złożoności-drzewa.",
+    "href": "Eksploracja_egzamin.html#opisz-przycinanie-drzewa-ze-względu-na-współczynnik-złożoności-drzewa.",
+    "title": "Eksploracja Danych",
+    "section": "16. Opisz przycinanie drzewa ze względu na współczynnik złożoności drzewa.",
+    "text": "16. Opisz przycinanie drzewa ze względu na współczynnik złożoności drzewa.\nPrzycinanie ze względu na współczynnik złożoności drzewa (ang. cost-complexity pruning) polega na wprowadzeniu “kary” za zwiększoną złożoność drzewa. Drzewa klasyfikacyjne przycinamy gdy spełniony jest warunek \\[e_T(l) \\leq e_T(n) + \\alpha C(n)\\] gdzie  \\(\\alpha\\) jest parametrem wagi kary za złożoność drzewa,  \\(C(n)\\) oznacza złożoność drzewa mierzoną liczbą liści\nWspomniane kryterium przycięcia dla drzew regresyjnych bazuje na względnym błędzie średnio-kwadratowym (ang. relative square error)"
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#opisz-zalety-i-wady-drzew-decyzyjnych.",
+    "href": "Eksploracja_egzamin.html#opisz-zalety-i-wady-drzew-decyzyjnych.",
+    "title": "Eksploracja Danych",
+    "section": "17. Opisz zalety i wady drzew decyzyjnych.",
+    "text": "17. Opisz zalety i wady drzew decyzyjnych.\nZalety:\n\nłatwe w interpretacji;\nnie wymagają żmudnego przygotowania danych (brak standaryzacji, wprowadzania zmiennych binarnych, dopuszcza występowanie braków danych);\ndziała na obu typach zmiennych - jakościowych i ilościowych;\ndopuszcza nieliniowość związku między zmienną wynikową a predyktorami;\nodporny na odstępstwa od założeń;\npozwala na obsługę dużych zbiorów danych.\n\nWady:\n\nbrak jawnej postaci zależności;\nzależność struktury drzewa od użytego algorytmu;\nprzegrywa jakością predykcji z innymi metodami nadzorowanego uczenia maszynowego."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#opisz-zasadę-działania-modeli-bagging.",
+    "href": "Eksploracja_egzamin.html#opisz-zasadę-działania-modeli-bagging.",
+    "title": "Eksploracja Danych",
+    "section": "18. Opisz zasadę działania modeli bagging.",
+    "text": "18. Opisz zasadę działania modeli bagging.\nBagging ma na celu zmniejszenie wariancji modelu pojedynczego drzewa. Podobnie jak technika bootstrap, w której statystyki są wyliczane na wielu próbach pobranych z tego samego rozkładu (próby), w metodzie bagging losuje się wiele prób ze zbioru uczącego (najczęściej poprzez wielokrotne losowanie próby o rozmiarze zbioru uczącego ze zwracaniem), a następnie dla każdej próby bootstrapowej buduje się drzewo. W ten sposób otrzymujemy \\(B\\) drzew decyzyjnych \\(\\hat f ^1 (x), \\hat f ^2 (x), \\dots, \\hat f ^B (x)\\). Na koniec poprzez uśrednienie otrzymujemy model charakteryzujący się większą precyzją \\[\\hat f_{\\text{bag}}(x) = \\frac{1}{B}\\sum\\limits^{B}_{b=1}\\hat f ^b (x)\\] Ponieważ podczas budowy drzew na podstawie prób bootstrapowych nie kontrolujemy złożoności, to w rezultacie każde z drzew może charakteryzować się dużą wariancją. Poprzez uśrednianie wyników pojedynczych drzew otrzymujemy mniejsze obciążenie ale również przy dostatecznie dużej liczbie prób (\\(B\\) często liczy się w setkach, czy tysiącach) zmniejszamy wariancję “średniej” predykcji z drzew. Oczywiście metodę tą trzeba dostosować do zadań klasyfikacyjnych, ponieważ nie istnieje średnia klasyfikacji z wielu drzew. W miejsce średniej stosuje się modę, czyli wartość dominującą.\n\nW przypadku metody bagging interpretacja jest znacznie utrudniona, ponieważ jej wynik składa się z agregacji wielu drzew. Można natomiast ocenić ważność predyktorów (ang. variable importance). I tak, przez obserwację spadku \\(RSS\\) dla baggingu regresyjnego przy zastosowaniu danego predyktora w podziałach drzewa i uśrednieniu wyniku otrzymamy wskaźnik ważności predyktora dużo lepszy niż dla pojedynczego drzewa. W przypadku baggingu klasyfikacyjnego w miejsce \\(RSS\\) stosujemy indeks Gini’ego"
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#opisz-zasadę-działania-lasów-losowych.",
+    "href": "Eksploracja_egzamin.html#opisz-zasadę-działania-lasów-losowych.",
+    "title": "Eksploracja Danych",
+    "section": "19. Opisz zasadę działania lasów losowych.",
+    "text": "19. Opisz zasadę działania lasów losowych.\nLasy losowe są uogólnieniem metody bagging, polegającą na losowaniu dla każdego drzewa wchodzącego w skład lasu \\(m\\) redyktorów spośród \\(p\\) dostępnych, a następnie budowaniu drzew z wykorzystaniem tylko tych predyktorów. Dzięki temu za każdy razem drzewo jest budowane w oparciu o nowy zestaw cech (najczęściej przyjmujemy \\(m = \\sqrt{p}\\). W przypadku modeli bagging za każdym razem najsilniejszy predyktor wchodził w skład zbioru uczącego, a co za tym idzie również uczestniczył w tworzeniu reguł podziału. Wówczas wiele drzew zawierało reguły stosujące dany atrybut, a wtedy predykcje otrzymywane za pomocą drzew były skorelowane. Dlatego nawet duża liczba prób bootstrapowych nie zapewniała poprawy precyzji."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#opisz-zasadę-działania-metody-boosting.",
+    "href": "Eksploracja_egzamin.html#opisz-zasadę-działania-metody-boosting.",
+    "title": "Eksploracja Danych",
+    "section": "20. Opisz zasadę działania metody boosting.",
+    "text": "20. Opisz zasadę działania metody boosting.\nW metodzie boosting nie stosuje się prób bootstrapowych ale odpowiednio modyfikuje się drzewo wyjściowe w kolejnych krokach na tym samym zbiorze uczącym.\nAlgorytm dla drzewa regresyjnego jest następujący:\n\nUstal \\(\\hat f(x) = 0\\) i \\(r_i = y_i\\) dla każdego \\(i\\) w zbiorze uczącym.\nDla \\(b = 1,2,\\dots ,B\\) powtarzaj:\n\n\nnaucz drzewo \\(\\hat f ^b\\) o \\(d\\) regułach podziału (czyli \\(d+1\\) liściach) na zbiorze \\((X_i,r_i)\\),\nzaktualizuj drzewo do nowej “skurczonej” wersji \\(\\hat f(x) \\leftarrow \\hat f(x) + \\lambda \\hat f^b (x)\\),\nzaktualizuj reszty \\(r_i \\leftarrow r_i - \\lambda \\hat f^b (x_i)\\),\n\n\nWyznacz boosted model \\(\\hat f(x) = \\sum \\limits ^B _{b=1} \\lambda \\hat f^b(x)\\)\n\n\nUczenie drzew klasyfikacyjnego metoda boosting przebiega w podobny sposób. Wynik uczenia drzew metodą boosting zależy od trzech parametrów:\n\nLiczby drzew \\(B\\). W przeciwieństwie do metody bagging i lasów losowych, zbyt duże \\(B\\) może doprowadzić do przeuczenia modelu. \\(B\\) ustala się najczęściej na podstawie walidacji krzyżowej.\nParametru “kurczenia” (ang. shrinkage) \\(\\lambda\\).Kontroluje on szybkość uczenia się kolejnych drzew. Typowe wartości \\(\\lambda\\) to \\(0.01\\) lub \\(0.001\\). Bardzo małe \\(\\lambda\\) może wymagać dobrania większego \\(B\\), aby zapewnić dobrą jakość predykcyjną modelu.\nLiczby podziałów w drzewach \\(d\\), która decyduje o złożoności drzewa. Bywa, że nawet \\(d=1\\) daje dobre rezultaty, ponieważ model wówczas uczy się powoli."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#czym-są-klasyfikatory-liniowe",
+    "href": "Eksploracja_egzamin.html#czym-są-klasyfikatory-liniowe",
+    "title": "Eksploracja Danych",
+    "section": "21. Czym są klasyfikatory liniowe?",
+    "text": "21. Czym są klasyfikatory liniowe?\nObszerną rodzinę klasyfikatorów stanowią modele liniowe (ang. linear classification models). Klasyfikacji w tej rodzinie technik dokonuje się na podstawie modeli funkcji kombinacji liniowej predyktorów. Jest to ujęcie parametryczne, w którym klasyfikacji nowej wartości dokonujemy na podstawie atrybutów obserwacji i wektora parametrów. Uczenie na podstawie zestawu treningowego polega na oszacowaniu parametrów modelu. W odróżnieniu od metod nieparametrycznych postać modelu tym razem jest znana. Każdy klasyfikator liniowy skład się z funkcji wewnętrznej (ang. inner representation function) i funkcji zewnętrznej (ang. outer representation function).\nPierwsza jest funkcją rzeczywistą parametrów modelu i wartości atrybutów obserwacji \\[g(x) = F(\\text a(x), \\text w) = \\sum \\limits ^p _{i=0} w_i a_i (x) = \\text w \\circ \\text a(x), \\quad \\text{przyjmując, że }\\;a_0(x) = 1\\]\nFunkcja zewnętrzna przyporządkowuje binarnie klasy na podstawie wartości funkcji wewnętrznej. Istnieją dwa główne typy tych klasyfikacji:\n\n\nbrzegowa - przyjmujemy, że funkcje wewnętrzne tworzą granice zbiorów obserwacji różnych klas,\nprobabilistyczna - bazująca na tym, że funkcje wewnętrzne mogą pośrednio wykazywać prawdopodobieństwo przynależności do danej klasy.\n\nPierwsza dzieli przestrzeń obserwacji za pomocą hiperpłaszczyzn na obszary jednorodne pod względem przynależności do klas. Druga jest próbą parametrycznej reprezentacji prawdopodobieństw przynależności do klas.\n\nKlasyfikacji na podstawie prawdopodobieństw można dokonać na różne sposoby, stosując:\n\nnajwiększe prawdopodobieństwo,\nfunkcję najmniejszego kosztu błędnej klasyfikacji,\nkrzywych ROC (ang. Receiver Operating Characteristic - o tym później).\n\n\nPodejście brzegowe lub probabilistyczne prowadzi najczęściej do dwóch typów reprezentacji funkcji zewnętrznej:\n\nreprezentacji progowej (ang. threshold representation) - najczęściej przy podejściu brzegowym,\nreprezentacji logistycznej (ang. logit representation) - przy podejściu probabilistycznym.\n\n\n Wady klasyfikatorów liniowych\n\n  tylko w przypadku prostych funkcji wewnętrznych jesteśmy w stanie ocenić wpływ poszczególnych predykorów na klasyfikację,\n  \n  jakość predykcji zależy od doboru funkcji wewnętrznej (liniowa w ścisłym sensie jest najczęściej niewystarczająca),\n  \n  nie jest w stanie klasyfikować poprawnie stanów (nie jest liniowo separowalna) w zagadnieniach typu XOR."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#opisz-reprezentację-progową.",
+    "href": "Eksploracja_egzamin.html#opisz-reprezentację-progową.",
+    "title": "Eksploracja Danych",
+    "section": "22. Opisz reprezentację progową.",
+    "text": "22. Opisz reprezentację progową.\nW przypadku klasyfikacji dwustanowej, dziedzina jest dzielona na dwa regiony (pozytywny i negatywny) poprzez porównanie funkcji zewnętrznej z wartością progową. Bez straty ogólności można sprawić, że będzie to wartość \\(0\\) \\[h(x) = H(g(x)) = \\begin{cases}1, \\quad \\text{jeśli } \\, g(x) \\geq 0 \\\\ 0, \\quad \\text{w przeciwnym przypadku}\\end{cases}\\] Czasami używa się parametryzacji \\(\\{-1,1\\}\\). Przez porównanie \\(g(x)\\) z \\(0\\) definiuje się hiperpłaszczyznę w \\(p\\)-wymiarowej przestrzeni, która rozdziela dziedzinę na regiony pozytywne i negatywne. W tym ujęciu mówimy o liniowej separowalności obserwacji różnych klas, jeśli istnieje hiperpłaszczyzna je rozdzielająca."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#opisz-reprezentację-logitową.",
+    "href": "Eksploracja_egzamin.html#opisz-reprezentację-logitową.",
+    "title": "Eksploracja Danych",
+    "section": "23. Opisz reprezentację logitową.",
+    "text": "23. Opisz reprezentację logitową.\nNajbardziej popularną reprezentacją parametryczną stosowaną w klasyfikacji jest reprezentacja logitowa \\[P(y=1|x) = \\frac{e^{g(x)}}{e^{g(x)}+1}\\]\n\nWówczas \\(g(X)\\) nie reprezentuje bezpośrednio \\(P(y=1|x)\\) ale jego logit \\[g(x) = \\text{logit}(P(y=1|x))\\]\n\ngdzie  \\(\\text{logit}(p)=\\text{ln}\\left(\\frac{p}{1-p}\\right)\\)  Dlatego właściwa postać reprezentacji jest następująca \\[P(y=1|x) = \\text{logit}^{-1}(g(x))\\]\n\nW ten sposób reprezentacja logitowa jest równoważna reprezentacji progowej, ponieważ \\[g(x) = \\text{ln}\\left(\\frac{P(y=1|x)}{1-P(y=1|x)}\\right) = \\text{ln}\\left(\\frac{P(y=1|x)}{P(y=0|x)}\\right) > 0\\]\n\nJednak zaletą reprezentacji logitowej, w porównaniu do progowej, jest to, że można wyznaczyć prawdopodobieństwa przynależności do obu klas. W przypadku klasyfikacji wielostanowej uczymy tyle funkcji \\(h\\) ile jest klas."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#opisz-konstrukcję-liniowych-modeli-dyskryminacyjnych-fishera-lub-welcha.",
+    "href": "Eksploracja_egzamin.html#opisz-konstrukcję-liniowych-modeli-dyskryminacyjnych-fishera-lub-welcha.",
+    "title": "Eksploracja Danych",
+    "section": "24. Opisz konstrukcję liniowych modeli dyskryminacyjnych (Fishera lub Welcha).",
+    "text": "24. Opisz konstrukcję liniowych modeli dyskryminacyjnych (Fishera lub Welcha)."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#czym-są-klasyfikatory-bayesowskie-zalety-i-wady",
+    "href": "Eksploracja_egzamin.html#czym-są-klasyfikatory-bayesowskie-zalety-i-wady",
+    "title": "Eksploracja Danych",
+    "section": "25. Czym są klasyfikatory bayesowskie? Zalety i wady?",
+    "text": "25. Czym są klasyfikatory bayesowskie? Zalety i wady?\nCałą gamę klasyfikatorów opartych na twierdzeniu Bayesa nazywać będziemy bayesowskimi. \\[P(A|B) = \\frac{P(A)P(B|A)}{P(B)}\\] gdzie  \\(P(B)>0\\)\nBayesowskie reguły podejmowania decyzji dały podstawy takich metod jak:\n\nliniowa analiza dyskryminacyjna,\nkwadratowa analiza dyskryminacyjna.\n\nW ustaleniu klasyfikatora bayesowskiego będzie nam przyświecała cały czas ta sama reguła: jeśli znam wartości cech charakteryzujących badane obiekty oraz klasy do których należą (w próbie uczącej), to na ich podstawie mogę wyznaczyć miary prawdopodobieństw a posteriori, które pomogą mi w ustaleniu klasy do której należy nowy testowy element."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#opisz-zasadę-działania-naiwnego-klasyfikatora-bayesa.",
+    "href": "Eksploracja_egzamin.html#opisz-zasadę-działania-naiwnego-klasyfikatora-bayesa.",
+    "title": "Eksploracja Danych",
+    "section": "26. Opisz zasadę działania naiwnego klasyfikatora Bayesa.",
+    "text": "26. Opisz zasadę działania naiwnego klasyfikatora Bayesa.\nW naiwnym klasyfikatorze Bayesa zakłada się niezależność warunkową poszczególnych atrybutów względem klasy do której ma należeć (wg hipotezy) obiekt. Założenie to często nie jest spełnione i stąd nazwa przymiotnik “naiwny”.\n\nDefinicja naiwnego klasyfikatora bayesowskiego różni się od klasyfikatora MAP tylko podejściem do prawdopodobieństwa a posteriori.\n\n\\[h_{\\text{NB}} = \\text{arg} \\max\\limits_{h_j \\in\\mathbf{H}}P(h_j)\\prod\\limits^p_{i=1}P(a_i=v_i|h_j)\\] gdzie  \\(h_j\\) oznacza hipotezę (decyzję), że badany obiek należy do \\(j\\)-tej klasy,  \\(P(h_j) = P_T(h_j) =\\frac{|T^j|}{|T|}\\) jest prawdopodobieństwiem a priori zajścia hipotezy \\(h_j\\), \\(P(a_i=v_i|h_j) = P_{T^j}(a_i=v_i) = \\frac{|T^j_{a_i=v_i}|}{|T|}\\) jest prawdopodobieństwem a posteriori dla i-tego atrybutu.\n\n\n\n\n\\(T\\) - zbiór danych uczących (treningowych),  \\(T^j\\) - zbiór danych uczących dla których przyjęliśmy decyzję o przynależności do \\(j\\)-tej klasy,  \\(T^j_{a_i=v_i}\\) - zbiór danych uczących o wartości atrybutu \\(a_i\\) równej \\(v\\) i \\(j\\)-tej klasy,  \\(\\mathbf{H}\\) - przestrzeń hipotez,  \\(c\\) - prawdziwy stan obiektu.\n\n\nZarówno prawdopodobieństwo a priori jak i a posteriori są wyznaczane na podstawie próby.\n\nZalety:\n\nprostota konstrukcji i prosty algorytm,\njeśli jest spełnione założenie warunkowej niezależności, to ten klasyfikator działa szybciej i czasem lepiej niż inne metody klasyfikacji,\nnie potrzebuje dużych zbiorów danych do estymacji parametrów.\n\nWady:\n\nczęsto nie spełnione założenie o warunkowej niezależności powoduje obciążenie wyników,\nbrak możliwości wprowadzania interakcji efektów kilku zmiennych,\npotrzebuje założenia normalności warunkowych gęstości w przypadku ciągłych atrybutów,\nczęsto istnieją lepsze klasyfikatory."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#opisz-regułę-działania-modeli-knn.",
+    "href": "Eksploracja_egzamin.html#opisz-regułę-działania-modeli-knn.",
+    "title": "Eksploracja Danych",
+    "section": "27. Opisz regułę działania modeli kNN.",
+    "text": "27. Opisz regułę działania modeli kNN.\nTechnika \\(k\\) najbliższych sąsiadów (ang.\\(k\\)-Nearest Neighbors) przewiduje wartość zmiennej wynikowej na podstawie \\(k\\) najbliższych obserwacji zbioru uczącego. W przeciwieństwie do modeli liniowych, nie posiada ona jawnej formy i należy do klasy technik nazywanych czarnymi skrzynkami (ang. black box). Może być wykorzystywana, zarówno do zadań klasyfikacyjnych, jak i regresyjnych. W obu przypadkach predykcja dla nowych wartości predyktorów przebiega podobnie.\nNiech \\(x_0\\) będzie obserwacją, dla której poszukujemy wartości zmiennej wynikowej \\(y_0\\). Na podstawie zbioru obserwacji \\(x \\in T\\) zbioru uczącego wyznacza się \\(k\\) najbliższych sąsiadów (metrykę można wybierać dowolnie, choć najczęściej jest to metryka euklidesowa), gdzie \\(k\\) jest z góry ustaloną wartością. Następnie, jeśli zadanie ma charakter klasyfikacyjny, to \\(y_0\\) przypisuje się modę zmiennej wynikowej obserwacji będących \\(k\\) ajbliższymi sąsiadami. W przypadku zadań regresyjnych \\(y_0\\) przypisuje się średnią lub medianę.\nOlbrzymie znaczenie dla wyników predykcji na podstawie metody kNN ma dobór metryki. Nie istnieje obiektywna technika wyboru najlepszej metryki, dlatego jej doboru dokonujemy metodą prób i błędów. Należy dodatkowo pamiętać, że wielkości mierzone \\(x\\) mogą się różnić zakresami zmienności, a co za tym idzie, mogą znacząco wpłynąć na mierzone odległości pomiędzy punktami. Dlatego zaleca się standaryzację zmiennych przed zastosowaniem metody kNN.\nKolejnym parametrem, który ma znaczący wpływ na predykcję, jest liczba sąsiadów \\(k\\). Wybór zbyt małej liczby \\(k\\) może doprowadzić do przeuczenia modelu, z kolei zbyt duża liczba sąsiadów powoduje obciążenie wyników. Dopiero dobór odpowiedniego \\(k\\) daje model o stosunkowo niskiej wariancji i obciążeniu. Najczęściej liczby \\(k\\) poszukujemy za pomocą próbkowania."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#czym-są-uogólnione-modele-addytywne",
+    "href": "Eksploracja_egzamin.html#czym-są-uogólnione-modele-addytywne",
+    "title": "Eksploracja Danych",
+    "section": "28. Czym są uogólnione modele addytywne?",
+    "text": "28. Czym są uogólnione modele addytywne?"
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#opisz-zasadę-działania-modeli-svm-dla-dwóch-klas-liniowo-separowalnych.",
+    "href": "Eksploracja_egzamin.html#opisz-zasadę-działania-modeli-svm-dla-dwóch-klas-liniowo-separowalnych.",
+    "title": "Eksploracja Danych",
+    "section": "29. Opisz zasadę działania modeli SVM dla dwóch klas liniowo separowalnych.",
+    "text": "29. Opisz zasadę działania modeli SVM dla dwóch klas liniowo separowalnych.\n\nMetoda wektorów nośnych (ang. Support Vector Machines) to metoda klasyfikacji obserwacji na podstawie cech (atrybutów). Jest techniką nadzorowaną tzn., że w próbie uczącej występują zarówno cechy charakteryzujące badane obiekty jak i ich przynależność do klasy.\n\n\n\n\n\nPrzykład prostych separujących obiekty obu grup\n\n\n\nIstotą tej metody jest znalezienie wektorów nośnych, definiujących hiperpowierzchnie optymalnie separujące obiekty w homogeniczne grupy.\nNiech \\(D\\) będzie zbiorem \\(n\\) punktów w \\(d\\)-wymiarowej przestrzeni określonych następująco \\((\\vec{x_i}, y_i)\\), \\(i=1,\\dots,d\\), gdzie \\(y_i\\) przyjmuje wartości \\(-1\\) lub \\(1\\) w zależności od tego do której grupy należy (zakładamy istnienie tylko dwóch grup). Poszukujemy takiej hiperpłaszczyzny, która maksymalizuje margines pomiędzy punktami obu klas w przestrzeni cech \\(\\vec x\\).\n\n\n\n\nPłaszczyzna najlepiej rozdzielająca obiekty obu grup (białe i czarne kropki) wraz z prostymi wyznaczającymi maksymalny margines separujący obie grupy\n\n\n\nMargines ten jest określany jako najmniejsza odległość pomiędzy hiperpłaszczyzną i elementami z każdej z grup.  Dowolna hiperpłaszczyzna może być zapisana równaniem \\(\\vec w \\vec x - b = 0\\) gdzie  \\(\\vec w\\) jest waktorem normalnym do hiperpłaszczyzny.  Jeśli dane są liniowo separowalne to, można wybrać takie dwie hiperpłaszczyzny, że odległość pomiędzy nimi jest największa.  Równania tych hiperpłaszczyzn dane są wzorami \\[\\vec w \\vec x - b = 1, \\quad \\vec w \\vec x - b = -1\\] Odległość pomiędzy tymi hiperpłaszczyznami wynosi \\(\\frac{2}{||\\vec w||}\\). Zatem żeby zmaksymalizować odległość pomiędzy hiperpłaszczyznami (margines) musimy zminimalizować \\(\\frac{||\\vec w||}{2}\\).  Dodatkowo, żeby nie pozwolić aby punkty wpadały do marginesu musimy nałożyć dodatkowe ograniczenia \\[\\begin{align}\n\\vec w \\vec x_i - b & \\geq 1, \\quad  y_i  = 1 \\\\\n\\vec w \\vec x_i - b & \\leq -1, \\;  y_i  = -1\n\\end{align}\\] Co można zapisać \\(y_i(\\vec w \\vec x_i - b \\geq 1), \\; 1\\leq i \\leq n\\).\nZatem \\(\\vec w\\) i \\(b\\) minimalizujące \\(||\\vec w||\\) przy jednoczesnym spełnieniu warunku definiują klasyfikator postaci \\[\\vec x \\rightarrow \\text{sgn}(\\vec w \\vec x - b)\\]. Z racji, że \\(||\\vec w||\\) jest określona jako pierwiastek sumy kwadratów poszczególnych współrzędnych wektora, to częściej w minimalizacji stosuje się\\(||\\vec w||^2\\).\nSformułowany powyżej problem należy do grupy optymalizacji funkcji kwadratowej przy liniowych ograniczeniach. Rozwiązuje się go metodą mnożników Lagrange’a. \\[L(\\vec w,b,\\alpha) = \\frac{1}{2}||\\vec w||^2 - \\sum\\limits^n_{i=1}\\alpha_i(y_i(\\vec w \\vec{x_i} - b) - 1)\\] gdzie  \\(\\alpha_i\\) są mnożnikami Lagrange’a."
+  },
+  {
+    "objectID": "Eksploracja_egzamin.html#na-czym-polega-metoda-jądrowa-w-svm",
+    "href": "Eksploracja_egzamin.html#na-czym-polega-metoda-jądrowa-w-svm",
+    "title": "Eksploracja Danych",
+    "section": "30. Na czym polega metoda jądrowa w SVM?",
+    "text": "30. Na czym polega metoda jądrowa w SVM?\nMetoda jądrowa pozwala ona na nieliniowy kształt brzegu obszaru decyzyjnego.\nZasada działania polega na znalezieniu takiego jądra przekształcenia (ang. kernel) \\(\\phi\\), które odwzoruje przestrzeń \\(d\\)-wymiarową w \\(d'\\)-wymiarową, gdzie \\(d'>d\\) taką, że \\(D_\\phi=\\{\\phi(\\vec{x_i}), y_i\\}\\) jest możliwie jak najbardziej separowalna.\n\n\n\n\nPrzykład zastosowania takiego przekształcenia jądrowego aby z sytuacji braku liniowej separowalności do niej doprowadzić\n\n\n\nDla funkcji jądrowej określonej wzorem \\(k(\\vec{x_i},\\vec{x_j})=\\phi(\\vec{x_i})\\phi(\\vec{x_j})\\) minimalizujemy wyrażenie \\[L(\\alpha_i) = \\sum\\limits^n_{i=1}\\alpha_i+\\frac{1}{2}\\sum\\limits^n_{i=1}\\sum\\limits^n_{j=1}\\alpha_i\\alpha_jy_iy_jk(\\vec{x_i},\\vec{x_j})\\] przy warunkach \\[\\sum\\limits^n_{n=1}\\alpha_iy_i =0, \\quad0\\leq \\alpha_i\\leq \\frac{1}{2n\\lambda}\\]\nNajczęściej stosowanymi funkcjami jądrowymi są:\n\nwialomianowa\ngaussowska\nLaplace’a\nhiperboliczna\nsigmoidalna\nBessel’a\nANOVA\nsklejana dla jednowymiarowej przestrzeni\n\nW przypadku braku wiedzy o danych funkcja gaussowska, Laplace’a i Bessel’a są zalecane."
+  }
+]

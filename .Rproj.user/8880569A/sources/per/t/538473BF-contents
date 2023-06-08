@@ -1,0 +1,218 @@
+# Eksploracja Danych {.unnumbered}
+
+---
+title: "Eksploracja Danych"
+author: "Michał Koziński"
+format: 
+  html:
+    toc: true
+    embed-resources: true
+    self-contained: true
+    page-layout: full
+date: "06-22-2023"
+---
+
+# Zagadnienia do przygotowania na egzamin ustny z Eksploracji Danych
+
+___
+
+## 1. Opisz etapy eksploracji danych.
+
+![](obrazki/dm_stages.jpg)
+
+1. Czyszczenie danych - polega na usuwaniu braków danych, usuwaniu stałych zmiennych, imputacji braków danych oraz przygotowaniu danych do dalszych analiz.
+
+2. Integracja danych - łączenie danych pochodzących z różnych źródeł.
+
+3. Selekcja danych - wybór z bazy tych danych, które są potrzebne do dalszych analiz.
+
+4. Transformacja danych - przekształcenie i konsolidacja danych do postaci przydatnej do eksploracji.
+
+5. Eksploracja danych - zastosowanie technik wymienionych wcześniej w celu odnalezienia wzorców i zależności.
+
+6. Ewaluacja modeli - ocena poprawności modeli oraz wzorców z nich uzyskanych.
+
+7. Wizualizacja wyników - graficzne przedstawienie odkrytych wzorców.
+
+8. Wdrażanie modeli - zastosowanie wyznaczonych wzorców.
+
+<br>
+
+## 2. Na czym polega imputacja danych? Wymień trzy metody imputacji.
+
+Zastępowanie braków danych (zwane także imputacją danych) jest etapem procesu przygotowania danych do analiz. Nie można jednak wyróżnić uniwersalnego sposobu zastępowania braków dla wszystkich możliwych sytuacji. Wśród statystyków panuje przekonanie, że w przypadku wystąpienia braków danych można zastosować trzy strategie:
+
+* **nic nie robić z brakami** - co wydaje się niedorzeczne ale wcale takie nie jest, ponieważ istnieje wiele modeli statystycznych (np. drzewa decyzyjne), które świetnie radzą sobie w sytuacji braków danych. Niestety nie jest to sposób, który można stosować zawsze, ponieważ są również modele wymagające kompletności danych jak na przykład sieci neuronowe.
+
+* **usuwać braki wierszami** - to metoda, która jest stosowana domyślnie w przypadku kiedy twórca modelu nie zadecyduje o innym sposobie obsługi luk. Metoda ta ma swoją niewątpliwą zaletę w postaci jasnej i prostej procedury, ale szczególnie w przypadku niewielkich zbiorów może skutkować obciążeniem estymatorów. Nie wiemy bowiem jaka wartość faktycznie jest przypisana danej cesze. Jeśli jest to wartość bliska np. średniej, to nie wpłynie znacząco na obciążenie estymatora wartości oczekiwanej. W przypadku, gdy różni się ona znacznie od średniej tej cechy, to estymator może już wykazywać obciążenie. Jego wielkość zależy również od liczby usuniętych elementów. Nie jest zalecane usuwanie wielu wierszy ze zbioru danych i na podstawie okrojonego zbioru wyciąganie wniosków o populacji, ponieważ próba jest wówczas znacząco inna niż populacja. Dodatkowo jeśli estymatory są wyznaczane na podstawie zbioru wyraźnie mniej licznego, to precyzja estymatorów wyrażona wariancją spada. Reasumując, jeśli liczba wierszy z brakującymi danymi jest niewielka w stosunku do całego zbioru, to usuwanie wierszy jest sensownym rozwiązaniem.
+
+* **uzupełnianie braków** - to procedura polegająca na zastępowaniu braków różnymi technikami. Jej niewątpliwą zaletą jest fakt posiadania kompletnych danych bez konieczności usuwania wierszy. Niestety wiąże się to również z pewnymi wadami. Zbiór posiadający wiele braków uzupełnianych nawet bardzo wyrafinowanymi metodami może cechować się zaniżoną wariancją poszczególnych cech oraz tzw. przeuczeniem.
+  - Uzupełnianie średnią - braki w zakresie danej zmiennej uzupełniamy średnią tej zmiennej przypadków uzupełnionych.
+  - Uzupełnianie medianą - braki w zakresie danej zmiennej uzupełniamy medianą tej zmiennej przypadków uzupełnionych.
+  - Wypełnianie zmiennych typu wyliczeniowego, logicznego lub znakowego odbywa się najczęściej przez dobranie w miejsce brakującej wartości, elementu powtarzającego się najczęściej wśród obiektów obserwowanych.
+  - Jeszcze innym sposobem imputacji danych są algorytmy oparte o metodę $k$-najbliższych sąsiadów. Istnieją również dużo bardziej złożone algorytmy imputacji danych oparte na bardziej wyrafinowanych technikach, takich jak: predykcja modelami liniowymi, nieliniowymi, analiza dyskryminacyjna, drzewa klasyfikacyjne.
+<br>
+
+## 3. Na co należy zwrócić uwagę podczas uzupełniania danych?
+
+
+
+<br>
+
+## 4. Czym są braki MCAR, MAR, MNAR?
+
+
+
+<br>
+
+## 5. Jakie znasz metody wnioskowania?
+
+
+
+<br>
+
+## 6. Czym są obserwacja, atrybut, dziedzina, zbiór uczący i testowy?
+
+
+
+<br>
+
+## 7. Czym jest nadmierne dopasowanie i niewystarczające dopasowanie modelu?
+
+
+
+<br>
+
+## 8. Wymień typy modeli uczenia maszynowego i krótki opis ich zasady działania.
+
+
+
+<br>
+
+## 9. Czym są drzewa decyzyjne, z jakich elementów się składają?
+
+
+
+<br>
+
+## 10. Podaj rodzaje reguł podziału.
+
+
+
+<br>
+
+## 11. Opisz algorytm budowy drzewa decyzyjnego.
+
+
+
+<br>
+
+## 12. Jakie znasz reguły zatrzymania modelu drzewa decyzyjnego?
+
+
+
+<br>
+
+## 13. Opisz jak się buduje reguły podziału w drzewach decyzyjnych.
+
+
+
+<br>
+
+## 14. Opisz przycinanie drzewa redukujące błąd.
+
+
+
+<br>
+
+## 15. Opisz przycinanie drzewa minimalizujące błąd.
+
+
+
+<br>
+
+## 16. Opisz przycinanie drzewa ze względu na współczynnik złożoności drzewa.
+
+
+
+<br>
+
+## 17. Opisz zalety i wady drzew decyzyjnych.
+
+
+
+<br>
+
+## 18. Opisz zasadę działania modeli bagging.
+
+
+
+<br>
+
+## 19. Opisz zasadę działania lasów losowych.
+
+
+
+<br>
+
+## 20. Opisz zasadę działania metody boosting.
+
+
+
+<br>
+
+## 21. Czym są klasyfikatory liniowe?
+
+
+
+<br>
+
+## 22. Opisz reprezentację progową.
+
+
+
+<br>
+
+## 23. Opisz reprezentację logitową.
+
+
+
+<br>
+
+## 24. Opisz konstrukcję liniowych modeli dyskryminacyjnych (Fishera lub Welcha).
+
+
+
+<br>
+
+## 25. Czym są klasyfikatory bayesowskie? Zalety i wady?
+
+
+
+<br>
+
+## 26. Opisz zasadę działania naiwnego klasyfikatora Bayesa.
+
+
+
+<br>
+
+## 27. Opisz regułę działania modeli kNN.
+
+
+
+<br>
+
+## 28. Czym są uogólnione modele addytywne?
+
+
+
+<br>
+
+## 29. Opisz zasadę działania modeli SVM dla dwóch klas liniowo separowalnych.
+
+
+
+<br>
+
+## 30. Na czym polega metoda jądrowa w SVM?

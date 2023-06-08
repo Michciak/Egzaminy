@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Egzaminy - Eksploracja Danych</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Modele_egzamin.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Eksploracja Danych</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Egzaminy</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Losowanie</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./WAD_egzamin.html" class="sidebar-item-text sidebar-link">Wielowymiarowa analiza danych</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Modele_egzamin.html" class="sidebar-item-text sidebar-link">Statystyczne Modele Liniowe i Nieliniowe</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Eksploracja_egzamin.html" class="sidebar-item-text sidebar-link active">Eksploracja Danych</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#zagadnienia-do-przygotowania-na-egzamin-ustny-z-eksploracji-danych" id="toc-zagadnienia-do-przygotowania-na-egzamin-ustny-z-eksploracji-danych" class="nav-link active" data-scroll-target="#zagadnienia-do-przygotowania-na-egzamin-ustny-z-eksploracji-danych">Zagadnienia do przygotowania na egzamin ustny z Eksploracji Danych</a>
+  <ul class="collapse">
+  <li><a href="#opisz-etapy-eksploracji-danych." id="toc-opisz-etapy-eksploracji-danych." class="nav-link" data-scroll-target="#opisz-etapy-eksploracji-danych.">1. Opisz etapy eksploracji danych.</a></li>
+  <li><a href="#na-czym-polega-imputacja-danych-wymień-trzy-metody-imputacji." id="toc-na-czym-polega-imputacja-danych-wymień-trzy-metody-imputacji." class="nav-link" data-scroll-target="#na-czym-polega-imputacja-danych-wymień-trzy-metody-imputacji.">2. Na czym polega imputacja danych? Wymień trzy metody imputacji.</a></li>
+  <li><a href="#na-co-należy-zwrócić-uwagę-podczas-uzupełniania-danych" id="toc-na-co-należy-zwrócić-uwagę-podczas-uzupełniania-danych" class="nav-link" data-scroll-target="#na-co-należy-zwrócić-uwagę-podczas-uzupełniania-danych">3. Na co należy zwrócić uwagę podczas uzupełniania danych?</a></li>
+  <li><a href="#czym-są-braki-mcar-mar-mnar" id="toc-czym-są-braki-mcar-mar-mnar" class="nav-link" data-scroll-target="#czym-są-braki-mcar-mar-mnar">4. Czym są braki MCAR, MAR, MNAR?</a></li>
+  <li><a href="#jakie-znasz-metody-wnioskowania" id="toc-jakie-znasz-metody-wnioskowania" class="nav-link" data-scroll-target="#jakie-znasz-metody-wnioskowania">5. Jakie znasz metody wnioskowania?</a></li>
+  <li><a href="#czym-są-obserwacja-atrybut-dziedzina-zbiór-uczący-i-testowy" id="toc-czym-są-obserwacja-atrybut-dziedzina-zbiór-uczący-i-testowy" class="nav-link" data-scroll-target="#czym-są-obserwacja-atrybut-dziedzina-zbiór-uczący-i-testowy">6. Czym są obserwacja, atrybut, dziedzina, zbiór uczący i testowy?</a></li>
+  <li><a href="#czym-jest-nadmierne-dopasowanie-i-niewystarczające-dopasowanie-modelu" id="toc-czym-jest-nadmierne-dopasowanie-i-niewystarczające-dopasowanie-modelu" class="nav-link" data-scroll-target="#czym-jest-nadmierne-dopasowanie-i-niewystarczające-dopasowanie-modelu">7. Czym jest nadmierne dopasowanie i niewystarczające dopasowanie modelu?</a></li>
+  <li><a href="#wymień-typy-modeli-uczenia-maszynowego-i-krótki-opis-ich-zasady-działania." id="toc-wymień-typy-modeli-uczenia-maszynowego-i-krótki-opis-ich-zasady-działania." class="nav-link" data-scroll-target="#wymień-typy-modeli-uczenia-maszynowego-i-krótki-opis-ich-zasady-działania.">8. Wymień typy modeli uczenia maszynowego i krótki opis ich zasady działania.</a></li>
+  <li><a href="#czym-są-drzewa-decyzyjne-z-jakich-elementów-się-składają" id="toc-czym-są-drzewa-decyzyjne-z-jakich-elementów-się-składają" class="nav-link" data-scroll-target="#czym-są-drzewa-decyzyjne-z-jakich-elementów-się-składają">9. Czym są drzewa decyzyjne, z jakich elementów się składają?</a></li>
+  <li><a href="#podaj-rodzaje-reguł-podziału." id="toc-podaj-rodzaje-reguł-podziału." class="nav-link" data-scroll-target="#podaj-rodzaje-reguł-podziału.">10. Podaj rodzaje reguł podziału.</a></li>
+  <li><a href="#opisz-algorytm-budowy-drzewa-decyzyjnego." id="toc-opisz-algorytm-budowy-drzewa-decyzyjnego." class="nav-link" data-scroll-target="#opisz-algorytm-budowy-drzewa-decyzyjnego.">11. Opisz algorytm budowy drzewa decyzyjnego.</a></li>
+  <li><a href="#jakie-znasz-reguły-zatrzymania-modelu-drzewa-decyzyjnego" id="toc-jakie-znasz-reguły-zatrzymania-modelu-drzewa-decyzyjnego" class="nav-link" data-scroll-target="#jakie-znasz-reguły-zatrzymania-modelu-drzewa-decyzyjnego">12. Jakie znasz reguły zatrzymania modelu drzewa decyzyjnego?</a></li>
+  <li><a href="#opisz-jak-się-buduje-reguły-podziału-w-drzewach-decyzyjnych." id="toc-opisz-jak-się-buduje-reguły-podziału-w-drzewach-decyzyjnych." class="nav-link" data-scroll-target="#opisz-jak-się-buduje-reguły-podziału-w-drzewach-decyzyjnych.">13. Opisz jak się buduje reguły podziału w drzewach decyzyjnych.</a></li>
+  <li><a href="#opisz-przycinanie-drzewa-redukujące-błąd." id="toc-opisz-przycinanie-drzewa-redukujące-błąd." class="nav-link" data-scroll-target="#opisz-przycinanie-drzewa-redukujące-błąd.">14. Opisz przycinanie drzewa redukujące błąd.</a></li>
+  <li><a href="#opisz-przycinanie-drzewa-minimalizujące-błąd." id="toc-opisz-przycinanie-drzewa-minimalizujące-błąd." class="nav-link" data-scroll-target="#opisz-przycinanie-drzewa-minimalizujące-błąd.">15. Opisz przycinanie drzewa minimalizujące błąd.</a></li>
+  <li><a href="#opisz-przycinanie-drzewa-ze-względu-na-współczynnik-złożoności-drzewa." id="toc-opisz-przycinanie-drzewa-ze-względu-na-współczynnik-złożoności-drzewa." class="nav-link" data-scroll-target="#opisz-przycinanie-drzewa-ze-względu-na-współczynnik-złożoności-drzewa.">16. Opisz przycinanie drzewa ze względu na współczynnik złożoności drzewa.</a></li>
+  <li><a href="#opisz-zalety-i-wady-drzew-decyzyjnych." id="toc-opisz-zalety-i-wady-drzew-decyzyjnych." class="nav-link" data-scroll-target="#opisz-zalety-i-wady-drzew-decyzyjnych.">17. Opisz zalety i wady drzew decyzyjnych.</a></li>
+  <li><a href="#opisz-zasadę-działania-modeli-bagging." id="toc-opisz-zasadę-działania-modeli-bagging." class="nav-link" data-scroll-target="#opisz-zasadę-działania-modeli-bagging.">18. Opisz zasadę działania modeli bagging.</a></li>
+  <li><a href="#opisz-zasadę-działania-lasów-losowych." id="toc-opisz-zasadę-działania-lasów-losowych." class="nav-link" data-scroll-target="#opisz-zasadę-działania-lasów-losowych.">19. Opisz zasadę działania lasów losowych.</a></li>
+  <li><a href="#opisz-zasadę-działania-metody-boosting." id="toc-opisz-zasadę-działania-metody-boosting." class="nav-link" data-scroll-target="#opisz-zasadę-działania-metody-boosting.">20. Opisz zasadę działania metody boosting.</a></li>
+  <li><a href="#czym-są-klasyfikatory-liniowe" id="toc-czym-są-klasyfikatory-liniowe" class="nav-link" data-scroll-target="#czym-są-klasyfikatory-liniowe">21. Czym są klasyfikatory liniowe?</a></li>
+  <li><a href="#opisz-reprezentację-progową." id="toc-opisz-reprezentację-progową." class="nav-link" data-scroll-target="#opisz-reprezentację-progową.">22. Opisz reprezentację progową.</a></li>
+  <li><a href="#opisz-reprezentację-logitową." id="toc-opisz-reprezentację-logitową." class="nav-link" data-scroll-target="#opisz-reprezentację-logitową.">23. Opisz reprezentację logitową.</a></li>
+  <li><a href="#opisz-konstrukcję-liniowych-modeli-dyskryminacyjnych-fishera-lub-welcha." id="toc-opisz-konstrukcję-liniowych-modeli-dyskryminacyjnych-fishera-lub-welcha." class="nav-link" data-scroll-target="#opisz-konstrukcję-liniowych-modeli-dyskryminacyjnych-fishera-lub-welcha.">24. Opisz konstrukcję liniowych modeli dyskryminacyjnych (Fishera lub Welcha).</a></li>
+  <li><a href="#czym-są-klasyfikatory-bayesowskie-zalety-i-wady" id="toc-czym-są-klasyfikatory-bayesowskie-zalety-i-wady" class="nav-link" data-scroll-target="#czym-są-klasyfikatory-bayesowskie-zalety-i-wady">25. Czym są klasyfikatory bayesowskie? Zalety i wady?</a></li>
+  <li><a href="#opisz-zasadę-działania-naiwnego-klasyfikatora-bayesa." id="toc-opisz-zasadę-działania-naiwnego-klasyfikatora-bayesa." class="nav-link" data-scroll-target="#opisz-zasadę-działania-naiwnego-klasyfikatora-bayesa.">26. Opisz zasadę działania naiwnego klasyfikatora Bayesa.</a></li>
+  <li><a href="#opisz-regułę-działania-modeli-knn." id="toc-opisz-regułę-działania-modeli-knn." class="nav-link" data-scroll-target="#opisz-regułę-działania-modeli-knn.">27. Opisz regułę działania modeli kNN.</a></li>
+  <li><a href="#czym-są-uogólnione-modele-addytywne" id="toc-czym-są-uogólnione-modele-addytywne" class="nav-link" data-scroll-target="#czym-są-uogólnione-modele-addytywne">28. Czym są uogólnione modele addytywne?</a></li>
+  <li><a href="#opisz-zasadę-działania-modeli-svm-dla-dwóch-klas-liniowo-separowalnych." id="toc-opisz-zasadę-działania-modeli-svm-dla-dwóch-klas-liniowo-separowalnych." class="nav-link" data-scroll-target="#opisz-zasadę-działania-modeli-svm-dla-dwóch-klas-liniowo-separowalnych.">29. Opisz zasadę działania modeli SVM dla dwóch klas liniowo separowalnych.</a></li>
+  <li><a href="#na-czym-polega-metoda-jądrowa-w-svm" id="toc-na-czym-polega-metoda-jądrowa-w-svm" class="nav-link" data-scroll-target="#na-czym-polega-metoda-jądrowa-w-svm">30. Na czym polega metoda jądrowa w SVM?</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Eksploracja Danych</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="zagadnienia-do-przygotowania-na-egzamin-ustny-z-eksploracji-danych" class="level1">
+<h1>Zagadnienia do przygotowania na egzamin ustny z Eksploracji Danych</h1>
+<hr>
+<section id="opisz-etapy-eksploracji-danych." class="level2">
+<h2 class="anchored" data-anchor-id="opisz-etapy-eksploracji-danych.">1. Opisz etapy eksploracji danych.</h2>
+<p><img src="obrazki/dm_stages.jpg" class="img-fluid"></p>
+<ol type="1">
+<li><p>Czyszczenie danych - polega na usuwaniu braków danych, usuwaniu stałych zmiennych, imputacji braków danych oraz przygotowaniu danych do dalszych analiz.</p></li>
+<li><p>Integracja danych - łączenie danych pochodzących z różnych źródeł.</p></li>
+<li><p>Selekcja danych - wybór z bazy tych danych, które są potrzebne do dalszych analiz.</p></li>
+<li><p>Transformacja danych - przekształcenie i konsolidacja danych do postaci przydatnej do eksploracji.</p></li>
+<li><p>Eksploracja danych - zastosowanie technik wymienionych wcześniej w celu odnalezienia wzorców i zależności.</p></li>
+<li><p>Ewaluacja modeli - ocena poprawności modeli oraz wzorców z nich uzyskanych.</p></li>
+<li><p>Wizualizacja wyników - graficzne przedstawienie odkrytych wzorców.</p></li>
+<li><p>Wdrażanie modeli - zastosowanie wyznaczonych wzorców.</p></li>
+</ol>
+<p><br></p>
+</section>
+<section id="na-czym-polega-imputacja-danych-wymień-trzy-metody-imputacji." class="level2">
+<h2 class="anchored" data-anchor-id="na-czym-polega-imputacja-danych-wymień-trzy-metody-imputacji.">2. Na czym polega imputacja danych? Wymień trzy metody imputacji.</h2>
+<p>Zastępowanie braków danych (zwane także imputacją danych) jest etapem procesu przygotowania danych do analiz. Nie można jednak wyróżnić uniwersalnego sposobu zastępowania braków dla wszystkich możliwych sytuacji. Wśród statystyków panuje przekonanie, że w przypadku wystąpienia braków danych można zastosować trzy strategie:</p>
+<ul>
+<li><p><strong>nic nie robić z brakami</strong> - co wydaje się niedorzeczne ale wcale takie nie jest, ponieważ istnieje wiele modeli statystycznych (np. drzewa decyzyjne), które świetnie radzą sobie w sytuacji braków danych. Niestety nie jest to sposób, który można stosować zawsze, ponieważ są również modele wymagające kompletności danych jak na przykład sieci neuronowe.</p></li>
+<li><p><strong>usuwać braki wierszami</strong> - to metoda, która jest stosowana domyślnie w przypadku kiedy twórca modelu nie zadecyduje o innym sposobie obsługi luk. Metoda ta ma swoją niewątpliwą zaletę w postaci jasnej i prostej procedury, ale szczególnie w przypadku niewielkich zbiorów może skutkować obciążeniem estymatorów. Nie wiemy bowiem jaka wartość faktycznie jest przypisana danej cesze. Jeśli jest to wartość bliska np. średniej, to nie wpłynie znacząco na obciążenie estymatora wartości oczekiwanej. W przypadku, gdy różni się ona znacznie od średniej tej cechy, to estymator może już wykazywać obciążenie. Jego wielkość zależy również od liczby usuniętych elementów. Nie jest zalecane usuwanie wielu wierszy ze zbioru danych i na podstawie okrojonego zbioru wyciąganie wniosków o populacji, ponieważ próba jest wówczas znacząco inna niż populacja. Dodatkowo jeśli estymatory są wyznaczane na podstawie zbioru wyraźnie mniej licznego, to precyzja estymatorów wyrażona wariancją spada. Reasumując, jeśli liczba wierszy z brakującymi danymi jest niewielka w stosunku do całego zbioru, to usuwanie wierszy jest sensownym rozwiązaniem.</p></li>
+<li><p><strong>uzupełnianie braków</strong> - to procedura polegająca na zastępowaniu braków różnymi technikami. Jej niewątpliwą zaletą jest fakt posiadania kompletnych danych bez konieczności usuwania wierszy. Niestety wiąże się to również z pewnymi wadami. Zbiór posiadający wiele braków uzupełnianych nawet bardzo wyrafinowanymi metodami może cechować się zaniżoną wariancją poszczególnych cech oraz tzw. przeuczeniem.</p>
+<ul>
+<li>Uzupełnianie średnią - braki w zakresie danej zmiennej uzupełniamy średnią tej zmiennej przypadków uzupełnionych.</li>
+<li>Uzupełnianie medianą - braki w zakresie danej zmiennej uzupełniamy medianą tej zmiennej przypadków uzupełnionych.</li>
+<li>Wypełnianie zmiennych typu wyliczeniowego, logicznego lub znakowego odbywa się najczęściej przez dobranie w miejsce brakującej wartości, elementu powtarzającego się najczęściej wśród obiektów obserwowanych.</li>
+<li>Jeszcze innym sposobem imputacji danych są algorytmy oparte o metodę <span class="math inline">\(k\)</span>-najbliższych sąsiadów. Istnieją również dużo bardziej złożone algorytmy imputacji danych oparte na bardziej wyrafinowanych technikach, takich jak: predykcja modelami liniowymi, nieliniowymi, analiza dyskryminacyjna, drzewa klasyfikacyjne. <br></li>
+</ul></li>
+</ul>
+</section>
+<section id="na-co-należy-zwrócić-uwagę-podczas-uzupełniania-danych" class="level2">
+<h2 class="anchored" data-anchor-id="na-co-należy-zwrócić-uwagę-podczas-uzupełniania-danych">3. Na co należy zwrócić uwagę podczas uzupełniania danych?</h2>
+<p>Imputacja danych z zastosowaniem pakietu mice wymaga podjęcia kilku decyzji przed przystąpieniem do uzupełniania danych:</p>
+<ol type="1">
+<li><p>Czy dane są MAR (ang. Missing At Random) czy MNAR (ang. Missing Not At Random), co oznacza, że musimy się zastanowić jakie mogły być źródła braków danych, przypadkowe czy systematyczne?</p></li>
+<li><p>Należy się zdecydować na formę imputacji, określając strukturę zależności pomiędzy cechami oraz rozkład błędu danej cechy?</p></li>
+<li><p>Wybrać zbiór danych, który posłuży nam za predyktory w imputacji (nie mogą zawierać braków).</p></li>
+<li><p>Określenie, które niepełne zmienne są funkcjami innych wybrakowanych zmiennych.</p></li>
+<li><p>Określić w jakiej kolejności dane będą imputowane.</p></li>
+<li><p>Określić parametry startowe imputacji (liczbę iteracji, warunek zbieżności).</p></li>
+<li><p>Określić liczę imputowanych zbiorów.</p></li>
+</ol>
+<p><br></p>
+</section>
+<section id="czym-są-braki-mcar-mar-mnar" class="level2">
+<h2 class="anchored" data-anchor-id="czym-są-braki-mcar-mar-mnar">4. Czym są braki MCAR, MAR, MNAR?</h2>
+<ul>
+<li><p><strong>MCAR</strong> (ang. <em>Missing Completely At Random</em>) - z definicji to braki, których pojawienie się jest kompletnie losowe. Przykładowo gdy osoba poproszona o wypełnienie wieku w ankiecie będzie rzucać monetą czy wypełnić tą zmienną.</p></li>
+<li><p><strong>MAR</strong> (ang. <em>Missing At Random</em>) - oznacza, że obserwowane wartości i wybrakowane mają inne rozkłady ale da się je oszacować na podstawie danych obserwowanych. Przykładowo ciśnienie tętnicze u osób, które nie wypełniły tej wartości jest wyższe niż u osób, które wpisały swoje ciśnienie. Okazuje się, że osoby starsze z nadciśnieniem nie wypełniały ankiety w tym punkcie.</p></li>
+<li><p><strong>MNAR</strong> (ang. <em>Missing Not At Random</em>) - jeśli nie jest spełniony warunek MCAR i MAR, wówczas brak ma charakter nielosowy. Przykładowo respondenci osiągający wyższe zarobki sukcesywnie nie wypełniają pola “zarobki” i dodatkowo nie ma w ankiecie zmiennych, które pozwoliłyby nam ustalić, jakie to osoby.</p></li>
+</ul>
+<p><br></p>
+</section>
+<section id="jakie-znasz-metody-wnioskowania" class="level2">
+<h2 class="anchored" data-anchor-id="jakie-znasz-metody-wnioskowania">5. Jakie znasz metody wnioskowania?</h2>
+<p>Data mining to zestaw metod pozyskiwania wiedzy na podstawie danych. Ową wiedzę zdobywamy w procesie wnioskowania na podstawie modeli. Wnioskowanie możemy podzielić na <strong>dedukcyjne</strong> i <strong>indukcyjne</strong>.</p>
+<ul>
+<li><p>Z wnioskowaniem <u>dedukcyjnym</u> mamy do czynienia wówczas, gdy na podstawie obecnego stanu wiedzy potrafimy odpowiedzieć na postawione pytanie dotyczące nowej wiedzy, stosując reguły wnioskowania.</p></li>
+<li><p>O wnioskowaniu <u>indukcyjnym</u> powiemy, że jest metodą pozyskiwania wiedzy na podstawie informacji ze zbioru uczącego. Znajduje ono szerokie zastosowanie w data mining i charakteryzuje się omylnością, ponieważ nawet najlepiej nauczony model na zbiorze uczącym nie zapewnia nam prawdziwości odpowiedzi w przypadku nowych danych, a jedynie je uprawdopodabnia. Esencją wnioskowania indukcyjnego w zakresie data mining, jest poszukiwanie na podstawie danych uczących modelu charakteryzującego się najlepszymi właściwościami predykcyjnymi i dającego się zastosować do zupełnie nowego zbioru danych.</p></li>
+</ul>
+<p><br></p>
+</section>
+<section id="czym-są-obserwacja-atrybut-dziedzina-zbiór-uczący-i-testowy" class="level2">
+<h2 class="anchored" data-anchor-id="czym-są-obserwacja-atrybut-dziedzina-zbiór-uczący-i-testowy">6. Czym są obserwacja, atrybut, dziedzina, zbiór uczący i testowy?</h2>
+<p><u>Obserwacja</u> - każdy element dziedziny <span class="math inline">\(x \in X\)</span>. Obserwacją nazywać będziemy zarówno rekordy danych ze zbioru uczącego, jak i ze zbioru testowego.</p>
+<p><u>Atrybut</u> - za jego pomocą (zestawu cech/ atrybutów) można opisać obserwację (każdy obiekt z dziedziny <span class="math inline">\(x \in X\)</span>). W notacji matematycznaj oznaczany przez <span class="math inline">\(a: X \rightarrow A\)</span>, gdzie <span class="math inline">\(A\)</span> jest przestrzenią wartości aatrybutów. Każda obserwacja <span class="math inline">\(x\)</span> posiadająca <span class="math inline">\(k\)</span> cech da się wyrazić wektorowo jako <span class="math inline">\((a_1(x),a_2(x),\dots,a_k(x))\)</span>.</p>
+<p>Dla większości algorytmów uczenia maszynowego wyrożnia się trzy typy atrybutów:</p>
+<ul>
+<li><p><u>nominalne</u> - posiadające skończoną liczbę stanów, które nie posiadają porządku (np. płeć, rasa)</p></li>
+<li><p><u>porządkowe</u> - posiadające skończoną liczbę stanów z zachowanie porządku (np. wykształcenie)</p></li>
+<li><p><u>ciągłe</u> - przyjmujące wartości numeryczne (np. wiek, wynagrodzenie)</p></li>
+</ul>
+<p>Często jeden z atrybutów spełnia specjalną rolę, ponieważ stanowi realizację cechy, którą traktujemy jako wyjściową (ang. <em>target value attribute</em>). W tym przypadku powiemy o <strong>nadzorowanym uczeniu maszynowym</strong>. Jeśli zmiennej wyjściowej nie ma dziedzinie, to mówimy o <strong>nienadzorowanym uczeniu maszynowym</strong>.</p>
+<p><u>Dziedzina</u> - zbiór wszystkich obiektów pozostających w zainteresowaniu badacza, będących przedmiotem wnioskowania, oznaczana najczęściej przez <span class="math inline">\(X\)</span>. Przykładowo mogą to być zbiory osób, transakcji, urządzeń, instytucji, itp.</p>
+<p><u>Zbiór uczący</u> - <span class="math inline">\(T\)</span> (ang. <em>training set</em>) podzbiór <span class="math inline">\(D\)</span> dzidziny <span class="math inline">\(X\)</span> (czyli <span class="math inline">\(T \subseteq D \subseteq X\)</span>), gdzie zbiór <span class="math inline">\(D\)</span> stanowi ogół dostępnych obserwacji z dziedziny <span class="math inline">\(X\)</span>. Zbiór uczący zawiera informacje dotyczące badane zjawiska na podstawie których, dokonuje się doboru modelu, selekcji cech istotnych z punktu widzenia własności predykcyjnych lub jakości klasyfikacji, budowy modelu oraz optymalizacji jego parametrów. W przypadku uczenia z nauczycielem (nadzorowanego) zbiór <span class="math inline">\(T\)</span> zawiera informację o wartościach atrybutów zmiennej wynikowej.</p>
+<p><u>Zbiór testowy</u> <span class="math inline">\(T'\)</span> (ang. <em>test set</em>) zbiór będący dopełnieniem zbioru uczącego do zbioru <span class="math inline">\(D\)</span>, czyli <span class="math inline">\(T' = D \backslash T\)</span>, stanowi zestaw danych służacy do oceny poprawności modelu nadzorowanego. W przypadku metod nienadorowanych raczej nie stosuje się zbiorów testowych</p>
+<p><br></p>
+</section>
+<section id="czym-jest-nadmierne-dopasowanie-i-niewystarczające-dopasowanie-modelu" class="level2">
+<h2 class="anchored" data-anchor-id="czym-jest-nadmierne-dopasowanie-i-niewystarczające-dopasowanie-modelu">7. Czym jest nadmierne dopasowanie i niewystarczające dopasowanie modelu?</h2>
+<p><u>Nadmierne dopasowanie</u> - sytuacja, w której model wykazuje dobre charakterystyki jakości dopasowania na zbiorze uczącym ale słabe na testowym, mówimy wtedy o zjawisku przeuczenia modelu (ang. overfitting). Oznacza to, że model wskazuje predykcję poprawnie jedynie dla zbioru treningowego ale ma słaba własności generalizacyjne. Takie modele nie przedstawiają znaczącej wartości w odkrywaniu wiedzy w sposób indukcyjny.</p>
+<p><u>Niewystarczające dopasowanie</u> - sytuacja w której parametry dopasowania modelu pokazują słabe dopasowanie, zarówno na zbiorze uczącym, jak i testowym. Takie modele również nie są użyteczne w pozyskiwaniu wiedzu na temaet badanego zjawiska, a sytuację taką nazywamy niedouczeniem (ang. underfitting).</p>
+<p><br></p>
+</section>
+<section id="wymień-typy-modeli-uczenia-maszynowego-i-krótki-opis-ich-zasady-działania." class="level2">
+<h2 class="anchored" data-anchor-id="wymień-typy-modeli-uczenia-maszynowego-i-krótki-opis-ich-zasady-działania.">8. Wymień typy modeli uczenia maszynowego i krótki opis ich zasady działania.</h2>
+<p><u><strong>Modele regresyjne</strong></u> Jednym z rodzajów zadań bazującym na wnioskowaniu indukcyjnym jest model regresyjny. Należy on do grupy metod nadzorowanych, których celem jest oszacowanie wartości cechy wyjściowej (która jest ilościowa) na podstawie zestawu predyktorów, które mogą być ilościowe i jakościowe. Uczenie takich modeli odbywa się poprzez optymalizację funkcji celu (np.<span class="math inline">\(MSE\)</span>) na podstawie zbioru uczącego.</p>
+<p><u><strong>Modele klasyfikacyjne</strong></u> Podobnie jak modele regresyjne, modele klasyfikacyjne należą do grupy metod nadzorowanego uczenia maszynowego. Ich zadaniem jest właściwa klasyfikacja obiektów na podstawie wielkości predyktorów. Odpowiedzią modelu jest zawsze cecha typu jakościowego, natomiast predyktory mogą mieć dowolny typ. Wyróżnia się klasyfikację dwu i wielostanową. Lista modeli realizujących klasyfikację binarną jest nieco dłuższa niż w przypadku modeli z wielostanową cechą wynikową. Proces uczenia modelu klasyfikacyjnego również opiera się na optymalizacji funkcji celu. Tym razem są to zupełnie inne miary jakości dopasowania (np. trafność, czyli odsetek poprawnych klasyfikacji).</p>
+<p><u><strong>Modele grupujące</strong></u> Bardzo szeroką gamę modeli nienadzorowanych stanowią metody analizy skupień. Ich zadaniem jest grupowanie obiektów w możliwie najbardziej jednorodne grupy, na podstawie wartości atrybutów poddanych analizie. Ponieważ są to metody “bez nauczyciela”, to ocena ich przydatności ma nieco inny charakter i choć istnieją różne wskaźniki jakości grupowania, to trudno tu o obiektywne wskazanie najlepszego rozwiązania.</p>
+<p><br></p>
+</section>
+<section id="czym-są-drzewa-decyzyjne-z-jakich-elementów-się-składają" class="level2">
+<h2 class="anchored" data-anchor-id="czym-są-drzewa-decyzyjne-z-jakich-elementów-się-składają">9. Czym są drzewa decyzyjne, z jakich elementów się składają?</h2>
+<p><u>Drzewo decyzyjne</u> jest strukturą hierarchiczną przedstawiającą model klasyfikacyjny lub regresyjny. Stosowane są szczególnie często wówczas, gdy funkcyjna postać związku pomiędzy predyktorami a zmienną wynikową jest nieznana lub ciężka do ustalenia. Każde drzewo decyzyjne składa się z korzenia (ang. <em>root</em>), węzłów (ang. <em>nodes</em>) i liści (ang. <em>leaves</em>). Korzeniem nazywamy początkowy węzeł drzewa, z którego poprzez podziały (ang. <em>splits</em>) powstają kolejne węzły potomne. Końcowe węzły, które nie podlegają podziałom nazywamy liśćmi, a linie łączące węzły nazywamy gałęziami (ang. <em>branches</em>).</p>
+<p style="color:#808080">
+Jeśli drzewo służy do zadań klasyfikacyjnych, to liście zawierają informację o tym, która klasa w danym ciągu podziałów jest najbardziej prawdopodobna. Natomiast, jeśli drzewo jest regresyjne, to liście zawierają warunkowe miary tendencji centralnej (najczęściej średnią) wartości zmiennej wynikowej. Warunek stanowi szereg podziałów doprowadzający do danego węzła terminalnego (liścia). W obu przypadkach (klasyfikacji i regresji) drzewo “dąży” do takiego podziału by kolejne węzły, a co za tym idzie również liście, były ja najbardziej jednorodne ze względu na zmienną wynikową.
+</p>
+<p><br></p>
+</section>
+<section id="podaj-rodzaje-reguł-podziału." class="level2">
+<h2 class="anchored" data-anchor-id="podaj-rodzaje-reguł-podziału.">10. Podaj rodzaje reguł podziału.</h2>
+<p><br></p>
+</section>
+<section id="opisz-algorytm-budowy-drzewa-decyzyjnego." class="level2">
+<h2 class="anchored" data-anchor-id="opisz-algorytm-budowy-drzewa-decyzyjnego.">11. Opisz algorytm budowy drzewa decyzyjnego.</h2>
+<ol type="1">
+<li><p>Stwórz początkowy węzeł (korzeń) i oznacz go jako otwarty.</p></li>
+<li><p>Przypisz wszystkie możliwe rekordy do węzła początkowego.</p></li>
+<li><p><strong>Dopóki</strong> istnieją otwarte węzły <strong>wykonuj</strong>:</p></li>
+</ol>
+<ul>
+<li>wybierz węzeł <span class="math inline">\(n\)</span>, wyznacz potrzebne statystyki opisowe zmiennej zależnej dla tego węzła i przypisz wartość docelową,</li>
+<li><strong>jesli</strong> kryterium zatrzymania podziału jest spełnione dla węzła <span class="math inline">\(n\)</span> , to oznacz go jako <strong>zamknięty</strong>,</li>
+<li><strong>w przeciwnym wypadku</strong> wybierz podział <span class="math inline">\(r\)</span> elementów węzła <span class="math inline">\(n\)</span> i dla każdego podzbioru podziału stwórz węzeł niższego rzędy (potomka) <span class="math inline">\(n_r\)</span> oraz oznacz go jako <em>otwarty</em>,</li>
+<li>następnie przypisz wszystkie przypadki generowane podziałem <span class="math inline">\(r\)</span> do odpowiednich węzłów potomków <span class="math inline">\(n_r\)</span>,</li>
+<li>oznacz węzeł <span class="math inline">\(n\)</span> jako <strong>zamknięty</strong>.</li>
+</ul>
+<p style="color:#808080">
+Sposób przypisywania wartości docelowej wiąże się ściśle z rodzajem drzewa. W drzewach regresyjnych chodzi o wyliczenie średniej lub mediany dla obserwacji ujętych w danym węźle. Natomiast w przypadku drzewa klasyfikacyjnego, wyznacza się wartości prawdopodobieństw przynależności obserwacji znajdującej się w danym węźle do poszczególnych klas.
+</p>
+<p><br></p>
+</section>
+<section id="jakie-znasz-reguły-zatrzymania-modelu-drzewa-decyzyjnego" class="level2">
+<h2 class="anchored" data-anchor-id="jakie-znasz-reguły-zatrzymania-modelu-drzewa-decyzyjnego">12. Jakie znasz reguły zatrzymania modelu drzewa decyzyjnego?</h2>
+<p style="color:#808080">
+Kryterium zatrzymania jest warunkiem, który decyduje o tym, że dany węzeł uznajemy za zamknięty i nie dokonujemy dalszego jego podziału.
+</p>
+<p>Wyróżniamy następujące kryteria zatrzymania:</p>
+<ol type="1">
+<li><p><u>Jednorodność węzła</u> - w przypadku drzewa klasyfikacyjnego może zdarzyć się sytuacja, że wszystkie obserwacje węzła będą pochodziły z jednej klasy. Wówczas nie ma sensu dokonywać dalszego podziału węzła.</p></li>
+<li><p><u>Węzeł jest pusty</u> - zbiór przypisanych obserwacji zbioru uczącego do <span class="math inline">\(n\)</span>-tego węzła jest pusty.</p></li>
+<li><p><u>Brak reguł podziału</u> - wszystkie reguły podziału zostały wykorzystane, zatem nie da się stworzyć potomnych węzłów, które charakteryzowałyby się większą homogenicznością.</p></li>
+</ol>
+<p style="color:#808080">
+</p><ol start="4" type="1">
+<li><u>Wielkość drzewa</u> - węzeł potomny ustala się jako zamknięty, gdy długość ścieżki dojścia do niego przekroczy ustaloną wartość.
+<p></p></li>
+</ol>
+<p style="color:#808080">
+Warunki ujęte w pierwszych dwóch kryteriach mogą być nieco złagodzone, poprzez zatrzymanie podziałów wówczas, gdy prawdopodobieństwo przynależenia do pewnej klasy przekroczy ustalony próg lub gdy liczebność węzła spadnie poniżej ustalonej wartości.
+</p>
+<p><br></p>
+</section>
+<section id="opisz-jak-się-buduje-reguły-podziału-w-drzewach-decyzyjnych." class="level2">
+<h2 class="anchored" data-anchor-id="opisz-jak-się-buduje-reguły-podziału-w-drzewach-decyzyjnych.">13. Opisz jak się buduje reguły podziału w drzewach decyzyjnych.</h2>
+<p><br></p>
+</section>
+<section id="opisz-przycinanie-drzewa-redukujące-błąd." class="level2">
+<h2 class="anchored" data-anchor-id="opisz-przycinanie-drzewa-redukujące-błąd.">14. Opisz przycinanie drzewa redukujące błąd.</h2>
+<p>Jedną ze strategii przycinania drzewa jest przycinanie redukujące błąd (ang. reduced error pruning). Polega ono na porównaniu błędów (najczęściej używana jest miara odsetka błędnych klasyfikacji lub MSE) liścia <span class="math inline">\(l\)</span> i węzła do którego drzewo przycinamy <span class="math inline">\(n\)</span> na całkiem nowym zbiorze uczącym <span class="math inline">\(R\)</span>. Niech <span class="math inline">\(e_R(l)\)</span> i <span class="math inline">\(e_R(n)\)</span> oznaczają odpowiednio błędy liścia i węzła na zbiorze <span class="math inline">\(R\)</span>. Przez błąd węzła rozumiemy błąd pod-drzewa o korzeniu w węźle <span class="math inline">\(n\)</span>. Wówczas jeśli zachodzi warunek <span class="math display">\[e_R(l)\leq e_R(n)\]</span> to zaleca się zastąpić węzeł <span class="math inline">\(n\)</span> liściem <span class="math inline">\(l\)</span>.</p>
+<p><br></p>
+</section>
+<section id="opisz-przycinanie-drzewa-minimalizujące-błąd." class="level2">
+<h2 class="anchored" data-anchor-id="opisz-przycinanie-drzewa-minimalizujące-błąd.">15. Opisz przycinanie drzewa minimalizujące błąd.</h2>
+<!-- nagranie wykładu 21.03.2023 0:37:00 -->
+Przycinanie minimalizujące błąd opiera się na spostrzeżeniu, że błąd drzewa przyciętego charakteryzuje się zbyt pesymistyczną oceną i dlatego wymaga korekty. Węzeł drzewa klasyfikacyjnego <span class="math inline">\(n\)</span> zastępujemy liściem <span class="math inline">\(l\)</span>, jeśli <span class="math display">\[\hat e_T(l)\leq \hat e_T(n)\]</span> gdzie <br> <span class="math inline">\(\hat e_T(n)\)</span> - miara błędu poddrzewa stojącego pod węzłem <span class="math inline">\(n\)</span> <br> <span class="math inline">\(\hat e_T(l)\)</span> - miara błędu na liściu liczona na podstwaie prawdopodobieństwa przynależności do danej klasy
+<p style="color:#808080">
+<span class="math inline">\(\hat e\)</span> - szacunek błędu
+</p>
+<p>W przypadku drzewa regresyjnego znajdujemy wiele analogii, ponieważ jeśli dla pewnego zbioru rekordów <span class="math inline">\(T\)</span> spełniony jest warunek <span class="math display">\[\text{mse}_T(l) \leq \text{mse}_T(n)\]</span> gdzie <br> <span class="math inline">\(l\)</span> i <span class="math inline">\(n\)</span> oznaczają odpowiednio liść i węzeł, <br></p>
+<p>to wówczas zastępujemy węzeł <span class="math inline">\(n\)</span> przez liść <span class="math inline">\(l\)</span>.</p>
+<p><br></p>
+</section>
+<section id="opisz-przycinanie-drzewa-ze-względu-na-współczynnik-złożoności-drzewa." class="level2">
+<h2 class="anchored" data-anchor-id="opisz-przycinanie-drzewa-ze-względu-na-współczynnik-złożoności-drzewa.">16. Opisz przycinanie drzewa ze względu na współczynnik złożoności drzewa.</h2>
+<p>Przycinanie ze względu na współczynnik złożoności drzewa (ang. <em>cost-complexity pruning</em>) polega na wprowadzeniu “kary” za zwiększoną złożoność drzewa. Drzewa klasyfikacyjne przycinamy gdy spełniony jest warunek <span class="math display">\[e_T(l) \leq e_T(n) + \alpha C(n)\]</span> gdzie <br> <span class="math inline">\(\alpha\)</span> jest parametrem wagi kary za złożoność drzewa, <br> <span class="math inline">\(C(n)\)</span> oznacza złożoność drzewa mierzoną liczbą liści</p>
+<p>Wspomniane kryterium przycięcia dla drzew regresyjnych bazuje na względnym błędzie średnio-kwadratowym (ang. <em>relative square error</em>)</p>
+<p><br></p>
+</section>
+<section id="opisz-zalety-i-wady-drzew-decyzyjnych." class="level2">
+<h2 class="anchored" data-anchor-id="opisz-zalety-i-wady-drzew-decyzyjnych.">17. Opisz zalety i wady drzew decyzyjnych.</h2>
+<p><u>Zalety</u>:</p>
+<ul>
+<li><p>łatwe w interpretacji;</p></li>
+<li><p>nie wymagają żmudnego przygotowania danych (brak standaryzacji, wprowadzania zmiennych binarnych, dopuszcza występowanie braków danych);</p></li>
+<li><p>działa na obu typach zmiennych - jakościowych i ilościowych;</p></li>
+<li><p>dopuszcza nieliniowość związku między zmienną wynikową a predyktorami;</p></li>
+<li><p>odporny na odstępstwa od założeń;</p></li>
+<li><p>pozwala na obsługę dużych zbiorów danych.</p></li>
+</ul>
+<p><u>Wady</u>:</p>
+<ul>
+<li><p>brak jawnej postaci zależności;</p></li>
+<li><p>zależność struktury drzewa od użytego algorytmu;</p></li>
+<li><p>przegrywa jakością predykcji z innymi metodami nadzorowanego uczenia maszynowego.</p></li>
+</ul>
+<p><br></p>
+</section>
+<section id="opisz-zasadę-działania-modeli-bagging." class="level2">
+<h2 class="anchored" data-anchor-id="opisz-zasadę-działania-modeli-bagging.">18. Opisz zasadę działania modeli bagging.</h2>
+<p>Bagging ma na celu zmniejszenie wariancji modelu pojedynczego drzewa. Podobnie jak technika bootstrap, w której statystyki są wyliczane na wielu próbach pobranych z tego samego rozkładu (próby), w metodzie bagging losuje się wiele prób ze zbioru uczącego (najczęściej poprzez wielokrotne losowanie próby o rozmiarze zbioru uczącego ze zwracaniem), a następnie dla każdej próby bootstrapowej buduje się drzewo. W ten sposób otrzymujemy <span class="math inline">\(B\)</span> drzew decyzyjnych <span class="math inline">\(\hat f ^1 (x), \hat f ^2 (x), \dots, \hat f ^B (x)\)</span>. Na koniec poprzez uśrednienie otrzymujemy model charakteryzujący się większą precyzją <span class="math display">\[\hat f_{\text{bag}}(x) = \frac{1}{B}\sum\limits^{B}_{b=1}\hat f ^b (x)\]</span> Ponieważ podczas budowy drzew na podstawie prób bootstrapowych nie kontrolujemy złożoności, to w rezultacie każde z drzew może charakteryzować się dużą wariancją. Poprzez uśrednianie wyników pojedynczych drzew otrzymujemy mniejsze obciążenie ale również przy dostatecznie dużej liczbie prób (<span class="math inline">\(B\)</span> często liczy się w setkach, czy tysiącach) zmniejszamy wariancję “średniej” predykcji z drzew. Oczywiście metodę tą trzeba dostosować do zadań klasyfikacyjnych, ponieważ nie istnieje średnia klasyfikacji z wielu drzew. W miejsce średniej stosuje się modę, czyli wartość dominującą.</p>
+<p style="color:#808080">
+W przypadku metody bagging interpretacja jest znacznie utrudniona, ponieważ jej wynik składa się z agregacji wielu drzew. Można natomiast ocenić ważność predyktorów (ang. <em>variable importance</em>). I tak, przez obserwację spadku <span class="math inline">\(RSS\)</span> dla baggingu regresyjnego przy zastosowaniu danego predyktora w podziałach drzewa i uśrednieniu wyniku otrzymamy wskaźnik ważności predyktora dużo lepszy niż dla pojedynczego drzewa. W przypadku baggingu klasyfikacyjnego w miejsce <span class="math inline">\(RSS\)</span> stosujemy <em>indeks Gini’ego</em>
+</p>
+<p><br></p>
+</section>
+<section id="opisz-zasadę-działania-lasów-losowych." class="level2">
+<h2 class="anchored" data-anchor-id="opisz-zasadę-działania-lasów-losowych.">19. Opisz zasadę działania lasów losowych.</h2>
+<p>Lasy losowe są uogólnieniem metody bagging, polegającą na losowaniu dla każdego drzewa wchodzącego w skład lasu <span class="math inline">\(m\)</span> redyktorów spośród <span class="math inline">\(p\)</span> dostępnych, a następnie budowaniu drzew z wykorzystaniem tylko tych predyktorów. Dzięki temu za każdy razem drzewo jest budowane w oparciu o nowy zestaw cech (najczęściej przyjmujemy <span class="math inline">\(m = \sqrt{p}\)</span>. W przypadku modeli bagging za każdym razem najsilniejszy predyktor wchodził w skład zbioru uczącego, a co za tym idzie również uczestniczył w tworzeniu reguł podziału. Wówczas wiele drzew zawierało reguły stosujące dany atrybut, a wtedy predykcje otrzymywane za pomocą drzew były skorelowane. Dlatego nawet duża liczba prób bootstrapowych nie zapewniała poprawy precyzji.</p>
+<p><br></p>
+</section>
+<section id="opisz-zasadę-działania-metody-boosting." class="level2">
+<h2 class="anchored" data-anchor-id="opisz-zasadę-działania-metody-boosting.">20. Opisz zasadę działania metody boosting.</h2>
+<p>W metodzie boosting nie stosuje się prób bootstrapowych ale odpowiednio modyfikuje się drzewo wyjściowe w kolejnych krokach na tym samym zbiorze uczącym.</p>
+<p>Algorytm dla drzewa regresyjnego jest następujący:</p>
+<ol type="1">
+<li><p>Ustal <span class="math inline">\(\hat f(x) = 0\)</span> i <span class="math inline">\(r_i = y_i\)</span> dla każdego <span class="math inline">\(i\)</span> w zbiorze uczącym.</p></li>
+<li><p>Dla <span class="math inline">\(b = 1,2,\dots ,B\)</span> powtarzaj:</p></li>
+</ol>
+<ul>
+<li><p>naucz drzewo <span class="math inline">\(\hat f ^b\)</span> o <span class="math inline">\(d\)</span> regułach podziału (czyli <span class="math inline">\(d+1\)</span> liściach) na zbiorze <span class="math inline">\((X_i,r_i)\)</span>,</p></li>
+<li><p>zaktualizuj drzewo do nowej “skurczonej” wersji <span class="math inline">\(\hat f(x) \leftarrow \hat f(x) + \lambda \hat f^b (x)\)</span>,</p></li>
+<li><p>zaktualizuj reszty <span class="math inline">\(r_i \leftarrow r_i - \lambda \hat f^b (x_i)\)</span>,</p></li>
+</ul>
+<ol start="3" type="1">
+<li>Wyznacz boosted model <span class="math inline">\(\hat f(x) = \sum \limits ^B _{b=1} \lambda \hat f^b(x)\)</span></li>
+</ol>
+<p><br></p>
+<p>Uczenie drzew klasyfikacyjnego metoda boosting przebiega w podobny sposób. Wynik uczenia drzew metodą boosting zależy od trzech parametrów:</p>
+<ol type="1">
+<li><p>Liczby drzew <span class="math inline">\(B\)</span>. W przeciwieństwie do metody bagging i lasów losowych, zbyt duże <span class="math inline">\(B\)</span> może doprowadzić do przeuczenia modelu. <span class="math inline">\(B\)</span> ustala się najczęściej na podstawie walidacji krzyżowej.</p></li>
+<li><p>Parametru “kurczenia” (ang. <em>shrinkage</em>) <span class="math inline">\(\lambda\)</span>.Kontroluje on szybkość uczenia się kolejnych drzew. Typowe wartości <span class="math inline">\(\lambda\)</span> to <span class="math inline">\(0.01\)</span> lub <span class="math inline">\(0.001\)</span>. Bardzo małe <span class="math inline">\(\lambda\)</span> może wymagać dobrania większego <span class="math inline">\(B\)</span>, aby zapewnić dobrą jakość predykcyjną modelu.</p></li>
+<li><p>Liczby podziałów w drzewach <span class="math inline">\(d\)</span>, która decyduje o złożoności drzewa. Bywa, że nawet <span class="math inline">\(d=1\)</span> daje dobre rezultaty, ponieważ model wówczas uczy się powoli.</p></li>
+</ol>
+<p><br></p>
+</section>
+<section id="czym-są-klasyfikatory-liniowe" class="level2">
+<h2 class="anchored" data-anchor-id="czym-są-klasyfikatory-liniowe">21. Czym są klasyfikatory liniowe?</h2>
+<p>Obszerną rodzinę klasyfikatorów stanowią modele liniowe (ang. <em>linear classification models</em>). Klasyfikacji w tej rodzinie technik dokonuje się na podstawie modeli funkcji kombinacji liniowej predyktorów. Jest to ujęcie parametryczne, w którym klasyfikacji nowej wartości dokonujemy na podstawie atrybutów obserwacji i wektora parametrów. Uczenie na podstawie zestawu treningowego polega na oszacowaniu parametrów modelu. W odróżnieniu od metod nieparametrycznych postać modelu tym razem jest znana. Każdy klasyfikator liniowy skład się z funkcji wewnętrznej (ang. <em>inner representation function</em>) i funkcji zewnętrznej (ang. <em>outer representation function</em>).</p>
+<p>Pierwsza jest funkcją rzeczywistą parametrów modelu i wartości atrybutów obserwacji <span class="math display">\[g(x) = F(\text a(x), \text w) = \sum \limits ^p _{i=0} w_i a_i (x) = \text w \circ \text a(x), \quad \text{przyjmując, że }\;a_0(x) = 1\]</span></p>
+<p>Funkcja zewnętrzna przyporządkowuje binarnie klasy na podstawie wartości funkcji wewnętrznej. Istnieją dwa główne typy tych klasyfikacji:</p>
+<ul>
+<ul>
+<li><p>brzegowa - przyjmujemy, że funkcje wewnętrzne tworzą granice zbiorów obserwacji różnych klas,</p></li>
+<li><p>probabilistyczna - bazująca na tym, że funkcje wewnętrzne mogą pośrednio wykazywać prawdopodobieństwo przynależności do danej klasy.</p></li>
+</ul>
+<p>Pierwsza dzieli przestrzeń obserwacji za pomocą hiperpłaszczyzn na obszary jednorodne pod względem przynależności do klas. Druga jest próbą parametrycznej reprezentacji prawdopodobieństw przynależności do klas.</p>
+<ul>
+<p>Klasyfikacji na podstawie prawdopodobieństw można dokonać na różne sposoby, stosując:</p>
+<ul>
+<li><p>największe prawdopodobieństwo,</p></li>
+<li><p>funkcję najmniejszego kosztu błędnej klasyfikacji,</p></li>
+<li><p>krzywych ROC (ang. <em>Receiver Operating Characteristic</em> - o tym później).</p></li>
+</ul>
+</ul>
+<p>Podejście brzegowe lub probabilistyczne prowadzi najczęściej do dwóch typów reprezentacji funkcji zewnętrznej:</p>
+<ul>
+<li><p>reprezentacji progowej (ang. <em>threshold representation</em>) - najczęściej przy podejściu brzegowym,</p></li>
+<li><p>reprezentacji logistycznej (ang. <em>logit representation</em>) - przy podejściu probabilistycznym.</p></li>
+</ul>
+</ul>
+<p style="color:#808080" !important=""> Wady klasyfikatorów liniowych
+
+  </p><li style="color:#808080">tylko w przypadku prostych funkcji wewnętrznych jesteśmy w stanie ocenić wpływ poszczególnych predykorów na klasyfikację,</li>
+  
+  <li style="color:#808080">jakość predykcji zależy od doboru funkcji wewnętrznej (liniowa w ścisłym sensie jest najczęściej niewystarczająca),</li>
+  
+  <li style="color:#808080">nie jest w stanie klasyfikować poprawnie stanów (nie jest liniowo separowalna) w zagadnieniach typu XOR.</li> <p></p>
+<p><br></p>
+</section>
+<section id="opisz-reprezentację-progową." class="level2">
+<h2 class="anchored" data-anchor-id="opisz-reprezentację-progową.">22. Opisz reprezentację progową.</h2>
+<p>W przypadku klasyfikacji dwustanowej, dziedzina jest dzielona na dwa regiony (pozytywny i negatywny) poprzez porównanie funkcji zewnętrznej z wartością progową. Bez straty ogólności można sprawić, że będzie to wartość <span class="math inline">\(0\)</span> <span class="math display">\[h(x) = H(g(x)) = \begin{cases}1, \quad \text{jeśli } \, g(x) \geq 0 \\ 0, \quad \text{w przeciwnym przypadku}\end{cases}\]</span> Czasami używa się parametryzacji <span class="math inline">\(\{-1,1\}\)</span>. Przez porównanie <span class="math inline">\(g(x)\)</span> z <span class="math inline">\(0\)</span> definiuje się hiperpłaszczyznę w <span class="math inline">\(p\)</span>-wymiarowej przestrzeni, która rozdziela dziedzinę na regiony pozytywne i negatywne. W tym ujęciu mówimy o liniowej separowalności obserwacji różnych klas, jeśli istnieje hiperpłaszczyzna je rozdzielająca.</p>
+<p><br></p>
+</section>
+<section id="opisz-reprezentację-logitową." class="level2">
+<h2 class="anchored" data-anchor-id="opisz-reprezentację-logitową.">23. Opisz reprezentację logitową.</h2>
+Najbardziej popularną reprezentacją parametryczną stosowaną w klasyfikacji jest reprezentacja logitowa <span class="math display">\[P(y=1|x) = \frac{e^{g(x)}}{e^{g(x)}+1}\]</span>
+<ul>
+Wówczas <span class="math inline">\(g(X)\)</span> nie reprezentuje bezpośrednio <span class="math inline">\(P(y=1|x)\)</span> ale jego logit <span class="math display">\[g(x) = \text{logit}(P(y=1|x))\]</span>
+<ol>
+gdzie <br> <span class="math inline">\(\text{logit}(p)=\text{ln}\left(\frac{p}{1-p}\right)\)</span> <br> Dlatego właściwa postać reprezentacji jest następująca <span class="math display">\[P(y=1|x) = \text{logit}^{-1}(g(x))\]</span>
+</ol>
+W ten sposób reprezentacja logitowa jest równoważna reprezentacji progowej, ponieważ <span class="math display">\[g(x) = \text{ln}\left(\frac{P(y=1|x)}{1-P(y=1|x)}\right) = \text{ln}\left(\frac{P(y=1|x)}{P(y=0|x)}\right) &gt; 0\]</span>
+</ul>
+<p>Jednak zaletą reprezentacji logitowej, w porównaniu do progowej, jest to, że można wyznaczyć prawdopodobieństwa przynależności do obu klas. W przypadku klasyfikacji wielostanowej uczymy tyle funkcji <span class="math inline">\(h\)</span> ile jest klas.</p>
+<p><br></p>
+</section>
+<section id="opisz-konstrukcję-liniowych-modeli-dyskryminacyjnych-fishera-lub-welcha." class="level2">
+<h2 class="anchored" data-anchor-id="opisz-konstrukcję-liniowych-modeli-dyskryminacyjnych-fishera-lub-welcha.">24. Opisz konstrukcję liniowych modeli dyskryminacyjnych (Fishera lub Welcha).</h2>
+<p><br></p>
+</section>
+<section id="czym-są-klasyfikatory-bayesowskie-zalety-i-wady" class="level2">
+<h2 class="anchored" data-anchor-id="czym-są-klasyfikatory-bayesowskie-zalety-i-wady">25. Czym są klasyfikatory bayesowskie? Zalety i wady?</h2>
+<p>Całą gamę klasyfikatorów opartych na twierdzeniu Bayesa nazywać będziemy bayesowskimi. <span class="math display">\[P(A|B) = \frac{P(A)P(B|A)}{P(B)}\]</span> gdzie <br> <span class="math inline">\(P(B)&gt;0\)</span></p>
+<p>Bayesowskie reguły podejmowania decyzji dały podstawy takich metod jak:</p>
+<ul>
+<li><p>liniowa analiza dyskryminacyjna,</p></li>
+<li><p>kwadratowa analiza dyskryminacyjna.</p></li>
+</ul>
+<p>W ustaleniu klasyfikatora bayesowskiego będzie nam przyświecała cały czas ta sama reguła: <em>jeśli znam wartości cech charakteryzujących badane obiekty oraz klasy do których należą (w próbie uczącej), to na ich podstawie mogę wyznaczyć miary prawdopodobieństw a posteriori, które pomogą mi w ustaleniu klasy do której należy nowy testowy element.</em></p>
+<p><br></p>
+</section>
+<section id="opisz-zasadę-działania-naiwnego-klasyfikatora-bayesa." class="level2">
+<h2 class="anchored" data-anchor-id="opisz-zasadę-działania-naiwnego-klasyfikatora-bayesa.">26. Opisz zasadę działania naiwnego klasyfikatora Bayesa.</h2>
+<p>W naiwnym klasyfikatorze Bayesa zakłada się niezależność warunkową poszczególnych atrybutów względem klasy do której ma należeć (wg hipotezy) obiekt. Założenie to często nie jest spełnione i stąd nazwa przymiotnik <em>“naiwny”</em>.</p>
+<p style="color:#808080">
+Definicja naiwnego klasyfikatora bayesowskiego różni się od klasyfikatora MAP tylko podejściem do prawdopodobieństwa a posteriori.
+</p>
+<p><span class="math display">\[h_{\text{NB}} = \text{arg} \max\limits_{h_j \in\mathbf{H}}P(h_j)\prod\limits^p_{i=1}P(a_i=v_i|h_j)\]</span> gdzie <br> <span class="math inline">\(h_j\)</span> oznacza hipotezę (decyzję), że badany obiek należy do <span class="math inline">\(j\)</span>-tej klasy, <br> <span class="math inline">\(P(h_j) = P_T(h_j) =\frac{|T^j|}{|T|}\)</span> jest prawdopodobieństwiem <em>a priori</em> zajścia hipotezy <span class="math inline">\(h_j\)</span>,<br> <span class="math inline">\(P(a_i=v_i|h_j) = P_{T^j}(a_i=v_i) = \frac{|T^j_{a_i=v_i}|}{|T|}\)</span> jest prawdopodobieństwem <em>a posteriori</em> dla <em>i</em>-tego atrybutu.</p>
+<details>
+<summary>
+</summary>
+<p style="color:#808080">
+<span class="math inline">\(T\)</span> - zbiór danych uczących (treningowych), <br> <span class="math inline">\(T^j\)</span> - zbiór danych uczących dla których przyjęliśmy decyzję o przynależności do <span class="math inline">\(j\)</span>-tej klasy, <br> <span class="math inline">\(T^j_{a_i=v_i}\)</span> - zbiór danych uczących o wartości atrybutu <span class="math inline">\(a_i\)</span> równej <span class="math inline">\(v\)</span> i <span class="math inline">\(j\)</span>-tej klasy, <br> <span class="math inline">\(\mathbf{H}\)</span> - przestrzeń hipotez, <br> <span class="math inline">\(c\)</span> - prawdziwy stan obiektu.
+</p>
+</details>
+<p>Zarówno prawdopodobieństwo a priori jak i a posteriori są wyznaczane na podstawie próby.</p>
+<p><br></p>
+<p>Zalety:</p>
+<ul>
+<li><p>prostota konstrukcji i prosty algorytm,</p></li>
+<li><p>jeśli jest spełnione założenie warunkowej niezależności, to ten klasyfikator działa szybciej i czasem lepiej niż inne metody klasyfikacji,</p></li>
+<li><p>nie potrzebuje dużych zbiorów danych do estymacji parametrów.</p></li>
+</ul>
+<p>Wady:</p>
+<ul>
+<li><p>często nie spełnione założenie o warunkowej niezależności powoduje obciążenie wyników,</p></li>
+<li><p>brak możliwości wprowadzania interakcji efektów kilku zmiennych,</p></li>
+<li><p>potrzebuje założenia normalności warunkowych gęstości w przypadku ciągłych atrybutów,</p></li>
+<li><p>często istnieją lepsze klasyfikatory.</p></li>
+</ul>
+<p><br></p>
+</section>
+<section id="opisz-regułę-działania-modeli-knn." class="level2">
+<h2 class="anchored" data-anchor-id="opisz-regułę-działania-modeli-knn.">27. Opisz regułę działania modeli kNN.</h2>
+<p>Technika <span class="math inline">\(k\)</span> najbliższych sąsiadów (ang.<em><span class="math inline">\(k\)</span>-Nearest Neighbors</em>) przewiduje wartość zmiennej wynikowej na podstawie <span class="math inline">\(k\)</span> najbliższych obserwacji zbioru uczącego. W przeciwieństwie do modeli liniowych, nie posiada ona jawnej formy i należy do klasy technik nazywanych czarnymi skrzynkami (ang. <em>black box</em>). Może być wykorzystywana, zarówno do zadań klasyfikacyjnych, jak i regresyjnych. W obu przypadkach predykcja dla nowych wartości predyktorów przebiega podobnie.</p>
+<p>Niech <span class="math inline">\(x_0\)</span> będzie obserwacją, dla której poszukujemy wartości zmiennej wynikowej <span class="math inline">\(y_0\)</span>. Na podstawie zbioru obserwacji <span class="math inline">\(x \in T\)</span> zbioru uczącego wyznacza się <span class="math inline">\(k\)</span> najbliższych sąsiadów <em>(metrykę można wybierać dowolnie, choć najczęściej jest to metryka euklidesowa)</em>, gdzie <span class="math inline">\(k\)</span> jest z góry ustaloną wartością. Następnie, jeśli zadanie ma charakter klasyfikacyjny, to <span class="math inline">\(y_0\)</span> przypisuje się modę zmiennej wynikowej obserwacji będących <span class="math inline">\(k\)</span> ajbliższymi sąsiadami. W przypadku zadań regresyjnych <span class="math inline">\(y_0\)</span> przypisuje się średnią lub medianę.</p>
+<p>Olbrzymie znaczenie dla wyników predykcji na podstawie metody <em>kNN</em> ma dobór metryki. Nie istnieje obiektywna technika wyboru najlepszej metryki, dlatego jej doboru dokonujemy metodą prób i błędów. Należy dodatkowo pamiętać, że wielkości mierzone <span class="math inline">\(x\)</span> mogą się różnić zakresami zmienności, a co za tym idzie, mogą znacząco wpłynąć na mierzone odległości pomiędzy punktami. Dlatego zaleca się standaryzację zmiennych przed zastosowaniem metody <em>kNN</em>.</p>
+<p>Kolejnym parametrem, który ma znaczący wpływ na predykcję, jest liczba sąsiadów <span class="math inline">\(k\)</span>. Wybór zbyt małej liczby <span class="math inline">\(k\)</span> może doprowadzić do przeuczenia modelu, z kolei zbyt duża liczba sąsiadów powoduje obciążenie wyników. Dopiero dobór odpowiedniego <span class="math inline">\(k\)</span> daje model o stosunkowo niskiej wariancji i obciążeniu. Najczęściej liczby <span class="math inline">\(k\)</span> poszukujemy za pomocą próbkowania.</p>
+<p><br></p>
+</section>
+<section id="czym-są-uogólnione-modele-addytywne" class="level2">
+<h2 class="anchored" data-anchor-id="czym-są-uogólnione-modele-addytywne">28. Czym są uogólnione modele addytywne?</h2>
+<p><br></p>
+</section>
+<section id="opisz-zasadę-działania-modeli-svm-dla-dwóch-klas-liniowo-separowalnych." class="level2">
+<h2 class="anchored" data-anchor-id="opisz-zasadę-działania-modeli-svm-dla-dwóch-klas-liniowo-separowalnych.">29. Opisz zasadę działania modeli SVM dla dwóch klas liniowo separowalnych.</h2>
+<p style="color:#808080">
+Metoda wektorów nośnych (ang. <em>Support Vector Machines</em>) to metoda klasyfikacji obserwacji na podstawie cech (atrybutów). Jest techniką nadzorowaną tzn., że w próbie uczącej występują zarówno cechy charakteryzujące badane obiekty jak i ich przynależność do klasy.
+</p>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="obrazki/SVM1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Przykład prostych separujących obiekty obu grup</figcaption><p></p>
+</figure>
+</div>
+</center>
+<p>Istotą tej metody jest znalezienie wektorów nośnych, definiujących hiperpowierzchnie optymalnie separujące obiekty w homogeniczne grupy.</p>
+<p>Niech <span class="math inline">\(D\)</span> będzie zbiorem <span class="math inline">\(n\)</span> punktów w <span class="math inline">\(d\)</span>-wymiarowej przestrzeni określonych następująco <span class="math inline">\((\vec{x_i}, y_i)\)</span>, <span class="math inline">\(i=1,\dots,d\)</span>, gdzie <span class="math inline">\(y_i\)</span> przyjmuje wartości <span class="math inline">\(-1\)</span> lub <span class="math inline">\(1\)</span> w zależności od tego do której grupy należy (zakładamy istnienie tylko dwóch grup). Poszukujemy takiej hiperpłaszczyzny, która maksymalizuje margines pomiędzy punktami obu klas w przestrzeni cech <span class="math inline">\(\vec x\)</span>.</p>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="obrazki/SVM2.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p></p><figcaption class="figure-caption">Płaszczyzna najlepiej rozdzielająca obiekty obu grup (białe i czarne kropki) wraz z prostymi wyznaczającymi maksymalny margines separujący obie grupy</figcaption><p></p>
+</figure>
+</div>
+</center>
+<p>Margines ten jest określany jako najmniejsza odległość pomiędzy hiperpłaszczyzną i elementami z każdej z grup. <br> Dowolna hiperpłaszczyzna może być zapisana równaniem <span class="math inline">\(\vec w \vec x - b = 0\)</span> gdzie <br> <span class="math inline">\(\vec w\)</span> jest waktorem normalnym do hiperpłaszczyzny. <br> Jeśli dane są liniowo separowalne to, można wybrać takie dwie hiperpłaszczyzny, że odległość pomiędzy nimi jest największa. <br> Równania tych hiperpłaszczyzn dane są wzorami <span class="math display">\[\vec w \vec x - b = 1, \quad \vec w \vec x - b = -1\]</span> Odległość pomiędzy tymi hiperpłaszczyznami wynosi <span class="math inline">\(\frac{2}{||\vec w||}\)</span>. Zatem żeby zmaksymalizować odległość pomiędzy hiperpłaszczyznami (margines) musimy zminimalizować <span class="math inline">\(\frac{||\vec w||}{2}\)</span>. <br> Dodatkowo, żeby nie pozwolić aby punkty wpadały do marginesu musimy nałożyć dodatkowe ograniczenia <span class="math display">\[\begin{align}
+\vec w \vec x_i - b &amp; \geq 1, \quad  y_i  = 1 \\
+\vec w \vec x_i - b &amp; \leq -1, \;  y_i  = -1
+\end{align}\]</span> Co można zapisać <span class="math inline">\(y_i(\vec w \vec x_i - b \geq 1), \; 1\leq i \leq n\)</span>.</p>
+<p>Zatem <span class="math inline">\(\vec w\)</span> i <span class="math inline">\(b\)</span> minimalizujące <span class="math inline">\(||\vec w||\)</span> przy jednoczesnym spełnieniu warunku definiują klasyfikator postaci <span class="math display">\[\vec x \rightarrow \text{sgn}(\vec w \vec x - b)\]</span>. Z racji, że <span class="math inline">\(||\vec w||\)</span> jest określona jako pierwiastek sumy kwadratów poszczególnych współrzędnych wektora, to częściej w minimalizacji stosuje się<span class="math inline">\(||\vec w||^2\)</span>.</p>
+<p>Sformułowany powyżej problem należy do grupy optymalizacji funkcji kwadratowej przy liniowych ograniczeniach. Rozwiązuje się go metodą mnożników Lagrange’a. <span class="math display">\[L(\vec w,b,\alpha) = \frac{1}{2}||\vec w||^2 - \sum\limits^n_{i=1}\alpha_i(y_i(\vec w \vec{x_i} - b) - 1)\]</span> gdzie <br> <span class="math inline">\(\alpha_i\)</span> są mnożnikami Lagrange’a.</p>
+<p><br></p>
+</section>
+<section id="na-czym-polega-metoda-jądrowa-w-svm" class="level2">
+<h2 class="anchored" data-anchor-id="na-czym-polega-metoda-jądrowa-w-svm">30. Na czym polega metoda jądrowa w SVM?</h2>
+<p>Metoda jądrowa pozwala ona na nieliniowy kształt brzegu obszaru decyzyjnego.</p>
+<p>Zasada działania polega na znalezieniu takiego jądra przekształcenia (ang. <em>kernel</em>) <span class="math inline">\(\phi\)</span>, które odwzoruje przestrzeń <span class="math inline">\(d\)</span>-wymiarową w <span class="math inline">\(d'\)</span>-wymiarową, gdzie <span class="math inline">\(d'&gt;d\)</span> taką, że <span class="math inline">\(D_\phi=\{\phi(\vec{x_i}), y_i\}\)</span> jest możliwie jak najbardziej separowalna.</p>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="obrazki/SVM3.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Przykład zastosowania takiego przekształcenia jądrowego aby z sytuacji braku liniowej separowalności do niej doprowadzić</figcaption><p></p>
+</figure>
+</div>
+</center>
+<p>Dla funkcji jądrowej określonej wzorem <span class="math inline">\(k(\vec{x_i},\vec{x_j})=\phi(\vec{x_i})\phi(\vec{x_j})\)</span> minimalizujemy wyrażenie <span class="math display">\[L(\alpha_i) = \sum\limits^n_{i=1}\alpha_i+\frac{1}{2}\sum\limits^n_{i=1}\sum\limits^n_{j=1}\alpha_i\alpha_jy_iy_jk(\vec{x_i},\vec{x_j})\]</span> przy warunkach <span class="math display">\[\sum\limits^n_{n=1}\alpha_iy_i =0, \quad0\leq \alpha_i\leq \frac{1}{2n\lambda}\]</span></p>
+<p>Najczęściej stosowanymi funkcjami jądrowymi są:</p>
+<ul>
+<li><p>wialomianowa</p></li>
+<li><p>gaussowska</p></li>
+<li><p>Laplace’a</p></li>
+<li><p>hiperboliczna</p></li>
+<li><p>sigmoidalna</p></li>
+<li><p>Bessel’a</p></li>
+<li><p>ANOVA</p></li>
+<li><p>sklejana dla jednowymiarowej przestrzeni</p></li>
+</ul>
+<p>W przypadku braku wiedzy o danych funkcja gaussowska, Laplace’a i Bessel’a są zalecane.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Modele_egzamin.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Statystyczne Modele Liniowe i Nieliniowe</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
