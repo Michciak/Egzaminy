@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -62,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
@@ -70,24 +71,26 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Eksploracja Danych</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Eksploracja_egzamin.html">Eksploracja Danych</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Egzaminy</a> 
         <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
       </div>
@@ -95,27 +98,32 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">Losowanie</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Losowanie</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./WAD_egzamin.html" class="sidebar-item-text sidebar-link">Wielowymiarowa analiza danych</a>
+  <a href="./WAD_egzamin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wielowymiarowa analiza danych</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Modele_egzamin.html" class="sidebar-item-text sidebar-link">Statystyczne Modele Liniowe i Nieliniowe</a>
+  <a href="./Modele_egzamin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statystyczne Modele Liniowe i Nieliniowe</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Eksploracja_egzamin.html" class="sidebar-item-text sidebar-link active">Eksploracja Danych</a>
+  <a href="./Eksploracja_egzamin.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Eksploracja Danych</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -163,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Eksploracja Danych</h1>
+<h1 class="title">Eksploracja Danych</h1>
 </div>
 
 
@@ -282,6 +290,34 @@ Jeśli drzewo służy do zadań klasyfikacyjnych, to liście zawierają informac
 </section>
 <section id="podaj-rodzaje-reguł-podziału." class="level2">
 <h2 class="anchored" data-anchor-id="podaj-rodzaje-reguł-podziału.">10. Podaj rodzaje reguł podziału.</h2>
+<p>Najczęściej występujące reguły podziału w drzewach decyzyjnych są jednowymiarowe, czyli warunek podziału jest generowany na podstawie jednego atrybutu. Istnieją podziały wielowymiarowe ale ze względu na złożoność obliczeniową są rzadziej stosowane.</p>
+<p><strong>Podziały dla atrybutów ze skali <u>nominalnej</u></strong></p>
+<p>Istnieją dwa typy reguł podziału dla skali nominalnej:</p>
+<ul>
+<li><p>oparte na wartości atrybutu (ang. <em>value based</em>) - wówczas funkcja testowa przyjmuje postać <span class="math display">\[t(x) = a(x)\]</span>, czyli podział generują wartości atrybutu,</p></li>
+<li><p>oparte na równości (ang. <em>equality based</em>) - gdzie funkcja testowa jest zdefiniowana jako <span class="math display">\[t(x) =
+\begin{cases}
+1, &amp; \text{gdy } \; a(x) = \nu\\
+0, &amp; \text{w przeciwnym wypadku,}
+\end{cases}\]</span> gdzie <br> <span class="math inline">\(\nu \in A \; \text{ [nu],}\)</span> <br> <span class="math inline">\(A\)</span> - zbiór możliwych wartości <span class="math inline">\(a\)</span>. <br> W tym przypadky podział jest dychotomiczny (podział na takie zbiory, które nie mają ze sobą wspólnych elementów), albo obiekt ma wartość atrybutu równą <span class="math inline">\(\nu\)</span>, albo go nie ma.</p></li>
+</ul>
+<p><strong>Podziały dla atrybutów ze skali <u>ciągłej</u></strong></p>
+<p>Reguły podziału stosowane do skali ciągłej, to:</p>
+<ul>
+<li><p>oparte na nierównościach (ang. <em>inequality based</em>) - zdefiniowana jako <span class="math display">\[t(x) =
+\begin{cases}
+1, &amp; \text{gdy } \; a(x) \leq \nu\\
+0, &amp; \text{w przeciwnym wypadku,}
+\end{cases}\]</span> gdzie <br> <span class="math inline">\(\nu \in A\)</span>,</p></li>
+<li><p>przedziałowa (ang. <em>interval based</em>) - zdefiniowana jako <span class="math display">\[t(x)=\begin{cases}
+1, &amp; \text{gdy } \; a(x) \in I_1\\
+2, &amp; \text{gdy } \; a(x) \in I_2\\
+\, \vdots \\
+k, &amp; \text{gdy } \; a(x) \in I_k\\
+\end{cases}\]</span> gdzie <br> <span class="math inline">\(I_1,I_2,\dots,I_k \subset A\)</span> stanowią rozłączny podział (przedziałmi) przeciwdziedziny <span class="math inline">\(A\)</span>.</p></li>
+</ul>
+<p><strong>Podziały dla atrybutów ze skali <u>porządkowej</u></strong></p>
+<p>Podziały te mogą wykorzystywać oba wcześniej wspomniane typy, w zależności od potrzeb.</p>
 <p><br></p>
 </section>
 <section id="opisz-algorytm-budowy-drzewa-decyzyjnego." class="level2">
@@ -326,6 +362,17 @@ Warunki ujęte w pierwszych dwóch kryteriach mogą być nieco złagodzone, popr
 </section>
 <section id="opisz-jak-się-buduje-reguły-podziału-w-drzewach-decyzyjnych." class="level2">
 <h2 class="anchored" data-anchor-id="opisz-jak-się-buduje-reguły-podziału-w-drzewach-decyzyjnych.">13. Opisz jak się buduje reguły podziału w drzewach decyzyjnych.</h2>
+Reguła podziału dobierana jest w taki sposób aby zmaksymalizować zdolności generalizacyjne drzewa. <br> Złożoność drzewa mierzona jest najczęściej przeciętną liczbą podziałów potrzebnych do dotarcia do liścia zaczynając od korzenia. Liście są najczęściej tworzone wówczas gdy dyspersja wartości wynikowej jest stosunkowo mała lub węzeł zawiera w miarę homogeniczne obserwacje ze względu na przynależność do klasy zmiennej wynikowej.
+<p style="color:#808080">
+W przypadku drzew regresyjnych zmienność na poziomie węzłów jest dobrą miarą służącą do definiowania podziału w węźle. I tak, jeśli pewien podział generuje nam stosunkowo małe dyspersje wartości docelowych w węzłach potomnych, to można ten podział uznać za właściwy.
+</p>
+<p>Jeśli <span class="math inline">\(T_n\)</span> oznacza zbiór rekordów należących do węzła <span class="math inline">\(n\)</span>, a <span class="math inline">\(T_{n, \, t\, =\, r}\)</span> są podzbiorami generowanymi przez podział <span class="math inline">\(r\)</span> w węzłach potomnych dla <span class="math inline">\(n\)</span>, to dyspersję wartości docelowej <span class="math inline">\(f\)</span> będziemy oznaczali następująco <span class="math display">\[\text{disp}_{T_{n, \, t\, =\, r}}(f)\]</span> Regułę podziału możemy określać poprzez minimalizację średniej ważonej dyspersji wartości docelowej następującej postaci <span class="math display">\[\text{disp}_n(f|t) = \sum\limits_{r \in R_t}\frac{|T_{n, \, t\, =\, r}|}{|T_n|}\text{disp}_{T_{n, \, t\, =\, r}}(f)\]</span> gdzie <br> <span class="math inline">\(||\)</span> oznacza moc zbioru, <br> <span class="math inline">\(R_t\)</span> oznacza zbiór biór wszystkich możliwych wartości reguły podziału.</p>
+<p>Czasami wygodniej będzie maksymalizować przyrost dyspersji (lub spadek) <span class="math display">\[\Delta \, \text{disp}_n(f|t) = \text{disp}_n(f) - \sum\limits_{r \in R_t}\frac{|T_{n, \, t\, =\, r}|}{|T_n|}\text{disp}_{T_{n, \, t\, =\, r}}(f)\]</span></p>
+<p>Miarą heterogeniczności węzłów ze względu na zmienną wynikową (ang. <em>impurity</em>) w drzewach klasyfikacyjnych, która pozwala na tworzenie kolejnych podziałów węzła, są najczęściej wskaźnik Gini’ego i entropia. <br> Entropię podzbioru uczącego w węźle <span class="math inline">\(\mathbf{n}\)</span>, wyznaczamy według wzoru <span class="math display">\[E_{T_\mathbf{n}}(c|t) = \sum\limits_{x \in R_t}\frac{|T_{\mathbf{n}, \, t\, =\, r}|}{|T_\mathbf{n}|}E_{T_{\mathbf{n}, \, t\, =\, r}}(c)\]</span> gdzie <br> <span class="math inline">\(t\)</span> jest podziałem (kandydatem), <br> <span class="math inline">\(r\)</span> jest potencjalnym wynikiem podziału <span class="math inline">\(t\)</span>, <br> <span class="math inline">\(c\)</span> jest oznaczeniem klasy zmiennej wynikowej, <br> natomiast <span class="math display">\[E_{T_{\mathbf{n}, \, t\, =\, r}}(c) = \sum\limits_{d \in C} - P_{T_{\mathbf{n}, \, t\, =\, r}}(c = d)\log\left[P_{T_{\mathbf{n}, \, t\, =\, r}}(c = d)\right]\]</span>przy czym <span class="math inline">\(P_{T_{\mathbf{n}, \, t\, =\, r}}(c = d)=P_{T_{\mathbf{n}}}(c = d|t=r)\)</span></p>
+<p style="color:#808080">
+Podobnie definiuje się indeks Gini’ego <span class="math display">\[Gi_{T_\mathbf{n}}(c|t) = \sum\limits_{x \in R_t}\frac{|T_{\mathbf{n}, \, t\, =\, r}|}{|T_\mathbf{n}|}Gi_{T_{\mathbf{n}, \, t\, =\, r}}(c)\]</span> gdzie <span class="math display">\[Gi_{T_{\mathbf{n}, \, t\, =\, r}}(c) = \sum\limits_{d \in C}P_{T_{\mathbf{n}, \, t\, =\, r}}(c = d) \,\cdot\,(1-P_{T_{\mathbf{n}, \, t\, =\, r}}(c = d))=1-\sum\limits_{d \in C}P^2_{T_{\mathbf{n}, \, t\, =\, r}}(c = d)\]</span>
+</p>
+<p>Dla tak zdefiniowanych miar “nieczystości” węzłów, podziału dokonujemy w taki sposób, aby zminimalizować współczynnik Gini’ego lub entropię. Im niższe miary nieczystości, tym bardziej obserwacje znajdujące się w węźle są monokulturą (prawie wszystkie są w jednej klasie). Nierzadko korzysta się również z współczynnika przyrostu informacji (ang. <em>information gain</em>) <span class="math display">\[\Delta E_{T_n}(c|t) = E_{T_n}(c) - E_{T_n}(c|t)\]</span> Istnieje również jego odpowiednik dla indeksu Gini’ego. W obu przypadkach optymalnego podziału szukamy poprzez maksymalizację przyrostu informacji.</p>
 <p><br></p>
 </section>
 <section id="opisz-przycinanie-drzewa-redukujące-błąd." class="level2">
@@ -461,6 +508,7 @@ W ten sposób reprezentacja logitowa jest równoważna reprezentacji progowej, p
 </section>
 <section id="opisz-konstrukcję-liniowych-modeli-dyskryminacyjnych-fishera-lub-welcha." class="level2">
 <h2 class="anchored" data-anchor-id="opisz-konstrukcję-liniowych-modeli-dyskryminacyjnych-fishera-lub-welcha.">24. Opisz konstrukcję liniowych modeli dyskryminacyjnych (Fishera lub Welcha).</h2>
+<p>Podejście Fishera wykorzystuje analizę wariancji, podczas gdy Welch skupił się na klasyfikacji minimalizującej prawdopodobieństwo błędnej klasyfikacji</p>
 <p><br></p>
 </section>
 <section id="czym-są-klasyfikatory-bayesowskie-zalety-i-wady" class="level2">
@@ -510,11 +558,21 @@ Definicja naiwnego klasyfikatora bayesowskiego różni się od klasyfikatora MAP
 <p>Technika <span class="math inline">\(k\)</span> najbliższych sąsiadów (ang.<em><span class="math inline">\(k\)</span>-Nearest Neighbors</em>) przewiduje wartość zmiennej wynikowej na podstawie <span class="math inline">\(k\)</span> najbliższych obserwacji zbioru uczącego. W przeciwieństwie do modeli liniowych, nie posiada ona jawnej formy i należy do klasy technik nazywanych czarnymi skrzynkami (ang. <em>black box</em>). Może być wykorzystywana, zarówno do zadań klasyfikacyjnych, jak i regresyjnych. W obu przypadkach predykcja dla nowych wartości predyktorów przebiega podobnie.</p>
 <p>Niech <span class="math inline">\(x_0\)</span> będzie obserwacją, dla której poszukujemy wartości zmiennej wynikowej <span class="math inline">\(y_0\)</span>. Na podstawie zbioru obserwacji <span class="math inline">\(x \in T\)</span> zbioru uczącego wyznacza się <span class="math inline">\(k\)</span> najbliższych sąsiadów <em>(metrykę można wybierać dowolnie, choć najczęściej jest to metryka euklidesowa)</em>, gdzie <span class="math inline">\(k\)</span> jest z góry ustaloną wartością. Następnie, jeśli zadanie ma charakter klasyfikacyjny, to <span class="math inline">\(y_0\)</span> przypisuje się modę zmiennej wynikowej obserwacji będących <span class="math inline">\(k\)</span> ajbliższymi sąsiadami. W przypadku zadań regresyjnych <span class="math inline">\(y_0\)</span> przypisuje się średnią lub medianę.</p>
 <p>Olbrzymie znaczenie dla wyników predykcji na podstawie metody <em>kNN</em> ma dobór metryki. Nie istnieje obiektywna technika wyboru najlepszej metryki, dlatego jej doboru dokonujemy metodą prób i błędów. Należy dodatkowo pamiętać, że wielkości mierzone <span class="math inline">\(x\)</span> mogą się różnić zakresami zmienności, a co za tym idzie, mogą znacząco wpłynąć na mierzone odległości pomiędzy punktami. Dlatego zaleca się standaryzację zmiennych przed zastosowaniem metody <em>kNN</em>.</p>
-<p>Kolejnym parametrem, który ma znaczący wpływ na predykcję, jest liczba sąsiadów <span class="math inline">\(k\)</span>. Wybór zbyt małej liczby <span class="math inline">\(k\)</span> może doprowadzić do przeuczenia modelu, z kolei zbyt duża liczba sąsiadów powoduje obciążenie wyników. Dopiero dobór odpowiedniego <span class="math inline">\(k\)</span> daje model o stosunkowo niskiej wariancji i obciążeniu. Najczęściej liczby <span class="math inline">\(k\)</span> poszukujemy za pomocą próbkowania.</p>
+<p>Kolejnym parametrem, który ma znaczący wpływ na predykcję, jest liczba sąsiadów <span class="math inline">\(k\)</span>. Wybór zbyt małej liczby <span class="math inline">\(k\)</span> może doprowadzić do przeuczenia modelu, z kolei zbyt duża liczba sąsiadów powoduje obciążenie wyników. Dopiero dobór odpowiedniego <span class="math inline">\(k\)</span> daje model o stosunkowo niskiej wariancji i obciążeniu. Najczęściej liczby <span class="math inline">\(k\)</span> poszukujemy za pomocą próbkowania. <br> Wówczas w zależności od postaci funkcji bazowej otrzymujemy modele z różnymi poziomami elastyczności. Zbiory wszystkich funkcji bazowych definiowanych w ten sposób tworzy słownik funkcji bazowych <span class="math inline">\(\mathbf{D}\)</span></p>
 <p><br></p>
 </section>
 <section id="czym-są-uogólnione-modele-addytywne" class="level2">
 <h2 class="anchored" data-anchor-id="czym-są-uogólnione-modele-addytywne">28. Czym są uogólnione modele addytywne?</h2>
+<p style="color:#808080">
+Modele liniowe, jako techniki klasyfikacji i regresji, mają niewątpliwą zaletę - jawna postać zależności pomiędzy predyktorami i zmienną wynikową. Często w rzeczywistości tak uproszczony model nie potrafi oddać złożoności natury badanego zjawiska. Dlatego powstał pomysł aby w miejsce kombinacji liniowej predyktorów wstawić kombinację liniową ich funkcji, czyli <span class="math display">\[E(Y|X) = f(X) = \sum\limits^M_{i=1}\beta_mh_m(x)\]</span> gdzie <br> <span class="math inline">\(h_m:\mathbb{R}^d \rightarrow \mathbb{R}\)</span> nazwyana jest często funkcją bazową (ang. <em>linear basis expansion</em>) Wówczas w zależności od postaci funkcji bazowej otrzymujemy modele z różnymi poziomami elastyczności. Zbiory wszystkich funkcji bazowych definiowanych w ten sposób tworzą słownik funkcji bazowych <span class="math inline">\(\mathcal{D}\)</span>. Aby kontrolować złożoność modeli, mając do dyspozycji tak zasobny słownik, wprowadza się następujące podejścia: <br> - ogranicza się klasę dostępnych funkcji bazowych, <br> - włącza się do modelu jedynie te funkcje ze słownika <span class="math inline">\(\mathcal{D}\)</span>, które istotnie poprawiają dopasowanie modelu, <br> - używa się metod penalizowanych, czyli dopuszcza się stosowanie wszystkich funkcji bazowych ze słownika <span class="math inline">\(\mathcal{D}\)</span>, ale współczynniki przy nich stojące są ograniczane.
+</p>
+<p>Przez uogólnione modele addytywne (ang. <em>Generalized Additive Models</em>) rozumiemy klasę modeli, które poprzez funkcję łączącą, opisują warunkową wartość zmiennej wynikowej w następujący sposób <span class="math display">\[g(E(X|Y)) = g(\mu(X)) = \alpha + f_1(X_1) + \ldots + f_d(X_d)\]</span> gdzie <br> <span class="math inline">\(g\)</span> jest funkcją łączącą. <br> Najczęściej stosowanymi funkcjami łączącymi są:</p>
+<ul>
+<li><p><span class="math inline">\(g(\mu) = \mu\)</span> - stosowana w modelach, gdy zmienna wynikowa ma rozkład normalny;</p></li>
+<li><p><span class="math inline">\(g(\mu) = \text{logit}\,\mu\)</span> - stosowana, gdy zmienna wynikowa ma rozkład dwumianowy;</p></li>
+<li><p><span class="math inline">\(g(\mu) = \text{probit}\,\mu\)</span> - stosowana również w przypadku gdy zmienna ma rozkład dwumianowy, a <span class="math inline">\(\Phi^{-1}\)</span> oznacza odwrotność dystrybuanty standaryzowanego rozkładu normalnego;</p></li>
+<li><p><span class="math inline">\(g(\mu) = \log\,\mu\)</span> - stosowana, gdy zmienna wynikowa jest zmienną typu zliczeniowego (rozkład Poissona).</p></li>
+</ul>
 <p><br></p>
 </section>
 <section id="opisz-zasadę-działania-modeli-svm-dla-dwóch-klas-liniowo-separowalnych." class="level2">
@@ -526,7 +584,7 @@ Metoda wektorów nośnych (ang. <em>Support Vector Machines</em>) to metoda klas
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="obrazki/SVM1.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Przykład prostych separujących obiekty obu grup</figcaption><p></p>
+<figcaption class="figure-caption">Przykład prostych separujących obiekty obu grup</figcaption>
 </figure>
 </div>
 </center>
@@ -536,7 +594,7 @@ Metoda wektorów nośnych (ang. <em>Support Vector Machines</em>) to metoda klas
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="obrazki/SVM2.png" class="img-fluid figure-img" style="width:50.0%"></p>
-<p></p><figcaption class="figure-caption">Płaszczyzna najlepiej rozdzielająca obiekty obu grup (białe i czarne kropki) wraz z prostymi wyznaczającymi maksymalny margines separujący obie grupy</figcaption><p></p>
+<figcaption class="figure-caption">Płaszczyzna najlepiej rozdzielająca obiekty obu grup (białe i czarne kropki) wraz z prostymi wyznaczającymi maksymalny margines separujący obie grupy</figcaption>
 </figure>
 </div>
 </center>
@@ -556,22 +614,25 @@ Metoda wektorów nośnych (ang. <em>Support Vector Machines</em>) to metoda klas
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="obrazki/SVM3.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Przykład zastosowania takiego przekształcenia jądrowego aby z sytuacji braku liniowej separowalności do niej doprowadzić</figcaption><p></p>
+<figcaption class="figure-caption">Przykład zastosowania takiego przekształcenia jądrowego aby z sytuacji braku liniowej separowalności do niej doprowadzić</figcaption>
 </figure>
 </div>
 </center>
 <p>Dla funkcji jądrowej określonej wzorem <span class="math inline">\(k(\vec{x_i},\vec{x_j})=\phi(\vec{x_i})\phi(\vec{x_j})\)</span> minimalizujemy wyrażenie <span class="math display">\[L(\alpha_i) = \sum\limits^n_{i=1}\alpha_i+\frac{1}{2}\sum\limits^n_{i=1}\sum\limits^n_{j=1}\alpha_i\alpha_jy_iy_jk(\vec{x_i},\vec{x_j})\]</span> przy warunkach <span class="math display">\[\sum\limits^n_{n=1}\alpha_iy_i =0, \quad0\leq \alpha_i\leq \frac{1}{2n\lambda}\]</span></p>
 <p>Najczęściej stosowanymi funkcjami jądrowymi są:</p>
 <ul>
-<li><p>wialomianowa</p></li>
-<li><p>gaussowska</p></li>
-<li><p>Laplace’a</p></li>
-<li><p>hiperboliczna</p></li>
-<li><p>sigmoidalna</p></li>
+<li><p>wialomianowa <span class="math inline">\(k(\vec{x_i},\vec{x_j}) = (a\vec{x_i}'\vec{x_j} + b)^q\)</span>,</p></li>
+<li><p>gaussowska <span class="math inline">\(k(\vec{x_i},\vec{x_j}) = exp(-\gamma||\vec{x_i} - \vec{x_j}||^2)\)</span>,</p></li>
+<li><p>Laplace’a <span class="math inline">\(k(\vec{x_i},\vec{x_j}) = exp(-\gamma||\vec{x_i} - \vec{x_j}||)\)</span>,</p></li>
+<li><p>hiperboliczna <span class="math inline">\(k(\vec{x_i},\vec{x_j}) = \text{tanh}(\vec{x_i}'\vec{x_j} + b)\)</span>,</p></li>
+<li><p>sigmoidalna <span class="math inline">\(k(\vec{x_i},\vec{x_j}) = \text{tanh}(a\vec{x_i}'\vec{x_j} + b)\)</span>,</p></li>
 <li><p>Bessel’a</p></li>
 <li><p>ANOVA</p></li>
 <li><p>sklejana dla jednowymiarowej przestrzeni</p></li>
 </ul>
+<p style="color:#808080">
+<em>Potrzebę zamieszczenia pozostałych wzorów zgłaszać autorowi strony.</em>
+</p>
 <p>W przypadku braku wiedzy o danych funkcja gaussowska, Laplace’a i Bessel’a są zalecane.</p>
 
 
@@ -721,9 +782,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -788,6 +863,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
