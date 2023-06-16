@@ -1,26 +1,27 @@
 {
-    "id": "538473BF",
+    "id": "626439B8",
     "path": "C:/Users/Michc/Dropbox/Uczelnia/Egzaminy/Egzaminy/Eksploracja_egzamin.qmd",
     "project_path": "Eksploracja_egzamin.qmd",
     "type": "quarto_markdown",
-    "hash": "2548156077",
+    "hash": "1375279558",
     "contents": "",
     "dirty": false,
-    "created": 1685977804479.0,
+    "created": 1686689227305.0,
     "source_on_save": false,
-    "relative_order": 1,
+    "relative_order": 2,
     "properties": {
+        "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "62,0",
-        "scrollLine": "52"
+        "cursorPosition": "541,169",
+        "scrollLine": "526"
     },
     "folds": "",
-    "lastKnownWriteTime": 1686429841,
+    "lastKnownWriteTime": 1686950252,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1686429841,
+    "last_content_update": 1686950252314,
     "read_only": false,
     "read_only_alternatives": []
 }

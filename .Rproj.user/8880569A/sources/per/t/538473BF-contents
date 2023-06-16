@@ -148,7 +148,40 @@ Bardzo szeroką gamę modeli nienadzorowanych stanowią metody analizy skupień.
 
 ## 10. Podaj rodzaje reguł podziału.
 
+Najczęściej występujące reguły podziału w drzewach decyzyjnych są jednowymiarowe, czyli warunek podziału jest generowany na podstawie jednego atrybutu. Istnieją podziały wielowymiarowe ale ze względu na złożoność obliczeniową są rzadziej stosowane.
 
+**Podziały dla atrybutów ze skali <u>nominalnej</u>**
+
+Istnieją dwa typy reguł podziału dla skali nominalnej:
+
+- oparte na wartości atrybutu (ang. *value based*) - wówczas funkcja testowa przyjmuje postać $$t(x) = a(x)$$ czyli podział generują wartości atrybutu,
+
+- oparte na równości (ang. *equality based*) - gdzie funkcja testowa jest zdefiniowana jako $$t(x) = 
+\begin{cases}
+1, & \text{gdy } \; a(x) = \nu\\
+0, & \text{w przeciwnym wypadku,}
+\end{cases}$$ gdzie <br> $\nu \in A \; \text{ [nu],}$ <br> $A$ - zbiór możliwych wartości $a$. <br> W tym przypadky podział jest dychotomiczny (podział na takie  zbiory, które nie mają ze sobą wspólnych elementów), albo obiekt ma wartość atrybutu równą $\nu$, albo go nie ma.
+
+**Podziały dla atrybutów ze skali <u>ciągłej</u>**
+
+Reguły podziału stosowane do skali ciągłej, to:
+
+- oparte na nierównościach (ang. *inequality based*) - zdefiniowana jako $$t(x) = 
+\begin{cases}
+1, & \text{gdy } \; a(x) \leq \nu\\
+0, & \text{w przeciwnym wypadku,}
+\end{cases}$$ gdzie <br> $\nu \in A$,
+
+- przedziałowa (ang. *interval based*) - zdefiniowana jako $$t(x)=\begin{cases}
+1, & \text{gdy } \; a(x) \in I_1\\
+2, & \text{gdy } \; a(x) \in I_2\\
+\, \vdots \\
+k, & \text{gdy } \; a(x) \in I_k\\
+\end{cases}$$ gdzie <br> $I_1,I_2,\dots,I_k \subset A$ stanowią rozłączny podział (przedziałmi) przeciwdziedziny $A$.
+
+**Podziały dla atrybutów ze skali <u>porządkowej</u>**
+
+Podziały te mogą wykorzystywać oba wcześniej wspomniane typy, w zależności od potrzeb.
 
 <br>
 
@@ -189,7 +222,17 @@ Wyróżniamy następujące kryteria zatrzymania:
 
 ## 13. Opisz jak się buduje reguły podziału w drzewach decyzyjnych.
 
+Reguła podziału dobierana jest w taki sposób aby zmaksymalizować zdolności generalizacyjne drzewa. <br> 
+Złożoność drzewa mierzona jest najczęściej przeciętną liczbą podziałów potrzebnych do dotarcia do liścia zaczynając od korzenia. Liście są najczęściej tworzone wówczas gdy dyspersja wartości wynikowej jest stosunkowo mała lub węzeł zawiera w miarę homogeniczne obserwacje ze względu na przynależność do klasy zmiennej wynikowej.
+<p style="color:#808080">W przypadku drzew regresyjnych zmienność na poziomie węzłów jest dobrą miarą służącą do definiowania podziału w węźle. I tak, jeśli pewien podział generuje nam stosunkowo małe dyspersje wartości docelowych w węzłach potomnych, to można ten podział uznać za właściwy.</p> 
+Jeśli $T_n$ oznacza zbiór rekordów należących do węzła $n$, a $T_{n, \, t\, =\, r}$ są podzbiorami generowanymi przez podział $r$ w węzłach potomnych dla $n$, to dyspersję wartości docelowej $f$ będziemy oznaczali następująco $$\text{disp}_{T_{n, \, t\, =\, r}}(f)$$ Regułę podziału możemy określać poprzez minimalizację średniej ważonej dyspersji wartości docelowej następującej postaci $$\text{disp}_n(f|t) = \sum\limits_{r \in R_t}\frac{|T_{n, \, t\, =\, r}|}{|T_n|}\text{disp}_{T_{n, \, t\, =\, r}}(f)$$ gdzie <br> $||$ oznacza moc zbioru, <br> $R_t$ oznacza zbiór biór wszystkich możliwych wartości reguły podziału.
 
+Czasami wygodniej będzie maksymalizować przyrost dyspersji (lub spadek) $$\Delta \, \text{disp}_n(f|t) = \text{disp}_n(f) - \sum\limits_{r \in R_t}\frac{|T_{n, \, t\, =\, r}|}{|T_n|}\text{disp}_{T_{n, \, t\, =\, r}}(f)$$
+
+Miarą heterogeniczności węzłów ze względu na zmienną wynikową (ang. *impurity*) w drzewach klasyfikacyjnych, która pozwala na tworzenie kolejnych podziałów węzła, są najczęściej wskaźnik Gini’ego i entropia. <br> Entropię podzbioru uczącego w węźle $\mathbf{n}$, wyznaczamy według wzoru $$E_{T_\mathbf{n}}(c|t) = \sum\limits_{x \in R_t}\frac{|T_{\mathbf{n}, \, t\, =\, r}|}{|T_\mathbf{n}|}E_{T_{\mathbf{n}, \, t\, =\, r}}(c)$$ gdzie <br> $t$ jest podziałem (kandydatem), <br> $r$ jest potencjalnym wynikiem podziału $t$, <br> $c$ jest oznaczeniem klasy zmiennej wynikowej, <br> natomiast $$E_{T_{\mathbf{n}, \, t\, =\, r}}(c) = \sum\limits_{d \in C} - P_{T_{\mathbf{n}, \, t\, =\, r}}(c = d)\log\left[P_{T_{\mathbf{n}, \, t\, =\, r}}(c = d)\right]$$przy czym $P_{T_{\mathbf{n}, \, t\, =\, r}}(c = d)=P_{T_{\mathbf{n}}}(c = d|t=r)$
+
+<p style="color:#808080">Podobnie definiuje się indeks Gini’ego $$Gi_{T_\mathbf{n}}(c|t) = \sum\limits_{x \in R_t}\frac{|T_{\mathbf{n}, \, t\, =\, r}|}{|T_\mathbf{n}|}Gi_{T_{\mathbf{n}, \, t\, =\, r}}(c)$$ gdzie $$Gi_{T_{\mathbf{n}, \, t\, =\, r}}(c) = \sum\limits_{d \in C}P_{T_{\mathbf{n}, \, t\, =\, r}}(c = d) \,\cdot\,(1-P_{T_{\mathbf{n}, \, t\, =\, r}}(c = d))=1-\sum\limits_{d \in C}P^2_{T_{\mathbf{n}, \, t\, =\, r}}(c = d)$$</p> 
+Dla tak zdefiniowanych miar “nieczystości” węzłów, podziału dokonujemy w taki sposób, aby zminimalizować współczynnik Gini’ego lub entropię. Im niższe miary nieczystości, tym bardziej obserwacje znajdujące się w węźle są monokulturą (prawie wszystkie są w jednej klasie). Nierzadko korzysta się również z współczynnika przyrostu informacji (ang. *information gain*) $$\Delta E_{T_n}(c|t) = E_{T_n}(c) - E_{T_n}(c|t)$$ Istnieje również jego odpowiednik dla indeksu Gini’ego. W obu przypadkach optymalnego podziału szukamy poprzez maksymalizację przyrostu informacji.
 
 <br>
 
@@ -366,6 +409,8 @@ Jednak zaletą reprezentacji logitowej, w porównaniu do progowej, jest to, że 
 
 ## 24. Opisz konstrukcję liniowych modeli dyskryminacyjnych (Fishera lub Welcha).
 
+Podejście Fishera wykorzystuje analizę wariancji, podczas gdy Welch skupił
+się na klasyfikacji minimalizującej prawdopodobieństwo błędnej klasyfikacji
 
 
 <br>
@@ -443,13 +488,26 @@ Niech $x_0$  będzie obserwacją, dla której poszukujemy wartości zmiennej wyn
 
 Olbrzymie znaczenie dla wyników predykcji na podstawie metody *kNN* ma dobór metryki. Nie istnieje obiektywna technika wyboru najlepszej metryki, dlatego jej doboru dokonujemy metodą prób i błędów. Należy dodatkowo pamiętać, że wielkości mierzone $x$ mogą się różnić zakresami zmienności, a co za tym idzie, mogą znacząco wpłynąć na mierzone odległości pomiędzy punktami. Dlatego zaleca się standaryzację zmiennych przed zastosowaniem metody *kNN*.
 
-Kolejnym parametrem, który ma znaczący wpływ na predykcję, jest liczba sąsiadów $k$. Wybór zbyt małej liczby $k$ może doprowadzić do przeuczenia modelu, z kolei zbyt duża liczba sąsiadów powoduje obciążenie wyników. Dopiero dobór odpowiedniego $k$ daje model o stosunkowo niskiej wariancji i obciążeniu. Najczęściej liczby $k$ poszukujemy za pomocą próbkowania.
+Kolejnym parametrem, który ma znaczący wpływ na predykcję, jest liczba sąsiadów $k$. Wybór zbyt małej liczby $k$ może doprowadzić do przeuczenia modelu, z kolei zbyt duża liczba sąsiadów powoduje obciążenie wyników. Dopiero dobór odpowiedniego $k$ daje model o stosunkowo niskiej wariancji i obciążeniu. Najczęściej liczby $k$ poszukujemy za pomocą próbkowania. <br> Wówczas w zależności od postaci funkcji bazowej otrzymujemy modele z różnymi poziomami elastyczności. Zbiory wszystkich funkcji bazowych definiowanych w ten sposób tworzy słownik funkcji bazowych $\mathbf{D}$
 
 <br>
 
 ## 28. Czym są uogólnione modele addytywne?
 
+<p style="color:#808080">
+Modele liniowe, jako techniki klasyfikacji i regresji, mają niewątpliwą zaletę - jawna postać zależności pomiędzy predyktorami i zmienną wynikową. Często w rzeczywistości tak uproszczony model nie potrafi oddać złożoności natury badanego zjawiska. Dlatego powstał pomysł aby w miejsce kombinacji liniowej predyktorów wstawić kombinację liniową ich funkcji, czyli $$E(Y|X) = f(X) = \sum\limits^M_{i=1}\beta_mh_m(x)$$ gdzie <br> $h_m:\mathbb{R}^d \rightarrow \mathbb{R}$ nazwyana jest często funkcją bazową (ang. *linear basis expansion*) Wówczas w zależności od postaci funkcji bazowej otrzymujemy modele z różnymi poziomami elastyczności. Zbiory wszystkich funkcji bazowych definiowanych w ten sposób tworzą słownik funkcji bazowych $\mathcal{D}$. Aby kontrolować złożoność modeli, mając do dyspozycji tak zasobny słownik, wprowadza się następujące podejścia: <br> - ogranicza się klasę dostępnych funkcji  bazowych, <br> - włącza się do modelu jedynie te funkcje ze słownika $\mathcal{D}$, które istotnie poprawiają dopasowanie modelu, <br> - używa się metod penalizowanych, czyli dopuszcza się stosowanie wszystkich funkcji bazowych ze słownika $\mathcal{D}$, ale współczynniki przy nich stojące są ograniczane.
+</p>
 
+Przez uogólnione modele addytywne (ang. *Generalized Additive Models*) rozumiemy klasę modeli, które poprzez funkcję łączącą, opisują warunkową wartość zmiennej wynikowej w następujący sposób $$g(E(X|Y)) = g(\mu(X)) = \alpha + f_1(X_1) + \ldots + f_d(X_d)$$ gdzie <br> $g$ jest funkcją łączącą. <br> 
+Najczęściej stosowanymi funkcjami łączącymi są:
+
+- $g(\mu) = \mu$ - stosowana w modelach, gdy zmienna wynikowa ma rozkład normalny;
+
+- $g(\mu) = \text{logit}\,\mu$ - stosowana, gdy zmienna wynikowa ma rozkład dwumianowy;
+
+- $g(\mu) = \text{probit}\,\mu$ - stosowana również w przypadku gdy zmienna ma rozkład dwumianowy, a $\Phi^{-1}$ oznacza odwrotność dystrybuanty standaryzowanego rozkładu normalnego;
+
+- $g(\mu) = \log\,\mu$ - stosowana, gdy zmienna wynikowa jest zmienną typu zliczeniowego (rozkład Poissona).
 
 <br>
 
@@ -500,21 +558,25 @@ Dla funkcji jądrowej określonej wzorem $k(\vec{x_i},\vec{x_j})=\phi(\vec{x_i})
 
 Najczęściej stosowanymi funkcjami jądrowymi są:
 
- - wialomianowa
+ - wialomianowa $k(\vec{x_i},\vec{x_j}) = (a\vec{x_i}'\vec{x_j} + b)^q$,
  
- - gaussowska
+ - gaussowska $k(\vec{x_i},\vec{x_j}) = exp(-\gamma||\vec{x_i} - \vec{x_j}||^2)$,
  
- - Laplace'a
+ - Laplace'a $k(\vec{x_i},\vec{x_j}) = exp(-\gamma||\vec{x_i} - \vec{x_j}||)$,
  
- - hiperboliczna
+ - hiperboliczna $k(\vec{x_i},\vec{x_j}) = \text{tanh}(\vec{x_i}'\vec{x_j} + b)$,
  
- - sigmoidalna
+ - sigmoidalna $k(\vec{x_i},\vec{x_j}) = \text{tanh}(a\vec{x_i}'\vec{x_j} + b)$,
  
  - Bessel'a
  
  - ANOVA
  
  - sklejana dla jednowymiarowej przestrzeni
+ 
+ <p style="color:#808080">
+*Potrzebę zamieszczenia pozostałych wzorów zgłaszać autorowi strony.*
+</p>
  
 W przypadku braku wiedzy o danych funkcja gaussowska, Laplace’a i Bessel’a są zalecane.
 
