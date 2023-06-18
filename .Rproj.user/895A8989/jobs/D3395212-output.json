@@ -1,0 +1,6 @@
+[2,"\n"]
+[1,"pandoc \n  to: html\n  output-file: Eksploracja_egzamin.html\n  standalone: true\n  toc: true\n  number-sections: false\n  title-prefix: Egzaminy\n  section-divs: true\n  html-math-method: mathjax\n  wrap: none\n  default-image-extension: png\n  \nmetadata\n  crossref:\n    chapters: true\n  document-css: false\n  link-citations: true\n  date-format: long\n  lang: en\n  theme:\n    light: pulse\n    dark: darkly\n  hide-description: true\n  title: Eksploracja Danych\n  \n"]
+[1,"\nWatching files for changes\nBrowse at http://localhost:7660/Eksploracja_egzamin.html\n"]
+[1,"GET: /Eksploracja_egzamin.html\n"]
+[1,"pandoc \n  to: html\n  output-file: Eksploracja_egzamin.html\n  standalone: true\n  toc: true\n  number-sections: false\n  title-prefix: Egzaminy\n  section-divs: true\n  html-math-method: mathjax\n  wrap: none\n  default-image-extension: png\n  \nmetadata\n  crossref:\n    chapters: true\n  document-css: false\n  link-citations: true\n  date-format: long\n  lang: en\n  theme:\n    light: pulse\n    dark: darkly\n  hide-description: true\n  title: Eksploracja Danych\n  \n"]
+[1,"Output created: docs\\Eksploracja_egzamin.html\n\nWatching files for changes\n"]

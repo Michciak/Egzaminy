@@ -340,7 +340,7 @@ Uczenie drzew do modelu klasyfikacyjnego metodą boosting przebiega w podobny sp
 
 ## 21. Czym są klasyfikatory liniowe?
 
-Obszerną rodzinę klasyfikatorów stanowią modele liniowe (ang. *linear classification models*). Klasyfikacji w tej rodzinie technik dokonuje się na podstawie modeli funkcji kombinacji liniowej predyktorów. Jest to ujęcie parametryczne, w którym klasyfikacji nowej wartości dokonujemy na podstawie atrybutów obserwacji i wektora parametrów. Uczenie na podstawie zestawu treningowego polega na oszacowaniu parametrów modelu. W odróżnieniu od metod nieparametrycznych postać modelu tym razem jest znana. Każdy klasyfikator liniowy skład się z funkcji wewnętrznej (ang. *inner representation function*) i funkcji zewnętrznej (ang. *outer representation function*). 
+Obszerną rodzinę klasyfikatorów stanowią modele liniowe (ang. *linear classification models*). Klasyfikacji w tej rodzinie technik dokonuje się na podstawie modeli funkcji kombinacji liniowej predyktorów. Jest to ujęcie parametryczne, w którym klasyfikacji nowej wartości dokonujemy na podstawie atrybutów obserwacji i wektora parametrów. Uczenie na podstawie zestawu treningowego polega na oszacowaniu parametrów modelu. W odróżnieniu od metod nieparametrycznych postać modelu tym razem jest znana. Każdy klasyfikator liniowy składa się z funkcji wewnętrznej (ang. *inner representation function*) i funkcji zewnętrznej (ang. *outer representation function*). 
 
 Pierwsza jest funkcją rzeczywistą parametrów modelu i wartości atrybutów obserwacji $$g(x) = F(\text a(x), \text w) = \sum \limits ^p _{i=0} w_i a_i (x) = \text w \circ \text a(x), \quad \text{przyjmując, że }\;a_0(x) = 1$$
 
@@ -363,7 +363,7 @@ Klasyfikacji na podstawie prawdopodobieństw można dokonać na różne sposoby,
 
   - funkcję najmniejszego kosztu błędnej klasyfikacji,
   
-  - krzywych ROC (ang. *Receiver Operating Characteristic* - o tym później).
+  - krzywych ROC (ang. *Receiver Operating Characteristic*).
 
 </ul>
 
@@ -431,6 +431,26 @@ W ustaleniu klasyfikatora bayesowskiego będzie nam przyświecała cały czas ta
 
 <br>
 
+Zalety:
+
+  - prostota konstrukcji i prosty algorytm,
+
+  - jeśli jest spełnione założenie warunkowej niezależności, to ten klasyfikator działa szybciej i czasem lepiej niż inne metody klasyfikacji,
+  
+  - nie potrzebuje dużych zbiorów danych do estymacji parametrów.
+  
+Wady:
+
+  - często nie spełnione założenie o warunkowej niezależności powoduje obciążenie wyników,
+
+  - brak możliwości wprowadzania interakcji efektów kilku zmiennych,
+
+  - potrzebuje założenia normalności warunkowych gęstości w przypadku ciągłych atrybutów,
+
+  - często istnieją lepsze klasyfikatory.
+
+<br>
+
 ## 26. Opisz zasadę działania naiwnego klasyfikatora Bayesa.
 
 W naiwnym klasyfikatorze Bayesa zakłada się niezależność warunkową poszczególnych atrybutów względem klasy do której ma należeć (wg hipotezy) obiekt. Założenie to często nie jest spełnione i stąd nazwa przymiotnik *“naiwny”*.
@@ -459,26 +479,6 @@ $c$ - prawdziwy stan obiektu.
 </details>
 
 Zarówno prawdopodobieństwo a priori jak i a posteriori są wyznaczane na podstawie próby.
-
-<br>
-
-Zalety:
-
-  - prostota konstrukcji i prosty algorytm,
-
-  - jeśli jest spełnione założenie warunkowej niezależności, to ten klasyfikator działa szybciej i czasem lepiej niż inne metody klasyfikacji,
-  
-  - nie potrzebuje dużych zbiorów danych do estymacji parametrów.
-  
-Wady:
-
-  - często nie spełnione założenie o warunkowej niezależności powoduje obciążenie wyników,
-
-  - brak możliwości wprowadzania interakcji efektów kilku zmiennych,
-
-  - potrzebuje założenia normalności warunkowych gęstości w przypadku ciągłych atrybutów,
-
-  - często istnieją lepsze klasyfikatory.
 
 <br>
 
@@ -537,7 +537,7 @@ Jeśli dane są liniowo separowalne to, można wybrać takie dwie hiperpłaszczy
 Równania tych hiperpłaszczyzn dane są wzorami $$\vec w \vec x - b = 1, \quad \vec w \vec x - b = -1$$ Odległość pomiędzy tymi hiperpłaszczyznami wynosi $\frac{2}{||\vec w||}$. Zatem żeby zmaksymalizować odległość pomiędzy hiperpłaszczyznami (margines) musimy zminimalizować $\frac{||\vec w||}{2}$. <br> Dodatkowo, żeby nie pozwolić aby punkty wpadały do marginesu musimy nałożyć dodatkowe ograniczenia $$\begin{align}
 \vec w \vec x_i - b & \geq 1, \quad  y_i  = 1 \\ 
 \vec w \vec x_i - b & \leq -1, \;  y_i  = -1
-\end{align}$$ Co można zapisać $y_i(\vec w \vec x_i - b \geq 1), \; 1\leq i \leq n$.
+\end{align}$$ Co można zapisać $y_i(\vec w \vec x_i - b) \geq 1, \; 1\leq i \leq n$.
 
 Zatem $\vec w$ i $b$ minimalizujące $||\vec w||$ przy jednoczesnym spełnieniu warunku definiują klasyfikator postaci $$\vec x \rightarrow \text{sgn}(\vec w \vec x - b)$$
 Z racji, że $||\vec w||$ jest określona jako pierwiastek sumy kwadratów poszczególnych współrzędnych wektora, to częściej w minimalizacji stosuje się$||\vec w||^2$.
@@ -548,7 +548,7 @@ Sformułowany powyżej problem należy do grupy optymalizacji funkcji kwadratowe
 
 ## 30. Na czym polega metoda jądrowa w SVM?
 
-Metoda jądrowa pozwala ona na nieliniowy kształt brzegu obszaru decyzyjnego. 
+Metoda jądrowa dla SVM pozwala na nieliniowy kształt brzegu obszaru decyzyjnego. 
 
 Zasada działania polega na znalezieniu takiego jądra przekształcenia (ang. *kernel*) $\phi$, które odwzoruje przestrzeń $d$-wymiarową w $d'$-wymiarową, gdzie $d'>d$ taką, że $D_\phi=\{\phi(\vec{x_i}), y_i\}$ jest możliwie jak najbardziej separowalna. 
 

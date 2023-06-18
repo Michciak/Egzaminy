@@ -3,7 +3,7 @@
     "path": "C:/Users/Michc/Dropbox/Uczelnia/Egzaminy/Egzaminy/Eksploracja_egzamin.qmd",
     "project_path": "Eksploracja_egzamin.qmd",
     "type": "quarto_markdown",
-    "hash": "1375279558",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1686689227305.0,
@@ -13,15 +13,15 @@
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "541,169",
-        "scrollLine": "526"
+        "cursorPosition": "438,2",
+        "scrollLine": "408"
     },
     "folds": "",
-    "lastKnownWriteTime": 1686950252,
+    "lastKnownWriteTime": 1687083822,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1686950252314,
+    "last_content_update": 1687083822916,
     "read_only": false,
     "read_only_alternatives": []
 }

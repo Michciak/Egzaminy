@@ -459,7 +459,7 @@ W przypadku metody bagging interpretacja jest znacznie utrudniona, ponieważ jej
 </section>
 <section id="czym-są-klasyfikatory-liniowe" class="level2">
 <h2 class="anchored" data-anchor-id="czym-są-klasyfikatory-liniowe">21. Czym są klasyfikatory liniowe?</h2>
-<p>Obszerną rodzinę klasyfikatorów stanowią modele liniowe (ang. <em>linear classification models</em>). Klasyfikacji w tej rodzinie technik dokonuje się na podstawie modeli funkcji kombinacji liniowej predyktorów. Jest to ujęcie parametryczne, w którym klasyfikacji nowej wartości dokonujemy na podstawie atrybutów obserwacji i wektora parametrów. Uczenie na podstawie zestawu treningowego polega na oszacowaniu parametrów modelu. W odróżnieniu od metod nieparametrycznych postać modelu tym razem jest znana. Każdy klasyfikator liniowy skład się z funkcji wewnętrznej (ang. <em>inner representation function</em>) i funkcji zewnętrznej (ang. <em>outer representation function</em>).</p>
+<p>Obszerną rodzinę klasyfikatorów stanowią modele liniowe (ang. <em>linear classification models</em>). Klasyfikacji w tej rodzinie technik dokonuje się na podstawie modeli funkcji kombinacji liniowej predyktorów. Jest to ujęcie parametryczne, w którym klasyfikacji nowej wartości dokonujemy na podstawie atrybutów obserwacji i wektora parametrów. Uczenie na podstawie zestawu treningowego polega na oszacowaniu parametrów modelu. W odróżnieniu od metod nieparametrycznych postać modelu tym razem jest znana. Każdy klasyfikator liniowy składa się z funkcji wewnętrznej (ang. <em>inner representation function</em>) i funkcji zewnętrznej (ang. <em>outer representation function</em>).</p>
 <p>Pierwsza jest funkcją rzeczywistą parametrów modelu i wartości atrybutów obserwacji <span class="math display">\[g(x) = F(\text a(x), \text w) = \sum \limits ^p _{i=0} w_i a_i (x) = \text w \circ \text a(x), \quad \text{przyjmując, że }\;a_0(x) = 1\]</span></p>
 <p>Funkcja zewnętrzna przyporządkowuje binarnie klasy na podstawie wartości funkcji wewnętrznej. Istnieją dwa główne typy tych klasyfikacji:</p>
 <ul>
@@ -473,7 +473,7 @@ W przypadku metody bagging interpretacja jest znacznie utrudniona, ponieważ jej
 <ul>
 <li><p>największe prawdopodobieństwo,</p></li>
 <li><p>funkcję najmniejszego kosztu błędnej klasyfikacji,</p></li>
-<li><p>krzywych ROC (ang. <em>Receiver Operating Characteristic</em> - o tym później).</p></li>
+<li><p>krzywych ROC (ang. <em>Receiver Operating Characteristic</em>).</p></li>
 </ul>
 </ul>
 <p>Podejście brzegowe lub probabilistyczne prowadzi najczęściej do dwóch typów reprezentacji funkcji zewnętrznej:</p>
@@ -524,6 +524,20 @@ W ten sposób reprezentacja logitowa jest równoważna reprezentacji progowej, p
 </ul>
 <p>W ustaleniu klasyfikatora bayesowskiego będzie nam przyświecała cały czas ta sama reguła: <em>jeśli znam wartości cech charakteryzujących badane obiekty oraz klasy do których należą (w próbie uczącej), to na ich podstawie mogę wyznaczyć miary prawdopodobieństw a posteriori, które pomogą mi w ustaleniu klasy do której należy nowy testowy element.</em></p>
 <p><br></p>
+<p>Zalety:</p>
+<ul>
+<li><p>prostota konstrukcji i prosty algorytm,</p></li>
+<li><p>jeśli jest spełnione założenie warunkowej niezależności, to ten klasyfikator działa szybciej i czasem lepiej niż inne metody klasyfikacji,</p></li>
+<li><p>nie potrzebuje dużych zbiorów danych do estymacji parametrów.</p></li>
+</ul>
+<p>Wady:</p>
+<ul>
+<li><p>często nie spełnione założenie o warunkowej niezależności powoduje obciążenie wyników,</p></li>
+<li><p>brak możliwości wprowadzania interakcji efektów kilku zmiennych,</p></li>
+<li><p>potrzebuje założenia normalności warunkowych gęstości w przypadku ciągłych atrybutów,</p></li>
+<li><p>często istnieją lepsze klasyfikatory.</p></li>
+</ul>
+<p><br></p>
 </section>
 <section id="opisz-zasadę-działania-naiwnego-klasyfikatora-bayesa." class="level2">
 <h2 class="anchored" data-anchor-id="opisz-zasadę-działania-naiwnego-klasyfikatora-bayesa.">26. Opisz zasadę działania naiwnego klasyfikatora Bayesa.</h2>
@@ -540,20 +554,6 @@ Definicja naiwnego klasyfikatora bayesowskiego różni się od klasyfikatora MAP
 </p>
 </details>
 <p>Zarówno prawdopodobieństwo a priori jak i a posteriori są wyznaczane na podstawie próby.</p>
-<p><br></p>
-<p>Zalety:</p>
-<ul>
-<li><p>prostota konstrukcji i prosty algorytm,</p></li>
-<li><p>jeśli jest spełnione założenie warunkowej niezależności, to ten klasyfikator działa szybciej i czasem lepiej niż inne metody klasyfikacji,</p></li>
-<li><p>nie potrzebuje dużych zbiorów danych do estymacji parametrów.</p></li>
-</ul>
-<p>Wady:</p>
-<ul>
-<li><p>często nie spełnione założenie o warunkowej niezależności powoduje obciążenie wyników,</p></li>
-<li><p>brak możliwości wprowadzania interakcji efektów kilku zmiennych,</p></li>
-<li><p>potrzebuje założenia normalności warunkowych gęstości w przypadku ciągłych atrybutów,</p></li>
-<li><p>często istnieją lepsze klasyfikatory.</p></li>
-</ul>
 <p><br></p>
 </section>
 <section id="opisz-regułę-działania-modeli-knn." class="level2">
@@ -604,14 +604,14 @@ Metoda wektorów nośnych (ang. <em>Support Vector Machines</em>) to metoda klas
 <p>Margines ten jest określany jako najmniejsza odległość pomiędzy hiperpłaszczyzną i elementami z każdej z grup. <br> Dowolna hiperpłaszczyzna może być zapisana równaniem <span class="math inline">\(\vec w \vec x - b = 0\)</span> gdzie <br> <span class="math inline">\(\vec w\)</span> jest waktorem normalnym do hiperpłaszczyzny. <br> Jeśli dane są liniowo separowalne to, można wybrać takie dwie hiperpłaszczyzny, że odległość pomiędzy nimi jest największa. <br> Równania tych hiperpłaszczyzn dane są wzorami <span class="math display">\[\vec w \vec x - b = 1, \quad \vec w \vec x - b = -1\]</span> Odległość pomiędzy tymi hiperpłaszczyznami wynosi <span class="math inline">\(\frac{2}{||\vec w||}\)</span>. Zatem żeby zmaksymalizować odległość pomiędzy hiperpłaszczyznami (margines) musimy zminimalizować <span class="math inline">\(\frac{||\vec w||}{2}\)</span>. <br> Dodatkowo, żeby nie pozwolić aby punkty wpadały do marginesu musimy nałożyć dodatkowe ograniczenia <span class="math display">\[\begin{align}
 \vec w \vec x_i - b &amp; \geq 1, \quad  y_i  = 1 \\
 \vec w \vec x_i - b &amp; \leq -1, \;  y_i  = -1
-\end{align}\]</span> Co można zapisać <span class="math inline">\(y_i(\vec w \vec x_i - b \geq 1), \; 1\leq i \leq n\)</span>.</p>
+\end{align}\]</span> Co można zapisać <span class="math inline">\(y_i(\vec w \vec x_i - b) \geq 1, \; 1\leq i \leq n\)</span>.</p>
 <p>Zatem <span class="math inline">\(\vec w\)</span> i <span class="math inline">\(b\)</span> minimalizujące <span class="math inline">\(||\vec w||\)</span> przy jednoczesnym spełnieniu warunku definiują klasyfikator postaci <span class="math display">\[\vec x \rightarrow \text{sgn}(\vec w \vec x - b)\]</span> Z racji, że <span class="math inline">\(||\vec w||\)</span> jest określona jako pierwiastek sumy kwadratów poszczególnych współrzędnych wektora, to częściej w minimalizacji stosuje się<span class="math inline">\(||\vec w||^2\)</span>.</p>
 <p>Sformułowany powyżej problem należy do grupy optymalizacji funkcji kwadratowej przy liniowych ograniczeniach. Rozwiązuje się go metodą mnożników Lagrange’a. <span class="math display">\[L(\vec w,b,\alpha) = \frac{1}{2}||\vec w||^2 - \sum\limits^n_{i=1}\alpha_i(y_i(\vec w \vec{x_i} - b) - 1)\]</span> gdzie <br> <span class="math inline">\(\alpha_i\)</span> są mnożnikami Lagrange’a.</p>
 <p><br></p>
 </section>
 <section id="na-czym-polega-metoda-jądrowa-w-svm" class="level2">
 <h2 class="anchored" data-anchor-id="na-czym-polega-metoda-jądrowa-w-svm">30. Na czym polega metoda jądrowa w SVM?</h2>
-<p>Metoda jądrowa pozwala ona na nieliniowy kształt brzegu obszaru decyzyjnego.</p>
+<p>Metoda jądrowa dla SVM pozwala na nieliniowy kształt brzegu obszaru decyzyjnego.</p>
 <p>Zasada działania polega na znalezieniu takiego jądra przekształcenia (ang. <em>kernel</em>) <span class="math inline">\(\phi\)</span>, które odwzoruje przestrzeń <span class="math inline">\(d\)</span>-wymiarową w <span class="math inline">\(d'\)</span>-wymiarową, gdzie <span class="math inline">\(d'&gt;d\)</span> taką, że <span class="math inline">\(D_\phi=\{\phi(\vec{x_i}), y_i\}\)</span> jest możliwie jak najbardziej separowalna.</p>
 <center>
 <div class="quarto-figure quarto-figure-center">
