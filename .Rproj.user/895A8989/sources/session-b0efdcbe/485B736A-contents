@@ -1,0 +1,18 @@
+# Losowanie {.unnumbered}
+
+---
+title: ""
+author: "Michał Koziński"
+format: 
+  html:
+    toc: false
+    embed-resources: false
+    self-contained: false
+    page-layout: full
+---
+
+<iframe height="350" width="125%" frameborder="no" src="https://michciak.shinyapps.io/losowanie2/"> </iframe>
+
+```{r}
+
+```
