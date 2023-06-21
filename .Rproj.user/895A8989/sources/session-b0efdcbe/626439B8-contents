@@ -511,6 +511,10 @@ Najczęściej stosowanymi funkcjami łączącymi są:
 
 - $g(\mu) = \log\,\mu$ - stosowana, gdy zmienna wynikowa jest zmienną typu zliczeniowego (rozkład Poissona).
 
+<p style="color:#808080">
+IBM: PROBIT można wykorzystać do oszacowania wpływu jednej lub większej liczby zmiennych niezależnych na dychotomiczną zmienną zależną (np. martwe lub żywe, zatrudnione lub bezrobotne, produkt zakupiony lub nie).
+</p>
+
 <br>
 
 ## 29. Opisz zasadę działania modeli SVM dla dwóch klas liniowo separowalnych.

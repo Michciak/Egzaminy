@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Michał Koziński">
 
-<title>walidacja_egzamin</title>
+<title>Egzaminy - Metody Walidacji Modeli Statystycznych</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,26 +23,156 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="Walidacja_egzamin_files/libs/clipboard/clipboard.min.js"></script>
-<script src="Walidacja_egzamin_files/libs/quarto-html/quarto.js"></script>
-<script src="Walidacja_egzamin_files/libs/quarto-html/popper.min.js"></script>
-<script src="Walidacja_egzamin_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="Walidacja_egzamin_files/libs/quarto-html/anchor.min.js"></script>
-<link href="Walidacja_egzamin_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Walidacja_egzamin_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="Walidacja_egzamin_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="Walidacja_egzamin_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Walidacja_egzamin_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./Eksploracja_egzamin.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
-<body class="fullcontent">
+<body class="nav-sidebar docked">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Walidacja_egzamin.html">Metody Walidacji Modeli Statystycznych</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Egzaminy</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Losowanie</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./WAD_egzamin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wielowymiarowa analiza danych</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Modele_egzamin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Statystyczne Modele Liniowe i Nieliniowe</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Eksploracja_egzamin.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Eksploracja Danych</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Walidacja_egzamin.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Metody Walidacji Modeli Statystycznych</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#zagadnienia-do-przygotowania-na-egzamin-ustny-z-metod-walidacji-modeli-statystycznych" id="toc-zagadnienia-do-przygotowania-na-egzamin-ustny-z-metod-walidacji-modeli-statystycznych" class="nav-link active" data-scroll-target="#zagadnienia-do-przygotowania-na-egzamin-ustny-z-metod-walidacji-modeli-statystycznych">Zagadnienia do przygotowania na egzamin ustny z Metod Walidacji Modeli Statystycznych</a>
+  <ul class="collapse">
+  <li><a href="#opisz-typy-modeli-statystycznych-w-podziale-na-przeznaczenie.-wymień-po-jednym-przykładzie-dla-każdego-typu." id="toc-opisz-typy-modeli-statystycznych-w-podziale-na-przeznaczenie.-wymień-po-jednym-przykładzie-dla-każdego-typu." class="nav-link" data-scroll-target="#opisz-typy-modeli-statystycznych-w-podziale-na-przeznaczenie.-wymień-po-jednym-przykładzie-dla-każdego-typu.">1. Opisz typy modeli statystycznych w podziale na przeznaczenie. Wymień po jednym przykładzie dla każdego typu.</a></li>
+  <li><a href="#opisz-proces-tworzenia-modelu-statystycznego." id="toc-opisz-proces-tworzenia-modelu-statystycznego." class="nav-link" data-scroll-target="#opisz-proces-tworzenia-modelu-statystycznego.">2. Opisz proces tworzenia modelu statystycznego.</a></li>
+  <li><a href="#opisz-zasadę-działania-testów-bootstrapowych." id="toc-opisz-zasadę-działania-testów-bootstrapowych." class="nav-link" data-scroll-target="#opisz-zasadę-działania-testów-bootstrapowych.">3. Opisz zasadę działania testów bootstrapowych.</a></li>
+  <li><a href="#opisz-zasadę-działania-testów-permutacyjnych." id="toc-opisz-zasadę-działania-testów-permutacyjnych." class="nav-link" data-scroll-target="#opisz-zasadę-działania-testów-permutacyjnych.">4. Opisz zasadę działania testów permutacyjnych.</a></li>
+  <li><a href="#podaj-podział-miar-dopasowania-modeli-predykcyjnych-oraz-wymień-po-trzy-miary-dedykowane-do-modeli-regresyjnych." id="toc-podaj-podział-miar-dopasowania-modeli-predykcyjnych-oraz-wymień-po-trzy-miary-dedykowane-do-modeli-regresyjnych." class="nav-link" data-scroll-target="#podaj-podział-miar-dopasowania-modeli-predykcyjnych-oraz-wymień-po-trzy-miary-dedykowane-do-modeli-regresyjnych.">5. Podaj podział miar dopasowania modeli predykcyjnych oraz wymień po trzy miary dedykowane do modeli regresyjnych.</a></li>
+  <li><a href="#podaj-podział-miar-dopasowania-modeli-predykcyjnych-oraz-wymień-po-trzy-miary-dedykowane-do-modeli-klasyfikacyjnych." id="toc-podaj-podział-miar-dopasowania-modeli-predykcyjnych-oraz-wymień-po-trzy-miary-dedykowane-do-modeli-klasyfikacyjnych." class="nav-link" data-scroll-target="#podaj-podział-miar-dopasowania-modeli-predykcyjnych-oraz-wymień-po-trzy-miary-dedykowane-do-modeli-klasyfikacyjnych.">6. Podaj podział miar dopasowania modeli predykcyjnych oraz wymień po trzy miary dedykowane do modeli klasyfikacyjnych.</a></li>
+  <li><a href="#podaj-miary-dopasowania-modeli-ze-zmienną-zależną-wieloklasową." id="toc-podaj-miary-dopasowania-modeli-ze-zmienną-zależną-wieloklasową." class="nav-link" data-scroll-target="#podaj-miary-dopasowania-modeli-ze-zmienną-zależną-wieloklasową.">7. Podaj miary dopasowania modeli ze zmienną zależną wieloklasową.</a></li>
+  <li><a href="#sec-roc_auc" id="toc-sec-roc_auc" class="nav-link" data-scroll-target="#sec-roc_auc">8. Opisz czym jest krzywa ROC i miara AUC.</a></li>
+  <li><a href="#opisz-do-czego-jest-stosowany-podział-na-próbę-uczącą-i-testową-oraz-opisz-jak-można-przeprowadzić-podział-na-co-wpływa-proporcja-podziału-jak-ją-można-ustalić." id="toc-opisz-do-czego-jest-stosowany-podział-na-próbę-uczącą-i-testową-oraz-opisz-jak-można-przeprowadzić-podział-na-co-wpływa-proporcja-podziału-jak-ją-można-ustalić." class="nav-link" data-scroll-target="#opisz-do-czego-jest-stosowany-podział-na-próbę-uczącą-i-testową-oraz-opisz-jak-można-przeprowadzić-podział-na-co-wpływa-proporcja-podziału-jak-ją-można-ustalić.">9. Opisz do czego jest stosowany podział na próbę uczącą i testową oraz opisz jak można przeprowadzić podział, na co wpływa proporcja podziału, jak ją można ustalić.</a></li>
+  <li><a href="#na-czym-polega-ekstrakcja-cech-podaj-przykłady-dwóch-technik-z-tego-zakresu." id="toc-na-czym-polega-ekstrakcja-cech-podaj-przykłady-dwóch-technik-z-tego-zakresu." class="nav-link" data-scroll-target="#na-czym-polega-ekstrakcja-cech-podaj-przykłady-dwóch-technik-z-tego-zakresu.">10. Na czym polega ekstrakcja cech? Podaj przykłady dwóch technik z tego zakresu.</a></li>
+  <li><a href="#czym-jest-walidacja-krzyżowa-i-walidacja-krzyżowa-z-powtórzeniami" id="toc-czym-jest-walidacja-krzyżowa-i-walidacja-krzyżowa-z-powtórzeniami" class="nav-link" data-scroll-target="#czym-jest-walidacja-krzyżowa-i-walidacja-krzyżowa-z-powtórzeniami">11. Czym jest walidacja krzyżowa i walidacja krzyżowa z powtórzeniami?</a></li>
+  <li><a href="#czym-jest-metoda-leave-one-out" id="toc-czym-jest-metoda-leave-one-out" class="nav-link" data-scroll-target="#czym-jest-metoda-leave-one-out">12. Czym jest metoda Leave-One-Out?</a></li>
+  <li><a href="#czym-jest-walidacja-metodą-monte-carlo" id="toc-czym-jest-walidacja-metodą-monte-carlo" class="nav-link" data-scroll-target="#czym-jest-walidacja-metodą-monte-carlo">13. Czym jest walidacja metodą Monte-Carlo?</a></li>
+  <li><a href="#jak-stosujemy-bootstraping-do-walidacji-modeli" id="toc-jak-stosujemy-bootstraping-do-walidacji-modeli" class="nav-link" data-scroll-target="#jak-stosujemy-bootstraping-do-walidacji-modeli">14. Jak stosujemy bootstraping do walidacji modeli?</a></li>
+  <li><a href="#czym-jest-i-do-czego-stosujemy-próbkowanie-kroczące" id="toc-czym-jest-i-do-czego-stosujemy-próbkowanie-kroczące" class="nav-link" data-scroll-target="#czym-jest-i-do-czego-stosujemy-próbkowanie-kroczące">15. Czym jest i do czego stosujemy próbkowanie kroczące?</a></li>
+  <li><a href="#na-czym-polega-optymalizacja-modeli-predykcyjnych" id="toc-na-czym-polega-optymalizacja-modeli-predykcyjnych" class="nav-link" data-scroll-target="#na-czym-polega-optymalizacja-modeli-predykcyjnych">16. Na czym polega optymalizacja modeli predykcyjnych?</a></li>
+  <li><a href="#przedstaw-zasadę-działania-dwóch-sposobów-podejścia-do-tuningu-modeli." id="toc-przedstaw-zasadę-działania-dwóch-sposobów-podejścia-do-tuningu-modeli." class="nav-link" data-scroll-target="#przedstaw-zasadę-działania-dwóch-sposobów-podejścia-do-tuningu-modeli.">17. Przedstaw zasadę działania dwóch sposobów podejścia do tuningu modeli.</a></li>
+  <li><a href="#opisz-przeszukiwanie-z-wykorzystaniem-siatki-regularnej-i-nieregularnej." id="toc-opisz-przeszukiwanie-z-wykorzystaniem-siatki-regularnej-i-nieregularnej." class="nav-link" data-scroll-target="#opisz-przeszukiwanie-z-wykorzystaniem-siatki-regularnej-i-nieregularnej.">18. Opisz przeszukiwanie z wykorzystaniem siatki regularnej i nieregularnej.</a></li>
+  <li><a href="#opisz-zasadę-wykorzystania-wielu-rdzeni-procesora-w-optymalizacji-modelu." id="toc-opisz-zasadę-wykorzystania-wielu-rdzeni-procesora-w-optymalizacji-modelu." class="nav-link" data-scroll-target="#opisz-zasadę-wykorzystania-wielu-rdzeni-procesora-w-optymalizacji-modelu.">19. Opisz zasadę wykorzystania wielu rdzeni procesora w optymalizacji modelu.</a></li>
+  <li><a href="#czym-jest-metoda-wyścigów" id="toc-czym-jest-metoda-wyścigów" class="nav-link" data-scroll-target="#czym-jest-metoda-wyścigów">20. Czym jest metoda wyścigów?</a></li>
+  <li><a href="#czym-jest-przeszukiwanie-iteracyjne" id="toc-czym-jest-przeszukiwanie-iteracyjne" class="nav-link" data-scroll-target="#czym-jest-przeszukiwanie-iteracyjne">21. Czym jest przeszukiwanie iteracyjne?</a></li>
+  <li><a href="#sec-bayes" id="toc-sec-bayes" class="nav-link" data-scroll-target="#sec-bayes">22. Opisz optymalizację bayesowską.</a></li>
+  <li><a href="#czym-są-procesu-gaussowskie" id="toc-czym-są-procesu-gaussowskie" class="nav-link" data-scroll-target="#czym-są-procesu-gaussowskie">23. Czym są procesu gaussowskie?</a></li>
+  <li><a href="#co-to-jest-funkcja-akwizycji" id="toc-co-to-jest-funkcja-akwizycji" class="nav-link" data-scroll-target="#co-to-jest-funkcja-akwizycji">24. Co to jest funkcja akwizycji?</a></li>
+  <li><a href="#sec-annealing" id="toc-sec-annealing" class="nav-link" data-scroll-target="#sec-annealing">25. Opisz zasadę działania metody symulowanego wyżarzania.</a></li>
+  <li><a href="#przedstaw-powody-stosowania-redukcji-wymiarowości." id="toc-przedstaw-powody-stosowania-redukcji-wymiarowości." class="nav-link" data-scroll-target="#przedstaw-powody-stosowania-redukcji-wymiarowości.">26. Przedstaw powody stosowania redukcji wymiarowości.</a></li>
+  <li><a href="#jakie-są-powody-stosowania-podpróbkowania-i-nadpróbkowania-w-modelowaniu-predykcyjnym" id="toc-jakie-są-powody-stosowania-podpróbkowania-i-nadpróbkowania-w-modelowaniu-predykcyjnym" class="nav-link" data-scroll-target="#jakie-są-powody-stosowania-podpróbkowania-i-nadpróbkowania-w-modelowaniu-predykcyjnym">27. Jakie są powody stosowania podpróbkowania i nadpróbkowania w modelowaniu predykcyjnym?</a></li>
+  <li><a href="#jakie-są-korzyści-ze-stosowania-próbkowania-zaniżającego-liczebność-klasy-większościowej" id="toc-jakie-są-korzyści-ze-stosowania-próbkowania-zaniżającego-liczebność-klasy-większościowej" class="nav-link" data-scroll-target="#jakie-są-korzyści-ze-stosowania-próbkowania-zaniżającego-liczebność-klasy-większościowej">28. Jakie są korzyści ze stosowania próbkowania zaniżającego liczebność klasy większościowej?</a></li>
+  <li><a href="#jakie-są-zalety-próbkowania-zawyżającego-liczebność-klasy-mniejszościowej" id="toc-jakie-są-zalety-próbkowania-zawyżającego-liczebność-klasy-mniejszościowej" class="nav-link" data-scroll-target="#jakie-są-zalety-próbkowania-zawyżającego-liczebność-klasy-mniejszościowej">29. Jakie są zalety próbkowania zawyżającego liczebność klasy mniejszościowej?</a></li>
+  <li><a href="#jak-należy-stosować-poszczególne-kroki-przygotowania-danych-w-procesie-uczenia-i-walidacji-modelu" id="toc-jak-należy-stosować-poszczególne-kroki-przygotowania-danych-w-procesie-uczenia-i-walidacji-modelu" class="nav-link" data-scroll-target="#jak-należy-stosować-poszczególne-kroki-przygotowania-danych-w-procesie-uczenia-i-walidacji-modelu">30. Jak należy stosować poszczególne kroki przygotowania danych w procesie uczenia i walidacji modelu?</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -56,12 +185,6 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">06-26-2023</p>
-    </div>
-  </div>
   
     
   </div>
@@ -69,9 +192,6 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="metody-walidacji-modeli-statystycznych" class="level1 unnumbered">
-<h1 class="unnumbered">Metody Walidacji Modeli Statystycznych</h1>
-</section>
 <section id="zagadnienia-do-przygotowania-na-egzamin-ustny-z-metod-walidacji-modeli-statystycznych" class="level1">
 <h1>Zagadnienia do przygotowania na egzamin ustny z Metod Walidacji Modeli Statystycznych</h1>
 <!-- ![](obrazki/overfit2.jpeg) -->
@@ -152,23 +272,23 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
 <div class="cell">
 <div class="cell-output-display">
 
-<div id="urjoibyjok" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#urjoibyjok table {
+<div id="vpovigiozk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vpovigiozk table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#urjoibyjok thead, #urjoibyjok tbody, #urjoibyjok tfoot, #urjoibyjok tr, #urjoibyjok td, #urjoibyjok th {
+#vpovigiozk thead, #vpovigiozk tbody, #vpovigiozk tfoot, #vpovigiozk tr, #vpovigiozk td, #vpovigiozk th {
   border-style: none;
 }
 
-#urjoibyjok p {
+#vpovigiozk p {
   margin: 0;
   padding: 0;
 }
 
-#urjoibyjok .gt_table {
+#vpovigiozk .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -194,12 +314,12 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
   border-left-color: #D3D3D3;
 }
 
-#urjoibyjok .gt_caption {
+#vpovigiozk .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#urjoibyjok .gt_title {
+#vpovigiozk .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -211,7 +331,7 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
   border-bottom-width: 0;
 }
 
-#urjoibyjok .gt_subtitle {
+#vpovigiozk .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -223,7 +343,7 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
   border-top-width: 0;
 }
 
-#urjoibyjok .gt_heading {
+#vpovigiozk .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -235,13 +355,13 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
   border-right-color: #D3D3D3;
 }
 
-#urjoibyjok .gt_bottom_border {
+#vpovigiozk .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#urjoibyjok .gt_col_headings {
+#vpovigiozk .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -256,7 +376,7 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
   border-right-color: #D3D3D3;
 }
 
-#urjoibyjok .gt_col_heading {
+#vpovigiozk .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -276,7 +396,7 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
   overflow-x: hidden;
 }
 
-#urjoibyjok .gt_column_spanner_outer {
+#vpovigiozk .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -288,15 +408,15 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
   padding-right: 4px;
 }
 
-#urjoibyjok .gt_column_spanner_outer:first-child {
+#vpovigiozk .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#urjoibyjok .gt_column_spanner_outer:last-child {
+#vpovigiozk .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#urjoibyjok .gt_column_spanner {
+#vpovigiozk .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -308,11 +428,11 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
   width: 100%;
 }
 
-#urjoibyjok .gt_spanner_row {
+#vpovigiozk .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#urjoibyjok .gt_group_heading {
+#vpovigiozk .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -338,7 +458,7 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
   text-align: left;
 }
 
-#urjoibyjok .gt_empty_group_heading {
+#vpovigiozk .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -353,15 +473,15 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
   vertical-align: middle;
 }
 
-#urjoibyjok .gt_from_md > :first-child {
+#vpovigiozk .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#urjoibyjok .gt_from_md > :last-child {
+#vpovigiozk .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#urjoibyjok .gt_row {
+#vpovigiozk .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -380,7 +500,7 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
   overflow-x: hidden;
 }
 
-#urjoibyjok .gt_stub {
+#vpovigiozk .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -393,7 +513,7 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
   padding-right: 5px;
 }
 
-#urjoibyjok .gt_stub_row_group {
+#vpovigiozk .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -407,15 +527,15 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
   vertical-align: top;
 }
 
-#urjoibyjok .gt_row_group_first td {
+#vpovigiozk .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#urjoibyjok .gt_row_group_first th {
+#vpovigiozk .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#urjoibyjok .gt_summary_row {
+#vpovigiozk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -425,16 +545,16 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
   padding-right: 5px;
 }
 
-#urjoibyjok .gt_first_summary_row {
+#vpovigiozk .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#urjoibyjok .gt_first_summary_row.thick {
+#vpovigiozk .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#urjoibyjok .gt_last_summary_row {
+#vpovigiozk .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -444,7 +564,7 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
   border-bottom-color: #D3D3D3;
 }
 
-#urjoibyjok .gt_grand_summary_row {
+#vpovigiozk .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -454,7 +574,7 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
   padding-right: 5px;
 }
 
-#urjoibyjok .gt_first_grand_summary_row {
+#vpovigiozk .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -464,7 +584,7 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
   border-top-color: #D3D3D3;
 }
 
-#urjoibyjok .gt_last_grand_summary_row_top {
+#vpovigiozk .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -474,11 +594,11 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
   border-bottom-color: #D3D3D3;
 }
 
-#urjoibyjok .gt_striped {
+#vpovigiozk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#urjoibyjok .gt_table_body {
+#vpovigiozk .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -487,7 +607,7 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
   border-bottom-color: #D3D3D3;
 }
 
-#urjoibyjok .gt_footnotes {
+#vpovigiozk .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -501,7 +621,7 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
   border-right-color: #D3D3D3;
 }
 
-#urjoibyjok .gt_footnote {
+#vpovigiozk .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -510,7 +630,7 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
   padding-right: 5px;
 }
 
-#urjoibyjok .gt_sourcenotes {
+#vpovigiozk .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -524,7 +644,7 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
   border-right-color: #D3D3D3;
 }
 
-#urjoibyjok .gt_sourcenote {
+#vpovigiozk .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -532,63 +652,63 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
   padding-right: 5px;
 }
 
-#urjoibyjok .gt_left {
+#vpovigiozk .gt_left {
   text-align: left;
 }
 
-#urjoibyjok .gt_center {
+#vpovigiozk .gt_center {
   text-align: center;
 }
 
-#urjoibyjok .gt_right {
+#vpovigiozk .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#urjoibyjok .gt_font_normal {
+#vpovigiozk .gt_font_normal {
   font-weight: normal;
 }
 
-#urjoibyjok .gt_font_bold {
+#vpovigiozk .gt_font_bold {
   font-weight: bold;
 }
 
-#urjoibyjok .gt_font_italic {
+#vpovigiozk .gt_font_italic {
   font-style: italic;
 }
 
-#urjoibyjok .gt_super {
+#vpovigiozk .gt_super {
   font-size: 65%;
 }
 
-#urjoibyjok .gt_footnote_marks {
+#vpovigiozk .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#urjoibyjok .gt_asterisk {
+#vpovigiozk .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#urjoibyjok .gt_indent_1 {
+#vpovigiozk .gt_indent_1 {
   text-indent: 5px;
 }
 
-#urjoibyjok .gt_indent_2 {
+#vpovigiozk .gt_indent_2 {
   text-indent: 10px;
 }
 
-#urjoibyjok .gt_indent_3 {
+#vpovigiozk .gt_indent_3 {
   text-indent: 15px;
 }
 
-#urjoibyjok .gt_indent_4 {
+#vpovigiozk .gt_indent_4 {
   text-indent: 20px;
 }
 
-#urjoibyjok .gt_indent_5 {
+#vpovigiozk .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -688,7 +808,7 @@ Przykładowo w pracy Kuhn i Johnson (2021) autorzy badając natężenie ruchu ko
 <li><p><u>Balanced Accuracy</u> - liczona jako średnia <em>sensitivity</em> i <em>specificity</em>.</p></li>
 </ol>
 <p>Należy pamiętać, że aby obserwacje zaklasyfikować do jednej z klas należy przyjąć pewien punkt odcięcia prawdopodobieństwa (<em>threshold</em>), od którego przewidywana wartość będzie przyjmowała stan <span class="math inline">\(,,1''\)</span>. Domyślnie w wielu modelach ten punkt jest ustalony na poziomie <span class="math inline">\(0.5\)</span>. Nie jest on jednak optymalny ze względu na jakość klasyfikacji. Zmieniając ten próg otrzymamy różne wartości powyższych miar. <br> Istnieją kryteria doboru progu odcięcia, np. oparte na wartości <em>Youdena</em>, <em>F1</em>, <em>średniej geometrycznej</em> itp.</p>
-<p>Bez względu na przyjęty poziom odcięcia istnieją również miary i wykresy, które pozwalają zilustrować jakość modelu. Należą do nich m.in. <em>ROC</em> i <em>AUC</em> (opisane tutaj <a href="#sec-roc_auc">Section&nbsp;1.8</a>)</p>
+<p>Bez względu na przyjęty poziom odcięcia istnieją również miary i wykresy, które pozwalają zilustrować jakość modelu. Należą do nich m.in. <em>ROC</em> i <em>AUC</em> (opisane tutaj <a href="#sec-roc_auc"><span>Section&nbsp;1.8</span></a>)</p>
 <p><br></p>
 </section>
 <section id="podaj-miary-dopasowania-modeli-ze-zmienną-zależną-wieloklasową." class="level2">
@@ -747,38 +867,122 @@ Jeszcze jedna uwaga na temat losowego podziału zbioru na uczący i testowy. W j
 </section>
 <section id="czym-jest-walidacja-krzyżowa-i-walidacja-krzyżowa-z-powtórzeniami" class="level2">
 <h2 class="anchored" data-anchor-id="czym-jest-walidacja-krzyżowa-i-walidacja-krzyżowa-z-powtórzeniami">11. Czym jest walidacja krzyżowa i walidacja krzyżowa z powtórzeniami?</h2>
+<p>Walidacja krzyżowa (ang. <em>cross-validation</em>) jest dobrze ugruntowaną metodą próbkowania. Chociaż istnieje wiele odmian, najbardziej powszechną metodą walidacji krzyżowej jest <span class="math inline">\(V\)</span>-krotna walidacja krzyżowa. Dane są losowo dzielone na <span class="math inline">\(V\)</span> biorów o mniej więcej równej wielkości (zwanych krotkami lub foldami).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="obrazki/walidacja1.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption"><span class="math inline">\(V=3\)</span> dla zbioru danych składającego się z 30 punktów zbioru treningowego z losowym przydziałem foldów. Liczba wewnątrz symboli to numer próbki. Kolory symboli reprezentują ich losowo przypisane foldy.</figcaption>
+</figure>
+</div>
+<p><img src="obrazki/walidacja2.png" class="img-fluid"></p>
+<p>Dla każdej iteracji jeden fold jest zatrzymywany do oceny modelu, a pozostałe foldy są używane do uczenia modelu. Proces ten jest kontynuowany dla każdego folda, tak że trzy modele dają trzy zestawy statystyk dopasowania. <br> Gdy <span class="math inline">\(V = 3\)</span> zbiory analiz stanowią 2/3 zbioru treningowego, a każdy zbiór oceny stanowi odrębną 1/3. Końcowa estymacja resamplingu wydajności uśrednia każdą z <span class="math inline">\(V\)</span> replik.</p>
+<p style="color:#808080">
+Użycie <span class="math inline">\(V=3\)</span> jest dobrym wyborem do zilustrowania walidacji krzyżowej, ale jest to zły wybór w praktyce, ponieważ jest zbyt mało foldów, aby wygenerować wiarygodne szacunki. W praktyce wartości <span class="math inline">\(V\)</span> to najczęściej 5 lub 10; raczej preferujemy 10-krotną walidację krzyżową jako domyślną, ponieważ jest ona wystarczająco duża, aby uzyskać dobre wyniki w większości sytuacji.
+</p>
+<p>Jakie są skutki zmiany <span class="math inline">\(V\)</span>? Większe wartości powodują, że szacunki z próbkowania mają mały błąd/obciążenie, ale znaczną wariancję. Mniejsze wartości <span class="math inline">\(V\)</span> mają duży błąd, ale niską wariancję. Preferujemy 10-krotne, ponieważ szum jest zmniejszony przez replikacje, ale obciążenie już nie.</p>
+<hr>
+<p>Najważniejszą odmianą walidacji krzyżowej jest <span class="math inline">\(V\)</span>-krotna walidacja krzyżowa z powtórzeniami. W zależności od rozmiaru danych i innych cech, ocena modelu uzyskana w wyniku <span class="math inline">\(V\)</span>-krotnej walidacji krzyżowej może być nadmiernie zaszumiona. Podobnie jak w przypadku wielu problemów statystycznych, jednym ze sposobów zmniejszenia szumu jest zebranie większej ilości danych. W przypadku walidacji krzyżowej oznacza to uśrednienie więcej niż <span class="math inline">\(V\)</span> statystyk.</p>
+<p>Aby stworzyć <span class="math inline">\(R\)</span> powtórzeń <span class="math inline">\(V\)</span>-ktornej walidacji krzyżowej, ten sam proces generowania foldów jest wykonywany <span class="math inline">\(R\)</span> razy, aby wygenerować <span class="math inline">\(R\)</span> zbiorów złożonych z <span class="math inline">\(V\)</span> podzbiorów. Zamiast uśredniania <span class="math inline">\(V\)</span> statystyk, <span class="math inline">\(V \times R\)</span> wartości daje ostateczną estymację resamplingu.</p>
+<p style="color:#808080">
+Generalnie zwiększanie liczby replikacji nie ma dużego wpływu na błąd standardowy estymacji, chyba że bazowa wartość <span class="math inline">\(\sigma\)</span> jest duża, wówczas faktycznie warto zwiększać liczbę replikacji.
+</p>
 <p><br></p>
 </section>
 <section id="czym-jest-metoda-leave-one-out" class="level2">
 <h2 class="anchored" data-anchor-id="czym-jest-metoda-leave-one-out">12. Czym jest metoda Leave-One-Out?</h2>
+<p>Jedną z odmian walidacji krzyżowej jest walidacja krzyżowa typu Leave-One-Out (LOO). Jeśli mamy <span class="math inline">\(n\)</span> próbek zbioru treningowego, modeli jest dopasowywanych przy użyciu <span class="math inline">\(n-1\)</span> wierszy zbioru treningowego. Każdy model przewiduje pojedynczy wykluczony punkt danych. Na koniec próbkowania <span class="math inline">\(n\)</span> rognoz jest łączonych w celu uzyskania pojedynczej statystyki dopasowania. Metody <em>LOO</em> są gorsze w porównaniu z prawie każdą inną metodą oceny dopasowania. Dla wszystkich oprócz patologicznie małych próbek, <em>LOO</em> jest obliczeniowo złożony i może nie mieć dobrych właściwości statystycznych.</p>
 <p><br></p>
 </section>
 <section id="czym-jest-walidacja-metodą-monte-carlo" class="level2">
 <h2 class="anchored" data-anchor-id="czym-jest-walidacja-metodą-monte-carlo">13. Czym jest walidacja metodą Monte-Carlo?</h2>
+<p>Innym wariantem <span class="math inline">\(V\)</span>-krotnej walidacji krzyżowej jest walidacja krzyżowa Monte-Carlo (ang. <em>Monte-Carlo Cross-Validation</em> - <em>MCCV</em>) Podobnie jak w sprawdzianie krzyżowym, przydziela ona ustaloną część danych do zbiorów oceny. Różnica między <em>MCCV</em> a zwykłą walidacją krzyżową polega na tym, że w przypadku <em>MCCV</em> ta część danych jest za każdym razem wybierana losowo. Przez to powstają zestawy oceny, które nie wykluczają się wzajemnie.</p>
 <p><br></p>
 </section>
 <section id="jak-stosujemy-bootstraping-do-walidacji-modeli" class="level2">
 <h2 class="anchored" data-anchor-id="jak-stosujemy-bootstraping-do-walidacji-modeli">14. Jak stosujemy bootstraping do walidacji modeli?</h2>
+<p style="color:#808080">
+Bootstrap został pierwotnie wynaleziony jako metoda aproksymacji próbkowego rozkładu statystyki, którego własności teoretyczne są nieznane. Wykorzystanie jej do szacowania dopasowania modelu jest wtórnym zastosowaniem tej metody.
+</p>
+<p>Próbka bootstrapowa zbioru treningowego to próbka, która ma ten sam rozmiar co zbiór treningowy, ale jest losowana ze zwracaniem. Oznacza to, że niektóre obserwacje zbioru treningowego są wielokrotnie wybierane do zbioru analitycznego. Każdy punkt danych ma 63,2% szans na włączenie do zbioru uczącego przynajmniej raz. Zestaw oceny zawiera wszystkie próbki zestawu treningowego, które nie zostały wybrane do zestawu analitycznego (średnio 36,8% zestawu treningowego). Podczas <em>bootstrappingu</em> zestaw oceny jest często nazywany próbką poza workiem (ang. <em>Out-Of-Bag</em>).</p>
+<p><img src="obrazki/bootstrap1.png" class="img-fluid" alt="Schemat trzech próbek bootstrapowych dla zbioru treningowego składającego się z 30 próbek."> Próbki bootstrapowe (w przeciwieństwie do walidacji krzyżowej) dają oszacowania dopasowania, które mają bardzo niską wariancję , ale są pesymistyczne w ocenie obciążenia. Oznacza to, że jeśli prawdziwa dokładność modelu wynosi 90%, bootstrap będzie miał tendencję do oszacowania wartości mniejszej niż 90%. Wielkość błędu systematycznego nie może być określona empirycznie z wystarczającą dokładnością. Dodatkowo, wielkość błędu systematycznego zmienia się w zależności od skali dopasowania. Na przykład obciążenie będzie prawdopodobnie inne, gdy dokładność wynosi 90% w porównaniu z 70%.</p>
+<p style="color:#808080">
+<em>Bootstrap</em> jest również wykorzystywany wewnątrz wielu modeli. Na przykład, wspomniany wcześniej model lasu losowego zawierał 1000 indywidualnych drzew decyzyjnych. Każde drzewo było produktem innej próbki bootstrapowej zbioru treningowego.
+</p>
 <p><br></p>
 </section>
 <section id="czym-jest-i-do-czego-stosujemy-próbkowanie-kroczące" class="level2">
 <h2 class="anchored" data-anchor-id="czym-jest-i-do-czego-stosujemy-próbkowanie-kroczące">15. Czym jest i do czego stosujemy próbkowanie kroczące?</h2>
+<p>Gdy dane mają istotny składnik czasowy (jak np. szeregi czasowe), metoda próbkowania powinna pozwolić na oszacowanie sezonowych i okresowych trendów w szeregach czasowych. Technika, która losowo próbkuje wartości ze zbioru treningowego, nie pozwoli na oszacowanie tych wzorców.</p>
+<p>Kroczące próbkowanie źródła (ang. rolling forecast origin resampling) jest metodą, która emuluje sposób, w jaki dane szeregów czasowych są często partycjonowane w praktyce, estymując parametry modelu na danych historycznych i oceniając go z najnowszymi danymi. Dla tego typu resamplingu określa się rozmiar zbiorów analiz i ocen. Pierwsza iteracja resamplingu wykorzystuje te rozmiary, zaczynając od początku serii. Druga iteracja wykorzystuje te same rozmiary danych, ale przesuwa się o ustaloną liczbę próbek.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="obrazki/krocz1.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Zbiór treningowy składający się z piętnastu próbek został ponownie próbkowany z rozmiarem zbioru analizy wynoszącym 8 próbek i zbioru oceny wynoszącym 3. W drugiej iteracji odrzucono pierwszą próbkę zbioru uczącego, a oba zbiory danych przesunięto do przodu o jeden. W tej konfiguracji uzyskuje się pięć próbek.</figcaption>
+</figure>
+</div>
+<p>Istnieją dwie różne konfiguracje tej metody:</p>
+<ul>
+<li><p>Zestaw analiz może narastać (w przeciwieństwie do utrzymywania tego samego rozmiaru). Po pierwszym początkowym zestawie analitycznym nowe próbki mogą narastać bez odrzucania wcześniejszych danych. W rezultacie oznacza to, że po nauczeniu i ocenie dopasowania modelu na <em>Resample 1</em>, model jest uczony na zbiorze rozszerzonym o obserwację 9, czyli na danych od 1 do 9. Następnie oceniany na obserwacjach od 10 do 12, itd.</p></li>
+<li><p>Próbki nie muszą być zwiększane o jeden. Na przykład, w przypadku dużych zestawów danych, blok przyrostowy może wynosić tydzień lub miesiąc zamiast dnia.</p></li>
+</ul>
 <p><br></p>
 </section>
 <section id="na-czym-polega-optymalizacja-modeli-predykcyjnych" class="level2">
 <h2 class="anchored" data-anchor-id="na-czym-polega-optymalizacja-modeli-predykcyjnych">16. Na czym polega optymalizacja modeli predykcyjnych?</h2>
+<p>Proces w którym odbywa się poszukiwanie optymalnych parametrów modelu nazywamy optymalizacją modelu (ang. tuning). Definicję tę można nawet rozszerzyć, jeśli pomyślimy o dostosowaniu takich parametrów jak szybkość uczenia sieci neuronowej, rodzaj metody gradientowej, czy liczba iteracji/epok w procesie uczenia. Co więcej również w procesie przygotowania danych do modelowania, występują parametry, których wartość należy optymalizować. Przykładowo liczba składowych głównych w PCA jest hiperparametrem, którego wartość należy dostrajać. Nawet w kontekście wspomnianych klasycznych modeli jak np. regresja możemy optymalizować model pod kątem wyboru funkcji łączącej. Jak zatem przeprowadzić optymalizację modelu, skoro tak wiele różnych parametrów może wpłynąć na ostateczną jego postać? To zależy od tego co chcemy optymalizować. Przykładowo jeśli obiektem naszych zainteresowań jest wybór najlepszej funkcji łączącej, to powinniśmy użyć do tego funkcji celu jako miary oceniającej rozwiązania. Friedman pokazał, że optymalna liczba drzew będzie inna jeśli w procesie optymalizacji użyjemy dwóch różnych kryteriów oceny modelu - funkcji wiarygodności i dokładności (<em>accuracy</em>).</p>
 <p><br></p>
 </section>
 <section id="przedstaw-zasadę-działania-dwóch-sposobów-podejścia-do-tuningu-modeli." class="level2">
 <h2 class="anchored" data-anchor-id="przedstaw-zasadę-działania-dwóch-sposobów-podejścia-do-tuningu-modeli.">17. Przedstaw zasadę działania dwóch sposobów podejścia do tuningu modeli.</h2>
+<p>Istnieją dwa sposoby realizacji tuningu modeli:</p>
+<ul>
+<li><p><u>Przeszukiwanie siatki</u> - gdy wstępnie określamy zestaw wartości parametrów do oceny. Głównymi problemami związanymi z przeszukiwaniem siatki są sposób wykonania siatki i liczba kombinacji parametrów do oceny. Przeszukiwanie siatki jest często oceniane jako nieefektywne, ponieważ liczba punktów siatki wymaganych do pokrycia przestrzeni parametrów może stać się niemożliwa do opanowania. Z jednej strony jest w tym trochę prawdy, ale jest to najbardziej uzasadniona metoda, gdy proces nie jest zoptymalizowany.</p></li>
+<li><p><u>przeszukiwanie iteracyjne</u> lub <u>sekwencyjne</u> - gdy sekwencyjnie odkrywamy nowe kombinacje parametrów na podstawie poprzednich wyników. W niektórych przypadkach do rozpoczęcia procesu optymalizacji wymagany jest wstępny zestaw wyników dla jednej lub więcej kombinacji parametrów.</p></li>
+</ul>
+<p style="color:#808080">
+</p><p>Można też stosować rozwiązania hybrydowe, gdzie metoda siatki jest stosowana do wstępnego oszacowania parametrów modelu, a następnie metodami iteracyjnymi korygowane są wspomniane parametry.</p>
+W procesie dostrajania modelu, możemy szacować hiperparametry główne oraz specyficzne dla danego silnika metody.
+<p></p>
+<p><img src="obrazki/tuning1.png" class="img-fluid"></p>
 <p><br></p>
 </section>
 <section id="opisz-przeszukiwanie-z-wykorzystaniem-siatki-regularnej-i-nieregularnej." class="level2">
 <h2 class="anchored" data-anchor-id="opisz-przeszukiwanie-z-wykorzystaniem-siatki-regularnej-i-nieregularnej.">18. Opisz przeszukiwanie z wykorzystaniem siatki regularnej i nieregularnej.</h2>
+<p>W metodach przeszukiwania siatki (ang. <em>grid search</em>) możliwe wartości parametrów określa się <em>a priori</em>. <br> Istnieją dwa główne rodzaje siatek:</p>
+<ol type="1">
+<li><p><u>Siatki regularne</u> łączą każdy parametr (z odpowiadającym mu zbiorem możliwych wartości) czynnikowo, tj. poprzez wykorzystanie wszystkich kombinacji zbiorów. <br> Regularne siatki są kombinacjami oddzielnych zestawów wartości parametrów, gdzi użytkownik najpierw tworzy odrębny zestaw wartości dla każdego parametru. Liczba możliwych wartości nie musi być taka sama dla każdego parametru.</p></li>
+<li><p><u>Siatka nieregularne</u> to taka, w której kombinacje parametrów nie są tworzone regularnie. <br> Istnieje kilka możliwości tworzenia nieregularnych siatek. Pierwszą z nich jest użycie losowego próbkowania w całym zakresie parametrów. Jeśli parametr ma powiązane przekształcenie, liczby losowe są generowane w przekształconej skali.</p>
+<p style="color:#808080">
+</p><p>Problem z siatkami losowymi polega na tym, że przy małych i średnich siatkach wartości losowe mogą powodować nakładanie się kombinacji parametrów. Ponadto siatka losowa musi pokryć całą przestrzeń parametrów, a prawdopodobieństwo dobrego pokrycia rośnie wraz z liczbą wartości siatki.</p>
+<p></p></li>
+</ol>
 <p><br></p>
 </section>
 <section id="opisz-zasadę-wykorzystania-wielu-rdzeni-procesora-w-optymalizacji-modelu." class="level2">
 <h2 class="anchored" data-anchor-id="opisz-zasadę-wykorzystania-wielu-rdzeni-procesora-w-optymalizacji-modelu.">19. Opisz zasadę wykorzystania wielu rdzeni procesora w optymalizacji modelu.</h2>
+<p>Chcąc przyspieszyć procedurę tuningu, musimy stosować paralelizację procedury dostrajania. W pakiecie <code>tune</code> możliwe jest zastosowanie paralelizacji na dwa sposoby. Podczas dostrajania modeli poprzez wyszukiwanie w siatce, istnieją dwie odrębne pętle: jedna nad foldami (zewnętrzna pętla) i druga nad unikalnymi kombinacjami parametrów (wewnętrzna pętla).</p>
+<p>Domyślnie pakiet <code>tune</code> paralelizuje tylko nad próbkami (pętla zewnętrzna). Jest to optymalny scenariusz, gdy metody wstępnego przetwarzania (<em>preprocessing</em>) są kosztowne oblczeniowo. Istnieją jednak dwa potencjalne minusy tego podejścia:</p>
+<ul>
+<li><p>Ogranicza osiągalne przyspieszenia, gdy preprocessing nie jest wymagający obliczeniowo.</p></li>
+<li><p>Liczba równoległych rdzeni jest ograniczona przez liczbę foldów. Na przykład przy 10-krotnej walidacji krzyżowej można użyć tylko 10 równoległych rdzeni, nawet jeśli komputer ma więcej.</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="obrazki/preproc1.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Przydzielenie zadań procesorom robotniczym ilustrujące działanie przetwarzania równoległego. W tym konkretnym przypadku, w którym istnieje 7 wartości parametrów dostrajania modelu, przy 5-krotnej walidacji krzyżowej.</figcaption>
+</figure>
+</div>
+<p style="color:#808080">
+Każdy fold jest przypisany do własnego procesu roboczego, a ponieważ dostrajane są tylko parametry modelu, przetwarzanie wstępne jest przeprowadzane raz na fold/rdzeń. Jeśli użyto by mniej niż pięciu rdzeni, niektóre rdzenie otrzymaliby do przeliczenia kilka foldów.
+</p>
+<p>Zamiast równoległego przetwarzania tylko nad zewnętrzną pętlą, alternatywny schemat łączy pętle nad foldami i modelami w jedną pętlę. W tym przypadku paralelizacja występuje teraz nad pojedynczą pętlą. Na przykład, jeśli używamy 5-krotnej walidacji krzyżowej z <span class="math inline">\(M\)</span> wartościami parametrów dostrajania, pętla jest wykonywana przez <span class="math inline">\(5 \times M\)</span> iteracji. Zwiększa to liczbę potencjalnych rdzeni, które można wykorzystać. Jednak praca związana ze wstępnym przetwarzaniem danych jest powtarzana wielokrotnie. Jeśli te kroki są wymagające obliczeniowo, to podejście to będzie nieefektywne.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="obrazki/tuning2.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Delegowanie zadań do robotników w tym schemacie; użyty jest ten sam przykład, ale z 10 rdzeniami.</figcaption>
+</figure>
+</div>
+<p>Tutaj każdy proces roboczy obsługuje wiele foldów, a przetwarzanie wstępne jest niepotrzebnie powtarzane. Na przykład, dla pierwszego foldu, preprocessing został wykonany siedem razy zamiast raz. Dla tego schematu argumentem funkcji sterującej jest <code>parallel_over = "everything"</code>.</p>
 <p><br></p>
 </section>
 <section id="czym-jest-metoda-wyścigów" class="level2">
@@ -787,47 +991,87 @@ Jeszcze jedna uwaga na temat losowego podziału zbioru na uczący i testowy. W j
 </section>
 <section id="czym-jest-przeszukiwanie-iteracyjne" class="level2">
 <h2 class="anchored" data-anchor-id="czym-jest-przeszukiwanie-iteracyjne">21. Czym jest przeszukiwanie iteracyjne?</h2>
+<p>Wyszukiwanie oparte o siatkę przyjmuje wstępnie zdefiniowany zestaw wartości kandydujących, ocenia je, a następnie wybiera najlepsze ustawienia. Iteracyjne metody wyszukiwania realizują inną strategię. <u>Podczas procesu wyszukiwania przewidują one, które wartości należy przetestować w następnej kolejności</u>. Przykładami takiego przeszukiwania są:</p>
+<ul>
+<li><p>Optymalizacja bayesowska (<a href="#sec-bayes"><span>Section&nbsp;1.22</span></a>)</p></li>
+<li><p>Symulowane wyżarzanie (<a href="#sec-annealing"><span>Section&nbsp;1.25</span></a>)</p></li>
+</ul>
 <p><br></p>
 </section>
-<section id="opisz-optymalizację-bayesowską." class="level2">
-<h2 class="anchored" data-anchor-id="opisz-optymalizację-bayesowską.">22. Opisz optymalizację bayesowską.</h2>
+<section id="sec-bayes" class="level2">
+<h2 class="anchored" data-anchor-id="sec-bayes">22. Opisz optymalizację bayesowską.</h2>
+<p>Techniki optymalizacji bayesowskiej analizują bieżące wyniki próbkowania i tworzą model predykcyjny, aby zasugerować wartości parametrów dostrajania, które nie zostały jeszcze ocenione. Sugerowana kombinacja parametrów jest następnie ponownie próbkowana. Wyniki te są następnie wykorzystywane w innym modelu predykcyjnym, który rekomenduje więcej wartości kandydatów do testowania, i tak dalej. Proces ten przebiega przez ustaloną liczbę iteracji lub do momentu, gdy nie pojawią się dalsze poprawy.</p>
+<p style="color:#808080">
+Podczas korzystania z optymalizacji bayesowskiej, podstawowe problemy to sposób tworzenia modelu i wybór parametrów rekomendowanych przez ten model. Najpierw rozważmy technikę najczęściej stosowaną w optymalizacji bayesowskiej, czyli model procesu gaussowskiego.
+</p>
 <p><br></p>
 </section>
 <section id="czym-są-procesu-gaussowskie" class="level2">
 <h2 class="anchored" data-anchor-id="czym-są-procesu-gaussowskie">23. Czym są procesu gaussowskie?</h2>
+<p>Modele procesu gaussowskiego (GP), to techniki statystyczne, które mają swoją historię w statystyce przestrzennej.Mogą być wyprowadzone na wiele sposobów, w tym jako model Bayesowski.</p>
+<p>Matematycznie, GP jest zbiorem zmiennych losowych, których wspólny rozkład prawdopodobieństwa jest wielowymiarowy normalny. W kontekście naszych zastosowań jest to zbiór metryk wydajności dla wartości kandydujących parametrów dostrajania.</p>
+<p>Modele procesów gaussowskich są określone przez ich funkcje średniej i kowariancji, choć to ta ostatnia ma większy wpływ na charakter modelu GP. Funkcja kowariancji jest często parametryzowana w kategoriach wartości wejściowych (oznaczanych jako <span class="math inline">\(x\)</span>).</p>
+<p>Przykładowo, powszechnie stosowaną funkcją kowariancji jest funkcja wykładnicza kwadratowa: <span class="math display">\[\operatorname{cov}(\boldsymbol{x}_i, \boldsymbol{x}_j) = \exp\left(-\frac{1}{2}|\boldsymbol{x}_i - \boldsymbol{x}_j|^2\right) + \sigma^2_{ij}\]</span> gdzie <br> <span class="math inline">\(\sigma_{i,j}^2\)</span> jest wariancją błędu modelu równą zero jeśli <span class="math inline">\(i=j\)</span>. <br> Możemy to interpretować jako, że wraz ze wzrostem odległości pomiędzy dwoma kombinacjami parametrów, kowariancja pomiędzy metrykami wydajności rośnie wykładniczo. Z równania wynika również, że zmienność metryki wynikowej jest minimalizowana w punktach, które już zostały zaobserwowane (tzn. gdy <span class="math inline">\(|x_i - x_j|^2\)</span> wynosi 0). Charakter tej funkcji kowariancji pozwala procesowi gaussowskiemu reprezentować wysoce nieliniowe zależności między wydajnością modelu a dostrajaniem parametrów, nawet jeśli istnieje tylko niewielka ilość danych.</p>
+<p>Ważną zaletą tego modelu jest to, że ponieważ określony jest pełny model prawdopodobieństwa, przewidywania dla nowych wejść mogą odzwierciedlać cały rozkład wyniku. Innymi słowy, nowe statystyki wydajności mogą być przewidywane zarówno pod względem średniej jak i wariancji.</p>
+<p style="color:#05E00C">
+Ważną zaletą tego modelu jest to, że ponieważ określony jest pełny model prawdopodobieństwa, przewidywania dla nowych wejść mogą odzwierciedlać cały rozkład wyniku. Innymi słowy, nowe statystyki wydajności mogą być przewidywane zarówno pod względem średniej jak i wariancji.
+</p>
 <p><br></p>
 </section>
 <section id="co-to-jest-funkcja-akwizycji" class="level2">
 <h2 class="anchored" data-anchor-id="co-to-jest-funkcja-akwizycji">24. Co to jest funkcja akwizycji?</h2>
+<p>Klasa funkcji celu, zwanych funkcjami akwizycji, ułatwia kompromis pomiędzy średnią a wariancją. Przypomnijmy, że przewidywana wariancja modeli GP zależy głównie od tego, jak bardzo są one oddalone od istniejących danych. Kompromis pomiędzy przewidywaną średnią i wariancją dla nowych kandydatów jest często postrzegany przez pryzmat eksploracji i eksploatacji:</p>
+<ul>
+<li><p>Eksploracja - powoduje wybór tych regionów, w których jest mniej obserwowanych modeli kandydujących. W ten sposób nadaje się większą wagę kandydatom o wyższej wariancji i koncentruje się na poszukiwaniu nowych wyników.</p></li>
+<li><p>Eksploatacja - zasadniczo opiera się istniejących wynikach, w celu odnalezienia najlepszej wartości średniej.</p></li>
+</ul>
+<p><a href="https://dax44.github.io/ModelsValidation/iterative.html#fig-iter2" class="uri">https://dax44.github.io/ModelsValidation/iterative.html#fig-iter2</a> &lt;- przykład</p>
 <p><br></p>
 </section>
-<section id="opisz-zasadę-działania-metody-symulowanego-wyżarzania." class="level2">
-<h2 class="anchored" data-anchor-id="opisz-zasadę-działania-metody-symulowanego-wyżarzania.">25. Opisz zasadę działania metody symulowanego wyżarzania.</h2>
+<section id="sec-annealing" class="level2">
+<h2 class="anchored" data-anchor-id="sec-annealing">25. Opisz zasadę działania metody symulowanego wyżarzania.</h2>
+<p>Symulowane wyżarzanie (ang. <em>simulated annealing</em>) jest nieliniową procedurą wyszukiwania zainspirowaną procesem stygnięcia metalu. Jest to metoda globalnego wyszukiwania, która może efektywnie poruszać się po wielu różnych obszarach poszukiwań, w tym po funkcjach nieciągłych. W przeciwieństwie do większości procedur optymalizacji opartych na gradiencie, symulowane wyżarzanie może ponownie ocenić poprzednie rozwiązania.</p>
+<p>Proces użycia symulowanego wyżarzania rozpoczyna się od wartości początkowej i rozpoczyna kontrolowany losowy spacer przez przestrzeń parametrów. Każda nowa wartość parametrukandydata jest niewielką perturbacją poprzedniej wartości, która utrzymuje nowy punkt w lokalnym sąsiedztwie.</p>
+<p><a href="https://dax44.github.io/ModelsValidation/iterative.html#symulowane-wy%C5%BCarzanie" class="uri">https://dax44.github.io/ModelsValidation/iterative.html#symulowane-wy%C5%BCarzanie</a> &lt;- przykład</p>
 <p><br></p>
 </section>
 <section id="przedstaw-powody-stosowania-redukcji-wymiarowości." class="level2">
 <h2 class="anchored" data-anchor-id="przedstaw-powody-stosowania-redukcji-wymiarowości.">26. Przedstaw powody stosowania redukcji wymiarowości.</h2>
+<p style="color:#808080">
+Redukcja wymiarowości (ang. dimensionality reduction) jest przekształceniem zbioru danych z przestrzeni wielowymiarowej w przestrzeń niskowymiarową i może być dobrym wyborem, gdy podejrzewamy, że jest “za dużo” zmiennych. Nadmiar zmiennych, zwykle predyktorów, może być problemem, ponieważ trudno jest zrozumieć lub wizualizować dane w wyższych wymiarach.
+</p>
+<ul>
+<li><p>Podejrzewamy, że jest “za dużo” zmiennych. Nadmiar zmiennych, zwykle predyktorów, może być problemem, ponieważ trudno jest zrozumieć lub wizualizować dane w wyższych wymiarach.</p></li>
+<li><p>Eksploracja danych jest trudna, gdy istnieją setki tysięcy wymiarów, a redukcja wymiarowości może być pomocą w analizie danych</p></li>
+<li><p>Model ma nadmiarową liczbę predyktorów. Np w regresji liniowej liczba predyktorów powinna być mniejsza niż liczba obserwacji użytych do dopasowania modelu.</p></li>
+<li><p>Współliniowość, gdzie korelacje między predyktorami mogą negatywnie wpływać na operacje matematyczne używane do oszacowania modelu. Jeśli istnieje bardzo duża liczba predyktorów, jest mało prawdopodobne, że istnieje taka sama liczba rzeczywistych efektów leżących u podstaw. Predyktory mogą mierzyć ten sam ukryty efekt (efekty), a zatem takie predyktory będą wysoko skorelowane.</p></li>
+</ul>
 <p><br></p>
 </section>
 <section id="jakie-są-powody-stosowania-podpróbkowania-i-nadpróbkowania-w-modelowaniu-predykcyjnym" class="level2">
 <h2 class="anchored" data-anchor-id="jakie-są-powody-stosowania-podpróbkowania-i-nadpróbkowania-w-modelowaniu-predykcyjnym">27. Jakie są powody stosowania podpróbkowania i nadpróbkowania w modelowaniu predykcyjnym?</h2>
+<p>Próbkowanie (ang. subsampling) zbioru treningowego, zarówno zaniżanie (ang. undersampling), jak i zawyżanie (ang. oversampling) próbkowania odpowiedniej klasy lub klas, może być pomocne w radzeniu sobie z danymi klasyfikacyjnymi, w których jedna lub więcej klas występuje bardzo rzadko. W takiej sytuacji (bez kompensacji), większość modeli będzie nadmiernie dopasowana do klasy większościowej i wytworzy bardzo dobre statystyki dopasowania dla klasy zawierającej często występujące klasy, podczas gdy klasy mniejszościowe będą miały słabe wyniki.</p>
 <p><br></p>
 </section>
 <section id="jakie-są-korzyści-ze-stosowania-próbkowania-zaniżającego-liczebność-klasy-większościowej" class="level2">
 <h2 class="anchored" data-anchor-id="jakie-są-korzyści-ze-stosowania-próbkowania-zaniżającego-liczebność-klasy-większościowej">28. Jakie są korzyści ze stosowania próbkowania zaniżającego liczebność klasy większościowej?</h2>
+<p>Wyrzucenie dużego procentu danych może być skuteczne w tworzeniu użytecznego modelu, który potrafi rozpoznać zarówno klasy większościowe, jak i mniejszościowe.</p>
+<p>Podpróbkowanie prawie zawsze daje modele, które są lepiej skalibrowane, co oznacza, że rozkłady prawdopodobieństwa klas są lepiej zachowane. W rezultacie, domyślne odcięcie 50% daje znacznie większe prawdopodobieństwo uzyskania lepszych wartości czułości i specyficzności niż w innym przypadku.</p>
 <p><br></p>
 </section>
 <section id="jakie-są-zalety-próbkowania-zawyżającego-liczebność-klasy-mniejszościowej" class="level2">
 <h2 class="anchored" data-anchor-id="jakie-są-zalety-próbkowania-zawyżającego-liczebność-klasy-mniejszościowej">29. Jakie są zalety próbkowania zawyżającego liczebność klasy mniejszościowej?</h2>
+<p>Techniki <em>oversamplingu</em> sprowadzają klasy mniejszościowe do liczebności takiej samej jak klasa większościowa (lub jej części) poprzez odpowiednie próbkowanie istniejących obserwacji lub też (jak to jest w przypadku metody SMOTE) tworzy się syntetyczne obserwacje podobne do już istniejących w klasie mniejszościowej. Jako zaletę można potraktować to, że w przeciwieństwie do <em>undersamplingu</em> nie zmniejszamy rozmiaru zbioru danych oraz przez co nie tracimy informacji, inne zalety pokrywają się z próbkowaniem w dół.</p>
 <p><br></p>
 </section>
 <section id="jak-należy-stosować-poszczególne-kroki-przygotowania-danych-w-procesie-uczenia-i-walidacji-modelu" class="level2">
 <h2 class="anchored" data-anchor-id="jak-należy-stosować-poszczególne-kroki-przygotowania-danych-w-procesie-uczenia-i-walidacji-modelu">30. Jak należy stosować poszczególne kroki przygotowania danych w procesie uczenia i walidacji modelu?</h2>
+
+
 </section>
 </section>
 
-</main>
-<!-- /main column -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -848,6 +1092,121 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -1061,6 +1420,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./Eksploracja_egzamin.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Eksploracja Danych</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

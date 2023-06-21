@@ -15,7 +15,7 @@ book:
     - WAD_egzamin.qmd
     - Modele_egzamin.qmd
     - Eksploracja_egzamin.qmd
-    # - Walidacja_egzamin.qmd
+    - Walidacja_egzamin.qmd
   # output-file: "EgzaminyOP"
 
 #bibliography: references.bib

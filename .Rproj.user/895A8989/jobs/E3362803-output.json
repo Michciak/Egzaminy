@@ -1,0 +1,8 @@
+[2,"\n"]
+[1,"3/3                  \r\noutput file: Walidacja_egzamin.knit.md\r\n\r\n"]
+[1,"pandoc \n  to: html\n  output-file: Walidacja_egzamin.html\n  standalone: true\n  toc: true\n  number-sections: false\n  title-prefix: Egzaminy\n  section-divs: true\n  html-math-method: mathjax\n  wrap: none\n  default-image-extension: png\n  \nmetadata\n  crossref:\n    chapters: true\n  document-css: false\n  link-citations: true\n  date-format: long\n  lang: en\n  theme:\n    light: pulse\n    dark: darkly\n  hide-description: true\n  title: Metody Walidacji Modeli Statystycznych\n  \n"]
+[1,"WARNING: Error removing file C:\\Users\\Michc\\Dropbox\\Uczelnia\\Egzaminy\\Egzaminy\\site_libs\\clipboard: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces. (os error 32), remove 'C:\\Users\\Michc\\Dropbox\\Uczelnia\\Egzaminy\\Egzaminy\\site_libs\\clipboard'\n"]
+[1,"WARNING: Error removing file C:\\Users\\Michc\\Dropbox\\Uczelnia\\Egzaminy\\Egzaminy\\site_libs: Proces nie może uzyskać dostępu do pliku, ponieważ jest on używany przez inny proces. (os error 32), remove 'C:\\Users\\Michc\\Dropbox\\Uczelnia\\Egzaminy\\Egzaminy\\site_libs'\n"]
+[1,"\n"]
+[1,"Watching files for changes\nBrowse at http://localhost:7384/Walidacja_egzamin.html\n"]
+[1,"GET: /Walidacja_egzamin.html\n"]
