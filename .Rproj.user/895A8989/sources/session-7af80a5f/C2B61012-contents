@@ -1,0 +1,14 @@
+# Losowanie pytań {.unnumbered}
+
+---
+title: "Losowanie pytań"
+author: "Michał Koziński"
+format: html
+---
+
+<iframe height="750" width="110%" frameborder="no" src="https://michciak.shinyapps.io/losowanie2/"> </iframe>
+
+```{r}
+
+```
+

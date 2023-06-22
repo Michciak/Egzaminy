@@ -123,17 +123,26 @@ dt |>
 
 ## 3. Opisz zasadę działania testów bootstrapowych.
 
-Wyliacznie $p$ dla testu bootstrapowego odbywa się wg następujących kroków:
+<!-- Wyliacznie $p$ dla testu bootstrapowego odbywa się wg następujących kroków: -->
 
-1. Wyznaczamy na podstawie próby statystykę interesującą nas w teście (w naszym przypadku średnią $\bar x$).
+<!-- 1. Wyznaczamy na podstawie próby statystykę interesującą nas w teście (w naszym przypadku średnią $\bar x$). -->
 
-2. Następnie przesuwamy wszystkie obserwację o różnicę pomiędzy średnią teoretyczną a $\bar x$, tak aby rozkład miał średnią teoretyczną.
+<!-- 2. Następnie przesuwamy wszystkie obserwację o różnicę pomiędzy średnią teoretyczną a $\bar x$, tak aby rozkład miał średnią teoretyczną.  -->
 
-3. Losujemy próby bootstrapowe z nowej (przesuniętej) próby.
+<!-- 3. Losujemy próby bootstrapowe z nowej (przesuniętej) próby. -->
 
-4. Na podstawie prób bootstrapowych wyznaczamy rozkład średnich poszczególnych prób.
+<!-- 4. Na podstawie prób bootstrapowych wyznaczamy rozkład średnich poszczególnych prób. -->
 
-5. Na koniec sprawdzamy prawdopodobieństwo (szacując na podstawie rozkładu bootstrapowego) otrzymania wartości większych niż średnia oryginalnej próby. Dla hipotez dwustronnych dodajemy do tego prawdopodobieństwo otrzymania wartości mniejszej niż $- \bar x$.
+<!-- 5. Na koniec sprawdzamy prawdopodobieństwo (szacując na podstawie rozkładu bootstrapowego) otrzymania wartości większych niż średnia oryginalnej próby. Dla hipotez dwustronnych dodajemy do tego prawdopodobieństwo otrzymania wartości mniejszej niż $- \bar x$. -->
+
+<!-- Chodzi o to, że hipoteza dotyczy równości średnich, więc gdy przeniesiemy wszystko na jedną stronę to hipoteza mówi, że różnica średniej z próby i średniej z danej próbki bootsrapowej jest równa $0$. -->
+
+<!-- <li style="color:#808080">Wyznaczamy na podstawie próby interesującą nas statystkę (np. medianę), możemy narysować rozkłady z podziałem ze względu na daną kategorię, których dotyczy hipoteza</li> -->
+
+<!-- <li style="color:#808080"></li> -->
+
+<!-- <li style="color:#808080"></li> -->
+
 
 <br>
 
@@ -383,33 +392,43 @@ Podczas korzystania z optymalizacji bayesowskiej, podstawowe problemy to sposób
 
 <br>
 
-## 23. Czym są procesu gaussowskie? 
+## 23. Czym są procesy gaussowskie? 
 
-Modele procesu gaussowskiego (GP), to techniki statystyczne, które mają swoją historię w statystyce przestrzennej.Mogą być wyprowadzone na wiele sposobów, w tym jako model Bayesowski. 
+<!-- <p style="color:#05E00C"> -->
+<!-- Ważną zaletą tego modelu jest to, że ponieważ określony jest pełny model prawdopodobieństwa, przewidywania dla nowych wejść mogą odzwierciedlać cały rozkład wyniku. Innymi słowy, nowe statystyki wydajności mogą być przewidywane zarówno pod względem średniej jak i wariancji. -->
+<!-- </p> -->
 
-Matematycznie, GP jest zbiorem zmiennych losowych, których wspólny rozkład prawdopodobieństwa jest wielowymiarowy normalny. W kontekście naszych zastosowań jest to zbiór metryk wydajności dla wartości kandydujących parametrów dostrajania.
+<!-- Zaczyna od wykresu. Przez 4 punkty można wiele krzywych przeprowadzić. Narysować więcej tych krzywych że różne mogą być. W każdym przekroju pomiędzy punktami można narysować Gaussa. Mniejsze prawdopodobieństwo że pójdzie skrajną ścieżką. Wektor średnich i wektor macierzy kowariancji potrzebne do GP. Przez co mają przechodzić i jakie mają rozrzuty. -->
 
-Modele procesów gaussowskich są określone przez ich funkcje średniej i kowariancji, choć to ta ostatnia ma większy wpływ na charakter modelu GP. Funkcja kowariancji jest często parametryzowana w kategoriach wartości wejściowych (oznaczanych jako $x$). 
 
-Przykładowo, powszechnie stosowaną funkcją kowariancji jest funkcja wykładnicza kwadratowa: $$\operatorname{cov}(\boldsymbol{x}_i, \boldsymbol{x}_j) = \exp\left(-\frac{1}{2}|\boldsymbol{x}_i - \boldsymbol{x}_j|^2\right) + \sigma^2_{ij}$$ gdzie <br> $\sigma_{i,j}^2$ jest wariancją błędu modelu równą zero jeśli $i=j$. <br> Możemy to interpretować jako, że wraz ze wzrostem odległości pomiędzy dwoma kombinacjami parametrów, kowariancja pomiędzy metrykami wydajności rośnie wykładniczo. Z równania wynika również, że zmienność metryki wynikowej jest minimalizowana w punktach, które już zostały zaobserwowane (tzn. gdy $|x_i - x_j|^2$ wynosi 0). Charakter tej funkcji kowariancji pozwala procesowi gaussowskiemu reprezentować wysoce nieliniowe zależności między wydajnością modelu a dostrajaniem parametrów, nawet jeśli istnieje tylko niewielka ilość danych.
-
-Ważną zaletą tego modelu jest to, że ponieważ określony jest pełny model prawdopodobieństwa, przewidywania dla nowych wejść mogą odzwierciedlać cały rozkład wyniku. Innymi słowy, nowe statystyki wydajności mogą być przewidywane zarówno pod względem średniej jak i wariancji.
-
-<p style="color:#05E00C">
-Ważną zaletą tego modelu jest to, że ponieważ określony jest pełny model prawdopodobieństwa, przewidywania dla nowych wejść mogą odzwierciedlać cały rozkład wyniku. Innymi słowy, nowe statystyki wydajności mogą być przewidywane zarówno pod względem średniej jak i wariancji.
+<p style="color:#808080">
+Modele procesu gaussowskiego (GP), to techniki statystyczne, które mają swoją historię w statystyce przestrzennej.Mogą być wyprowadzone na wiele sposobów, w tym jako model Bayesowski.
 </p>
+
+Matematycznie, GP jest zbiorem zmiennych losowych, których wspólny rozkład prawdopodobieństwa jest wielowymiarowy normalny.
+
+Modele procesów gaussowskich są określone przez ich funkcje średniej i kowariancji, choć to ta ostatnia ma większy wpływ na charakter modelu GP. Funkcja kowariancji jest często parametryzowana w kategoriach wartości wejściowych (oznaczanych jako $x$).
+
+Przykładowo, powszechnie stosowaną funkcją kowariancji jest funkcja wykładnicza kwadratowa: $$\operatorname{cov}(\boldsymbol{x}_i, \boldsymbol{x}_j) = \exp\left(-\frac{1}{2}|\boldsymbol{x}_i - \boldsymbol{x}_j|^2\right) + \sigma^2_{ij}$$ gdzie <br> $\sigma_{i,j}^2$ jest wariancją błędu modelu równą zero jeśli $i=j$. <br> Możemy to interpretować jako, że wraz ze wzrostem odległości pomiędzy dwoma kombinacjami parametrów, kowariancja pomiędzy metrykami wydajności rośnie wykładniczo. Z równania wynika również, że zmienność metryki wynikowej (Estimated $R^2$) jest minimalizowana w punktach, które już zostały zaobserwowane (tzn. gdy $|x_i - x_j|^2$ wynosi 0). Charakter tej funkcji kowariancji pozwala procesowi gaussowskiemu reprezentować wysoce nieliniowe zależności między wydajnością modelu a dostrajaniem parametrów, nawet jeśli istnieje tylko niewielka ilość danych.
+
+![W każdym przekroju pomiędzy punktami można narysować Gaussa, co ilustruje mniejsze prawdopodobieństwo że wykres pójdzie skrajną ścieżką.](obrazki/GP1.png)
+
+Ważną zaletą tego modelu jest to, że ponieważ określony jest pełny model prawdopodobieństwa, przewidywania dla nowych wejść mogą odzwierciedlać cały rozkład wyniku. Innymi słowy, nowe statystyki wydajności mogą być przewidywane zarówno pod względem średniej jak i wariancji.
+
 
 <br>
 
 ## 24. Co to jest funkcja akwizycji?
 
-Klasa funkcji celu, zwanych funkcjami akwizycji, ułatwia kompromis pomiędzy średnią a wariancją. Przypomnijmy, że przewidywana wariancja modeli GP zależy głównie od tego, jak bardzo są one oddalone od istniejących danych. Kompromis pomiędzy przewidywaną średnią i wariancją dla nowych kandydatów jest często postrzegany przez pryzmat eksploracji i eksploatacji:
+<!-- Klasa funkcji celu, zwanych funkcjami akwizycji, ułatwia kompromis pomiędzy średnią a wariancją. Przypomnijmy, że przewidywana wariancja modeli GP zależy głównie od tego, jak bardzo są one oddalone od istniejących danych. Kompromis pomiędzy przewidywaną średnią i wariancją dla nowych kandydatów jest często postrzegany przez pryzmat eksploracji i eksploatacji: -->
 
-- Eksploracja - powoduje wybór tych regionów, w których jest mniej obserwowanych modeli kandydujących. W ten sposób nadaje się większą wagę kandydatom o wyższej wariancji i koncentruje się na poszukiwaniu nowych wyników.
+<!-- - Eksploracja - powoduje wybór tych regionów, w których jest mniej obserwowanych modeli kandydujących. W ten sposób nadaje się większą wagę kandydatom o wyższej wariancji i koncentruje się na poszukiwaniu nowych wyników. -->
 
-- Eksploatacja - zasadniczo opiera się istniejących wynikach, w celu odnalezienia najlepszej wartości średniej.
+<!-- - Eksploatacja - zasadniczo opiera się istniejących wynikach, w celu odnalezienia najlepszej wartości średniej. -->
 
-<https://dax44.github.io/ModelsValidation/iterative.html#fig-iter2> <- przykład 
+<!-- <https://dax44.github.io/ModelsValidation/iterative.html#fig-iter2> <- przykład  -->
+
+Funcjaj akwizycji oczekiwanej poprawy wskazuje którego kandydata wybrać (?). Znowu rysuje wykres z wykładu.  Mówi o eksploatacji i eksploracji. Funkcja akwizycji wyznaczy kompromis pomiędzy nimi.
 
 <br>
 
