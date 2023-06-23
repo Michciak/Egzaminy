@@ -158,16 +158,24 @@ Wśród miar dopasowania dla modeli regresyjnych można wyróżnić, te które m
 
 **Miary dopadowania modeli regresyjnych**:
 
+<u>Miary bazujące na **korelacjach**:</u>
+
 1. <u>$R^2$</u> <br> Miara stosowana najczęściej do oceny dopasowania modeli liniowych, zdefiniowana jako: $$R^2 = \frac{\sum_i(y_i - \hat y_i)^2}{\sum_i(y_i - \bar y)^2}$$ gdzie <br> $\hat y_i$ jest $i$-tą wartością przewidywaną na podstawie modelu, <br> $\bar y$ jest średnią zmiennej wynikowej, <br> $y_i$ jest $i$-tą wartością obserwowaną. <br> <br> Wśród wad tak zdefiniowanej miary należy wymienić przede wszystkim fakt, iż dołączając do modelu zmienne, których zdolność predykcyjna jest nieistotna, to i tak rośnie $R^2$ <br> <br> W przypadku modeli liniowych wprowadzaliśmy korektę eliminującą tą wadę, jednak w przypadku modeli predykcyjnych skorygowana miara $R_{\text{adj}}^2$ nie wystarcza. W sytuacji gdy modele mają bardzo słabą moc predykcyjną, czyli są np. drzewem regresyjnym bez żadnej reguły podziału (sam korzeń), wówczas można otrzymać ujemne wartości obu miar. Zaleca się zatem wprowadzenie miary, która pozbawiona jest tej wady, a jednocześnie ma tą sama interpretację. <br> Definiuję się ją następująco: $$\tilde R^2 = \left[ Cor \left( Y, \hat Y \right) \right]^2$$ Tak zdefiniowana miara zapewnia nam wartości w przedziale $(0,1)$, a klasyczna miara nie. Oczywiście interpretacja jest następująca, że jeśli wartość $\tilde R^2$ jest bliska $1$, to model jest dobrze dopasowany, a bliskie $0$ oznacza słabe dopasowanie.
 
-2. <u>RMSE</u> <br> Inną powszechnie stosowaną miarą do oceny dopasowania modeli regresyjnych jest pierwiastek błędu średnio-kwadratowego (ang. *Root Mean Square Error*), zdefiniowany następująco: $$\text{RMSE} = \sqrt{\frac{\sum^n_{i=1}(y_i-\hat y_i)^2}{n}}$$ gdzie <br> $n$ oznacza liczebność zbioru danych na jakim dokonywana jest ocena dopasowania. <br> Im mniejsza jest wartość błędu RMSE tym lepiej dopasowany jest model. Niestety wadą tej miary jest brak odporności na wartości odstające. Błąd w tym przypadku jest mierzony w tych samych jednostkach co mierzona wielkość wynikowa $Y$.
+2. <u>$CCC$</u> <br>Korelacyjny współczynnik zgodności (ang. *Concordance Correlation Coefficient*) mierzy zgodność pomiędzy wartościami predykcji i obserwowanymi. Definiujemy go w następujący sposób: $$CCC = \frac{2\rho\sigma_y\sigma_{\hat{y}}}{\sigma^2_{y}+\sigma^2_{\hat{y}}+(\mu_y-\mu_{\hat{y}})^2}$$ gdzie <br>$\mu_y,\mu_{\hat{y}}$ oznaczają średnią wartości obserwowanych i przewidywanych, <br>$\sigma_{y},\sigma_{\hat{y}}$ stanowią odchylenia standardowe tych wielkości, <br>$\rho$ est współczynnikiem korelacji pomiędzy $Y$ i $\hat Y$.
 
-3. <u>MSE</u> <br> Ściśle powiązaną miarą dopasowania modelu z RMSE jest błąd średnio-kwadratowy (ang. *Mean Square Error*). Oczywiście jest on definiowany jako kwadrat RMSE. Interpretacja jest podobna jak w przypadku RMSE. W tym przypadku błąd jest mierzony w jednostkach do kwadratu i również jak w przypadku RMSE miara ta jest wrażliwa na wartości odstające. 
+<!-- 3. <u>$r$</u> <br>Współczynnik korelacji Pearsona (ang. *Pearson Correlation Coefficient*) mierzy siłę liniowej zależności pomiędzy wartościami predykcji i obserowanymi. Definiujemy go w następujący sposób: $$r_{xy}$$ -->
 
-4. <u>MAE</u> <br> Chcąc uniknąć (choćby w części) wrażliwości na wartości odstające stosuje się miarę średniego absolutnego błędu (ang. *Mean Absolut Error*). Definiujemy go następująco: $$\text{MAE} = \frac{\sum^n_{i=1}|y_i-\hat y_i|}{n}$$ Ponieważ wartości błędów $y_i-\hat y_i$ nie są podnoszone do kwadratu, to miara ta jest mniej wrażliwa na punkty odstające. Interpretacja jej jest podobna jak MSE i RMSE. <br> Błąd w tym przypadku jest również mierzony w tych samych jednostkach co $Y$. 
+<u>Miary bazujące na **błędach**:</u>
 
+1. <u>RMSE</u> <br> Inną powszechnie stosowaną miarą do oceny dopasowania modeli regresyjnych jest pierwiastek błędu średnio-kwadratowego (ang. *Root Mean Square Error*), zdefiniowany następująco: $$\text{RMSE} = \sqrt{\frac{\sum^n_{i=1}(y_i-\hat y_i)^2}{n}}$$ gdzie <br> $n$ oznacza liczebność zbioru danych na jakim dokonywana jest ocena dopasowania. <br> Im mniejsza jest wartość błędu RMSE tym lepiej dopasowany jest model. Niestety wadą tej miary jest brak odporności na wartości odstające. Błąd w tym przypadku jest mierzony w tych samych jednostkach co mierzona wielkość wynikowa $Y$.
 
-Wymienione miary błędów są nieunormowane, a dopasowania modeli możemy dokonywać jedynie porównując wynik błędu z wartościami $Y$, lub też przez porównanie miar dla różnych modeli.
+2. <u>MSE</u> <br> Ściśle powiązaną miarą dopasowania modelu z RMSE jest błąd średnio-kwadratowy (ang. *Mean Square Error*). Oczywiście jest on definiowany jako kwadrat RMSE. Interpretacja jest podobna jak w przypadku RMSE. W tym przypadku błąd jest mierzony w jednostkach do kwadratu i również jak w przypadku RMSE miara ta jest wrażliwa na wartości odstające. 
+
+3. <u>MAE</u> <br> Chcąc uniknąć (choćby w części) wrażliwości na wartości odstające stosuje się miarę średniego absolutnego błędu (ang. *Mean Absolut Error*). Definiujemy go następująco: $$\text{MAE} = \frac{\sum^n_{i=1}|y_i-\hat y_i|}{n}$$ Ponieważ wartości błędów $y_i-\hat y_i$ nie są podnoszone do kwadratu, to miara ta jest mniej wrażliwa na punkty odstające. Interpretacja jej jest podobna jak MSE i RMSE. <br> Błąd w tym przypadku jest również mierzony w tych samych jednostkach co $Y$. 
+<p style="color:#808080">
+Wymienione miary błędów są nieunormowane (tzn. przyjmują również wartości spoza przedziału $(0,1)$), a dopasowania modeli możemy dokonywać jedynie porównując wynik błędu z wartościami $Y$, lub też przez porównanie miar dla różnych modeli.
+</p>
 
 <br>
 
@@ -235,7 +243,7 @@ Wśród innych metod ekstrakcji można wymienić analizę składowych niezależn
 
 ## 11. Czym jest walidacja krzyżowa i walidacja krzyżowa z powtórzeniami?
 
-Walidacja krzyżowa (ang. *cross-validation*) jest dobrze ugruntowaną metodą próbkowania. Chociaż istnieje wiele odmian, najbardziej powszechną metodą walidacji krzyżowej jest $V$-krotna walidacja krzyżowa. Dane są losowo dzielone na $V$ biorów o mniej więcej równej wielkości (zwanych krotkami lub foldami). 
+Walidacja krzyżowa (ang. *cross-validation*) jest dobrze ugruntowaną metodą próbkowania. Chociaż istnieje wiele odmian, najbardziej powszechną metodą walidacji krzyżowej jest $V$-krotna walidacja krzyżowa. Dane są losowo dzielone na $V$ zbiorów o mniej więcej równej wielkości (zwanych krotkami lub foldami). 
 
 ![$V=3$ dla zbioru danych składającego się z 30 punktów zbioru treningowego z losowym przydziałem foldów. Liczba wewnątrz symboli to numer próbki. Kolory symboli reprezentują ich losowo przypisane foldy.](obrazki/walidacja1.png)
 
@@ -264,7 +272,7 @@ Generalnie zwiększanie liczby replikacji nie ma dużego wpływu na błąd stand
 
 ## 12. Czym jest metoda Leave-One-Out?
 
-Jedną z odmian walidacji krzyżowej jest walidacja krzyżowa typu Leave-One-Out (LOO). Jeśli mamy $n$ próbek zbioru treningowego, modeli jest dopasowywanych przy użyciu $n-1$ wierszy zbioru treningowego. Każdy model przewiduje pojedynczy wykluczony punkt danych. Na koniec próbkowania $n$ rognoz jest łączonych w celu uzyskania pojedynczej statystyki dopasowania. Metody *LOO* są gorsze w porównaniu z prawie każdą inną metodą oceny dopasowania. Dla wszystkich oprócz patologicznie małych próbek, *LOO* jest obliczeniowo złożony i może nie mieć dobrych właściwości statystycznych.
+Jedną z odmian walidacji krzyżowej jest walidacja krzyżowa typu Leave-One-Out (LOO). Jeśli mamy $n$ próbek zbioru treningowego, $n$ modeli jest dopasowywanych przy użyciu $n-1$ wierszy zbioru treningowego. Każdy model przewiduje pojedynczy wykluczony punkt danych. Na koniec próbkowania $n$ prognoz jest łączonych w celu uzyskania pojedynczej statystyki dopasowania. Metody *LOO* są gorsze w porównaniu z prawie każdą inną metodą oceny dopasowania. <br>Dla wszystkich oprócz patologicznie małych próbek, *LOO* jest obliczeniowo złożony i może nie mieć dobrych właściwości statystycznych.
 
 <br>
 
