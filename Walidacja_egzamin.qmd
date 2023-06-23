@@ -272,7 +272,7 @@ Generalnie zwiększanie liczby replikacji nie ma dużego wpływu na błąd stand
 
 ## 12. Czym jest metoda Leave-One-Out?
 
-Jedną z odmian walidacji krzyżowej jest walidacja krzyżowa typu Leave-One-Out (LOO). Jeśli mamy $n$ próbek zbioru treningowego, $n$ modeli jest dopasowywanych przy użyciu $n-1$ wierszy zbioru treningowego. Każdy model przewiduje pojedynczy wykluczony punkt danych. Na koniec próbkowania $n$ rognoz jest łączonych w celu uzyskania pojedynczej statystyki dopasowania. Metody *LOO* są gorsze w porównaniu z prawie każdą inną metodą oceny dopasowania. Dla wszystkich oprócz patologicznie małych próbek, *LOO* jest obliczeniowo złożony i może nie mieć dobrych właściwości statystycznych.
+Jedną z odmian walidacji krzyżowej jest walidacja krzyżowa typu Leave-One-Out (LOO). Jeśli mamy $n$ próbek zbioru treningowego, $n$ modeli jest dopasowywanych przy użyciu $n-1$ wierszy zbioru treningowego. Każdy model przewiduje pojedynczy wykluczony punkt danych. Na koniec próbkowania $n$ prognoz jest łączonych w celu uzyskania pojedynczej statystyki dopasowania. Metody *LOO* są gorsze w porównaniu z prawie każdą inną metodą oceny dopasowania. <br>Dla wszystkich oprócz patologicznie małych próbek, *LOO* jest obliczeniowo złożony i może nie mieć dobrych właściwości statystycznych.
 
 <br>
 
