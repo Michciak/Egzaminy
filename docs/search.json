@@ -956,7 +956,7 @@
     "href": "Walidacja_egzamin.html#opisz-zasadę-działania-testów-bootstrapowych.",
     "title": "Metody Walidacji Modeli Statystycznych",
     "section": "3. Opisz zasadę działania testów bootstrapowych.",
-    "text": "3. Opisz zasadę działania testów bootstrapowych.\nWyliacznie \\(p\\) dla testu bootstrapowego odbywa się wg następujących kroków:\n\nWyznaczamy na podstawie próby statystykę interesującą nas w teście (w naszym przypadku średnią \\(\\bar x\\)).\nNastępnie przesuwamy wszystkie obserwację o różnicę pomiędzy średnią teoretyczną a \\(\\bar x\\), tak aby rozkład miał średnią teoretyczną.\n\n\nChodzi o to, że hipoteza dotyczy równości średnich, więc gdy przeniesiemy wszystko na jedną stronę to hipoteza zmienia się, że różnica średniej z próby i średniej z danej próbki bootsrapowej jest równa \\(0\\).\n\n\nLosujemy próby bootstrapowe z nowej (przesuniętej) próby.\nNa podstawie prób bootstrapowych wyznaczamy rozkład średnich poszczególnych prób.\nNa koniec sprawdzamy prawdopodobieństwo (szacując na podstawie rozkładu bootstrapowego) otrzymania wartości większych niż średnia oryginalnej próby. Dla hipotez dwustronnych dodajemy do tego prawdopodobieństwo otrzymania wartości mniejszej niż \\(- \\bar x\\)."
+    "text": "3. Opisz zasadę działania testów bootstrapowych."
   },
   {
     "objectID": "Walidacja_egzamin.html#opisz-zasadę-działania-testów-permutacyjnych.",
@@ -1103,7 +1103,7 @@
     "href": "Walidacja_egzamin.html#co-to-jest-funkcja-akwizycji",
     "title": "Metody Walidacji Modeli Statystycznych",
     "section": "24. Co to jest funkcja akwizycji?",
-    "text": "24. Co to jest funkcja akwizycji?\nKlasa funkcji celu, zwanych funkcjami akwizycji, ułatwia kompromis pomiędzy średnią a wariancją. Przypomnijmy, że przewidywana wariancja modeli GP zależy głównie od tego, jak bardzo są one oddalone od istniejących danych. Kompromis pomiędzy przewidywaną średnią i wariancją dla nowych kandydatów jest często postrzegany przez pryzmat eksploracji i eksploatacji:\n\nEksploracja - powoduje wybór tych regionów, w których jest mniej obserwowanych modeli kandydujących. W ten sposób nadaje się większą wagę kandydatom o wyższej wariancji i koncentruje się na poszukiwaniu nowych wyników.\nEksploatacja - zasadniczo opiera się istniejących wynikach, w celu odnalezienia najlepszej wartości średniej.\n\nhttps://dax44.github.io/ModelsValidation/iterative.html#fig-iter2 &lt;- przykład"
+    "text": "24. Co to jest funkcja akwizycji?\n\n\n\n\nFuncjaj akwizycji oczekiwanej poprawy wskazuje którego kandydata wybrać (?). Znowu rysuje wykres z wykładu. Mówi o eksploatacji i eksploracji. Funkcja akwizycji wyznaczy kompromis pomiędzy nimi."
   },
   {
     "objectID": "Walidacja_egzamin.html#sec-annealing",
@@ -1146,5 +1146,12 @@
     "title": "Metody Walidacji Modeli Statystycznych",
     "section": "30. Jak należy stosować poszczególne kroki przygotowania danych w procesie uczenia i walidacji modelu?",
     "text": "30. Jak należy stosować poszczególne kroki przygotowania danych w procesie uczenia i walidacji modelu?"
+  },
+  {
+    "objectID": "Walidacja_egzamin.html#czym-są-procesy-gaussowskie",
+    "href": "Walidacja_egzamin.html#czym-są-procesy-gaussowskie",
+    "title": "Metody Walidacji Modeli Statystycznych",
+    "section": "23. Czym są procesy gaussowskie?",
+    "text": "23. Czym są procesy gaussowskie?\n\n\n\n\n\nModele procesu gaussowskiego (GP), to techniki statystyczne, które mają swoją historię w statystyce przestrzennej.Mogą być wyprowadzone na wiele sposobów, w tym jako model Bayesowski.\n\nMatematycznie, GP jest zbiorem zmiennych losowych, których wspólny rozkład prawdopodobieństwa jest wielowymiarowy normalny.\nModele procesów gaussowskich są określone przez ich funkcje średniej i kowariancji, choć to ta ostatnia ma większy wpływ na charakter modelu GP. Funkcja kowariancji jest często parametryzowana w kategoriach wartości wejściowych (oznaczanych jako \\(x\\)).\nPrzykładowo, powszechnie stosowaną funkcją kowariancji jest funkcja wykładnicza kwadratowa: \\[\\operatorname{cov}(\\boldsymbol{x}_i, \\boldsymbol{x}_j) = \\exp\\left(-\\frac{1}{2}|\\boldsymbol{x}_i - \\boldsymbol{x}_j|^2\\right) + \\sigma^2_{ij}\\] gdzie  \\(\\sigma_{i,j}^2\\) jest wariancją błędu modelu równą zero jeśli \\(i=j\\).  Możemy to interpretować jako, że wraz ze wzrostem odległości pomiędzy dwoma kombinacjami parametrów, kowariancja pomiędzy metrykami wydajności rośnie wykładniczo. Z równania wynika również, że zmienność metryki wynikowej (Estimated \\(R^2\\)) jest minimalizowana w punktach, które już zostały zaobserwowane (tzn. gdy \\(|x_i - x_j|^2\\) wynosi 0). Charakter tej funkcji kowariancji pozwala procesowi gaussowskiemu reprezentować wysoce nieliniowe zależności między wydajnością modelu a dostrajaniem parametrów, nawet jeśli istnieje tylko niewielka ilość danych.\n\n\n\nW każdym przekroju pomiędzy punktami można narysować Gaussa, co ilustruje mniejsze prawdopodobieństwo że wykres pójdzie skrajną ścieżką.\n\n\nWażną zaletą tego modelu jest to, że ponieważ określony jest pełny model prawdopodobieństwa, przewidywania dla nowych wejść mogą odzwierciedlać cały rozkład wyniku. Innymi słowy, nowe statystyki wydajności mogą być przewidywane zarówno pod względem średniej jak i wariancji."
   }
 ]
