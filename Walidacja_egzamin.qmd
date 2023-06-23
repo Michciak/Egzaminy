@@ -420,15 +420,43 @@ Ważną zaletą tego modelu jest to, że ponieważ określony jest pełny model 
 
 ## 24. Co to jest funkcja akwizycji?
 
-<!-- Klasa funkcji celu, zwanych funkcjami akwizycji, ułatwia kompromis pomiędzy średnią a wariancją. Przypomnijmy, że przewidywana wariancja modeli GP zależy głównie od tego, jak bardzo są one oddalone od istniejących danych. Kompromis pomiędzy przewidywaną średnią i wariancją dla nowych kandydatów jest często postrzegany przez pryzmat eksploracji i eksploatacji: -->
+Klasa funkcji celu, zwanych funkcjami akwizycji, ułatwia kompromis pomiędzy średnią a wariancją. Przypomnijmy, że przewidywana wariancja modeli GP zależy głównie od tego, jak bardzo są one oddalone od istniejących danych. Kompromis pomiędzy przewidywaną średnią i wariancją dla nowych kandydatów jest często postrzegany przez pryzmat eksploracji i eksploatacji:
 
-<!-- - Eksploracja - powoduje wybór tych regionów, w których jest mniej obserwowanych modeli kandydujących. W ten sposób nadaje się większą wagę kandydatom o wyższej wariancji i koncentruje się na poszukiwaniu nowych wyników. -->
+- Eksploracja - powoduje wybór tych regionów, w których jest mniej obserwowanych modeli kandydujących. W ten sposób nadaje się większą wagę kandydatom o wyższej wariancji i koncentruje się na poszukiwaniu nowych wyników.
 
-<!-- - Eksploatacja - zasadniczo opiera się istniejących wynikach, w celu odnalezienia najlepszej wartości średniej. -->
+- Eksploatacja - zasadniczo opiera się istniejących wynikach, w celu odnalezienia najlepszej wartości średniej.
 
 <!-- <https://dax44.github.io/ModelsValidation/iterative.html#fig-iter2> <- przykład  -->
 
-Funcjaj akwizycji oczekiwanej poprawy wskazuje którego kandydata wybrać (?). Znowu rysuje wykres z wykładu.  Mówi o eksploatacji i eksploracji. Funkcja akwizycji wyznaczy kompromis pomiędzy nimi.
+Funkcja akwizycji oczekiwanej poprawy wskazuje którego kandydata wybrać (?). Znowu rysuje wykres z wykładu.  Mówi o eksploatacji i eksploracji. Funkcja akwizycji wyznaczy kompromis pomiędzy nimi.
+
+
+![Na wykresie widać dwie przerywane pionowe linie, są to (do lewej) *Eksploatacja* i *Eksploracja*.](obrazki/GP1.png)
+
+Jedną z najczęściej stosowanych funkcji akwizycji jest oczekiwana poprawa. Na przykład, rozważmy dwie wartości parametrów kandydujących 0,10 i 0,25 (wskazane przez pionowe linie na powyższym rysunku. Używając dopasowanego modelu GP, ich przewidywane $R^2$ są pokazane na poniższym rysunku wraz z linią odniesienia dla aktualnych najlepszych wyników.
+
+![Porównie rozkładów przewidywania $R^2$ dla wartości przewidywanych przez *Eksploatację* i *Eksplorację*.](obrazki/fakwiz.png)
+
+Rozpatrując tylko średnią $R^2$ lepszym wyborem jest wartość parametru 0,10 Rekomendacja parametru dostrajania dla 0,25 ma gorsze przewidywanie średnie niż aktualny najlepszy kandydat. Jednakże, ponieważ ma wyższą wariancję, ma większy ogólny obszar prawdopodobieństwa powyżej aktualnego najlepszego. W rezultacie ma większą oczekiwaną poprawę: 
+```{r echo=FALSE}
+tab2 <- tibble::tribble(
+  ~Parameter.Value,  ~Mean,  ~Std.Dev, ~Expected.Improvment,
+               0.1, 0.8679, 0.0004317,              0.00019,
+              0.25, 0.8671, 0.0039301,             0.001216
+  )
+gt::gt(tab2)
+```
+
+
+<details>
+
+<summary>Poprawa na całym zakresie</summary>
+
+![Szacowany profil wydajności wygenerowany przez model procesu gaussowskiego (górny panel) oraz oczekiwana poprawa (dolny panel). Pionowa linia wskazuje punkt maksymalnej poprawy.](obrazki/fakwiz1.png)
+
+Kiedy oczekiwana poprawa jest obliczana w całym zakresie dostrajania parametrów, zalecany punkt do próbkowania jest znacznie bliższy 0,25 niż 0,10.
+
+</details>
 
 <br>
 
@@ -438,7 +466,23 @@ Symulowane wyżarzanie (ang. *simulated annealing*) jest nieliniową procedurą 
 
 Proces użycia symulowanego wyżarzania rozpoczyna się od wartości początkowej i rozpoczyna kontrolowany losowy spacer przez przestrzeń parametrów. Każda nowa wartość parametrukandydata jest niewielką perturbacją poprzedniej wartości, która utrzymuje nowy punkt w lokalnym sąsiedztwie.
 
-<https://dax44.github.io/ModelsValidation/iterative.html#symulowane-wy%C5%BCarzanie> <- przykład 
+Punkt kandydujący jest oceniany przy zastosowaniu resamplingu, aby uzyskać odpowiadającą mu wartość wydajności. Jeśli osiąga ona lepsze wyniki niż poprzednie parametry, jest akceptowana jako nowa najlepsza i proces jest kontynuowany. Jeśli wyniki są gorsze niż poprzednia wartość, procedura wyszukiwania może nadal używać tego parametru do określenia dalszych kroków. Zależy to od dwóch czynników. Po pierwsze, prawdopodobieństwo zatrzymania złego kandydata maleje wraz z pogorszeniem się wyników. Innymi słowy, tylko nieco gorszy wynik od obecnie najlepszego ma większą szansę na akceptację niż ten z dużym spadkiem wydajności. Drugim czynnikiem jest liczba iteracji wyszukiwania. Symulowane wyżarzanie próbuje zaakceptować mniej suboptymalnych wartości w miarę postępu wyszukiwania.
+
+Dla złego wyniku określamy prawdopodobieństwo akceptacji i porównujemy je z liczbą wylosowaną z rozkładu jednostajnego. Jeśli liczba ta jest większa od wartości prawdopodobieństwa, wyszukiwanie odrzuca bieżące parametry i następna iteracja tworzy swoją wartość kandydata w sąsiedztwie poprzedniej wartości. W przeciwnym razie następna iteracja tworzy kolejny zestaw parametrów na podstawie bieżących (suboptymalnych) wartości.
+
+<details style="color:#808080">
+  <summary>Wzór na prawdopodobieństwo akceptacji złego wyniku</summary>
+
+Prawdopodobieństwo akceptacji złego wyniku można sformalizować jako:
+
+$$\operatorname{Pr}[\text{accept suboptimal parameters at iteration } i] = \exp(c\times D_i \times i)$$
+
+gdzie <br> $i$ jest numerem iteracji,<br>$c$ jest stałą określoną przez użytkownika,<br>$D_i$ jest procentową różnicą pomiędzy starą i nową wartością (gdzie wartości ujemne oznaczają gorsze wyniki).
+</details>
+
+Proces ten trwa przez określoną ilość iteracji, ale może zostać zatrzymany, jeśli w ciągu określonej liczby iteracji nie pojawią się globalnie najlepsze wyniki. Bardzo pomocne może być ustawienie progu restartu. Jeśli wystąpi ciąg niepowodzeń, funkcja ta powraca do ostatnich globalnie najlepszych ustawień parametrów i zaczyna od nowa.
+
+![Mapa ciepła prawdopodobieństwa akceptacji symulowanego wyżarzania dla różnych wartości współczynnika. Pokazuje, jak prawdopodobieństwo akceptacji może się zmieniać w zależności od iteracji, wydajności i współczynnika określonego przez użytkownika.](obrazki/annealing1.png)
 
 <br>
 
