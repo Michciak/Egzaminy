@@ -441,7 +441,7 @@ Klasa funkcji celu, zwanych funkcjami akwizycji, ułatwia kompromis pomiędzy ś
 
 <!-- <https://dax44.github.io/ModelsValidation/iterative.html#fig-iter2> <- przykład  -->
 
-Funkcja akwizycji oczekiwanej poprawy wskazuje którego kandydata wybrać (?). Znowu rysuje wykres z wykładu.  Mówi o eksploatacji i eksploracji. Funkcja akwizycji wyznaczy kompromis pomiędzy nimi.
+<!-- Funkcja akwizycji oczekiwanej poprawy wskazuje którego kandydata wybrać (?). Znowu rysuje wykres z wykładu.  Mówi o eksploatacji i eksploracji. Funkcja akwizycji wyznaczy kompromis pomiędzy nimi. -->
 
 
 ![Na wykresie widać dwie przerywane pionowe linie, są to (do lewej) *Eksploatacja* i *Eksploracja*.](obrazki/GP1.png)

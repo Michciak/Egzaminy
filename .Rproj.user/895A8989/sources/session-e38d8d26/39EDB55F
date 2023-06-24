@@ -3,7 +3,7 @@
     "path": "C:/Users/Michc/Dropbox/Uczelnia/Egzaminy/Egzaminy/Walidacja_egzamin.qmd",
     "project_path": "Walidacja_egzamin.qmd",
     "type": "quarto_markdown",
-    "hash": "958558916",
+    "hash": "1385889540",
     "contents": "",
     "dirty": false,
     "created": 1686689264935.0,
@@ -13,15 +13,15 @@
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "153,27",
-        "scrollLine": "137"
+        "cursorPosition": "443,200",
+        "scrollLine": "427"
     },
     "folds": "",
-    "lastKnownWriteTime": 1687624783,
+    "lastKnownWriteTime": 1687641663,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1687624783335,
+    "last_content_update": 1687641663291,
     "read_only": false,
     "read_only_alternatives": []
 }
