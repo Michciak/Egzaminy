@@ -143,18 +143,23 @@ dt |>
 
 <!-- <li style="color:#808080"></li> -->
 
+On i tak wytłumaczy to lepiej, oglądnij sobie:
+
+<https://www.youtube.com/watch?v=N4ZQQqyIf6k>
 
 <br>
 
 ## 4. Opisz zasadę działania testów permutacyjnych.
 
+Całkiem dobrze opowiedziane:
 
+<https://www.youtube.com/watch?v=F8b_gxKPxG8>
 
 <br>
 
 ## 5. Podaj podział miar dopasowania modeli predykcyjnych oraz wymień po trzy miary dedykowane do modeli regresyjnych.
 
-Wśród miar dopasowania dla modeli regresyjnych można wyróżnić, te które mierzą zgodność pomiędzy wartościami obserwowanymi a przewidywanymi, wyrażone często pewnego rodzaju korelacjami (lub ich kwadratami), a interpretujemy je w ten sposób, że im wyższe wartości tych współczynników tym bardziej zgodne są predykcje z obserwacjami. Drugą duża grupę miar stanowią błędy (bezwzględne i względne), które mierzą w różny sposób różnice pomiędzy wartościami obserwowanymi i przewidywanymi. Jedne są bardziej odporne wartości odstające inne mniej, a wszystkie interpretujemy tak, że jeśli ich wartość jest mniejsza tym lepiej jest dopasowany model. 
+Wśród miar dopasowania dla modeli regresyjnych można wyróżnić, te które mierzą zgodność pomiędzy wartościami obserwowanymi a przewidywanymi, wyrażone często pewnego rodzaju korelacjami (lub ich kwadratami), a interpretujemy je w ten sposób, że im wyższe wartości tych współczynników tym bardziej zgodne są predykcje z obserwacjami. Drugą duża grupę miar stanowią błędy (bezwzględne i względne), które mierzą w różny sposób różnice pomiędzy wartościami obserwowanymi i przewidywanymi. Jedne są bardziej odporne na wartości odstające, inne mniej, natomiast wszystkie interpretujemy tak, że jeśli ich wartość jest mniejsza tym lepiej jest dopasowany model. 
 
 **Miary dopadowania modeli regresyjnych**:
 
@@ -472,7 +477,7 @@ Kiedy oczekiwana poprawa jest obliczana w całym zakresie dostrajania parametró
 
 Symulowane wyżarzanie (ang. *simulated annealing*) jest nieliniową procedurą wyszukiwania zainspirowaną procesem stygnięcia metalu. Jest to metoda globalnego wyszukiwania, która może efektywnie poruszać się po wielu różnych obszarach poszukiwań, w tym po funkcjach nieciągłych. W przeciwieństwie do większości procedur optymalizacji opartych na gradiencie, symulowane wyżarzanie może ponownie ocenić poprzednie rozwiązania. 
 
-Proces użycia symulowanego wyżarzania rozpoczyna się od wartości początkowej i rozpoczyna kontrolowany losowy spacer przez przestrzeń parametrów. Każda nowa wartość parametrukandydata jest niewielką perturbacją poprzedniej wartości, która utrzymuje nowy punkt w lokalnym sąsiedztwie.
+Proces użycia symulowanego wyżarzania rozpoczyna się od wartości początkowej i rozpoczyna kontrolowany losowy spacer przez przestrzeń parametrów. Każda nowa wartość parametru kandydata jest niewielką perturbacją poprzedniej wartości, która utrzymuje nowy punkt w lokalnym sąsiedztwie.
 
 Punkt kandydujący jest oceniany przy zastosowaniu resamplingu, aby uzyskać odpowiadającą mu wartość wydajności. Jeśli osiąga ona lepsze wyniki niż poprzednie parametry, jest akceptowana jako nowa najlepsza i proces jest kontynuowany. Jeśli wyniki są gorsze niż poprzednia wartość, procedura wyszukiwania może nadal używać tego parametru do określenia dalszych kroków. Zależy to od dwóch czynników. Po pierwsze, prawdopodobieństwo zatrzymania złego kandydata maleje wraz z pogorszeniem się wyników. Innymi słowy, tylko nieco gorszy wynik od obecnie najlepszego ma większą szansę na akceptację niż ten z dużym spadkiem wydajności. Drugim czynnikiem jest liczba iteracji wyszukiwania. Symulowane wyżarzanie próbuje zaakceptować mniej suboptymalnych wartości w miarę postępu wyszukiwania.
 
@@ -526,7 +531,7 @@ Podpróbkowanie prawie zawsze daje modele, które są lepiej skalibrowane, co oz
 
 ## 29. Jakie są zalety próbkowania zawyżającego liczebność klasy mniejszościowej?
 
-Techniki *oversamplingu* sprowadzają klasy mniejszościowe do liczebności takiej samej jak klasa większościowa (lub jej części) poprzez odpowiednie próbkowanie istniejących obserwacji lub też (jak to jest w przypadku metody SMOTE) tworzy się syntetyczne obserwacje podobne do już istniejących w klasie mniejszościowej. Jako zaletę można potraktować to, że w przeciwieństwie do *undersamplingu* nie zmniejszamy rozmiaru zbioru danych oraz przez co nie tracimy informacji, inne zalety pokrywają się z próbkowaniem w dół.
+Techniki *oversamplingu* sprowadzają klasy mniejszościowe do liczebności takiej samej jak klasa większościowa (lub jej części) poprzez odpowiednie próbkowanie istniejących obserwacji lub też (jak to jest w przypadku metody SMOTE) tworzy się syntetyczne obserwacje podobne do już istniejących w klasie mniejszościowej. Jako zaletę można potraktować to, że w przeciwieństwie do *undersamplingu* nie zmniejszamy rozmiaru zbioru danych oraz przez to nie tracimy informacji, inne zalety pokrywają się z próbkowaniem w dół.
 
 
 <br>
